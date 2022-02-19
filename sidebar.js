@@ -9,6 +9,7 @@ function makeSidebar() {
             temp.appendChild(d);
         }
         document.getElementById("sidebar").appendChild(tempList);
+        document.getElementById("sidebar").appendChild(document.createElement("br"));
     }
 }
 function makeDropdown() {
