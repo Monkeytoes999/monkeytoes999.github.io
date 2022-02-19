@@ -14,6 +14,11 @@ function changeNewsHtml(content) {
     var par = content.split("\n")
     var base = document.createElement("div");
     base.classList.add("widget");
+    base.style.lineHeight = 1.25;
+
+    var head = document.createElement("h3");
+    head.innerHTML = "The Guardian News";
+    base.appendChild(head);
 
     for (let i = 0; i < par.length; i++){
         var text = document.createElement("a");

@@ -6,12 +6,13 @@ async function callCovidAPI() {
 }
 
 async function covidJson() {
-    return await callCovidAPI().then(data => {return changeHtml("<b>United States Daily Covid Report</b>\nDaily reported cases: " + data["actuals"]["newCases"] + "\nDaily reported deaths: " + data["actuals"]["newDeaths"] + "\nLast updated: " + data["lastUpdatedDate"])});
+    return await callCovidAPI().then(data => {return changeHtml("<h3>United States Daily Covid Report</h3>\nDaily reported cases: " + data["actuals"]["newCases"] + "\nDaily reported deaths: " + data["actuals"]["newDeaths"] + "\nLast updated: " + data["lastUpdatedDate"])});
 }
 
 function changeHtml(content) {
     var par = content.split("\n")
     var base = document.createElement("div");
+    base.style.lineHeight = 1;
     base.classList.add("widget");
     for (let i = 0; i < par.length; i++){
         var text = document.createElement("p");

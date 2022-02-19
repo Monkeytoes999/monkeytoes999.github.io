@@ -15,6 +15,10 @@ function changeCryptoHtml(content) {
     var base = document.createElement("div");
     base.classList.add("widget");
 
+    var head = document.createElement("h3");
+    head.innerHTML = "Crypto Prices";
+    base.appendChild(head);
+
     for (let i = 0; i < par.length; i++){
         var text = document.createElement("p");
         text.innerHTML = par[i];

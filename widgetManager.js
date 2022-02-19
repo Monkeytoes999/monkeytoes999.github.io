@@ -20,6 +20,8 @@ async function getWidget(name) {
         output = await cryptoJson();
     } else if (name == wName[4]) { 
         output = await weatherJson();
+    } else if (name == wName[5]) {
+        output = await dadJokesJson();
     }
     return output;
 }
