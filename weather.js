@@ -1,5 +1,5 @@
 async function callW() {
-    let response = await fetch("api.openweathermap.org/data/2.5/weather?lat=33.957409&lon=-83.376801&units=imperial&appid=0720fc8331f4175cbeb36cf226c9f876");
+    let response = await fetch("https://api.openweathermap.org/data/2.5/weather?lat=33.957409&lon=-83.376801&appid=0720fc8331f4175cbeb36cf226c9f876");
     let data = await response.json()
     return data;
 }
