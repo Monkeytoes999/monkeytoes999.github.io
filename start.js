@@ -8,7 +8,7 @@ makeSidebar();
 async function manAddWidget(name, position) {
     var temp = document.getElementById(widgetLocations[position]);
     temp.appendChild(await getWidget(name));
-}
+} // manAddWidget
 
 manAddWidget("Blank", 0);
 manAddWidget("Blank", 1);
@@ -23,5 +23,6 @@ async function updateClock(){
     setTimeout(() => {
         updateClock();
     }, 500);
-}
+} // updateClock
+
 updateClock();

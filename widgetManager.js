@@ -6,14 +6,14 @@ async function fetchAPI() {
     let response = await fetch("api");
     let data = await response.json()
     return data;
-}
+} // fetchAPI
 
 /**
  * This logs API calls.
  */
 function apiName() {
     console.log(fetchTest().then(data => console.log(data)));
-}
+} // apiName
 
 /**
  * Assists in widget selection
@@ -34,6 +34,6 @@ async function getWidget(name) {
         output = await weatherJson();
     } else if (name == wName[5]) {
         output = await dadJokesJson();
-    }
+    } // if
     return output;
-}
+} // getWidget
