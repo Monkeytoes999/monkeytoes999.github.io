@@ -13,11 +13,12 @@ body {
     text-align: center;
 }
 .widget {
+    padding: 1%;
     float: left;
     position: relative;
     outline: 1px solid black;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 4%;
+    margin-right: 4%;
     margin-top: 5%;
     width: 40%;
     height: 150px;

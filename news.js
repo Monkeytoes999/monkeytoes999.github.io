@@ -14,6 +14,7 @@ function changeNewsHtml(content) {
     var par = content.split("\n")
     var base = document.createElement("div");
     base.classList.add("widget");
+    base.style.lineHeight = 2;
 
     for (let i = 0; i < par.length; i++){
         var text = document.createElement("a");
