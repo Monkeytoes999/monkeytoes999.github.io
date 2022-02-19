@@ -6,7 +6,7 @@ async function callCovidAPI() {
 }
 
 async function covidJson() {
-    return await callCovidAPI().then(data => {return changeHtml("New cases: " + data["actuals"]["newCases"] + "\nNew deaths: " + data["actuals"]["newDeaths"] + "\nLast updated: " + data["lastUpdatedDate"])});
+    return await callCovidAPI().then(data => {return changeHtml("<b>United States Daily Covid Report</b>\nDaily reported cases: " + data["actuals"]["newCases"] + "\nDaily reported deaths: " + data["actuals"]["newDeaths"] + "\nLast updated: " + data["lastUpdatedDate"])});
 }
 
 function changeHtml(content) {
