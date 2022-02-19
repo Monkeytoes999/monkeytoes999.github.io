@@ -1,27 +1,25 @@
-function newsWidget() {
-    // Base creation
-    
-    
-    newsJson();
-
-    // Add base to list of widgets
-}
-
 async function callNewsAPI() {
-    let response = await fetch("https://jsonplaceholder.typicode.com/users");
+    let response = await fetch("https://content.guardianapis.com/search?api-key=b86d1bc0-85fb-44ea-ad0c-7f58e8991ec0");
     let data = await response.json()
     return data;
 }
 
 async function newsJson() {
-    return await callNewsAPI().then(data => { return changeHtml(data["0"]["name"])});
+    return await callNewsAPI().then(data => {return changeNewsHtml(data["response"]["results"]["0"]["webTitle"] + "\n" + data["response"]["results"]["0"]["webUrl"])});
 }
 
-function changeHtml(content) {
+function changeNewsHtml(content) {
+    var par = content.split("\n")
     var base = document.createElement("div");
     base.classList.add("widget");
-    var text = document.createElement("p");
-    text.innerHTML = content;
-    base.appendChild(text);
+
+    for (let i = 0; i < par.length; i++){
+        var text = document.createElement("a");
+        text.innerHTML = par[i];
+        text.href = par[i+1];
+        i++;
+        base.appendChild(text);
+    }
+
     return base;
 }
