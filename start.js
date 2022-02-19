@@ -7,3 +7,5 @@ manAddWidget("Demo", 0);
 manAddWidget("Demo", 1);
 manAddWidget("News", 2);
 manAddWidget("Covid", 3);
+
+document.getElementById("clock").innerHTML = Date();

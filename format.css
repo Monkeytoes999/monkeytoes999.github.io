@@ -2,6 +2,16 @@ body {
     background-image: url("https://images.unsplash.com/photo-1533745848184-3db07256e163?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2VsY29tZXxlbnwwfHwwfHw%3D&w=1000&q=80");
     background-size: cover;
 }
+.gear {
+    background-image: url("https://www.seekpng.com/png/full/928-9287664_gear-transparent-png-clip-clipart-transparent-background-gear.png");
+    height: 40px;
+    width: 40px;
+    position: absolute;
+}
+.head {
+    color: white;
+    text-align: center;
+}
 .widget {
     float: left;
     outline: 1px solid black;

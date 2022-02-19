@@ -21,9 +21,12 @@
         <div id = "sidebar" class = "sidebar" style = "display: none">
             <h2>Settings</h2>
         </div>
-        <button onclick = "expand()">Settings</button>
+        <button onclick = "expand()" class = "gear"></button>
         <div onclick = "shrink()">
-            <p>Welcome Friends</p>
+            <div class = "head">
+                <h1>Welcome Friends</h1>
+                <p id = "clock"></p>
+            </div>
             <div class = "row" id = "widgetList">
                 <div id = "wa"></div>
                 <div id = "wb"></div>
