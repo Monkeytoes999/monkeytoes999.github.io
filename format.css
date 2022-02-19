@@ -8,3 +8,13 @@
     height: 200px;
     overflow-y: hidden;
 }
+.sidebar {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    height: 100%;
+    outline: 1px solid black;
+    background-color: white;
+}
