@@ -1,10 +1,10 @@
-var shown = [
-    "Demo",
-    "Demo",
-    "Covid",
-    "News"
+const widgetLocations = [
+    "wa",
+    "wb",
+    "wc",
+    "wd"
 ];
-const widgetList = [
+const wName = [
     "Demo",
     "News",
     "Covid"

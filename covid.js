@@ -5,8 +5,8 @@ async function callCovidAPI() {
     return data;
 }
 
-function covidJson() {
-    callCovidAPI().then(data => changeHtml("New cases: " + data["actuals"]["newCases"] + "\nNew deaths: " + data["actuals"]["newDeaths"] + "\nLast updated: " + data["lastUpdatedDate"]));
+async function covidJson() {
+    return await callCovidAPI().then(data => {return changeHtml("New cases: " + data["actuals"]["newCases"] + "\nNew deaths: " + data["actuals"]["newDeaths"] + "\nLast updated: " + data["lastUpdatedDate"])});
 }
 
 function changeHtml(content) {
@@ -18,5 +18,5 @@ function changeHtml(content) {
         text.innerHTML = par[i];
         base.appendChild(text);
     }
-    document.getElementById("widgetList").appendChild(base);
+    return base;
 }

@@ -2,17 +2,20 @@ function makeSidebar() {
     for (var i = 0; i < 4; i++) {
         var tempList = makeDropdown();
         const position = i;
-        tempList.onchange = function() {
-            showWidget(this.value, position);
+        tempList.onchange = async function() {
+            var temp = document.getElementById(widgetLocations[position]);
+            temp.removeChild(temp.firstChild);
+            d = await getWidget(this.value);
+            temp.appendChild(d);
         }
         document.getElementById("sidebar").appendChild(tempList);
     }
 }
 function makeDropdown() {
     var list = document.createElement("select");
-    for (var i = 0; i < widgetList.length; i++) {
+    for (var i = 0; i < wName.length; i++) {
         var ia = document.createElement("option");
-        ia.innerHTML = widgetList[i];
+        ia.innerHTML = wName[i];
         list.appendChild(ia);
     }
     return list;

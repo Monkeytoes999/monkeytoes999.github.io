@@ -8,26 +8,14 @@ function apiName() {
     console.log(fetchTest().then(data => console.log(data)));
 }
 
-
-function showWidget(name, position) {
-    shown[position] = name;
-    var temp = document.getElementById("widgetList");
-    while (temp.firstChild) {
-        temp.removeChild(temp.firstChild);
+async function getWidget(name) {
+    var output;
+    if (name == wName[0]) {
+        output = addDemo();
+    } else if (name == wName[1]) {
+        output = newsJson();
+    } else if (name == wName[2]) {
+        output = await covidJson();
     }
-    for (var i = 0; i < 4; i++) {
-        makeWidget(i);
-    }
-}
-function makeWidget(position) {
-    setTimeout(() => { 
-        var temp = shown[position];
-        if (temp == widgetList[0]) {
-            addDemo();
-        } else if (temp == widgetList[1]) {
-            newsJson();
-        } else if (temp == widgetList[2]) {
-            covidJson();
-        }
-    }, 175*position);
+    return output;
 }

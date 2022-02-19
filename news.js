@@ -13,16 +13,15 @@ async function callNewsAPI() {
     return data;
 }
 
-function newsJson() {
-    callNewsAPI().then(data => changeHtml(data["0"]["name"]));
+async function newsJson() {
+    return await callNewsAPI().then(data => { return changeHtml(data["0"]["name"])});
 }
 
 function changeHtml(content) {
-    //console.log(content)
     var base = document.createElement("div");
     base.classList.add("widget");
     var text = document.createElement("p");
     text.innerHTML = content;
     base.appendChild(text);
-    document.getElementById("widgetList").appendChild(base);
+    return base;
 }

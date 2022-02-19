@@ -7,6 +7,6 @@ function addDemo() {
     text.innerHTML = "Demonstration";
     base.appendChild(text);
 
-    // Add base to list of widgets
-    document.getElementById("widgetList").appendChild(base);
+    // Return base
+    return base;
 }
