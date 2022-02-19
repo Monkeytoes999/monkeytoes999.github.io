@@ -18,6 +18,12 @@ function changeDadHtml(content) {
         text.innerHTML = par[i];
         base.appendChild(text);
     }
+    var button = document.createElement("button");
+    button.innerHTML = "New Joke";
+    button.onclick = async function() {
+        await dadJokesJson();
+    }
+    base.appendChild(button);
 
     return base;
 }
