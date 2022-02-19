@@ -5,7 +5,7 @@ const widgetLocations = [
     "wd"
 ];
 const wName = [
-    "Demo",
+    "Blank",
     "News",
     "Covid",
     "Cyrpto"
