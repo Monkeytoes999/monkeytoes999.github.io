@@ -18,7 +18,7 @@ function newsJson() {
 }
 
 function changeHtml(content) {
-    console.log(content)
+    //console.log(content)
     var base = document.createElement("div");
     base.classList.add("widget");
     var text = document.createElement("p");
