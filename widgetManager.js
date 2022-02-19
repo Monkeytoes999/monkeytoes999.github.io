@@ -26,6 +26,8 @@ function makeWidget(position) {
             addDemo();
         } else if (temp == widgetList[1]) {
             newsJson();
-        }   
-    }, 50*position);
+        } else if (temp == widgetList[2]) {
+            covidJson();
+        }
+    }, 175*position);
 }

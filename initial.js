@@ -1,10 +1,11 @@
 var shown = [
     "Demo",
     "Demo",
-    "Demo",
-    "Demo"
+    "Covid",
+    "News"
 ];
 const widgetList = [
     "Demo",
-    "News"
+    "News",
+    "Covid"
 ];
