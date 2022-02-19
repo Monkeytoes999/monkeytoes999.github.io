@@ -5,8 +5,8 @@ async function callCryptoAPI() {
 }
 
 async function cryptoJson() {
-    return await callCryptoAPI().then(data => {return changeCryptoHtml("Bitcoin Price: " + data["0"]["current_price"] + "\n" 
-        + "Ethereum Price: " + data["1"]["current_price"])});
+    return await callCryptoAPI().then(data => {return changeCryptoHtml("Bitcoin Price: $" + data["0"]["current_price"] + "\n" 
+        + "Ethereum Price: $" + data["1"]["current_price"])});
 }
 
 function changeCryptoHtml(content) {
@@ -15,13 +15,9 @@ function changeCryptoHtml(content) {
     base.classList.add("widget");
 
     for (let i = 0; i < par.length; i++){
-        var text = document.createElement("a");
+        var text = document.createElement("p");
         text.innerHTML = par[i];
-        text.href = par[i+1];
-        i++;
         base.appendChild(text);
-        var lineBreak = document.createElement("br");
-        base.appendChild(lineBreak);
     }
 
     return base;
