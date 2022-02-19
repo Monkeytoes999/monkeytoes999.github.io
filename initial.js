@@ -7,5 +7,6 @@ const widgetLocations = [
 const wName = [
     "Demo",
     "News",
-    "Covid"
+    "Covid",
+    "Cyrpto"
 ];

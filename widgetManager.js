@@ -16,6 +16,8 @@ async function getWidget(name) {
         output = newsJson();
     } else if (name == wName[2]) {
         output = await covidJson();
+    } else if (name == wName[3]) { 
+        output = await cryptoJson();
     }
     return output;
 }

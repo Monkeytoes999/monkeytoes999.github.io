@@ -5,7 +5,7 @@ async function callCryptoAPI() {
 }
 
 async function cryptoJson() {
-    return await callCryptoAPI().then(data => {return changeCryptHtml("Bitcoin Price: " + data["0"]["current_price"] + "\n" 
+    return await callCryptoAPI().then(data => {return changeCryptoHtml("Bitcoin Price: " + data["0"]["current_price"] + "\n" 
         + "Ethereum Price: " + data["1"]["current_price"])});
 }
 
