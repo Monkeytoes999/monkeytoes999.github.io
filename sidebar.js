@@ -16,6 +16,7 @@ function makeDropdown() {
     var list = document.createElement("select");
     for (var i = 0; i < wName.length; i++) {
         var ia = document.createElement("option");
+        ia.classList.add("items");
         ia.innerHTML = wName[i];
         list.appendChild(ia);
     }
