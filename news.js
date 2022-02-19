@@ -5,7 +5,9 @@ async function callNewsAPI() {
 }
 
 async function newsJson() {
-    return await callNewsAPI().then(data => {return changeNewsHtml(data["response"]["results"]["0"]["webTitle"] + "\n" + data["response"]["results"]["0"]["webUrl"])});
+    return await callNewsAPI().then(data => {return changeNewsHtml(data["response"]["results"]["0"]["webTitle"] + "\n" + data["response"]["results"]["0"]["webUrl"]
+        + "\n" + data["response"]["results"]["1"]["webTitle"] + "\n" + data["response"]["results"]["1"]["webUrl"]
+        + "\n" + data["response"]["results"]["2"]["webTitle"] + "\n" + data["response"]["results"]["2"]["webUrl"])});
 }
 
 function changeNewsHtml(content) {
@@ -19,6 +21,8 @@ function changeNewsHtml(content) {
         text.href = par[i+1];
         i++;
         base.appendChild(text);
+        var lineBreak = document.createElement("br");
+        base.appendChild(lineBreak);
     }
 
     return base;
