@@ -7,5 +7,10 @@ manAddWidget("Blank", 0);
 manAddWidget("Blank", 1);
 manAddWidget("Blank", 2);
 manAddWidget("Blank", 3);
-
-document.getElementById("clock").innerHTML = Date();
+async function updateClock(){
+    document.getElementById("clock").innerHTML = Date();
+    setTimeout(() => {
+        updateClock();
+    }, 500);
+}
+updateClock();
