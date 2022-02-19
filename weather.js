@@ -5,7 +5,7 @@ async function callW() {
 }
 
 async function weatherJson() {
-    return await callW().then(data => {return changeHtml("Right Now: " + data["weather"]["main"] + data["main"]["temp"] + "\nFeels Like " + data["main"]["feels_like"] + "\nHumidity: " + data["main"]["humidity"] + "\n\n" + data["name"] + " " + data["sys"]["country"])});
+    return await callW().then(data => {return changeHtml("Right Now: " + data["weather"][0]["main"] + " " + data["main"]["temp"] + " F" + "\nFeels Like " + data["main"]["feels_like"] + " F" + "\nHumidity: " + data["main"]["humidity"] + "%\n\n" + data["name"] + " " + data["sys"]["country"])});
 }
 
 function changeHtml(content) {
