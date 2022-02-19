@@ -8,5 +8,6 @@ const wName = [
     "Blank",
     "News",
     "Covid",
-    "Cyrpto"
+    "Cyrpto",
+    "Weather"
 ];
