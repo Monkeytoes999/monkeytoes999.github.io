@@ -5,13 +5,16 @@ async function callW() {
 }
 
 async function weatherJson() {
-    return await callW().then(data => {return changeHtml("Right Now: " + data["weather"][0]["main"] + " " + data["main"]["temp"] + " F" + "\nFeels Like " + data["main"]["feels_like"] + " F" + "\nHumidity: " + data["main"]["humidity"] + "%\n\n" + data["name"] + " " + data["sys"]["country"])});
+    return await callW().then(data => {return changeWeHtml("Right Now: " + data["weather"][0]["main"] + " " + data["main"]["temp"] + " F" + "\nFeels Like " + data["main"]["feels_like"] + " F" + "\nHumidity: " + data["main"]["humidity"] + "%\n\n" + data["name"] + " " + data["sys"]["country"])});
 }
 
-function changeHtml(content) {
+function changeWeHtml(content) {
     var par = content.split("\n")
     var base = document.createElement("div");
     base.classList.add("widget");
+    var head = document.createElement("h3");
+    head.innerHTML = "Weather";
+    base.appendChild(head);
     for (let i = 0; i < par.length; i++){
         var text = document.createElement("p");
         text.innerHTML = par[i];

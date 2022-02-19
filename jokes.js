@@ -9,7 +9,7 @@ async function dadJokesJson() {
 }
 
 function changeDadHtml(content) {
-    var par = content.split("\n")
+    var par = content.split("\n");
     var base = document.createElement("div");
     base.classList.add("widget");
 
