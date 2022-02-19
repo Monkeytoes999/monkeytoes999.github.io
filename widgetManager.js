@@ -1,13 +1,25 @@
+/**
+ * Gets relevant API information.
+ * @returns data for the API call
+ */
 async function fetchAPI() {
     let response = await fetch("api");
     let data = await response.json()
     return data;
 }
 
+/**
+ * This logs API calls.
+ */
 function apiName() {
     console.log(fetchTest().then(data => console.log(data)));
 }
 
+/**
+ * Assists in widget selection
+ * @param {String} name 
+ * @returns the widget to be applied.
+ */
 async function getWidget(name) {
     var output;
     if (name == wName[0]) {

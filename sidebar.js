@@ -1,3 +1,6 @@
+/**
+ * Creates a sidebar at start.
+ */
 function makeSidebar() {
     for (var i = 0; i < 4; i++) {
         var tempList = makeDropdown();
@@ -12,6 +15,11 @@ function makeSidebar() {
         document.getElementById("sidebar").appendChild(document.createElement("br"));
     }
 }
+
+/**
+ * Creates a select object
+ * @returns the select object for all positions
+ */
 function makeDropdown() {
     var list = document.createElement("select");
     for (var i = 0; i < wName.length; i++) {
@@ -22,9 +30,17 @@ function makeDropdown() {
     }
     return list;
 }
+
+/**
+ * Shows the settings sidebar.
+ */
 function expand() {
     document.getElementById("sidebar").style.display = "block";
 }
+
+/**
+ * Closes the settings sidebar.
+ */
 function shrink() {
     document.getElementById("sidebar").style.display = "none";
 }
