@@ -18,10 +18,11 @@ if (document.cookie.indexOf("widget0")==-1){
     document.cookie = "widget3=Demo; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
 }
 cookies = document.cookie.split(';');
-manAddWidget(cookies[0].substring(9), 0);
-manAddWidget(cookies[1].substring(9), 1);
-manAddWidget(cookies[2].substring(9), 2);
-manAddWidget(cookies[3].substring(9), 3);
+for (var cStart = 0; cookies[cStart].indexOf("widget0") == -1; i++);
+manAddWidget(cookies[cStart].substring(9), 0);
+manAddWidget(cookies[cStart+1].substring(9), 1);
+manAddWidget(cookies[cStart+2].substring(9), 2);
+manAddWidget(cookies[cStart+3].substring(9), 3);
 
 /**
  * This updates the clock so it will tick forward.
