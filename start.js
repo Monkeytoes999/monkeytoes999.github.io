@@ -11,7 +11,6 @@ async function manAddWidget(name, position) {
 } // manAddWidget
 
 if (document.cookie.indexOf("widget0")==-1){
-    console.log("eewe");
     document.cookie = "widget0=Blank; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
     document.cookie = "widget1=Blank; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
     document.cookie = "widget2=Blank; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
@@ -19,10 +18,10 @@ if (document.cookie.indexOf("widget0")==-1){
 }
 cookies = document.cookie.split(';');
 for (var cStart = 0; cookies[cStart].indexOf("widget0") == -1; cStart++);
-manAddWidget(cookies[cStart].substring(9), 1);
-manAddWidget(cookies[cStart+1].substring(9), 2);
-manAddWidget(cookies[cStart+2].substring(9), 3);
-manAddWidget(cookies[cStart+3].substring(9), 4);
+manAddWidget(cookies[cStart].substring(8), 0);
+manAddWidget(cookies[cStart+1].substring(9), 1);
+manAddWidget(cookies[cStart+2].substring(9), 2);
+manAddWidget(cookies[cStart+3].substring(9), 3);
 
 /**
  * This updates the clock so it will tick forward.
