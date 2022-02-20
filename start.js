@@ -6,8 +6,10 @@ makeSidebar();
  * @param {*int} position for the location the widget should be displayed.
  */
 async function manAddWidget(name, position) {
-    var temp = document.getElementById(widgetLocations[position]);
-    temp.appendChild(await getWidget(name));
+    setTimeout(() => {
+        var temp = document.getElementById(widgetLocations[position]);
+        temp.appendChild(await getWidget(name));
+    }, 500);
 } // manAddWidget
 
 if (document.cookie.indexOf("widget0")==-1){
