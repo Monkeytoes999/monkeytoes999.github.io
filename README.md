@@ -25,4 +25,4 @@ JASUP is a start page/new tab page that aggregates useful and fun information in
 
 ---
 ## Try it Out
-Link here eventually
+7.wysteria.xyz/
