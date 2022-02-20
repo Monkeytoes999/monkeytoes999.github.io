@@ -12,10 +12,10 @@ async function manAddWidget(name, position) {
 
 if (document.cookie.indexOf("widget0")==-1){
     console.log("eewe");
-    document.cookie = "widget0=Demo; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
-    document.cookie = "widget1=Demo; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
-    document.cookie = "widget2=Demo; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
-    document.cookie = "widget3=Demo; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
+    document.cookie = "widget0=Blank; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
+    document.cookie = "widget1=Blank; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
+    document.cookie = "widget2=Blank; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
+    document.cookie = "widget3=Blank; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
 }
 cookies = document.cookie.split(';');
 for (var cStart = 0; cookies[cStart].indexOf("widget0") == -1; cStart++);
