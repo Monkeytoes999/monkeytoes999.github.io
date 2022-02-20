@@ -19,11 +19,10 @@ if (document.cookie.indexOf("widget0")==-1){
 }
 cookies = document.cookie.split(';');
 for (var cStart = 0; cookies[cStart].indexOf("widget0") == -1; cStart++);
-manAddWidget(cookies[cStart].substring(9), 0);
-manAddWidget(cookies[cStart].substring(9), 0);
-manAddWidget(cookies[cStart+1].substring(9), 1);
-manAddWidget(cookies[cStart+2].substring(9), 2);
-manAddWidget(cookies[cStart+3].substring(9), 3);
+await manAddWidget(cookies[cStart].substring(9), 1);
+await manAddWidget(cookies[cStart+1].substring(9), 2);
+await manAddWidget(cookies[cStart+2].substring(9), 3);
+await manAddWidget(cookies[cStart+3].substring(9), 4);
 
 /**
  * This updates the clock so it will tick forward.
