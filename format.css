@@ -5,9 +5,10 @@ body {
     font-family: 'Heebo', sans-serif;
 }
 .gear {
-    background-image: url("https://www.seekpng.com/png/full/928-9287664_gear-transparent-png-clip-clipart-transparent-background-gear.png");
+    background-image: url("https://www.pngfind.com/pngs/m/121-1211827_grey-gear-clip-art-at-clker-transparent-background.png");
+    background-size: cover;
     height: 40px;
-    width: 40px;
+    width: 50px;
     position: absolute;
 }
 .head {
@@ -28,6 +29,7 @@ body {
     overflow-y: hidden;
     background-color: aliceblue;
     opacity: 0.7;
+    border-radius: 10px;
 }
 .sidebar {
     display: none; /* Hidden by default */
