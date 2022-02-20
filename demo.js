@@ -1,4 +1,4 @@
-function addDemo() {
+async function addDemo() {
     // Base creation
     var base = document.createElement("div");
     base.classList.add("widget");

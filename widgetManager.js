@@ -23,9 +23,9 @@ function apiName() {
 async function getWidget(name) {
     var output;
     if (name == wName[0]) {
-        output = addDemo();
+        output = await addDemo();
     } else if (name == wName[1]) {
-        output = newsJson();
+        output = await newsJson();
     } else if (name == wName[2]) {
         output = await covidJson();
     } else if (name == wName[3]) { 
