@@ -10,20 +10,11 @@ async function manAddWidget(name, position) {
     temp.appendChild(await getWidget(name));
 } // manAddWidget
 
+manAddWidget("Blank", 0);
+manAddWidget("Blank", 1);
+manAddWidget("Blank", 2);
+manAddWidget("Blank", 3);
 
-//Load cookies
-if (document.cookie.length < 1){
-    console.log("eewe");
-    document.cookie = "widget0=Demo; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
-    document.cookie = "widget1=Demo; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
-    document.cookie = "widget2=Demo; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
-    document.cookie = "widget3=Demo; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
-}
-cookies = document.cookie.split(';');
-manAddWidget(cookies[0].substring(8), 0);
-manAddWidget(cookies[1].substring(8), 1);
-manAddWidget(cookies[2].substring(8), 2);
-manAddWidget(cookies[3].substring(8), 3);
 /**
  * This updates the clock so it will tick forward.
  */

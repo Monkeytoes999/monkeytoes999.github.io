@@ -10,7 +10,6 @@ function makeSidebar() {
             temp.removeChild(temp.firstChild);
             d = await getWidget(this.value);
             temp.appendChild(d);
-            document.cookie = "widget" + i + "=" + this.value + "; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
         } // function
         document.getElementById("sidebar").appendChild(tempList);
         document.getElementById("sidebar").appendChild(document.createElement("br"));
