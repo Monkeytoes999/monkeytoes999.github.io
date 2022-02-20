@@ -11,7 +11,7 @@ const wName = [
     "Blank",
     "News",
     "Covid",
-    "Cyrpto",
+    "Crypto",
     "Weather",
     "Dad Jokes"
 ];
