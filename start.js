@@ -10,7 +10,7 @@ async function manAddWidget(name, position) {
     temp.appendChild(await getWidget(name));
 } // manAddWidget
 
-if (document.cookie.length < 1){
+if (document.cookie.indexOf("widget0")==-1){
     console.log("eewe");
     document.cookie = "widget0=Demo; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
     document.cookie = "widget1=Demo; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
