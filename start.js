@@ -18,7 +18,7 @@ if (document.cookie.indexOf("widget0")==-1){
     document.cookie = "widget3=Demo; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
 }
 cookies = document.cookie.split(';');
-for (var cStart = 0; cookies[cStart].indexOf("widget0") == -1; i++);
+for (var cStart = 0; cookies[cStart].indexOf("widget0") == -1; cStart++);
 manAddWidget(cookies[cStart].substring(9), 0);
 manAddWidget(cookies[cStart+1].substring(9), 1);
 manAddWidget(cookies[cStart+2].substring(9), 2);
