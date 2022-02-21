@@ -1,0 +1,9 @@
+.widget {
+    position: fixed;
+    width: 100px;
+    height: 80px;
+    background-color: blue;
+}
+.widget:hover {
+    cursor: grab;
+}
