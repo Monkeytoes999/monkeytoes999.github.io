@@ -4,6 +4,7 @@ function Widget() {
     this.txpos = 0;
     this.typos = 0;
     this.base;
+    this.dragging = false;
     const big = this;
     this.setPos = function(xpos, ypos) {
         this.xpos = snap*Math.round(xpos/snap);
@@ -14,25 +15,30 @@ function Widget() {
         this.base.style.top = ypos + "px";
         this.base.style.left = xpos + "px";
     }
+    this.setDrag = function(input) {
+        this.dragging = input;
+    }
+    this.getDrag = function() {
+        return this.dragging;
+    }
     this.drag = function(event) {
+        this.setDrag(true);
         this.txpos = event.clientX - this.xpos;
         this.typos = event.clientY - this.ypos;
     }
     this.makeElement = function() {
         this.base = document.createElement("div");
         this.base.classList.add("widget");
-        this.base.ondragstart = function(event) {
+        this.base.onmousedown = function(event) {
             big.drag(event);
         }
-        this.base.ondrag = function(event) {
-            big.move(event.clientX - big.txpos, event.clientY - big.typos);
-            big.base.classList.add("dragging");
+        this.base.onmousemove = function(event) {
+            if (big.getDrag()) {
+                big.move(event.clientX - big.txpos, event.clientY - big.typos);
+            }
         }
-        this.base.ondragover = function(event) {
-            event.preventDefault();
-        }
-        this.base.ondragend = function(event) {
-            big.base.classList.remove("dragging");
+        this.base.onmouseup = function(event) {
+            big.setDrag(false);
             big.setPos(event.clientX - big.txpos, event.clientY - big.typos);
         }
     }
@@ -42,6 +48,3 @@ function Widget() {
     }
     this.initialize();
 }
-var onDragOver = function (event) {
-    event.preventDefault();
-  };

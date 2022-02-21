@@ -3,17 +3,5 @@
     width: 100px;
     height: 100px;
     background-color: blue;
-    cursor: pointer; /* IE */
     cursor: grab;
-}
-.widget:hover {
-    cursor: grab;
-}
-.draggable {
-    position: absolute;
-    cursor: pointer; /* IE */
-    cursor: grab;
-  }
-.dragging {
-    cursor: grabbing;
 }
