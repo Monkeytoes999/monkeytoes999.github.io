@@ -1,0 +1,12 @@
+/* The sidebar */
+.sidebar {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    overflow-y: scroll;
+    backdrop-filter: blur(1px) grayscale(10%) brightness(90%);
+}
