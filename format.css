@@ -1,3 +1,8 @@
+* {
+    user-select: none;
+    -webkit-user-select: none; /*Safari*/
+    -moz-user-select: none; /*Firefox*/
+}
 body {
     background-image: url("https://images.unsplash.com/photo-1642272083829-4feeddd903dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
     background-size: cover;
@@ -8,8 +13,9 @@ body {
 }
 .widget {
     position: fixed;
-    width: 100px;
+    width: 300px;
     height: 100px;
-    background-color: blue;
+    background-color: white;
     cursor: grab;
+    border-radius: 15px;
 }

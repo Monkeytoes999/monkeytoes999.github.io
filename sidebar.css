@@ -5,8 +5,14 @@
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+    backdrop-filter: blur(1px) grayscale(10%) brightness(90%);
+}
+.sidebar embed {
     width: 30%;
     height: 100%;
-    overflow-y: scroll;
-    backdrop-filter: blur(1px) grayscale(10%) brightness(90%);
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
