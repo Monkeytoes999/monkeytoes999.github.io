@@ -26,9 +26,14 @@ function Widget() {
         }
         this.base.ondrag = function(event) {
             big.move(event.clientX - big.txpos, event.clientY - big.typos);
+            big.base.classList.add("dragging");
+        }
+        this.base.ondragover = function(event) {
+            event.preventDefault();
         }
         this.base.ondragend = function(event) {
-            big.setPos(event.clientX, event.clientY);
+            big.base.classList.remove("dragging");
+            big.setPos(event.clientX - big.txpos, event.clientY - big.typos);
         }
     }
     this.initialize = function() {
@@ -37,3 +42,6 @@ function Widget() {
     }
     this.initialize();
 }
+var onDragOver = function (event) {
+    event.preventDefault();
+  };
