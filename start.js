@@ -4,7 +4,9 @@ function refresh() {
         base.removeChild(base.firstChild);
     }
     for (let i = 0; i < widgets.length; i++) {
-        widgets[i].setPos(0, 200*i);
+        widgets[i].build();
+        widgets[i].initialize();
+        widgets[i].setPos(0, 100*i);
         base.appendChild(widgets[i].base);
     }
 }

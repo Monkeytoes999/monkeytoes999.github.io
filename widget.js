@@ -5,11 +5,15 @@ function Case(widget) {
     this.typos = 0;
     this.base;
     this.dragging = false;
+    widget.build();
     this.widget = widget;
     const big = this;
 
     this.update = function() {
         this.widget.update();
+    }
+    this.build = function() {
+        this.widget.build();
     }
 
     this.setPos = function(xpos, ypos) {
@@ -17,7 +21,6 @@ function Case(widget) {
         this.ypos = snap*Math.round(ypos/snap);
         this.move(this.xpos, this.ypos);
     }
-
     this.move = function(xpos, ypos) {
         this.base.style.top = ypos + "px";
         this.base.style.left = xpos + "px";
@@ -26,11 +29,9 @@ function Case(widget) {
     this.setDrag = function(input) {
         this.dragging = input;
     }
-
     this.getDrag = function() {
         return this.dragging;
     }
-
     this.drag = function(event) {
         this.setDrag(true);
         this.txpos = event.clientX - this.xpos;
@@ -61,7 +62,6 @@ function Case(widget) {
             big.base.style.zIndex = "0";
         }
     }
-
     this.initialize = function() {
         this.makeElement();
     }
