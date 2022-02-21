@@ -3,7 +3,7 @@
  * @returns a JSON object containing data on crypto
  */
 async function callCryptoAPI() {
-    let response = await fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd");
+    let response = await fetch(process.env.CRYPTO_API);
     let data = await response.json()
     return data;
 } // callCryptoAPI

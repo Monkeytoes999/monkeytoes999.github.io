@@ -3,7 +3,7 @@
  * @returns a JSON file that holds current Covid data
  */
 async function callCovidAPI() {
-    let response = await fetch("https://api.covidactnow.org/v2/country/US.json?apiKey=dd1370169b8c4397b1ffc66b629b03da");
+    let response = await fetch(process.env.COVID_API);
     let data = await response.json()
     return data;
 }

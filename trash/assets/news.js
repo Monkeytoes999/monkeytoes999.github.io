@@ -3,7 +3,7 @@
  * @returns a JSON object containing data on the latest news stories
  */
 async function callNewsAPI() {
-    let response = await fetch("https://content.guardianapis.com/search?api-key=b86d1bc0-85fb-44ea-ad0c-7f58e8991ec0");
+    let response = await fetch(process.env.NEWS_KEY);
     let data = await response.json()
     return data;
 } // callNewsAPI

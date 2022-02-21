@@ -3,7 +3,7 @@
  * @returns a JSON structure that holds a dad joke
  */
 async function callDadJokesAPI() {
-    let response = await fetch("https://icanhazdadjoke.com/slack");
+    let response = await fetch(process.env.DAD_API);
     let data = await response.json();
     return data;
 }
