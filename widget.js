@@ -47,23 +47,30 @@ function Case(widget) {
                 big.drag(event);
                 big.base.style.zIndex = "1";
             }
-        }
+        };
         this.base.onmousemove = function(event) {
             if (big.getDrag()) {
                 big.move(event.clientX - big.txpos, event.clientY - big.typos);
             }
         };
-        window.onmouseleave = function(event) {
-            event.onmousemove;
-        }
         this.base.onmouseup = function(event) {
             big.setDrag(false);
             big.setPos(event.clientX - big.txpos, event.clientY - big.typos);
             big.base.style.zIndex = "0";
+        };
+    }
+    this.fixMotion = function() {
+        console.log("O");
+        if (this.getDrag()) {
+            this.move(globalX - this.txpos, globalY - this.typos);
         }
     }
     this.initialize = function() {
         this.makeElement();
     }
     this.initialize();
+}
+window.onmousemove = function(event) {
+    globalX = event.clientX;
+    globalY = event.clientY;
 }

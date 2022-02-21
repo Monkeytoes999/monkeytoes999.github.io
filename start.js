@@ -36,3 +36,12 @@ function updateAll() {
 }
 refresh();
 updateAll();
+async function tick() {
+    for (let i = 0; i < widgets.length; i++) {
+        widgets[i].fixMotion();
+    }
+    setTimeout(() => {
+        tick();
+    }, 10);
+}
+tick();
