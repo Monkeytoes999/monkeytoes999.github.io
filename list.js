@@ -11,7 +11,7 @@ function welcome() {
     welcome.type = "Welcome";
     welcome.update = function() {
     }
-    widgets.push(welcome);
+    widgets.push(new Case(welcome));
 }
 welcome();
 
@@ -29,6 +29,6 @@ function clock() {
     clock.update = function() {
         document.getElementById(this.id).innerHTML = new Date();
     }
-    widgets.push(clock);
+    widgets.push(new Case(clock));
 }
 clock();
