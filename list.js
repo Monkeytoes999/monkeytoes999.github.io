@@ -68,12 +68,27 @@ function posClock(x, y) {
     pos.push([x,y]);
 }
 
-welcome();
-clock();
-clock();
-clock();
-clock();
-welcome();
-welcome();
-posWelcome(540,420);
-posClock(540,520);
+if (document.cookie.includes("types") == false){
+    welcome();
+    clock();
+} else {
+    cookies = document.split("; ");
+    cookies[cookies.length] = cookies[cookies.length].substring(0, cookies[cookies.length].length-1);
+    let i = 0;
+    for (i = 0; !cookies[i].includes("types="); i++);
+    types = cookies[i].substring(6).split(',');
+    for (i = 0; !cookies[i].includes("xpos="); i++);
+    x = cookies[i].substring(5).split(',');
+    for (i = 0; !cookies[i].includes("ypos="); i++);
+    y = cookies[i].substring(5).split(',');
+    for (i=0; i < types.length; i++){
+        switch(types[i]){
+            case "Welcome":
+                posWelcome(x[i], y[i]);
+                break;
+            case "Clock":
+                posClock(x[i], y[i]);
+                break;
+        }
+    }
+}
