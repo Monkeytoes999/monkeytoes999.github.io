@@ -1,3 +1,11 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1642272083829-4feeddd903dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+    background-size: cover;
+    backdrop-filter: blur(1px) saturate(200%) brightness(70%);
+    height: 100vh;
+    margin: 0px;
+    overflow: hidden;
+}
 .widget {
     position: fixed;
     width: 100px;
