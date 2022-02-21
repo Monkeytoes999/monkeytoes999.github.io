@@ -13,6 +13,7 @@ widgets[0] = new Case(welcome);
 var clock = new Widget();
 clock.build = function() {
     var main = document.createElement("p");
+    main.style.textAlign = "center";
     main.innerHTML = new Date();
     main.id = this.id;
 

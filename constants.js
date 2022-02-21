@@ -1,1 +1,1 @@
-const snap = 100;
+const snap = 20;
