@@ -72,7 +72,7 @@ if (document.cookie.includes("types") == false){
     welcome();
     clock();
 } else {
-    cookies = document.split("; ");
+    cookies = document.cookie.split("; ");
     cookies[cookies.length] = cookies[cookies.length].substring(0, cookies[cookies.length].length-1);
     let i = 0;
     for (i = 0; !cookies[i].includes("types="); i++);
