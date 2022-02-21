@@ -26,17 +26,19 @@ function Widget() {
         this.txpos = event.clientX - this.xpos;
         this.typos = event.clientY - this.ypos;
     }
-    this.makeElement = function() {
+    this.makeElement = function(event) {
         this.base = document.createElement("div");
         this.base.classList.add("widget");
         this.base.onmousedown = function(event) {
-            big.drag(event);
+            if (!big.getDrag()) {
+                big.drag(event);
+            }
         }
-        this.base.onmousemove = function(event) {
+        window.onmousemove = function(event) {
             if (big.getDrag()) {
                 big.move(event.clientX - big.txpos, event.clientY - big.typos);
             }
-        }
+        };
         this.base.onmouseup = function(event) {
             big.setDrag(false);
             big.setPos(event.clientX - big.txpos, event.clientY - big.typos);
