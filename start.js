@@ -15,9 +15,13 @@ function refresh() {
     }
 }
 function updateAll() {
-    for (let i = 0; i < widgets.length; i++) {
-        widgets[i].update();
-    }
+    setTimeout(() => {
+        for (let i = 0; i < widgets.length; i++) {
+            widgets[i].update();
+        }
+        save();
+    }, 500);
+    updateAll();
 }
 async function tick() {
     for (let i = 0; i < widgets.length; i++) {
