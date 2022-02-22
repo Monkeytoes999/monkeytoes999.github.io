@@ -1,5 +1,9 @@
 function refresh() {
     var base = document.getElementById("widgets");
+    widgets = [];
+    for (let i = 0; i < types.length; i++) {
+        widgets.push(creators[types[i]]());
+    }
     while (base.firstChild) {
         base.removeChild(base.firstChild);
     }
@@ -22,9 +26,6 @@ async function tick() {
     setTimeout(() => {
         tick();
     }, 10);
-}
-for (let i = 0; i < types.length; i++) {
-    widgets.push(creators[types[i]]());
 }
 refresh();
 updateAll();
