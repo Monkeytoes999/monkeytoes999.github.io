@@ -6,7 +6,7 @@ function refresh() {
     for (let i = 0; i < widgets.length; i++) {
         widgets[i].build();
         widgets[i].initialize();
-        widgets[i].setPos(0, 100*i);
+        widgets[i].setPos(positions[i][0], positions[i][1]);
         base.appendChild(widgets[i].base);
     }
 }
@@ -23,8 +23,8 @@ async function tick() {
         tick();
     }, 10);
 }
-for (let i = 0; i < creators.length; i++) {
-    widgets.push(creators[i]());
+for (let i = 0; i < types.length; i++) {
+    widgets.push(creators[types[i]]());
 }
 refresh();
 updateAll();
