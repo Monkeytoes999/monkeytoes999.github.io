@@ -60,7 +60,6 @@ function Case(widget) {
         };
     }
     this.fixMotion = function() {
-        console.log("O");
         if (this.getDrag()) {
             this.move(globalX - this.txpos, globalY - this.typos);
         }
