@@ -1,6 +1,6 @@
 function save() {
-    tC = "types=";
-    xC = "xpos=";
+    tc = "types=";
+    xc = "xpos=";
     yc = "ypos=";
     cookies = document.cookie.split("; ");
     for (let i = 0; i<types.length; i++){

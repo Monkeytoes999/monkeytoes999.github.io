@@ -2,7 +2,7 @@ function refresh() {
     var base = document.getElementById("widgets");
     widgets = [];
     for (let i = 0; i < types.length; i++) {
-        widgets.push(creators[types[i]]());
+        widgets.push(creators[i]());
     }
     while (base.firstChild) {
         base.removeChild(base.firstChild);
@@ -15,18 +15,16 @@ function refresh() {
     }
 }
 function updateAll() {
-    setTimeout(() => {
-        for (let i = 0; i < widgets.length; i++) {
-            widgets[i].update();
-        }
-        save();
-    }, 500);
-    updateAll();
+    for (let i = 0; i < widgets.length; i++) {
+        widgets[i].update();
+    }
+    save();
 }
 async function tick() {
     for (let i = 0; i < widgets.length; i++) {
         widgets[i].fixMotion();
     }
+    updateAll();
     setTimeout(() => {
         tick();
     }, 10);
