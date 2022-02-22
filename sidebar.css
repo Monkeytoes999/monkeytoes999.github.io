@@ -5,10 +5,12 @@
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
-    width: 30%;
+    padding: 25px;
+    width: 350px;
     height: 100vh;
     overflow-y: hidden;
     overflow-x: hidden;
-    background-color: white;
+    background-color: black;
+    color: white;
     backdrop-filter: blur(1px) grayscale(10%) brightness(90%);
 }
