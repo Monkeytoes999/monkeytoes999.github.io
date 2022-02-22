@@ -15,8 +15,6 @@ function updateAll() {
         widgets[i].update();
     }
 }
-refresh();
-updateAll();
 async function tick() {
     for (let i = 0; i < widgets.length; i++) {
         widgets[i].fixMotion();
@@ -25,4 +23,9 @@ async function tick() {
         tick();
     }, 10);
 }
+for (let i = 0; i < creators.length; i++) {
+    widgets.push(creators[i]());
+}
+refresh();
+updateAll();
 tick();
