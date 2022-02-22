@@ -17,8 +17,8 @@ function refresh() {
 function updateAll() {
     for (let i = 0; i < widgets.length; i++) {
         widgets[i].update();
-        pos[i][0] = widgets[i].xpos;
-        pos[i][1] = widgets[i].ypos;
+        positions[i][0] = widgets[i].xpos;
+        positions[i][1] = widgets[i].ypos;
     }
     save();
 }
