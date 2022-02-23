@@ -33,13 +33,23 @@ async function tick() {
 }
 function addAdd() {
     for (let i = 0; i < creators.length; i++) {
+        var divider = document.createElement("div");
         var button = document.createElement("button");
         const temp = i;
         button.onclick = function() {
             add(temp);
         }
         button.innerHTML = creators[i]().widget.name;
-        document.getElementById("widgetList").appendChild(button);
+        divider.appendChild(button);
+
+        var widge = creators[i]();
+        widge.setButton();
+        widge.initialize();
+        divider.appendChild(widge.base);
+
+        divider.appendChild(document.createElement("br"));
+        
+        document.getElementById("widgetList").appendChild(divider);
     }
 }
 addAdd();

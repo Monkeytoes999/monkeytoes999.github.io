@@ -8,6 +8,7 @@ function Case(widget) {
     this.dragging = false;
     widget.build();
     this.widget = widget;
+    this.button = false;
     const big = this;
 
     this.update = function() {
@@ -17,6 +18,9 @@ function Case(widget) {
         this.widget.build();
     }
 
+    this.setButton = function() {
+        this.button = true;
+    }
     this.setPos = function(xpos, ypos) {
         this.xpos = snap*Math.round(xpos/snap);
         this.ypos = snap*Math.round(ypos/snap);
@@ -43,7 +47,11 @@ function Case(widget) {
 
     this.makeElement = function(event) {
         this.base = document.createElement("div");
-        this.base.classList.add("widget");
+        if (this.button) {
+            this.base.classList.add("widgetButton");
+        } else {
+            this.base.classList.add("widget");
+        }
         this.base.appendChild(this.widget.base);
         this.base.onmousedown = function(event) {
             if (!big.getDrag()) {
