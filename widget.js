@@ -79,7 +79,7 @@ function Case(widget) {
             if (big.removable) {
                 big.dead = true;
             }
-            if (!big.getDrag()) {
+            if (!big.getDrag() && big.draggable) {
                 big.drag(event);
                 big.base.style.zIndex = "1";
             }
