@@ -15,6 +15,6 @@ window.addEventListener("click", function() {
     }
     showing = showing + 1;
 });
-document.getElementById("settings").addEventListener("click", function() {
+document.getElementById("additions").addEventListener("click", function() {
     showing = 1;
 });

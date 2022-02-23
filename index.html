@@ -4,6 +4,7 @@
         <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet'>
         <link rel = "stylesheet" type = "text/css" href = "sidebar.css"/>
         <link rel = "stylesheet" type = "text/css" href = "format.css"/>
+        <link rel = "stylesheet" type = "text/css" href = "widgetFormat.css"/>
         <script src = "constants.js" type = "text/javascript"></script>
         <script src = "initialize.js" type = "text/javascript"></script>
 
@@ -24,8 +25,9 @@
             </div>
             <br><br><br>
         </div>
-        <div class = "buttons">
-            <button id = "settings">Settings</button><br>
+        <button onclick = "showSettings()" style = "font-size: large;">Settings</button>
+        <div class = "buttons" id = "bList">
+            <button id = "additions">Widgets</button><br>
             <button onclick="edit(this)" id = "editor">Edit Mode</button><br>
             <button onclick="clearCookies()">Clear Cookies</button>
         </div>

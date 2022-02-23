@@ -12,3 +12,11 @@ function edit(input) {
         input.style.backgroundColor = "white";
     }
 }
+function showSettings() {
+    var temp = document.getElementById("bList");
+    if (temp.style.display == "block") {
+        temp.style.display = "none";
+    } else {
+        temp.style.display = "block";
+    }
+}
