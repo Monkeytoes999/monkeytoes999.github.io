@@ -19,3 +19,15 @@ body {
     cursor: grab;
     border-radius: 15px;
 }
+button {
+    width: 8vw;
+    height: 5vh;
+    border-radius: 0;
+    border: 0px;
+}
+button:hover {
+    filter: brightness(85%);
+}
+button:active {
+    filter: brightness(70%);
+}

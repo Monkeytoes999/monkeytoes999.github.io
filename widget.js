@@ -4,6 +4,7 @@ function Case(widget) {
     this.txpos = 0;
     this.typos = 0;
     this.base;
+    this.draggable = false;
     this.dragging = false;
     widget.build();
     this.widget = widget;
@@ -27,7 +28,9 @@ function Case(widget) {
     }
 
     this.setDrag = function(input) {
-        this.dragging = input;
+        if (this.draggable) {
+            this.dragging = input;
+        }
     }
     this.getDrag = function() {
         return this.dragging;
@@ -54,9 +57,11 @@ function Case(widget) {
             }
         };
         this.base.onmouseup = function(event) {
-            big.setDrag(false);
-            big.setPos(event.clientX - big.txpos, event.clientY - big.typos);
-            big.base.style.zIndex = "0";
+            if (big.getDrag()) {
+                big.setDrag(false);
+                big.setPos(event.clientX - big.txpos, event.clientY - big.typos);
+                big.base.style.zIndex = "0";
+            }
         };
     }
     this.fixMotion = function() {

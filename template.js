@@ -1,7 +1,7 @@
 function Widget() {
     this.base = document.createElement("div");
     this.id = "default";
-    this.type = "default";
+    this.name = "Unnamed";
     this.setBase = function(input) {
         this.base = input;
     }

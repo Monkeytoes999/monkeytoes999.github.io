@@ -15,3 +15,6 @@ function save() {
     document.cookie = xc + "; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
     document.cookie = yc + "; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
 }
+function clearCookies() {
+    document.cookie = "";
+}

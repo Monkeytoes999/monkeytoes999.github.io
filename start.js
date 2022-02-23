@@ -31,6 +31,18 @@ async function tick() {
         tick();
     }, 10);
 }
+function addAdd() {
+    for (let i = 0; i < creators.length; i++) {
+        var button = document.createElement("button");
+        const temp = i;
+        button.onclick = function() {
+            add(temp);
+        }
+        button.innerHTML = creators[i]().widget.name;
+        document.getElementById("widgetList").appendChild(button);
+    }
+}
+addAdd();
 refresh();
 updateAll();
 tick();

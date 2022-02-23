@@ -9,7 +9,7 @@ creators.push(function() {
         this.setBase(head);
     }
 
-    welcome.type = "Welcome";
+    welcome.name = "Welcome";
     welcome.update = function() {
     }
     return new Case(welcome);
@@ -25,7 +25,7 @@ creators.push(function() {
 
         this.setBase(main);
     }
-    clock.type = "Clock";
+    clock.name = "Clock";
     clock.update = function() {
         document.getElementById(this.id).innerHTML = new Date();
     }
