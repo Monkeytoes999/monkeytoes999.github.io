@@ -35,6 +35,7 @@ button {
 }
 .mini button {
     width: 3vw;
+    height: 7vh;
 }
 button:hover {
     filter: brightness(85%);
