@@ -20,3 +20,10 @@ function showSettings() {
         temp.style.display = "block";
     }
 }
+function show(input) {
+    if (input.style.display == "block") {
+        input.style.display = "none";
+    } else {
+        input.style.display = "block";
+    }
+}

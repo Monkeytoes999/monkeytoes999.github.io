@@ -1,4 +1,5 @@
 var creators = [];
+var tags = ["Time","Other"];
 // Welcome
 creators.push(function() {
     var welcome = new Widget();

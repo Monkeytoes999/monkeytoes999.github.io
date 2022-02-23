@@ -2,6 +2,7 @@ function Widget() {
     this.base = document.createElement("div");
     this.id = "default";
     this.name = "Unnamed";
+    this.tag = "Other";
     this.setBase = function(input) {
         this.base = input;
     }

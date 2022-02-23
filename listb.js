@@ -10,6 +10,7 @@ creators.push(function() {
         this.setBase(main);
     }
     clock.name = "Default Clock";
+    clock.tag = "Time";
     clock.update = function() {
         document.getElementById(this.id).innerHTML = new Date();
     }
@@ -39,6 +40,7 @@ creators.push(function() {
         this.setBase(main);
     }
     clock.name = "Simple Clock";
+    clock.tag = "Time";
     clock.update = function() {
         var d = new Date();
         var txt = (((d.getHours() + 11) % 12) + 1) + ":";
@@ -75,6 +77,7 @@ creators.push(function() {
         this.setBase(main);
     }
     clock.name = "24 Hour Clock";
+    clock.tag = "Time";
     clock.update = function() {
         var d = new Date();
         var txt = d.getHours() + ":";
@@ -100,6 +103,7 @@ creators.push(function() {
         this.setBase(main);
     }
     clock.name = "Simple Date";
+    clock.tag = "Time";
     clock.update = function() {
         var d = new Date();
         document.getElementById(this.id).innerHTML = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getUTCFullYear();
@@ -131,6 +135,7 @@ creators.push(function() {
         this.setBase(main);
     }
     clock.name = "Simon Date";
+    clock.tag = "Time";
     clock.update = function() {
         var d = new Date();
         var txt = d.getUTCFullYear() + "-"
@@ -163,6 +168,7 @@ creators.push(function() {
         this.setBase(main);
     }
     clock.name = "Standard Date";
+    clock.tag = "Time";
     clock.update = function() {
         var d = new Date();
         var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -184,6 +190,7 @@ creators.push(function() {
         this.setBase(main);
     }
     clock.name = "Daily Message";
+    clock.tag = "Time";
     clock.update = function() {
         var d = new Date();
         var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];

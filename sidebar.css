@@ -27,3 +27,18 @@
 .sideWidge button {
     float: right;
 }
+.sideWidge h2:hover {
+    filter: opacity(0.5);
+}
+.sideWidge h2::after {
+    color: black;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+.inactive:after {
+    content: '\002B';
+}
+.active:after {
+    content: "\2212";
+}
