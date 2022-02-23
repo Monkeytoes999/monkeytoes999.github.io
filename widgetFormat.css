@@ -10,8 +10,7 @@
     padding-bottom: 1vh;
     padding-right: 1vw;
     border: 0px;
-    border-radius: 10px;
-    float: right;
+    border-radius: 15px;
 }
 .widgetButton button {
     padding-top: 1vh;
@@ -19,6 +18,5 @@
     padding-bottom: 1vh;
     padding-right: 1vw;
     border: 0px;
-    border-radius: 10px;
-    float: right;
+    border-radius: 15px;
 }

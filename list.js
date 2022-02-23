@@ -22,10 +22,13 @@ creators.push(function() {
     dadjoke.build = function() {
         var base = document.createElement("div");
         var head = document.createElement("p");
-        fetch("https://icanhazdadjoke.com/slack").then(data => data.json().then(d => head.innerHTML = (d["attachments"]["0"]["text"])))        
+        fetch("https://icanhazdadjoke.com/slack").then(data => data.json().then(d => head.innerHTML = (d["attachments"]["0"]["text"])))
         
         var button = document.createElement("button");
         button.innerHTML = "New Joke";
+        button.style.position = "absolute";
+        button.style.right = "2px";
+        button.style.bottom = "2px";
         const temp = head;
         button.onclick = function() {
             fetch("https://icanhazdadjoke.com/slack").then(data => data.json().then(d => temp.innerHTML = (d["attachments"]["0"]["text"])))

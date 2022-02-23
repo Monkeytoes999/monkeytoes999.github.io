@@ -49,7 +49,6 @@ function addAdd() {
         title.onclick = function() {
             ttt.classList.toggle("active");
             ttt.classList.toggle("inactive");
-            console.log(ttt);
             show(temp);
         }
 
@@ -78,5 +77,5 @@ function addAdd() {
 addAdd();
 refresh();
 updateAll();
-edit();
+edit(document.getElementById("editor"));
 tick();
