@@ -113,7 +113,19 @@ creators.push(function() {
         var main = document.createElement("h1");
         main.style.textAlign = "center";
         var d = new Date();
-        main.innerHTML = d.getUTCFullYear() + "/" + (d.getMonth()+1) + "/" + d.getDate();
+        var txt = d.getUTCFullYear() + "-"
+        if ((d.getUTCMonth() + 1).toString().length < 2) {
+            txt = txt + "0" + (d.getUTCMonth() + 1);
+        } else {
+            txt = txt + (d.getUTCMonth() + 1);
+        }
+        txt = txt + "-";
+        if (d.getUTCDate().toString().length < 2) {
+            txt = txt + "0" + d.getUTCDate();
+        } else {
+            txt = txt + d.getUTCDate();
+        }
+        main.innerHTML = txt;
         main.id = this.id;
 
         this.setBase(main);
@@ -121,7 +133,19 @@ creators.push(function() {
     clock.name = "Simon Date";
     clock.update = function() {
         var d = new Date();
-        document.getElementById(this.id).innerHTML = d.getUTCFullYear() + "/" + (d.getMonth()+1) + "/" + d.getDate();
+        var txt = d.getUTCFullYear() + "-"
+        if ((d.getUTCMonth() + 1).toString().length < 2) {
+            txt = txt + "0" + (d.getUTCMonth() + 1);
+        } else {
+            txt = txt + (d.getUTCMonth() + 1);
+        }
+        txt = txt + "-";
+        if (d.getUTCDate().toString().length < 2) {
+            txt = txt + "0" + d.getUTCDate();
+        } else {
+            txt = txt + d.getUTCDate();
+        }
+        document.getElementById(this.id).innerHTML = txt;
     }
     return new Case(clock);
 });
