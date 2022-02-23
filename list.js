@@ -1,4 +1,5 @@
 var creators = [];
+// Welcome
 creators.push(function() {
     var welcome = new Widget();
     welcome.build = function() {
@@ -14,7 +15,7 @@ creators.push(function() {
     }
     return new Case(welcome);
 });
-
+// Default Clock
 creators.push(function() {
     var clock = new Widget();
     clock.build = function() {
@@ -28,6 +29,44 @@ creators.push(function() {
     clock.name = "Default Clock";
     clock.update = function() {
         document.getElementById(this.id).innerHTML = new Date();
+    }
+    return new Case(clock);
+});
+// Simple Clock
+creators.push(function() {
+    var clock = new Widget();
+    clock.build = function() {
+        var main = document.createElement("h1");
+        main.style.textAlign = "center";
+        var d = new Date();
+        main.innerHTML = d.getHours() + ":" + d.getMinutes();
+        main.id = this.id;
+
+        this.setBase(main);
+    }
+    clock.name = "Simple Clock";
+    clock.update = function() {
+        var d = new Date();
+        document.getElementById(this.id).innerHTML = d.getHours() + ":" + d.getMinutes();
+    }
+    return new Case(clock);
+});
+// Simple Date
+creators.push(function() {
+    var clock = new Widget();
+    clock.build = function() {
+        var main = document.createElement("h1");
+        main.style.textAlign = "center";
+        var d = new Date();
+        main.innerHTML = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getUTCFullYear();
+        main.id = this.id;
+
+        this.setBase(main);
+    }
+    clock.name = "Simple";
+    clock.update = function() {
+        var d = new Date();
+        document.getElementById(this.id).innerHTML = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getUTCFullYear();
     }
     return new Case(clock);
 });
