@@ -16,5 +16,7 @@ function save() {
     document.cookie = yc + "; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
 }
 function clearCookies() {
-    document.cookie = "";
+    document.cookie = "types=jeff; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
+    document.cookie = "types=xpos; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
+    document.cookie = "types=ypos; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
 }
