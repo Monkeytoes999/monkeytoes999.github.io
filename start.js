@@ -13,6 +13,7 @@ function refresh() {
         widgets[i].setPos(positions[i][0], positions[i][1]);
         base.appendChild(widgets[i].base);
     }
+    edit(document.getElementById("editor"));
 }
 function updateAll() {
     for (let i = 0; i < widgets.length; i++) {
