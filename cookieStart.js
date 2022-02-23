@@ -16,14 +16,17 @@ function save() {
     document.cookie = yc + "; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
 }
 function clearCookies() {
-    var papa = document.getElementById("widgets");
-    while (papa.firstChild) {
-        papa.removeChild(papa.firstChild);
+    var question = "This will reset all cookies. Select OK to continue.";
+    if (confirm(question)) {
+        var papa = document.getElementById("widgets");
+        while (papa.firstChild) {
+            papa.removeChild(papa.firstChild);
+        }
+        document.cookie = "types=jeff; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
+        document.cookie = "types=xpos; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
+        document.cookie = "types=ypos; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
+        types = [];
+        positions = [];
+        refresh();
     }
-    document.cookie = "types=jeff; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
-    document.cookie = "types=xpos; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
-    document.cookie = "types=ypos; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
-    types = [];
-    positions = [];
-    refresh();
 }
