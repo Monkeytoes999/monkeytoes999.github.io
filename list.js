@@ -1,5 +1,5 @@
 var creators = [];
-var tags = ["Time","Other"];
+var tags = ["Time","News","Weather","Playful","Other"];
 // Welcome
 creators.push(function() {
     var welcome = new Widget();
@@ -16,16 +16,27 @@ creators.push(function() {
     }
     return new Case(welcome);
 });
+// Dad Joke
 creators.push(function() {
     var dadjoke = new Widget();
     dadjoke.build = function() {
-        var head = document.createElement("h1");
+        var base = document.createElement("div");
+        var head = document.createElement("p");
         fetch("https://icanhazdadjoke.com/slack").then(data => data.json().then(d => head.innerHTML = (d["attachments"]["0"]["text"])))        
-        head.style.textAlign = "center";
-        head.style.fontSize = "18px";
-        this.setBase(head);
+        
+        var button = document.createElement("button");
+        button.innerHTML = "New Joke";
+        const temp = head;
+        button.onclick = function() {
+            fetch("https://icanhazdadjoke.com/slack").then(data => data.json().then(d => temp.innerHTML = (d["attachments"]["0"]["text"])))
+        }
+        base.appendChild(button);
+        base.appendChild(head);
+
+        this.setBase(base);
     }
     dadjoke.name = "Dad Joke";
+    dadjoke.tag = "Playful";
     dadjoke.update = function() {}
     return new Case(dadjoke);
 });

@@ -4,3 +4,21 @@
 .widgetButton h1 {
     font-size: 250%;
 }
+.widget button {
+    padding-top: 1vh;
+    padding-left: 1vw;
+    padding-bottom: 1vh;
+    padding-right: 1vw;
+    border: 0px;
+    border-radius: 10px;
+    float: right;
+}
+.widgetButton button {
+    padding-top: 1vh;
+    padding-left: 1vw;
+    padding-bottom: 1vh;
+    padding-right: 1vw;
+    border: 0px;
+    border-radius: 10px;
+    float: right;
+}
