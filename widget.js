@@ -1,11 +1,18 @@
 function Case(widget) {
     this.xpos = 0;
     this.ypos = 0;
+    this.xsize = 300;
+    this.ysize = 100;
     this.txpos = 0;
     this.typos = 0;
     this.base;
+
     this.draggable = false;
+    this.resize = false;
+    this.removable = false;
+    this.dead = false;
     this.dragging = false;
+
     widget.build();
     this.widget = widget;
     this.button = false;
@@ -18,6 +25,13 @@ function Case(widget) {
         this.widget.build();
     }
 
+    this.changeResize = function() {
+        this.resize = !this.resize;
+        this.base.classList.toggle("resize");
+    }
+    this.remove = function() {
+        this.removable = !this.removable;
+    }
     this.setButton = function() {
         this.button = true;
     }
@@ -29,6 +43,12 @@ function Case(widget) {
     this.move = function(xpos, ypos) {
         this.base.style.top = ypos + "px";
         this.base.style.left = xpos + "px";
+    }
+    this.setSize = function(xsize, ysize) {
+        this.xsize = snap*Math.round(xsize/snap);
+        this.ysize = snap*Math.round(ysize/snap);
+        this.base.style.width = this.xsize + "px";
+        this.base.style.height = this.ysize + "px";
     }
 
     this.setDrag = function(input) {
@@ -47,6 +67,8 @@ function Case(widget) {
 
     this.makeElement = function(event) {
         this.base = document.createElement("div");
+        this.base.style.width = this.xsize + "px";
+        this.base.style.height = this.ysize + "px";
         if (this.button) {
             this.base.classList.add("widgetButton");
         } else {
@@ -54,6 +76,9 @@ function Case(widget) {
         }
         this.base.appendChild(this.widget.base);
         this.base.onmousedown = function(event) {
+            if (big.removable) {
+                big.dead = true;
+            }
             if (!big.getDrag()) {
                 big.drag(event);
                 big.base.style.zIndex = "1";
@@ -73,6 +98,11 @@ function Case(widget) {
         };
     }
     this.fixMotion = function() {
+        if (this.resize) {
+            var xt = this.base.style.width;
+            var yt = this.base.style.height;
+            this.setSize(xt.substring(0, xt.length - 2), yt.substring(0, yt.length - 2));
+        }
         if (this.getDrag()) {
             this.move(globalX - this.txpos, globalY - this.typos);
         }

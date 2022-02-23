@@ -3,6 +3,7 @@ var globalX = 0;
 var globalY = 0;
 var types = [];
 var positions = [];
+var sizes = [];
 if (document.cookie.includes("types=")){
     cookies = document.cookie.split("; ");
     let i = 0;

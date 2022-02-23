@@ -11,21 +11,34 @@ function refresh() {
         widgets[i].build();
         widgets[i].initialize();
         widgets[i].setPos(positions[i][0], positions[i][1]);
+        widgets[i].setSize(sizes[i][0], sizes[i][1]);
         base.appendChild(widgets[i].base);
     }
-    edit(document.getElementById("editor"));
 }
 function updateAll() {
     for (let i = 0; i < widgets.length; i++) {
         widgets[i].update();
         positions[i][0] = widgets[i].xpos;
         positions[i][1] = widgets[i].ypos;
+        sizes[i][0] = widgets[i].xsize;
+        sizes[i][1] = widgets[i].ysize;
     }
     save();
 }
 async function tick() {
     for (let i = 0; i < widgets.length; i++) {
-        widgets[i].fixMotion();
+        if (widgets[i].dead) {
+            types.splice(i, 1);
+            positions.splice(i, 1);
+            sizes.splice(i, 1);
+            refresh();
+            for (let j = 0; j < widgets.length; j++) {
+                widgets[j].remove();
+            }
+            break;
+        } else {
+            widgets[i].fixMotion();
+        }
     }
     updateAll();
     setTimeout(() => {
@@ -77,5 +90,4 @@ function addAdd() {
 addAdd();
 refresh();
 updateAll();
-edit(document.getElementById("editor"));
 tick();

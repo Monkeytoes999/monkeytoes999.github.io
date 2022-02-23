@@ -1,8 +1,7 @@
-function edit(input) {
-    var goal = false;
-    if (widgets.length > 0) {
-        goal = !widgets[0].draggable;
-    }
+var modeA = -1;
+function edit() {
+    var input = document.getElementById("editor");
+    var goal = (modeA == -1);
     for (let i = 0; i < types.length; i++) {
         widgets[i].draggable = goal;
     }
@@ -10,6 +9,43 @@ function edit(input) {
         input.style.backgroundColor = "green";
     } else {
         input.style.backgroundColor = "white";
+    }
+}
+function resize() {
+    var input = document.getElementById("resizor");
+    var goal = (modeA == -1);
+    for (let i = 0; i < types.length; i++) {
+        widgets[i].changeResize();
+    }
+    if (goal) {
+        input.style.backgroundColor = "green";
+    } else {
+        input.style.backgroundColor = "white";
+    }
+}
+function remove() {
+    var input = document.getElementById("killor");
+    var goal = (modeA == -1);
+    for (let i = 0; i < types.length; i++) {
+        widgets[i].remove();
+    }
+    if (goal) {
+        input.style.backgroundColor = "red";
+    } else {
+        input.style.backgroundColor = "white";
+    }
+}
+function mode(input) {
+    var flist = [function() { edit(); }, function() { resize(); }, function() { remove(); }];
+    if (modeA == -1) {
+        flist[input]();
+        modeA = input;
+    } else if (modeA == input) {
+        flist[input]();
+        modeA = -1;
+    } else {
+        mode(modeA);
+        mode(input);
     }
 }
 function showSettings() {
