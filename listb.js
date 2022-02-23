@@ -106,6 +106,25 @@ creators.push(function() {
     }
     return new Case(clock);
 });
+// Simon Date
+creators.push(function() {
+    var clock = new Widget();
+    clock.build = function() {
+        var main = document.createElement("h1");
+        main.style.textAlign = "center";
+        var d = new Date();
+        main.innerHTML = d.getUTCFullYear() + "/" + (d.getMonth()+1) + "/" + d.getDate();
+        main.id = this.id;
+
+        this.setBase(main);
+    }
+    clock.name = "Simon Date";
+    clock.update = function() {
+        var d = new Date();
+        document.getElementById(this.id).innerHTML = d.getUTCFullYear() + "/" + (d.getMonth()+1) + "/" + d.getDate();
+    }
+    return new Case(clock);
+});
 // Standard Date
 creators.push(function() {
     var clock = new Widget();
@@ -124,27 +143,6 @@ creators.push(function() {
         var d = new Date();
         var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         document.getElementById(this.id).innerHTML = months[d.getMonth()] + " " + d.getDate() + ", " + d.getUTCFullYear();
-    }
-    return new Case(clock);
-});
-// Daily Message
-creators.push(function() {
-    var clock = new Widget();
-    clock.build = function() {
-        var main = document.createElement("h1");
-        main.style.textAlign = "center";
-        var d = new Date();
-        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        main.innerHTML = "Happy " + days[d.getDay()] + "!";
-        main.id = this.id;
-
-        this.setBase(main);
-    }
-    clock.name = "Daily Message";
-    clock.update = function() {
-        var d = new Date();
-        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        document.getElementById(this.id).innerHTML = "Happy " + days[d.getDay()] + "!";
     }
     return new Case(clock);
 });
