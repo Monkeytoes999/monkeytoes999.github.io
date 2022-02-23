@@ -78,4 +78,5 @@ function addAdd() {
 addAdd();
 refresh();
 updateAll();
+edit();
 tick();
