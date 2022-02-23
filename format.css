@@ -2,6 +2,7 @@
     user-select: none;
     -webkit-user-select: none; /*Safari*/
     -moz-user-select: none; /*Firefox*/
+    font-family: "VT323";
 }
 body {
     background-image: url("https://images.unsplash.com/photo-1642272083829-4feeddd903dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
@@ -21,9 +22,11 @@ body {
 }
 button {
     width: 8vw;
-    height: 5vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
     border-radius: 0;
     border: 0px;
+    border-bottom: 1px solid black;
 }
 button:hover {
     filter: brightness(85%);
