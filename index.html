@@ -27,7 +27,11 @@
         <button onclick = "showSettings()" style = "font-size: large;">Settings</button>
         <div class = "buttons" id = "bList">
             <button id = "additions">Widgets</button><br>
-            <button onclick="edit(this)" id = "editor">Edit Mode</button><br>
+            <div class = "mini">
+                <button onclick="edit(this)" id = "editor" class = "mini" style = "float: left;">M</button>
+                <button class = "mini" style = "float: left;">R</button>
+                <button class = "mini">X</button>
+            </div>
             <button onclick="clearCookies()">Clear Cookies</button>
         </div>
         <div id = "widgets">

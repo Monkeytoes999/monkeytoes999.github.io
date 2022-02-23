@@ -28,6 +28,7 @@
     float: right;
 }
 .sideWidge h2:hover {
+    cursor: pointer;
     filter: opacity(0.5);
 }
 .sideWidge h2::after {

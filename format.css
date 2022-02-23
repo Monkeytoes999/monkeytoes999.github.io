@@ -22,12 +22,16 @@ body {
     padding: 0px;
 }
 button {
-    width: 8vw;
+    background-color: white;
+    width: 9vw;
     padding-top: 2vh;
     padding-bottom: 2vh;
     border-radius: 0;
     border: 0px;
     border-bottom: 1px solid black;
+}
+.mini button {
+    width: 3vw;
 }
 button:hover {
     filter: brightness(85%);
