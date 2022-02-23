@@ -25,7 +25,7 @@ creators.push(function() {
 
         this.setBase(main);
     }
-    clock.name = "Clock";
+    clock.name = "Default Clock";
     clock.update = function() {
         document.getElementById(this.id).innerHTML = new Date();
     }

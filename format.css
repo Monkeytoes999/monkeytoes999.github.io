@@ -19,13 +19,6 @@ body {
     cursor: grab;
     border-radius: 15px;
 }
-.widgetButton {
-    position: relative;
-    width: 300px;
-    height: 100px;
-    background-color: rgba(255,255,255,0.6);
-    border-radius: 15px;
-}
 button {
     width: 8vw;
     height: 5vh;
@@ -34,6 +27,7 @@ button {
 }
 button:hover {
     filter: brightness(85%);
+    cursor: pointer;
 }
 button:active {
     filter: brightness(70%);
