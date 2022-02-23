@@ -22,7 +22,18 @@ creators.push(function() {
         var main = document.createElement("h1");
         main.style.textAlign = "center";
         var d = new Date();
-        main.innerHTML = d.getHours() + ":" + d.getMinutes();
+        var txt = (((d.getHours() + 11) % 12) + 1) + ":";
+        if (d.getMinutes().toString().length < 2) {
+            txt = txt + "0" + d.getMinutes();
+        } else {
+            txt = txt + d.getMinutes();
+        }
+        if (d.getHours() >= 13) {
+            txt = txt + "PM";
+        } else {
+            txt = txt + "AM";
+        }
+        main.innerHTML = txt;
         main.id = this.id;
 
         this.setBase(main);
@@ -30,7 +41,49 @@ creators.push(function() {
     clock.name = "Simple Clock";
     clock.update = function() {
         var d = new Date();
-        document.getElementById(this.id).innerHTML = d.getHours() + ":" + d.getMinutes();
+        var txt = (((d.getHours() + 11) % 12) + 1) + ":";
+        if (d.getMinutes().toString().length < 2) {
+            txt = txt + "0" + d.getMinutes();
+        } else {
+            txt = txt + d.getMinutes();
+        }
+        if (d.getHours() >= 13) {
+            txt = txt + "PM";
+        } else {
+            txt = txt + "AM";
+        }
+        document.getElementById(this.id).innerHTML = txt;
+    }
+    return new Case(clock);
+});
+// 24 Hour Clock
+creators.push(function() {
+    var clock = new Widget();
+    clock.build = function() {
+        var main = document.createElement("h1");
+        main.style.textAlign = "center";
+        var d = new Date();
+        var txt = d.getHours() + ":";
+        if (d.getMinutes().toString().length < 2) {
+            txt = txt + "0" + d.getMinutes();
+        } else {
+            txt = txt + d.getMinutes();
+        }
+        main.innerHTML = txt;
+        main.id = this.id;
+
+        this.setBase(main);
+    }
+    clock.name = "24 Hour Clock";
+    clock.update = function() {
+        var d = new Date();
+        var txt = d.getHours() + ":";
+        if (d.getMinutes().toString().length < 2) {
+            txt = txt + "0" + d.getMinutes();
+        } else {
+            txt = txt + d.getMinutes();
+        }
+        document.getElementById(this.id).innerHTML = txt;
     }
     return new Case(clock);
 });
@@ -71,6 +124,27 @@ creators.push(function() {
         var d = new Date();
         var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         document.getElementById(this.id).innerHTML = months[d.getMonth()] + " " + d.getDate() + ", " + d.getUTCFullYear();
+    }
+    return new Case(clock);
+});
+// Daily Message
+creators.push(function() {
+    var clock = new Widget();
+    clock.build = function() {
+        var main = document.createElement("h1");
+        main.style.textAlign = "center";
+        var d = new Date();
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        main.innerHTML = "Happy " + days[d.getDay()] + "!";
+        main.id = this.id;
+
+        this.setBase(main);
+    }
+    clock.name = "Daily Message";
+    clock.update = function() {
+        var d = new Date();
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        document.getElementById(this.id).innerHTML = "Happy " + days[d.getDay()] + "!";
     }
     return new Case(clock);
 });
