@@ -50,7 +50,7 @@ creators.push(function() {
     weather.build = function() {
         var head = document.createElement("h1");
         head.style.textAlign = "center";
-        fetch("https://freegeoip.app/json/").then(loc => loc.json().then(l => fetch("https://weather-react-api.vercel.app/forecast/coords/"+l["latitude"]+","+l["longitude"]).then(weather => weather.json().then(w => head.innerHTML = w["currently"]["summary"]))))
+        fetch("https://freegeoip.app/json/").then(loc => loc.json().then(l => fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+l["latitude"]+"&lon="+l["longitude"]+"&units=imperial&appid=bd87d30c89b9f5d3ca4a22700b39b202").then(weather => weather.json().then(w => head.innerHTML = w["current"]["weather"]["0"]["main"]))))
         this.setBase(head);
     }
     weather.name = "Weather Conditions";
