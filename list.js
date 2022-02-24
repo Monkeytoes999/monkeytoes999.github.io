@@ -393,7 +393,7 @@ creators.push(function() {
         base.style.textAlign = "center";
         fetch("https://api.isevenapi.xyz/api/iseven/2")
             .then(data => data.json()
-            .then(d => ad.innerHTML ="ad: " + d["ad"]));
+            .then(d => ad.innerHTML = d["ad"]));
         base.append(head);
         base.append(ad);
         this.setBase(base);
