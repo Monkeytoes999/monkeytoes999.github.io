@@ -348,3 +348,30 @@ creators.push(function() {
     dadjoke.update = function() {}
     return new Case(dadjoke);
 });
+// Data
+creators.push(function() {
+    var main = new Widget();
+    main.build = function() {
+        var head = document.createElement("p");
+        head.style.margin = "20px";
+        head.style.whiteSpace = "pre";
+        var wl = widgets.length;
+        var xy = "(" + globalX + "," + globalY + ")";
+        var len = document.cookie.length;
+        var txt = "Widgets: " + wl + "\nMouse Position: " + xy + "\nCookie Size: " + len;
+        head.innerHTML = txt;
+        head.id = this.id;
+
+        this.setBase(head);
+    }
+
+    main.name = "Data";
+    main.update = function() {
+        var wl = widgets.length;
+        var xy = "(" + globalX + "," + globalY + ")";
+        var len = document.cookie.length;
+        var txt = "Widgets: " + wl + "\nMouse Position: " + xy + "\nCookie Size: " + len;
+        document.getElementById(this.id).innerHTML = txt;
+    }
+    return new Case(main);
+});
