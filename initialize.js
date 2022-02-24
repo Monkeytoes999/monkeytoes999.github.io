@@ -13,8 +13,13 @@ if (document.cookie.includes("types=")){
     xa = cookies[i].substring(5).split(',');
     for (i = 0; !cookies[i].includes("ypos="); i++);
     ya = cookies[i].substring(5).split(',');
+    for (i = 0; !cookies[i].includes("xsize="); i++);
+    sxa = cookies[i].substring(5).split(',');
+    for (i = 0; !cookies[i].includes("ysize="); i++);
+    sya = cookies[i].substring(5).split(',');
     for (i = 0; i < ta.length; i++){
         types.push(ta[i]);
         positions.push([xa[i], ya[i]]);
+        sizes.push([sxa[i],sya[i]]);
     }
 }
