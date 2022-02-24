@@ -260,8 +260,8 @@ creators.push(function() {
 });
 // Owl House
 creators.push(function() {
-    var dadjoke = new Widget();
-    dadjoke.build = function() {
+    var main = new Widget();
+    main.build = function() {
         var base = document.createElement("div");
         base.style.padding = "4px";
         base.style.lineHeight = "0.75";
@@ -270,7 +270,10 @@ creators.push(function() {
         var head = document.createElement("b");
         var des = document.createElement("p");
         var tim = document.createElement("p");
-        var url = "https://api.tvmaze.com/shows/35073";
+
+        var showName = "the+owl+house";
+
+        var url = "https://api.tvmaze.com/singlesearch/shows?q=" + showName;
         fetch(url)
             .then(data => data.json()
             .then(d => titl.innerHTML = d["name"]));
@@ -298,15 +301,15 @@ creators.push(function() {
 
         this.setBase(base);
     }
-    dadjoke.name = "Owl House";
-    dadjoke.tag = "Culture";
-    dadjoke.update = function() {}
-    return new Case(dadjoke);
+    main.name = "Owl House";
+    main.tag = "Culture";
+    main.update = function() {}
+    return new Case(main);
 });
 // Molly McGee
 creators.push(function() {
-    var dadjoke = new Widget();
-    dadjoke.build = function() {
+    var main = new Widget();
+    main.build = function() {
         var base = document.createElement("div");
         base.style.padding = "4px";
         base.style.lineHeight = "0.75";
@@ -315,7 +318,10 @@ creators.push(function() {
         var head = document.createElement("b");
         var des = document.createElement("p");
         var tim = document.createElement("p");
-        var url = "https://api.tvmaze.com/shows/52771";
+
+        var showName = "the+ghost+and+molly+mcgee";
+
+        var url = "https://api.tvmaze.com/singlesearch/shows?q=" + showName;
         fetch(url)
             .then(data => data.json()
             .then(d => titl.innerHTML = d["name"]));
@@ -343,10 +349,10 @@ creators.push(function() {
 
         this.setBase(base);
     }
-    dadjoke.name = "Molly McGee";
-    dadjoke.tag = "Culture";
-    dadjoke.update = function() {}
-    return new Case(dadjoke);
+    main.name = "Molly McGee";
+    main.tag = "Culture";
+    main.update = function() {}
+    return new Case(main);
 });
 // Data
 creators.push(function() {
