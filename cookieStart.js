@@ -15,8 +15,8 @@ function save() {
     tc = tc.substring(0, tc.length-1);
     xc = xc.substring(0, xc.length-1);
     yc = yc.substring(0, yc.length-1);
-    sx = sx.substring(0, yc.length-1);
-    sy = sy.substring(0, yc.length-1);
+    sx = sx.substring(0, sx.length-1);
+    sy = sy.substring(0, sy.length-1);
     document.cookie = tc + "; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
     document.cookie = xc + "; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
     document.cookie = yc + "; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
@@ -31,10 +31,10 @@ function clearCookies() {
             papa.removeChild(papa.firstChild);
         }
         document.cookie = "types=jeff; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
-        document.cookie = "types=xpos; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
-        document.cookie = "types=ypos; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
-        document.cookie = "types=xsize; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
-        document.cookie = "types=ysize; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
+        document.cookie = "xpos=xpos; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
+        document.cookie = "ypos=ypos; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
+        document.cookie = "xsize=xsize; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
+        document.cookie = "ysize=ysize; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
         types = [];
         positions = [];
         sizes = [];
