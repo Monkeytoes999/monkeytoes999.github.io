@@ -26,7 +26,7 @@ body {
 }
 button {
     background-color: white;
-    width: 9vw;
+    width: 10vw;
     padding-top: 2vh;
     padding-bottom: 2vh;
     border-radius: 0;
@@ -34,7 +34,7 @@ button {
     border-bottom: 1px solid black;
 }
 .mini button {
-    width: 3vw;
+    width: 2vw;
     height: 7vh;
 }
 button:hover {

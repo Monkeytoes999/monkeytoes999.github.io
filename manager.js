@@ -35,9 +35,38 @@ function remove() {
         input.style.backgroundColor = "white";
     }
 }
+function upLayer() {
+    var input = document.getElementById("upor");
+    var goal = (modeA == -1);
+    for (let i = 0; i < types.length; i++) {
+        widgets[i].upwards = goal;
+    }
+    if (goal) {
+        input.style.backgroundColor = "green";
+    } else {
+        input.style.backgroundColor = "white";
+    }
+}
+function downLayer() {
+    var input = document.getElementById("downor");
+    var goal = (modeA == -1);
+    for (let i = 0; i < types.length; i++) {
+        widgets[i].downwards = goal;
+    }
+    if (goal) {
+        input.style.backgroundColor = "green";
+    } else {
+        input.style.backgroundColor = "white";
+    }
+}
 function mode(input) {
-    var flist = [function() { edit(); }, function() { resize(); }, function() { remove(); }];
-    if (modeA == -1) {
+    var flist = [function() { edit(); }, function() { resize(); }, function() { remove(); },
+        function() { upLayer(); }, function() { downLayer(); }];
+    if (input == -1) {
+        if (modeA != -1) {
+            mode(modeA);
+        }
+    } else if (modeA == -1) {
         flist[input]();
         modeA = input;
     } else if (modeA == input) {

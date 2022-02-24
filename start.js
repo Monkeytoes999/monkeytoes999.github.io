@@ -25,6 +25,29 @@ function updateAll() {
     }
     save();
 }
+function swapTwo(list, a, b) {
+    var temp = list[a];
+    list[a] = list[b];
+    list[b] = temp;
+    return list;
+}
+function shift(input, direction) {
+    var location = 0;
+    for (let i = 0; i < widgets.length; i++) {
+        if (widgets[i] == input) {
+            location = i;
+        }
+    }
+    if (location + direction > 0 && location + direction <= types.length) {
+        widgets = swapTwo(widgets, location, location + direction);
+        types = swapTwo(types, location, location + direction);
+        positions = swapTwo(positions, location, location + direction);
+        sizes = swapTwo(sizes, location, location + direction);
+    }
+    console.log(widgets.length);
+    refresh();
+    mode(-1);
+}
 async function tick() {
     for (let i = 0; i < widgets.length; i++) {
         if (widgets[i].dead) {
