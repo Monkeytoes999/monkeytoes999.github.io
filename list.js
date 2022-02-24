@@ -43,3 +43,16 @@ creators.push(function() {
     dadjoke.update = function() {}
     return new Case(dadjoke);
 });
+creators.push(function() {
+    var weather = new Widget();
+    weather.build = function() {
+        var head = document.createElement("h1");
+        head.style.textAlign = "center";
+        fetch("https://freegeoip.app/json/").then(loc => loc.json().then(l => fetch("https://weather-react-api.vercel.app/forecast/coords/"+l["latitude"]+","+l["longitude"]).then(weather => weather.json().then(w => head.innerHTML = w["currently"]["summary"]))))
+        this.setBase(head);
+    }
+    weather.name = "Weather Conditions";
+    weather.tag = "Weather";
+    weather.update = function() {}
+    return new Case(weather);
+});
