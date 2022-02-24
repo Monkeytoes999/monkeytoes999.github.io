@@ -266,10 +266,14 @@ creators.push(function() {
         base.style.padding = "4px";
         base.style.lineHeight = "0.75";
         base.style.textAlign = "center";
+        var titl = document.createElement("b");
         var head = document.createElement("b");
         var des = document.createElement("p");
         var tim = document.createElement("p");
         var url = "https://api.tvmaze.com/shows/35073";
+        fetch(url)
+            .then(data => data.json()
+            .then(d => titl.innerHTML = d["name"]));
         fetch(url)
             .then(data => data.json()
             .then(d => fetch(d["_links"]["nextepisode"]["href"])
@@ -286,6 +290,8 @@ creators.push(function() {
             .then(ep => ep.json()
             .then(e => tim.innerHTML = new Date(new Date(e["airdate"]) - new Date()).getUTCDate() + " days remaining"))));
 
+        base.appendChild(titl);
+        base.appendChild(document.createElement("br"));
         base.appendChild(head);
         base.appendChild(des);
         base.appendChild(tim);
@@ -305,10 +311,14 @@ creators.push(function() {
         base.style.padding = "4px";
         base.style.lineHeight = "0.75";
         base.style.textAlign = "center";
+        var titl = document.createElement("b");
         var head = document.createElement("b");
         var des = document.createElement("p");
         var tim = document.createElement("p");
         var url = "https://api.tvmaze.com/shows/52771";
+        fetch(url)
+            .then(data => data.json()
+            .then(d => titl.innerHTML = d["name"]));
         fetch(url)
             .then(data => data.json()
             .then(d => fetch(d["_links"]["nextepisode"]["href"])
@@ -325,6 +335,8 @@ creators.push(function() {
             .then(ep => ep.json()
             .then(e => tim.innerHTML = new Date(new Date(e["airdate"]) - new Date()).getUTCDate() + " days remaining"))));
 
+        base.appendChild(titl);
+        base.appendChild(document.createElement("br"));
         base.appendChild(head);
         base.appendChild(des);
         base.appendChild(tim);
