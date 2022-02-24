@@ -38,15 +38,16 @@ function shift(input, direction) {
             location = i;
         }
     }
-    if (location + direction > 0 && location + direction <= types.length) {
+    if (location + direction > 0 && location + direction < widgets.length) {
         widgets = swapTwo(widgets, location, location + direction);
         types = swapTwo(types, location, location + direction);
         positions = swapTwo(positions, location, location + direction);
         sizes = swapTwo(sizes, location, location + direction);
     }
-    console.log(widgets.length);
     refresh();
+    var temp = modeA;
     mode(-1);
+    mode(temp);
 }
 async function tick() {
     for (let i = 0; i < widgets.length; i++) {
