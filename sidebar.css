@@ -23,6 +23,7 @@
     border-radius: 15px;
     cursor: pointer;
     border: 1px solid black;
+    overflow: hidden;
 }
 .sideWidge button {
     float: right;
