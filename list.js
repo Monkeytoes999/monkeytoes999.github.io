@@ -1,5 +1,5 @@
 var creators = [];
-var tags = ["Time","News","Weather","Playful","Other"];
+var tags = ["Time","News","Weather","Playful","Culture","Other"];
 // Welcome
 creators.push(function() {
     var welcome = new Widget();
