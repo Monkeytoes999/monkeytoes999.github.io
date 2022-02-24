@@ -381,3 +381,23 @@ creators.push(function() {
     }
     return new Case(main);
 });
+creators.push(function() {
+    var even = new Widget();
+    even.build = function() {
+        var base = document.createElement("div");
+        var num = Math.round(Math.random()*1000);
+        var head = document.createElement("b");
+        var ad = document.createElement("p");
+        head.innerHTML = num + (num%2==0 ? " is even" : " is not even");
+        base.style.textAlign = "center";
+        fetch("https://api.isevenapi.xyz/api/iseven/2").then(data => data.json().then(d => ad.innerHTML ="ad: " + d["ad"]));
+        base.append(head);
+        base.append(ad);
+        this.setBase(base);
+    }
+
+    even.name = "Is it even?";
+    even.tag = "Playful";
+    even.update = function() {}
+    return new Case(even);
+});
