@@ -404,3 +404,20 @@ creators.push(function() {
     even.update = function() {}
     return new Case(even);
 });
+// Welcome Visitor
+creators.push(function() {
+    var welcome = new Widget();
+    welcome.build = function() {
+        var head = document.createElement("h2");
+        var num = Math.round(Math.random()*1000);
+        head.innerHTML = "Welcome Daily Visitor #" + num;
+        head.style.textAlign = "center";
+
+        this.setBase(head);
+    }
+
+    welcome.name = "Welcome Visitor";
+    welcome.update = function() {
+    }
+    return new Case(welcome);
+});
