@@ -391,7 +391,9 @@ creators.push(function() {
         var ad = document.createElement("p");
         head.innerHTML = num + (num%2==0 ? " is even" : " is not even");
         base.style.textAlign = "center";
-        fetch("https://api.isevenapi.xyz/api/iseven/2").then(data => data.json().then(d => ad.innerHTML ="ad: " + d["ad"]));
+        fetch("https://api.isevenapi.xyz/api/iseven/2")
+            .then(data => data.json()
+            .then(d => ad.innerHTML ="ad: " + d["ad"]));
         base.append(head);
         base.append(ad);
         this.setBase(base);
