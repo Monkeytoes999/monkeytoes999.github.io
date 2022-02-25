@@ -464,3 +464,43 @@ creators.push(function() {
     weather.update = function() {}
     return new Case(weather);
 });
+// Temperatures (°F)
+creators.push(function() {
+    var weather = new Widget();
+    weather.build = function() {
+        var head = document.createElement("p");
+        head.style.whiteSpace = "pre";
+        head.style.padding = "5px";
+        head.style.textAlign = "right";
+        fetch("https://freegeoip.app/json/")
+            .then(loc => loc.json()
+            .then(l => fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+l["latitude"]+"&lon="+l["longitude"]+"&units=imperial&appid=bd87d30c89b9f5d3ca4a22700b39b202")
+            .then(weather => weather.json()
+            .then(w => head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>" + w["current"]["temp"] + "°F</td></tr> <tr> <td><b>Daily High:</b></td> <td>" + w["daily"]["0"]["temp"]["max"] + "°F</td></tr> <tr> <td><b>Daily Low:</b></td> <td>" + w["daily"]["0"]["temp"]["min"] + "°F</td></tr> <tr> <td><b>Morning Average:</b></td> <td>" + w["daily"]["0"]["temp"]["morn"] + "°F</td></tr> <tr> <td><b>Daytime Average:</b></td> <td>" + w["daily"]["0"]["temp"]["day"] + "°F</td></tr> <tr> <td><b>Evening Average:</b></td> <td>" + w["daily"]["0"]["temp"]["eve"] + "°F</td></tr> <tr> <td><b>Nighttime Average:</b></td> <td>" + w["daily"]["0"]["temp"]["night"] + "°F</td></tr></table>"))));
+        this.setBase(head);
+    }
+    weather.name = "Temperatures (°F)";
+    weather.tag = "Weather";
+    weather.update = function() {}
+    return new Case(weather);
+});
+// Temperatures (°C)
+creators.push(function() {
+    var weather = new Widget();
+    weather.build = function() {
+        var head = document.createElement("p");
+        head.style.whiteSpace = "pre";
+        head.style.padding = "5px";
+        head.style.textAlign = "right";
+        fetch("https://freegeoip.app/json/")
+            .then(loc => loc.json()
+            .then(l => fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+l["latitude"]+"&lon="+l["longitude"]+"&units=metric&appid=bd87d30c89b9f5d3ca4a22700b39b202")
+            .then(weather => weather.json()
+            .then(w => head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>" + w["current"]["temp"] + "°C</td></tr> <tr> <td><b>Daily High:</b></td> <td>" + w["daily"]["0"]["temp"]["max"] + "°C</td></tr> <tr> <td><b>Daily Low:</b></td> <td>" + w["daily"]["0"]["temp"]["min"] + "°C</td></tr> <tr> <td><b>Morning Average:</b></td> <td>" + w["daily"]["0"]["temp"]["morn"] + "°C</td></tr> <tr> <td><b>Daytime Average:</b></td> <td>" + w["daily"]["0"]["temp"]["day"] + "°C</td></tr> <tr> <td><b>Evening Average:</b></td> <td>" + w["daily"]["0"]["temp"]["eve"] + "°C</td></tr> <tr> <td><b>Nighttime Average:</b></td> <td>" + w["daily"]["0"]["temp"]["night"] + "°C</td></tr></table>"))));
+        this.setBase(head);
+    }
+    weather.name = "Temperatures (°C)";
+    weather.tag = "Weather";
+    weather.update = function() {}
+    return new Case(weather);
+});
