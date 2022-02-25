@@ -105,3 +105,18 @@ function show(input) {
         input.style.display = "block";
     }
 }
+function drawButton() {
+    var input = document.getElementById("line");
+    var goal = input.style.backgroundColor == "green";
+    if (!goal) {
+        input.style.backgroundColor = "green";
+    } else {
+        input.style.backgroundColor = "white";
+    }
+}
+function drawLines() {
+    drawButton();
+    var input = document.getElementsByTagName("body")[0];
+    console.log(input);
+    input.classList.toggle("grid");
+}

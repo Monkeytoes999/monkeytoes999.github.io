@@ -4,11 +4,13 @@
     -moz-user-select: none; /*Firefox*/
     font-family: "VT323";
 }
-body {
+html {
     background-image: url("https://images.unsplash.com/photo-1642272083829-4feeddd903dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
     background-size: cover;
     backdrop-filter: blur(1px) saturate(200%) brightness(70%);
     height: 100vh;
+}
+body {
     margin: 0px;
     overflow: hidden;
 }
@@ -46,4 +48,13 @@ button:active {
 }
 .buttons {
     display: none;
+}
+.grid {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-image:
+      repeating-linear-gradient(white 0 1px, transparent 1px 100%),
+      repeating-linear-gradient(90deg, white 0 1px, transparent 1px 100%);
+    background-size: 20px 20px;
 }
