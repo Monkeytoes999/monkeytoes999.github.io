@@ -59,7 +59,13 @@ creators.push(function() {
     }
     weather.name = "Weather Conditions";
     weather.tag = "Weather";
-    weather.update = function() {}
+    weather.update = function() {
+        try {
+            head.innerHTML = weatherdbi["currentConditions"]["comment"];
+        } catch {
+            head.innerHTML = "Sunny";
+        }
+    }
     return new Case(weather);
 });
 // Default Clock
@@ -438,16 +444,22 @@ creators.push(function() {
             head.style.height = "100%";
             head.style.verticalAlign = "middle";
             try {
-                head.src = weatherdbi["currentConditions"]["iconURL"]
+                head.src = weatherdbi["currentConditions"]["iconURL"];
             } catch (error) {
-                head.src = "https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-            };
+                head.src = "https://ssl.gstatic.com/onebox/weather/64/sunny.png";
+            }
             base.appendChild(head)
             this.setBase(base);
     }
     weather.name = "Weather Icon";
     weather.tag = "Weather";
-    weather.update = function() {}
+    weather.update = function() {
+        try {
+            head.src = weatherdbi["currentConditions"]["iconURL"];
+        } catch (error) {
+            head.src = "https://ssl.gstatic.com/onebox/weather/64/sunny.png";
+        }
+    }
     return new Case(weather);
 });
 // Temperatures (°F)
@@ -467,7 +479,13 @@ creators.push(function() {
     }
     weather.name = "Temperatures (°F)";
     weather.tag = "Weather";
-    weather.update = function() {}
+    weather.update = function() {
+        try {
+            head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>" + weatherdbi["currentConditions"]["temp"]["f"] + "°F</td></tr> <tr> <td><b>Daily High:</b></td> <td>" + weatherdbi["next_days"]["0"]["max_temp"]["f"] + "°F</td></tr> <tr> <td><b>Daily Low:</b></td> <td>" + weatherdbi["next_days"]["0"]["min_temp"]["f"] + "°F</td></tr></table>";
+        } catch {
+            head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>58°F</td></tr> <tr> <td><b>Daily High:</b></td> <td>60°F</td></tr> <tr> <td><b>Daily Low:</b></td> <td>41°F</td></tr></table>";
+        }
+    }
     return new Case(weather);
 });
 // Temperatures (°C)
@@ -487,7 +505,13 @@ creators.push(function() {
     }
     weather.name = "Temperatures (°C)";
     weather.tag = "Weather";
-    weather.update = function() {}
+    weather.update = function() {
+        try {
+            head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>" + weatherdbi["currentConditions"]["temp"]["c"] + "°C</td></tr> <tr> <td><b>Daily High:</b></td> <td>" + weatherdbi["next_days"]["0"]["max_temp"]["c"] + "°C</td></tr> <tr> <td><b>Daily Low:</b></td> <td>" + weatherdbi["next_days"]["0"]["min_temp"]["c"] + "°C</td></tr></table>";
+        } catch {
+            head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>14°C</td></tr> <tr> <td><b>Daily High:</b></td> <td>16°C</td></tr> <tr> <td><b>Daily Low:</b></td> <td>5°C</td></tr></table>";
+        }
+    }
     return new Case(weather);
 });
 // Temperatures (K)
@@ -507,6 +531,12 @@ creators.push(function() {
     }
     weather.name = "Temperatures (K)";
     weather.tag = "Weather";
-    weather.update = function() {}
+    weather.update = function() {
+        try {
+            head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>" + (parseInt(weatherdbi["currentConditions"]["temp"]["c"])+273.15) + " K</td></tr> <tr> <td><b>Daily High:</b></td> <td>" + (parseInt(weatherdbi["next_days"]["0"]["max_temp"]["c"])+273.15) + " K</td></tr> <tr> <td><b>Daily Low:</b></td> <td>" + (parseInt(weatherdbi["next_days"]["0"]["min_temp"]["c"])+273.15) + " K</td></tr></table>";
+        } catch {
+            head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>287.15 K</td></tr> <tr> <td><b>Daily High:</b></td> <td>289.15 K</td></tr> <tr> <td><b>Daily Low:</b></td> <td>278.15 K</td></tr></table>";
+        }
+    }
     return new Case(weather);
 });
