@@ -7,16 +7,16 @@ function weatherAPIs() {
             .then(wdb => weatherdbi = wdb));
             console.log("owo");
 
-            fetch("http://www.7timer.info/bin/api.pl?lon=" + l["lon"] + "7&lat=" + l["lat"] + "&product=civil&output=json")
+            fetch("https://www.7timer.info/bin/api.pl?lon=" + l["lon"] + "7&lat=" + l["lat"] + "&product=civil&output=json")
             .then(cv => cv.json()
             .then(cvw => civil = cvw));
-            fetch("http://www.7timer.info/bin/api.pl?lon=" + l["lon"] + "7&lat=" + l["lat"] + "&product=civillight&output=json")
+            fetch("https://www.7timer.info/bin/api.pl?lon=" + l["lon"] + "7&lat=" + l["lat"] + "&product=civillight&output=json")
             .then(cvl => cvl.json()
             .then(cvlw => civillight = cvlw));
-            fetch("http://www.7timer.info/bin/api.pl?lon=" + l["lon"] + "7&lat=" + l["lat"] + "&product=astro&output=json")
+            fetch("https://www.7timer.info/bin/api.pl?lon=" + l["lon"] + "7&lat=" + l["lat"] + "&product=astro&output=json")
             .then(as => as.json()
             .then(asw => astro = asw));
-            fetch("http://www.7timer.info/bin/api.pl?lon=" + l["lon"] + "7&lat=" + l["lat"] + "&product=two&output=json")
+            fetch("https://www.7timer.info/bin/api.pl?lon=" + l["lon"] + "7&lat=" + l["lat"] + "&product=two&output=json")
             .then(me => me.json()
             .then(mew => meteo = mew));
         })
