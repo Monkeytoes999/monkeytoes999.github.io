@@ -437,11 +437,29 @@ creators.push(function() {
             .then(loc => loc.json()
             .then(l => fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+l["latitude"]+"&lon="+l["longitude"]+"&units=imperial&appid=bd87d30c89b9f5d3ca4a22700b39b202")
             .then(weather => weather.json()
-            .then(w => head.src = "https://openweathermap.org/img/wn/" + w["current"]["weather"]["0"]["icon"] + "@2x.png"))));
+            .then(w => head.src = "https://openweathermap.org/img/wn/" + w["current"]["weather"]["0"]["icon"] + "@2x.png"))));0
         base.appendChild(head)
         this.setBase(base);
     }
     weather.name = "Weather Icon";
+    weather.tag = "Weather";
+    weather.update = function() {}
+    return new Case(weather);
+});
+// Descriptive Current Weather
+creators.push(function() {
+    var weather = new Widget();
+    weather.build = function() {
+        var head = document.createElement("h1");
+        head.style.textAlign = "center";
+        fetch("https://freegeoip.app/json/")
+            .then(loc => loc.json()
+            .then(l => fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+l["latitude"]+"&lon="+l["longitude"]+"&units=imperial&appid=bd87d30c89b9f5d3ca4a22700b39b202")
+            .then(weather => weather.json()
+            .then(w => head.innerHTML = w["current"]["weather"]["0"]["description"]))));
+        this.setBase(head);
+    }
+    weather.name = "Weather Description";
     weather.tag = "Weather";
     weather.update = function() {}
     return new Case(weather);
