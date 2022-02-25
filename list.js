@@ -366,7 +366,7 @@ creators.push(function() {
         head.style.margin = "20px";
         head.style.whiteSpace = "pre";
         var wl = widgets.length;
-        var xy = "(" + globalX + "," + globalY + ")";
+        var xy = "(" + globalX + "/" + window.innerWidth + "," + globalY + "/" + window.innerHeight + ")";
         var len = document.cookie.length;
         var txt = "Widgets: " + wl + "\nMouse Position: " + xy + "\nCookie Size: " + len;
         head.innerHTML = txt;
@@ -378,7 +378,7 @@ creators.push(function() {
     main.name = "Data";
     main.update = function() {
         var wl = widgets.length;
-        var xy = "(" + globalX + "," + globalY + ")";
+        var xy = "(" + globalX + "/" + window.innerWidth + "," + globalY + "/" + window.innerHeight + ")";
         var len = document.cookie.length;
         var txt = "Widgets: " + wl + "\nMouse Position: " + xy + "\nCookie Size: " + len;
         document.getElementById(this.id).innerHTML = txt;
