@@ -117,6 +117,5 @@ function drawButton() {
 function drawLines() {
     drawButton();
     var input = document.getElementsByTagName("body")[0];
-    console.log(input);
     input.classList.toggle("grid");
 }
