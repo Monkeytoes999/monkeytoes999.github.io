@@ -2,6 +2,7 @@ var showing = 2;
 function openSettings() {
     document.getElementById("sidebar").style.display = "block";
     showing = 1;
+    mode(-1);
 }
 function closeSettings() {
     document.getElementById("sidebar").style.display = "none";

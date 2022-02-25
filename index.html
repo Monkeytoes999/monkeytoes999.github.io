@@ -39,18 +39,18 @@
         <button onclick = "showSettings()" style = "font-size: large;">Settings</button>
         <div class = "buttons" id = "bList">
             <button id = "additions">Widgets</button><br>
-            <div class = "minia">
+            <div class = "mini">
                 <button onclick = "mode(0)" id = "editor" style = "float: left;" title = "Move">&#10021</button>
                 <button onclick = "mode(1)" id = "resizor" style = "float: left;" title = "Resize">&#8690</button>
-                <button onclick = "mode(2)" id = "killor" title = "Delete">&#128465</button>
+                <button onclick = "mode(2)" id = "killor" style = "float: left;" title = "Delete">&#10006</button>
+                <button onclick="clearCookies()" title = "Clear All">&#128465</button>
             </div>
-            <div class = "minib">
+            <div class = "mini">
                 <button onclick = "mode(3)" id = "upor" style = "float: left;" title = "Up layer">&#10514</button>
                 <button onclick = "mode(4)" id = "downor" style = "float: left;" title = "Down layer">&#10515</button>
                 <button onclick = "mode(5)" id = "uuuor" style = "float: left;" title = "Top layer">&#8613</button>
                 <button onclick = "mode(6)" id = "dddor" title = "Bottom layer">&#8615</button>
             </div>
-            <button onclick="clearCookies()">Clear Cookies</button>
         </div>
         <div id = "widgets">
         </div>
