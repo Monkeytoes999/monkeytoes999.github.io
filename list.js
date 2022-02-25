@@ -540,3 +540,27 @@ creators.push(function() {
     }
     return new Case(weather);
 });
+// Chance of rain (next hour)
+creators.push(function() {
+    var weather = new Widget();
+    weather.build = function() {
+        var head = document.createElement("h1");
+        head.style.textAlign = "center";
+        try {
+            head.innerHTML = weatherdbi["currentConditions"]["precip"];
+        } catch {
+            head.innerHTML = "0%";
+        }
+        this.setBase(head);
+    }
+    weather.name = "Hourly chance of rain";
+    weather.tag = "Weather";
+    weather.update = function() {
+        try {
+            head.innerHTML = weatherdbi["currentConditions"]["precip"];
+        } catch {
+            head.innerHTML = "0%";
+        }
+    }
+    return new Case(weather);
+});
