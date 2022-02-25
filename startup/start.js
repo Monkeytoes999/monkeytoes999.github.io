@@ -118,6 +118,7 @@ function addAdd() {
         document.getElementById(widge.widget.tag).appendChild(divider);
     }
 }
+weatherAPIs();
 addAdd();
 refresh();
 updateAll();

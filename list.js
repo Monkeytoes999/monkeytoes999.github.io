@@ -50,11 +50,11 @@ creators.push(function() {
     weather.build = function() {
         var head = document.createElement("h1");
         head.style.textAlign = "center";
-        fetch("https://freegeoip.app/json/")
-            .then(loc => loc.json()
-            .then(l => fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+l["latitude"]+"&lon="+l["longitude"]+"&units=imperial&appid=bd87d30c89b9f5d3ca4a22700b39b202")
-            .then(weather => weather.json()
-            .then(w => head.innerHTML = w["current"]["weather"]["0"]["main"]))));
+        try {
+            head.innerHTML = weatherdbi["currentConditions"]["comment"];
+        } catch {
+            head.innerHTML = "Sunny";
+        }
         this.setBase(head);
     }
     weather.name = "Weather Conditions";
@@ -431,37 +431,21 @@ creators.push(function() {
 creators.push(function() {
     var weather = new Widget();
     weather.build = function() {
-        var base = document.createElement("div");
-        base.style.textAlign = "center";
-        var head = document.createElement("img");
-        head.style.width = "auto";
-        fetch("https://freegeoip.app/json/")
-            .then(loc => loc.json()
-            .then(l => fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+l["latitude"]+"&lon="+l["longitude"]+"&units=imperial&appid=bd87d30c89b9f5d3ca4a22700b39b202")
-            .then(weather => weather.json()
-            .then(w => head.src = "https://openweathermap.org/img/wn/" + w["current"]["weather"]["0"]["icon"] + "@2x.png"))));0
-        base.appendChild(head)
-        this.setBase(base);
+            var base = document.createElement("div");
+            base.style.textAlign = "center";
+            var head = document.createElement("img");
+            head.style.width = "auto";
+            head.style.height = "100%";
+            head.style.verticalAlign = "middle";
+            try {
+                head.src = weatherdbi["currentConditions"]["iconURL"]
+            } catch (error) {
+                head.src = "https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+            };
+            base.appendChild(head)
+            this.setBase(base);
     }
     weather.name = "Weather Icon";
-    weather.tag = "Weather";
-    weather.update = function() {}
-    return new Case(weather);
-});
-// Descriptive Current Weather
-creators.push(function() {
-    var weather = new Widget();
-    weather.build = function() {
-        var head = document.createElement("h1");
-        head.style.textAlign = "center";
-        fetch("https://freegeoip.app/json/")
-            .then(loc => loc.json()
-            .then(l => fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+l["latitude"]+"&lon="+l["longitude"]+"&units=imperial&appid=bd87d30c89b9f5d3ca4a22700b39b202")
-            .then(weather => weather.json()
-            .then(w => head.innerHTML = w["current"]["weather"]["0"]["description"]))));
-        this.setBase(head);
-    }
-    weather.name = "Weather Description";
     weather.tag = "Weather";
     weather.update = function() {}
     return new Case(weather);
@@ -474,11 +458,11 @@ creators.push(function() {
         head.style.whiteSpace = "pre";
         head.style.padding = "5px";
         head.style.textAlign = "right";
-        fetch("https://freegeoip.app/json/")
-            .then(loc => loc.json()
-            .then(l => fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+l["latitude"]+"&lon="+l["longitude"]+"&units=imperial&appid=bd87d30c89b9f5d3ca4a22700b39b202")
-            .then(weather => weather.json()
-            .then(w => head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>" + w["current"]["temp"] + "°F</td></tr> <tr> <td><b>Daily High:</b></td> <td>" + w["daily"]["0"]["temp"]["max"] + "°F</td></tr> <tr> <td><b>Daily Low:</b></td> <td>" + w["daily"]["0"]["temp"]["min"] + "°F</td></tr> <tr> <td><b>Morning Average:</b></td> <td>" + w["daily"]["0"]["temp"]["morn"] + "°F</td></tr> <tr> <td><b>Daytime Average:</b></td> <td>" + w["daily"]["0"]["temp"]["day"] + "°F</td></tr> <tr> <td><b>Evening Average:</b></td> <td>" + w["daily"]["0"]["temp"]["eve"] + "°F</td></tr> <tr> <td><b>Nighttime Average:</b></td> <td>" + w["daily"]["0"]["temp"]["night"] + "°F</td></tr></table>"))));
+        try {
+            head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>" + weatherdbi["currentConditions"]["temp"]["f"] + "°F</td></tr> <tr> <td><b>Daily High:</b></td> <td>" + weatherdbi["next_days"]["0"]["max_temp"]["f"] + "°F</td></tr> <tr> <td><b>Daily Low:</b></td> <td>" + weatherdbi["next_days"]["0"]["min_temp"]["f"] + "°F</td></tr></table>";
+        } catch {
+            head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>58°F</td></tr> <tr> <td><b>Daily High:</b></td> <td>60°F</td></tr> <tr> <td><b>Daily Low:</b></td> <td>41°F</td></tr></table>";
+        }
         this.setBase(head);
     }
     weather.name = "Temperatures (°F)";
@@ -494,11 +478,11 @@ creators.push(function() {
         head.style.whiteSpace = "pre";
         head.style.padding = "5px";
         head.style.textAlign = "right";
-        fetch("https://freegeoip.app/json/")
-            .then(loc => loc.json()
-            .then(l => fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+l["latitude"]+"&lon="+l["longitude"]+"&units=metric&appid=bd87d30c89b9f5d3ca4a22700b39b202")
-            .then(weather => weather.json()
-            .then(w => head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>" + w["current"]["temp"] + "°C</td></tr> <tr> <td><b>Daily High:</b></td> <td>" + w["daily"]["0"]["temp"]["max"] + "°C</td></tr> <tr> <td><b>Daily Low:</b></td> <td>" + w["daily"]["0"]["temp"]["min"] + "°C</td></tr> <tr> <td><b>Morning Average:</b></td> <td>" + w["daily"]["0"]["temp"]["morn"] + "°C</td></tr> <tr> <td><b>Daytime Average:</b></td> <td>" + w["daily"]["0"]["temp"]["day"] + "°C</td></tr> <tr> <td><b>Evening Average:</b></td> <td>" + w["daily"]["0"]["temp"]["eve"] + "°C</td></tr> <tr> <td><b>Nighttime Average:</b></td> <td>" + w["daily"]["0"]["temp"]["night"] + "°C</td></tr></table>"))));
+        try {
+            head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>" + weatherdbi["currentConditions"]["temp"]["c"] + "°C</td></tr> <tr> <td><b>Daily High:</b></td> <td>" + weatherdbi["next_days"]["0"]["max_temp"]["c"] + "°C</td></tr> <tr> <td><b>Daily Low:</b></td> <td>" + weatherdbi["next_days"]["0"]["min_temp"]["c"] + "°C</td></tr></table>";
+        } catch {
+            head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>14°C</td></tr> <tr> <td><b>Daily High:</b></td> <td>16°C</td></tr> <tr> <td><b>Daily Low:</b></td> <td>5°C</td></tr></table>";
+        }
         this.setBase(head);
     }
     weather.name = "Temperatures (°C)";
@@ -514,11 +498,11 @@ creators.push(function() {
         head.style.whiteSpace = "pre";
         head.style.padding = "5px";
         head.style.textAlign = "right";
-        fetch("https://freegeoip.app/json/")
-            .then(loc => loc.json()
-            .then(l => fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+l["latitude"]+"&lon="+l["longitude"]+"&units=metric&appid=bd87d30c89b9f5d3ca4a22700b39b202")
-            .then(weather => weather.json()
-            .then(w => head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>" + (parseInt(w["current"]["temp"])+273.15) + "K</td></tr> <tr> <td><b>Daily High:</b></td> <td>" + (parseInt(w["daily"]["0"]["temp"]["max"])+273.15) + "K</td></tr> <tr> <td><b>Daily Low:</b></td> <td>" + (parseInt(w["daily"]["0"]["temp"]["min"])+273.15) + "K</td></tr> <tr> <td><b>Morning Average:</b></td> <td>" + (parseInt(w["daily"]["0"]["temp"]["morn"])+273.15) + "K</td></tr> <tr> <td><b>Daytime Average:</b></td> <td>" + (parseInt(w["daily"]["0"]["temp"]["day"])+273.15) + "K</td></tr> <tr> <td><b>Evening Average:</b></td> <td>" + (parseInt(w["daily"]["0"]["temp"]["eve"])+273.15) + "K</td></tr> <tr> <td><b>Nighttime Average:</b></td> <td>" + (parseInt(w["daily"]["0"]["temp"]["night"])+273.15) + "K</td></tr></table>"))));
+        try {
+            head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>" + (parseInt(weatherdbi["currentConditions"]["temp"]["c"])+273.15) + " K</td></tr> <tr> <td><b>Daily High:</b></td> <td>" + (parseInt(weatherdbi["next_days"]["0"]["max_temp"]["c"])+273.15) + " K</td></tr> <tr> <td><b>Daily Low:</b></td> <td>" + (parseInt(weatherdbi["next_days"]["0"]["min_temp"]["c"])+273.15) + " K</td></tr></table>";
+        } catch {
+            head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>287.15 K</td></tr> <tr> <td><b>Daily High:</b></td> <td>289.15 K</td></tr> <tr> <td><b>Daily Low:</b></td> <td>278.15 K</td></tr></table>";
+        }
         this.setBase(head);
     }
     weather.name = "Temperatures (K)";

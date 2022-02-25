@@ -4,6 +4,11 @@ var globalY = 0;
 var types = [];
 var positions = [];
 var sizes = [];
+var cviil = {};
+var civillight = {};
+var astro = {};
+var meteo = {};
+var weatherdbi = {};
 if (!document.cookie.includes("types=")) {
     document.cookie = "types=0,4,8,9; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
     document.cookie = "ysize=200,100,100,100; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
