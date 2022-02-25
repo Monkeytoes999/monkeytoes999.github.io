@@ -38,11 +38,18 @@ function shift(input, direction) {
             location = i;
         }
     }
-    if (location + direction > 0 && location + direction < widgets.length) {
-        widgets = swapTwo(widgets, location, location + direction);
-        types = swapTwo(types, location, location + direction);
-        positions = swapTwo(positions, location, location + direction);
-        sizes = swapTwo(sizes, location, location + direction);
+    var goal = location + direction;
+    if (direction == -2) {
+        goal = widgets.length - 1;
+    }
+    if (direction == 2) {
+        goal = 0;
+    }
+    if (location + direction >= 0 && goal < widgets.length) {
+        widgets = swapTwo(widgets, location, goal);
+        types = swapTwo(types, location, goal);
+        positions = swapTwo(positions, location, goal);
+        sizes = swapTwo(sizes, location, goal);
     }
     refresh();
     var temp = modeA;

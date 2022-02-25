@@ -12,8 +12,6 @@ function Case(widget) {
     this.removable = false;
     this.dead = false;
     this.dragging = false;
-    this.upwards = false;
-    this.downwards = false;
 
     widget.build();
     this.widget = widget;
@@ -78,11 +76,17 @@ function Case(widget) {
         }
         this.base.appendChild(this.widget.base);
         this.base.onmousedown = function(event) {
-            if (big.upwards) {
+            if (modeA == 3) {
                 shift(big, 1);
             }
-            if (big.downwards) {
+            if (modeA == 4) {
                 shift(big, -1);
+            }
+            if (modeA == 5) {
+                shift(big, -2);
+            }
+            if (modeA == 6) {
+                shift(big, 2);
             }
             if (big.removable) {
                 big.dead = true;

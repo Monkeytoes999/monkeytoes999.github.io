@@ -26,15 +26,19 @@ body {
 }
 button {
     background-color: white;
-    width: 10vw;
+    width: 12vw;
     padding-top: 2vh;
     padding-bottom: 2vh;
     border-radius: 0;
     border: 0px;
     border-bottom: 1px solid black;
 }
-.mini button {
-    width: 2vw;
+.minia button {
+    width: 4vw;
+    height: 7vh;
+}
+.minib button {
+    width: 3vw;
     height: 7vh;
 }
 button:hover {
