@@ -49,6 +49,7 @@ creators.push(function() {
     var weather = new Widget();
     weather.build = function() {
         var head = document.createElement("h1");
+        head.id = this.id;
         head.style.textAlign = "center";
         try {
             head.innerHTML = weatherdbi["currentConditions"]["comment"];
@@ -440,6 +441,7 @@ creators.push(function() {
             var base = document.createElement("div");
             base.style.textAlign = "center";
             var head = document.createElement("img");
+            head.id = this.id;
             head.style.width = "auto";
             head.style.height = "100%";
             head.style.verticalAlign = "middle";
@@ -467,6 +469,7 @@ creators.push(function() {
     var weather = new Widget();
     weather.build = function() {
         var head = document.createElement("p");
+        head.id = this.id;
         head.style.whiteSpace = "pre";
         head.style.padding = "5px";
         head.style.textAlign = "right";
@@ -493,6 +496,7 @@ creators.push(function() {
     var weather = new Widget();
     weather.build = function() {
         var head = document.createElement("p");
+        head.id = this.id;
         head.style.whiteSpace = "pre";
         head.style.padding = "5px";
         head.style.textAlign = "right";
@@ -519,6 +523,7 @@ creators.push(function() {
     var weather = new Widget();
     weather.build = function() {
         var head = document.createElement("p");
+        head.id = this.id;
         head.style.whiteSpace = "pre";
         head.style.padding = "5px";
         head.style.textAlign = "right";
@@ -545,6 +550,7 @@ creators.push(function() {
     var weather = new Widget();
     weather.build = function() {
         var head = document.createElement("h1");
+        head.id = this.id;
         head.style.textAlign = "center";
         try {
             head.innerHTML = weatherdbi["currentConditions"]["precip"];
