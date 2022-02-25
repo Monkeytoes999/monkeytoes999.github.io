@@ -54,7 +54,7 @@ button:active {
     width: 100%;
     margin: 0;
     background-image:
-      repeating-linear-gradient(white 0 1px, transparent 1px 100%),
-      repeating-linear-gradient(90deg, white 0 1px, transparent 1px 100%);
+      repeating-linear-gradient(rgb(255,255,255,0.5) 0 1px, transparent 1px 100%),
+      repeating-linear-gradient(90deg, rgb(255,255,255,0.5) 0 1px, transparent 1px 100%);
     background-size: 20px 20px;
 }
