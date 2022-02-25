@@ -57,15 +57,24 @@
                 <button onclick = "mode(5)" id = "uuuor" style = "float: left;" title = "Top layer">&#8613</button>
                 <button onclick = "mode(6)" id = "dddor" title = "Bottom layer">&#8615</button>
             </div>
-            <button onclick = "drawLines()" id = "line">Grid</button>
+            <button onclick = "drawLines()" id = "line">Grid</button><br>
+            <button id = "helpBut">Help</button><br>
+            <button id = "credBut">Credits</button>
         </div>
         <div id = "lines"></div>
         <div id = "widgets">
         </div>
+        <div id = "credits" class = "modal">
+            <p>Thanks yall</p>
+        </div>
+        <div id = "help" class = "modal">
+            <p>Don't be stupid</p>
+        </div>
         <a style = "position: absolute; bottom: 5px; right: 5px; color: turquoise" href = "https://github.com/Monkeytoes999/monkeytoes999.github.io">Github Repo</a>
     </body>
     <footer>
-        <script src = "startup/sidebar.js" type = "text/javascript"></script>
+        <script src = "modals/sidebar.js" type = "text/javascript"></script>
+        <script src = "modals/modal.js" type = "text/javascript"></script>
 
         <script src = "startup/cookieStart.js" type = "text/javascript"></script>
         <script src = "startup/start.js" type = "text/javascript"></script>

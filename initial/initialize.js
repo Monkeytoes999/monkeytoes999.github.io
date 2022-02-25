@@ -5,7 +5,11 @@ var types = [];
 var positions = [];
 var sizes = [];
 if (!document.cookie.includes("types=")) {
-    document.cookie = 'ysize; types=0,4,8,9; ysize=200,100,100,100; xpos=160,500,800,180; ypos=160,240,240,240; xsize=960,280,300,300';
+    document.cookie = "types=0,4,8,9; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
+    document.cookie = "ysize=200,100,100,100; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
+    document.cookie = "xpos=160,500,800,180; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
+    document.cookie = "ypos=160,240,240,240; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
+    document.cookie = "xsize=960,280,300,300 expires=Thu, 7 Dec 2056 12:00:00 UTC;";
 }
 if (document.cookie.includes("types=")){
     cookies = document.cookie.split("; ");

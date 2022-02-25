@@ -58,3 +58,13 @@ button:active {
       repeating-linear-gradient(90deg, rgb(255,255,255,0.5) 0 1px, transparent 1px 100%);
     background-size: 20px 20px;
 }
+.modal {
+    display: none;
+    z-index: 128;
+    position: fixed;
+    top: 25vh;
+    left: 25vw;
+    height: 50vh;
+    width: 50vw;
+    background-color: white;
+}
