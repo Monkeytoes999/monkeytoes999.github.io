@@ -506,3 +506,23 @@ creators.push(function() {
     weather.update = function() {}
     return new Case(weather);
 });
+// Temperatures (K)
+creators.push(function() {
+    var weather = new Widget();
+    weather.build = function() {
+        var head = document.createElement("p");
+        head.style.whiteSpace = "pre";
+        head.style.padding = "5px";
+        head.style.textAlign = "right";
+        fetch("https://freegeoip.app/json/")
+            .then(loc => loc.json()
+            .then(l => fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+l["latitude"]+"&lon="+l["longitude"]+"&units=metric&appid=bd87d30c89b9f5d3ca4a22700b39b202")
+            .then(weather => weather.json()
+            .then(w => head.innerHTML = "<table> <tr> <td><b>Current:</b></td> <td>" + (parseInt(w["current"]["temp"])+273.15) + "K</td></tr> <tr> <td><b>Daily High:</b></td> <td>" + (parseInt(w["daily"]["0"]["temp"]["max"])+273.15) + "K</td></tr> <tr> <td><b>Daily Low:</b></td> <td>" + (parseInt(w["daily"]["0"]["temp"]["min"])+273.15) + "K</td></tr> <tr> <td><b>Morning Average:</b></td> <td>" + (parseInt(w["daily"]["0"]["temp"]["morn"])+273.15) + "K</td></tr> <tr> <td><b>Daytime Average:</b></td> <td>" + (parseInt(w["daily"]["0"]["temp"]["day"])+273.15) + "K</td></tr> <tr> <td><b>Evening Average:</b></td> <td>" + (parseInt(w["daily"]["0"]["temp"]["eve"])+273.15) + "K</td></tr> <tr> <td><b>Nighttime Average:</b></td> <td>" + (parseInt(w["daily"]["0"]["temp"]["night"])+273.15) + "K</td></tr></table>"))));
+        this.setBase(head);
+    }
+    weather.name = "Temperatures (K)";
+    weather.tag = "Weather";
+    weather.update = function() {}
+    return new Case(weather);
+});
