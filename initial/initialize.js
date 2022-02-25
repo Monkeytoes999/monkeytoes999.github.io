@@ -4,6 +4,9 @@ var globalY = 0;
 var types = [];
 var positions = [];
 var sizes = [];
+if (!document.cookie.includes("types=")) {
+    document.cookie = 'ysize; types=0,4,8,9; ysize=200,100,100,100; xpos=160,500,800,180; ypos=160,240,240,240; xsize=960,280,300,300';
+}
 if (document.cookie.includes("types=")){
     cookies = document.cookie.split("; ");
     let i = 0;
