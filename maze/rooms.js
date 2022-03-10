@@ -266,8 +266,8 @@ window.addEventListener("keyup", function(event) {
 
 function inp(){
     var act = false;
-    var i = pri.length - 1;
-    while (i >= 0 && !act) {
+    var i = 0;
+    while (i < pri.length && !act) {
         var temp = pri[i];
         if (temp == 87){
             act = true;
@@ -285,7 +285,7 @@ function inp(){
             act = true;
             mRight();
         }
-        i--
+        i++;
     }
 }
 
@@ -318,7 +318,7 @@ function tick(){
     setTimeout(() => {
         inp();
         tick();
-    }, 300);
+    }, 100);
 }
 
 createOut();
