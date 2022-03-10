@@ -1,11 +1,11 @@
 var coordsList = [];
 var Rooms = [];
-var max = 100;
+var max = 5000000;
 var n = 0;
 var rm = 0;
 var w = false;
 var down = {};
-var pri = [0];
+var pri = [];
 
 class Room {
     constructor(a = [0, 0, 0, 0], b = [0, 0]) {
@@ -207,10 +207,11 @@ function mUp(){
         if (Rooms[rm].connections[1][0]) {
             Rooms[rm].connections = Rooms[rm].connections[1];
             rm = inCoordsList([Rooms[rm].coord[0], Rooms[rm].coord[1]+1]);
-            Rooms[rm].connections = ["inUse", Rooms[rm].connections]
+            Rooms[rm].connections = ["inUse", Rooms[rm].connections];
+            return true;
         }
         createOut();
-        return true;
+        return false;
     }
     return false;
 }
@@ -220,10 +221,11 @@ function mDown(){
         if (Rooms[rm].connections[1][1]) {
             Rooms[rm].connections = Rooms[rm].connections[1];
             rm = inCoordsList([Rooms[rm].coord[0], Rooms[rm].coord[1]-1]);
-            Rooms[rm].connections = ["inUse", Rooms[rm].connections]
+            Rooms[rm].connections = ["inUse", Rooms[rm].connections];
+            return true;
         }
         createOut();
-        return true;
+        return false;
     }
     return false;
 }
@@ -233,10 +235,11 @@ function mLeft(){
         if (Rooms[rm].connections[1][2]) {
             Rooms[rm].connections = Rooms[rm].connections[1];
             rm = inCoordsList([Rooms[rm].coord[0]-1, Rooms[rm].coord[1]]);
-            Rooms[rm].connections = ["inUse", Rooms[rm].connections]
+            Rooms[rm].connections = ["inUse", Rooms[rm].connections];
+            return true;
         }
         createOut();
-        return true;
+        return false;
     }
     return false;
 }
@@ -246,10 +249,11 @@ function mRight(){
         if (Rooms[rm].connections[1][3]) {
             Rooms[rm].connections = Rooms[rm].connections[1];
             rm = inCoordsList([Rooms[rm].coord[0]+1, Rooms[rm].coord[1]]);
-            Rooms[rm].connections = ["inUse", Rooms[rm].connections]
+            Rooms[rm].connections = ["inUse", Rooms[rm].connections];
+            return true
         }
         createOut();
-        return true;
+        return false;
     }
     return false;
 }
