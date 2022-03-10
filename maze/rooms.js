@@ -4,6 +4,7 @@ var max = 10000;
 var n = 0;
 var rm = 0;
 var w = false;
+var down = {};
 
 class Room {
     constructor(a = [0, 0, 0, 0], b = [0, 0]) {
@@ -244,25 +245,32 @@ function mRight(){
     }
 }
 
-function inp(event){
+window.addEventListener("keydown", function(event) {
     let unicode = event.which;
-    switch (unicode) {
-        case 87:
-        case 38:
-            mUp();
-            break;
-        case 65:
-        case 37:
-            mLeft();
-            break;
-        case 83:
-        case 40:
-            mDown();
-            break;
-        case 68:
-        case 39:
-            mRight();
-            break;
+    if (!down[unicode]) {
+        down[unicode] = true;
+        inp();
+    }
+});
+window.addEventListener("keyup", function(event) {
+    let unicode = event.which;
+    down[unicode] = false;
+    console.log(unicode)
+});
+
+function inp(){
+    console.log("inp");
+    if (down[87] || down[38]){
+        mUp();
+    }
+    if (down[65] || down[37]) {
+        mLeft();
+    }
+    if (down[83] || down[40]) {
+        mDown();
+    }
+    if (down[68] || down[39]) {
+        mRight();
     }
 }
 
@@ -291,4 +299,12 @@ Rooms.forEach(r => {
     }
 });
 
+function tick(){
+    setTimeout(() => {
+        inp();
+        tick();
+    }, 150);
+}
+
 createOut();
+tick();
