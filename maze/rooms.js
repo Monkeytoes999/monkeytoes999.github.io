@@ -208,6 +208,7 @@ function mUp(){
             Rooms[rm].connections = Rooms[rm].connections[1];
             rm = inCoordsList([Rooms[rm].coord[0], Rooms[rm].coord[1]+1]);
             Rooms[rm].connections = ["inUse", Rooms[rm].connections];
+            createOut();
             return true;
         }
         createOut();
@@ -222,6 +223,7 @@ function mDown(){
             Rooms[rm].connections = Rooms[rm].connections[1];
             rm = inCoordsList([Rooms[rm].coord[0], Rooms[rm].coord[1]-1]);
             Rooms[rm].connections = ["inUse", Rooms[rm].connections];
+            createOut();
             return true;
         }
         createOut();
@@ -236,6 +238,7 @@ function mLeft(){
             Rooms[rm].connections = Rooms[rm].connections[1];
             rm = inCoordsList([Rooms[rm].coord[0]-1, Rooms[rm].coord[1]]);
             Rooms[rm].connections = ["inUse", Rooms[rm].connections];
+            createOut();
             return true;
         }
         createOut();
@@ -250,6 +253,7 @@ function mRight(){
             Rooms[rm].connections = Rooms[rm].connections[1];
             rm = inCoordsList([Rooms[rm].coord[0]+1, Rooms[rm].coord[1]]);
             Rooms[rm].connections = ["inUse", Rooms[rm].connections];
+            createOut();
             return true
         }
         createOut();
