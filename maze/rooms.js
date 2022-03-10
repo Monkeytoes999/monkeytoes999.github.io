@@ -1,10 +1,11 @@
 var coordsList = [];
 var Rooms = [];
-var max = 10000;
+var max = 100;
 var n = 0;
 var rm = 0;
 var w = false;
 var down = {};
+var pri = [0];
 
 class Room {
     constructor(a = [0, 0, 0, 0], b = [0, 0]) {
@@ -249,28 +250,42 @@ window.addEventListener("keydown", function(event) {
     let unicode = event.which;
     if (!down[unicode]) {
         down[unicode] = true;
+        pri.push(unicode);
         inp();
     }
 });
 window.addEventListener("keyup", function(event) {
     let unicode = event.which;
     down[unicode] = false;
-    console.log(unicode)
+    for (let i = pri.length; i >= 0; i--) {
+        if (pri[i] == unicode) {
+            pri.splice(i,1);
+        }
+    }
 });
 
 function inp(){
-    console.log("inp");
-    if (down[87] || down[38]){
-        mUp();
-    }
-    if (down[65] || down[37]) {
-        mLeft();
-    }
-    if (down[83] || down[40]) {
-        mDown();
-    }
-    if (down[68] || down[39]) {
-        mRight();
+    var act = false;
+    var i = pri.length - 1;
+    while (i >= 0 && !act) {
+        var temp = pri[i];
+        if (temp == 87){
+            act = true;
+            mUp();
+        }
+        if (temp == 65) {
+            act = true;
+            mLeft();
+        }
+        if (temp == 83) {
+            act = true;
+            mDown();
+        }
+        if (temp == 68) {
+            act = true;
+            mRight();
+        }
+        i--
     }
 }
 
