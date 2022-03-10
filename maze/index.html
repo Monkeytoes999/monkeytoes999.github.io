@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html onkeydown="inp(event)">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:site_name" content="Maze">
+
+        <link rel = "stylesheet" type = "text/css" href = "format.css"/>
+        <title>Maze</title>
+    </head>
+    <body>
+        <div id = "Title">
+            <h1>Maze Page</h1>
+            <h1 id = "Win"></h1>
+        </div>
+        <div id = "Content">
+            <p id = "Large" class="maze" style="white-space: pre; padding: 5px; text-align: left;"></p>
+            <p id = "Room" class="maze" style="white-space: pre; padding: 5px; text-align: left;"></p>
+        </div>
+        <a download="maze.txt" id="downloadlink" style="display: none">Download</a>
+    </body>
+    <footer>
+        <script src = "rooms.js" type = "text/javascript"></script>
+    </footer>
+</html>

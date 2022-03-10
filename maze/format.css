@@ -1,0 +1,8 @@
+.maze {
+    user-select: none;
+    -webkit-user-select: none; /*Safari*/
+    -moz-user-select: none; /*Firefox*/
+    font-size: 12px !important;
+    font-family: "monospace";
+    line-height: 1;
+}
