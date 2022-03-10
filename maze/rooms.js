@@ -210,7 +210,9 @@ function mUp(){
             Rooms[rm].connections = ["inUse", Rooms[rm].connections]
         }
         createOut();
+        return true;
     }
+    return false;
 }
 
 function mDown(){
@@ -221,7 +223,9 @@ function mDown(){
             Rooms[rm].connections = ["inUse", Rooms[rm].connections]
         }
         createOut();
+        return true;
     }
+    return false;
 }
 
 function mLeft(){
@@ -232,7 +236,9 @@ function mLeft(){
             Rooms[rm].connections = ["inUse", Rooms[rm].connections]
         }
         createOut();
+        return true;
     }
+    return false;
 }
 
 function mRight(){
@@ -243,7 +249,9 @@ function mRight(){
             Rooms[rm].connections = ["inUse", Rooms[rm].connections]
         }
         createOut();
+        return true;
     }
+    return false;
 }
 
 window.addEventListener("keydown", function(event) {
@@ -270,20 +278,16 @@ function inp(){
     while (i < pri.length && !act) {
         var temp = pri[i];
         if (temp == 87){
-            act = true;
-            mUp();
+            act = mUp();
         }
         if (temp == 65) {
-            act = true;
-            mLeft();
+            act = mLeft();
         }
         if (temp == 83) {
-            act = true;
-            mDown();
+            act = mDown();
         }
         if (temp == 68) {
-            act = true;
-            mRight();
+            act = mRight();
         }
         i++;
     }
