@@ -303,7 +303,7 @@ function tick(){
     setTimeout(() => {
         inp();
         tick();
-    }, 150);
+    }, 300);
 }
 
 createOut();
