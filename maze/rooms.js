@@ -1,6 +1,6 @@
 var coordsList = [];
 var Rooms = [];
-var max = 5000000;
+var max = 100;
 var n = 0;
 var rm = 0;
 var w = false;
