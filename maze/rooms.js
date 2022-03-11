@@ -6,8 +6,9 @@ var rm = 0;
 var w = false;
 var down = {};
 var pri = [];
-var xMax = 45; //Half true size
-var yMax = 30;
+var xMax = 15; //Half true size
+var yMax = 15;
+var toBuild = [];
 class Room {
     constructor(a = [0, 0, 0, 0], b = [0, 0]) {
         this.connections = a;
@@ -60,7 +61,7 @@ class BoxRoom {
     }
 
     define(){
-        while (n < 3100 && ((inCoordsList([this.coord[0], this.coord[1]+1]) == -1 && this.coord[1] < yMax) || (inCoordsList([this.coord[0], this.coord[1]-1]) == -1 && this.coord[1] > -yMax) || (inCoordsList([this.coord[0]-1, this.coord[1]]) == -1 && this.coord[0] > -xMax) || (inCoordsList([this.coord[0]+1, this.coord[1]]) == -1 && this.coord[0] < xMax))){
+        while (n < 2500 && ((inCoordsList([this.coord[0], this.coord[1]+1]) == -1 && this.coord[1] < yMax) || (inCoordsList([this.coord[0], this.coord[1]-1]) == -1 && this.coord[1] > -yMax) || (inCoordsList([this.coord[0]-1, this.coord[1]]) == -1 && this.coord[0] > -xMax) || (inCoordsList([this.coord[0]+1, this.coord[1]]) == -1 && this.coord[0] < xMax))){
             let dir = Math.floor(Math.random()*4);
             if (dir == 0){
                 if (this.coord[1] < yMax & inCoordsList([this.coord[0], this.coord[1]+1]) == -1 & this.connections[0] != 1){
@@ -90,6 +91,9 @@ class BoxRoom {
                     new BoxRoom([0, 0, 1, 0], [this.coord[0]+1, this.coord[1]]);
                 }
             }
+        }
+        if (n >= 2500) {
+            toBuild.push(this);
         }
         n--;
     }
@@ -185,6 +189,13 @@ function redefine(){
     Rooms[0].define();
     Rooms.sort(roomSort);
     coordsList.sort(coordSort);
+}
+
+function boxRedefine(){
+    if (toBuild[0]) {
+        toBuild[0].define();
+        toBuild.shift();
+    }
 }
 
 function createOut(){
@@ -370,11 +381,14 @@ function tree(){
 
 function box(){
     test = new BoxRoom();
+    while (Rooms.length < (xMax+1/2)*4*(yMax+1/2)){
+        boxRedefine();
+    }
     coordsList.sort(coordSort);
     Rooms.sort(roomSort);
 }
 
-tree();
+box();
 
 rm = Math.floor(Math.random()*Rooms.length);
 Rooms[rm].connections = ['inUse',Rooms[rm].connections]
