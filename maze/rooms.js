@@ -1,12 +1,13 @@
 var coordsList = [];
 var Rooms = [];
-var max = 100;
+var max = 1000;
 var n = 0;
 var rm = 0;
 var w = false;
 var down = {};
 var pri = [];
-
+var xMax = 45; //Half true size
+var yMax = 30;
 class Room {
     constructor(a = [0, 0, 0, 0], b = [0, 0]) {
         this.connections = a;
@@ -47,48 +48,93 @@ class Room {
         }
         n--;
     }
+}
 
-    getShape(){
-        let shape = "X"
-        if (shapeConnectionCheck(this.connections, [1,1,1,1])) {
-            shape = "╋"
-        } else if  (shapeConnectionCheck(this.connections, [1,1,1,0])) {
-            shape = "┫"
-        } else if  (shapeConnectionCheck(this.connections, [1,1,0,1])) {
-            shape = "┣"
-        } else if  (shapeConnectionCheck(this.connections, [1,1,0,0])) {
-            shape = "┃"
-        } else if  (shapeConnectionCheck(this.connections, [1,0,1,1])) {
-            shape = "┻"
-        } else if  (shapeConnectionCheck(this.connections, [1,0,0,1])) {
-            shape = "┗"
-        } else if  (shapeConnectionCheck(this.connections, [1,0,1,0])) {
-            shape = "┛"
-        } else if  (shapeConnectionCheck(this.connections, [1,0,0,0])) {
-            shape = "╹"
-        } else if  (shapeConnectionCheck(this.connections, [0,1,1,1])) {
-            shape = "┳"
-        } else if  (shapeConnectionCheck(this.connections, [0,1,1,0])) {
-            shape = "┓"
-        } else if  (shapeConnectionCheck(this.connections, [0,1,0,1])) {
-            shape = "┏"
-        } else if  (shapeConnectionCheck(this.connections, [0,1,0,0])) {
-            shape = "╻"
-        } else if  (shapeConnectionCheck(this.connections, [0,0,1,1])) {
-            shape = "━"
-        } else if  (shapeConnectionCheck(this.connections, [0,0,1,0])) {
-            shape = "╸"
-        } else if  (shapeConnectionCheck(this.connections, [0,0,0,1])) {
-            shape = "╺"
-        } else if (this.connections[0] == "inUse"){
-            shape = "X "
-        } else if (this.connections[0] == "goal"){
-            shape = "O "
-        }
-        return shape
+class BoxRoom {
+    constructor(a = [0, 0, 0, 0], b = [0, 0]) {
+        this.connections = a;
+        this.coord = b;
+        Rooms.push(this);
+        coordsList.push(b);
+        this.define();
     }
 
+    define(){
+        while (n < 3100 && ((inCoordsList([this.coord[0], this.coord[1]+1]) == -1 && this.coord[1] < yMax) || (inCoordsList([this.coord[0], this.coord[1]-1]) == -1 && this.coord[1] > -yMax) || (inCoordsList([this.coord[0]-1, this.coord[1]]) == -1 && this.coord[0] > -xMax) || (inCoordsList([this.coord[0]+1, this.coord[1]]) == -1 && this.coord[0] < xMax))){
+            let dir = Math.floor(Math.random()*4);
+            if (dir == 0){
+                if (this.coord[1] < yMax & inCoordsList([this.coord[0], this.coord[1]+1]) == -1 & this.connections[0] != 1){
+                    this.connections[0] = 1;
+                    n++;
+                    new BoxRoom([0, 1, 0, 0], [this.coord[0], this.coord[1]+1]);
+                }
+            }
+            if (dir == 1){
+                if (this.coord[1] > -yMax & inCoordsList([this.coord[0], this.coord[1]-1]) == -1 & this.connections[1] != 1){
+                    this.connections[1] = 1;
+                    n++;
+                    new BoxRoom([1, 0, 0, 0], [this.coord[0], this.coord[1]-1]);
+                }
+            }
+            if (dir == 2){
+                if (this.coord[0] > -xMax & inCoordsList([this.coord[0]-1, this.coord[1]]) == -1 & this.connections[2] != 1){
+                    this.connections[2] = 1;
+                    n++;
+                    new BoxRoom([0, 0, 0, 1], [this.coord[0]-1, this.coord[1]]);
+                }
+            }
+            if (dir == 3){
+                if (this.coord[0] < xMax & inCoordsList([this.coord[0]+1, this.coord[1]]) == -1 & this.connections[3] != 1){
+                    this.connections[3] = 1;
+                    n++;
+                    new BoxRoom([0, 0, 1, 0], [this.coord[0]+1, this.coord[1]]);
+                }
+            }
+        }
+        n--;
+    }
 }
+
+function getShape(shr){
+    let shape = "X"
+    if (shapeConnectionCheck(shr.connections, [1,1,1,1])) {
+        shape = "╋"
+    } else if  (shapeConnectionCheck(shr.connections, [1,1,1,0])) {
+        shape = "┫"
+    } else if  (shapeConnectionCheck(shr.connections, [1,1,0,1])) {
+        shape = "┣"
+    } else if  (shapeConnectionCheck(shr.connections, [1,1,0,0])) {
+        shape = "┃"
+    } else if  (shapeConnectionCheck(shr.connections, [1,0,1,1])) {
+        shape = "┻"
+    } else if  (shapeConnectionCheck(shr.connections, [1,0,0,1])) {
+        shape = "┗"
+    } else if  (shapeConnectionCheck(shr.connections, [1,0,1,0])) {
+        shape = "┛"
+    } else if  (shapeConnectionCheck(shr.connections, [1,0,0,0])) {
+        shape = "╹"
+    } else if  (shapeConnectionCheck(shr.connections, [0,1,1,1])) {
+        shape = "┳"
+    } else if  (shapeConnectionCheck(shr.connections, [0,1,1,0])) {
+        shape = "┓"
+    } else if  (shapeConnectionCheck(shr.connections, [0,1,0,1])) {
+        shape = "┏"
+    } else if  (shapeConnectionCheck(shr.connections, [0,1,0,0])) {
+        shape = "╻"
+    } else if  (shapeConnectionCheck(shr.connections, [0,0,1,1])) {
+        shape = "━"
+    } else if  (shapeConnectionCheck(shr.connections, [0,0,1,0])) {
+        shape = "╸"
+    } else if  (shapeConnectionCheck(shr.connections, [0,0,0,1])) {
+        shape = "╺"
+    } else if (shr.connections[0] == "inUse"){
+        shape = "X "
+    } else if (shr.connections[0] == "goal"){
+        shape = "O "
+    }
+    return shape
+}
+
 
 function shapeConnectionCheck(a,o){
     if (a[0]==o[0] & a[1] == o[1] & a[2] == o[2] & a[3] == o[3]){
@@ -156,7 +202,7 @@ function createOut(){
         for (let i = r.coord[0]-lastc; i>1; i--){
             out = out + "    ";
         }
-        out = out + r.getShape();
+        out = out + getShape(r);
         lastr = r.coord[1];
         lastc = r.coord[0];
     });
@@ -306,13 +352,31 @@ function win(){
     w = true;
 }
 
-test = new Room();
-Rooms.sort(roomSort);
-coordsList.sort(coordSort);
-while(Rooms.length < max){
-    redefine();
+function tick(){
+    setTimeout(() => {
+        inp();
+        tick();
+    }, 100);
 }
 
+function tree(){
+    test = new Room();
+    coordsList.sort(coordSort);
+    Rooms.sort(roomSort);
+    while(Rooms.length < max){
+        redefine();
+    }
+}
+
+function box(){
+    test = new BoxRoom();
+    coordsList.sort(coordSort);
+    Rooms.sort(roomSort);
+}
+
+tree();
+
+rm = Math.floor(Math.random()*Rooms.length);
 Rooms[rm].connections = ['inUse',Rooms[rm].connections]
 gl = rm;
 while (gl == rm) {
@@ -325,13 +389,6 @@ Rooms.forEach(r => {
         xmin = r.coord[0];
     }
 });
-
-function tick(){
-    setTimeout(() => {
-        inp();
-        tick();
-    }, 100);
-}
 
 createOut();
 tick();
