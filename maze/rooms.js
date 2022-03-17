@@ -414,7 +414,18 @@ function boxOff(){
 }
 
 function refresh() {
-    window.location = window.location.href;
+    document.getElementById("WinUI").hidden = true;
+    document.getElementById("Large").innerHTML = "";
+    document.getElementById("Room").innerHTML = "";
+    document.getElementById("UI").hidden = false;
+    coordsList = [];
+    Rooms = [];
+    n = 0;
+    rm = 0;
+    w = false;
+    down = {};
+    pri = [];
+    toBuild = [];
 }
 
 function reset() {
