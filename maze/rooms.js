@@ -1,18 +1,19 @@
 var coordsList = [];
 var Rooms = [];
-var max = 1000;
+var max = 5000;
 var n = 0;
 var rm = 0;
 var w = false;
 var down = {};
 var pri = [];
-var xMax = 15; //Half true size
-var yMax = 15;
+var xMax = 5; //Half true size
+var yMax = 5;
 var toBuild = [];
 class Room {
     constructor(a = [0, 0, 0, 0], b = [0, 0]) {
         this.connections = a;
         this.coord = b;
+        this.hit = false;
         Rooms.push(this);
         coordsList.push(b);
         this.define();
@@ -47,6 +48,9 @@ class Room {
                 new Room([0, 0, 1, 0], [this.coord[0]+1, this.coord[1]]);
             }
         }
+        if (n >= 5000){
+            toBuild.push[this];
+        }
         n--;
     }
 }
@@ -61,7 +65,7 @@ class BoxRoom {
     }
 
     define(){
-        while (n < 2500 && ((inCoordsList([this.coord[0], this.coord[1]+1]) == -1 && this.coord[1] < yMax) || (inCoordsList([this.coord[0], this.coord[1]-1]) == -1 && this.coord[1] > -yMax) || (inCoordsList([this.coord[0]-1, this.coord[1]]) == -1 && this.coord[0] > -xMax) || (inCoordsList([this.coord[0]+1, this.coord[1]]) == -1 && this.coord[0] < xMax))){
+        while (Rooms.length < max & n < 2500 && ((inCoordsList([this.coord[0], this.coord[1]+1]) == -1 && this.coord[1] < yMax) || (inCoordsList([this.coord[0], this.coord[1]-1]) == -1 && this.coord[1] > -yMax) || (inCoordsList([this.coord[0]-1, this.coord[1]]) == -1 && this.coord[0] > -xMax) || (inCoordsList([this.coord[0]+1, this.coord[1]]) == -1 && this.coord[0] < xMax))){
             let dir = Math.floor(Math.random()*4);
             if (dir == 0){
                 if (this.coord[1] < yMax & inCoordsList([this.coord[0], this.coord[1]+1]) == -1 & this.connections[0] != 1){
@@ -135,6 +139,9 @@ function getShape(shr){
         shape = "X "
     } else if (shr.connections[0] == "goal"){
         shape = "O "
+    }
+    if (shr.hit & shape != "X "){
+        shape = "<hit>" + shape + "</hit>";
     }
     return shape
 }
@@ -265,6 +272,7 @@ function mUp(){
             Rooms[rm].connections = Rooms[rm].connections[1];
             rm = inCoordsList([Rooms[rm].coord[0], Rooms[rm].coord[1]+1]);
             Rooms[rm].connections = ["inUse", Rooms[rm].connections];
+            Rooms[rm].hit = true;
             createOut();
             return true;
         }
@@ -280,6 +288,7 @@ function mDown(){
             Rooms[rm].connections = Rooms[rm].connections[1];
             rm = inCoordsList([Rooms[rm].coord[0], Rooms[rm].coord[1]-1]);
             Rooms[rm].connections = ["inUse", Rooms[rm].connections];
+            Rooms[rm].hit = true;
             createOut();
             return true;
         }
@@ -295,6 +304,7 @@ function mLeft(){
             Rooms[rm].connections = Rooms[rm].connections[1];
             rm = inCoordsList([Rooms[rm].coord[0]-1, Rooms[rm].coord[1]]);
             Rooms[rm].connections = ["inUse", Rooms[rm].connections];
+            Rooms[rm].hit = true;
             createOut();
             return true;
         }
@@ -310,6 +320,7 @@ function mRight(){
             Rooms[rm].connections = Rooms[rm].connections[1];
             rm = inCoordsList([Rooms[rm].coord[0]+1, Rooms[rm].coord[1]]);
             Rooms[rm].connections = ["inUse", Rooms[rm].connections];
+            Rooms[rm].hit = true;
             createOut();
             return true
         }
@@ -381,28 +392,58 @@ function tree(){
 
 function box(){
     test = new BoxRoom();
-    while (Rooms.length < (xMax+1/2)*4*(yMax+1/2)){
+    while (Rooms.length < max & Rooms.length < (xMax+1/2)*4*(yMax+1/2)){
         boxRedefine();
     }
     coordsList.sort(coordSort);
     Rooms.sort(roomSort);
 }
 
-box();
-
-rm = Math.floor(Math.random()*Rooms.length);
-Rooms[rm].connections = ['inUse',Rooms[rm].connections]
-gl = rm;
-while (gl == rm) {
-    gl = Math.floor(Math.random()*Rooms.length);
+function boxOn(){
+    document.getElementById("boxUI").hidden = false;
 }
-Rooms[gl].connections = ["goal", Rooms[gl].connections]
-let xmin = 0
-Rooms.forEach(r => {
-    if (r.coord[0] < xmin){
-        xmin = r.coord[0];
-    }
-});
 
-createOut();
-tick();
+function boxOff(){
+    document.getElementById("boxUI").hidden = true;
+}
+
+function generate() {
+    if (document.getElementById("size").value < document.getElementById("size").min) {
+        document.getElementById("size").value = document.getElementById("size").min;
+    } else if (document.getElementById("size").value > document.getElementById("size").max) {
+        document.getElementById("size").value = document.getElementById("size").max;
+    }
+    max = parseInt(document.getElementById("size").value);
+    if (document.getElementById("Tree").checked){
+        tree();
+    } else {
+       // if (box.getElementById("xsize").value * box.getElementById.value * 4 < max){
+            //document.getElementById("xsize").value = Math.floor(Math.sqrt(max)/2);
+            //document.getElementById("ysize").value = Math.floor(Math.sqrt(max)/2);
+       // }
+        xMax = parseInt(document.getElementById("xsize").value);
+        yMax = parseInt(document.getElementById("ysize").value);
+        if (max > (xMax+.5)*(yMax+.5)*4){
+            max = (xMax+.5)*(yMax+.5)*4;
+        }
+        box();
+    }
+    document.getElementById("UI").hidden = true;
+    rm = Math.floor(Math.random()*Rooms.length);
+    Rooms[rm].connections = ['inUse',Rooms[rm].connections]
+    Rooms[rm].hit = true;
+    gl = rm;
+    while (gl == rm) {
+        gl = Math.floor(Math.random()*Rooms.length);
+    }
+    Rooms[gl].connections = ["goal", Rooms[gl].connections]
+    xmin = 0
+    Rooms.forEach(r => {
+        if (r.coord[0] < xmin){
+            xmin = r.coord[0];
+        }
+    });
+
+    createOut();
+    tick();
+}

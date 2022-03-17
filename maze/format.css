@@ -6,3 +6,11 @@
     font-family: "monospace";
     line-height: 1;
 }
+
+.maze hit {
+    color: #ffa500
+}
+
+input[type=radio] {
+    display: inline;
+}
