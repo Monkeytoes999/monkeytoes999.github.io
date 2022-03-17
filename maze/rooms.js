@@ -9,6 +9,7 @@ var pri = [];
 var xMax = 5; //Half true size
 var yMax = 5;
 var toBuild = [];
+var color = "#ffa500";
 class Room {
     constructor(a = [0, 0, 0, 0], b = [0, 0]) {
         this.connections = a;
@@ -141,7 +142,7 @@ function getShape(shr){
         shape = "O "
     }
     if (shr.hit & shape != "X "){
-        shape = "<hit>" + shape + "</hit>";
+        shape = "<span style='color:"+color+"'>" + shape + "</span>";
     }
     return shape
 }
@@ -367,17 +368,22 @@ function inp(){
         }
         i++;
     }
+    if (act){
+        document.getElementById("help").hidden = true;
+    }
 }
 
 function win(){
-    document.getElementById("Win").innerHTML = "You Win!"
+    document.getElementById("WinUI").hidden = false;
     w = true;
 }
 
 function tick(){
     setTimeout(() => {
         inp();
-        tick();
+        if (!w) {
+            tick();
+        }
     }, 100);
 }
 
@@ -407,7 +413,26 @@ function boxOff(){
     document.getElementById("boxUI").hidden = true;
 }
 
+function refresh() {
+    window.location = window.location.href;
+}
+
+function reset() {
+    document.getElementById("WinUI").hidden = true;
+    coordsList = [];
+    Rooms = [];
+    n = 0;
+    rm = 0;
+    w = false;
+    down = {};
+    pri = [];
+    toBuild = [];
+    generate()
+}
+
 function generate() {
+    color = document.getElementById("color").value
+    document.getElementById("help").hidden = false;
     if (document.getElementById("size").value < document.getElementById("size").min) {
         document.getElementById("size").value = document.getElementById("size").min;
     } else if (document.getElementById("size").value > document.getElementById("size").max) {

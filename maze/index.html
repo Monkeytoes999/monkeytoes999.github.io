@@ -11,7 +11,13 @@
     <body>
         <div id = "Title">
             <h1>Maze Page</h1>
-            <h1 id = "Win"></h1>
+            <small id="help" hidden>WASD to move</small>
+            <div id = "WinUI" hidden>
+                <h1 id = "Win">You Win!</h1>
+                <p>Play again?</p>
+                <input id = "winSame" type="submit" onclick="reset()" value="Similar Maze">
+                <input id = "winNew" type="submit" onclick="refresh()" value="New Parameters">
+            </div>
         </div>
         <div id = "UI">
             <p>Select the maze type:</p>
@@ -20,7 +26,7 @@
             <input type="radio" id="Box" name="maze_type" value="Box" onclick="boxOn()">
             <label for="Box">Box</label><br><br>
             <p>Input your maze length: (2-500000)</p>
-            <input type="number" id="size" name="size" value="5000" min="2" max="500000"><br>
+            <input type="number" id="size" name="size" value="500" min="2" max="500000"><br>
             <div id = "boxUI" hidden>
                 <br><p>Input the dimensions of the box:</p>
                 <label for="xsize">X Max</label>
@@ -28,6 +34,8 @@
                 <label for="ysize">Y Max</label>
                 <input type="number" id="ysize" name="ysize" value="35" min="1"><br>
             </div>
+            <br><p>Pick your trail color:</p>
+            <input id="color" type="color" value="#ffa500"><br>
             <br><input type="submit" onclick="generate()">
         </div>
         <div id = "Content">
