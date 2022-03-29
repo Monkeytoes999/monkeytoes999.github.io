@@ -444,9 +444,9 @@ function reset() {
 function generate() {
     color = document.getElementById("color").value
     document.getElementById("help").hidden = false;
-    if (document.getElementById("size").value < document.getElementById("size").min) {
+    if (parseInt(document.getElementById("size").value) < parseInt(document.getElementById("size").min)) {
         document.getElementById("size").value = document.getElementById("size").min;
-    } else if (document.getElementById("size").value > document.getElementById("size").max) {
+    } else if (parseInt(document.getElementById("size").value) > parseInt(document.getElementById("size").max)) {
         document.getElementById("size").value = document.getElementById("size").max;
     }
     max = parseInt(document.getElementById("size").value);
