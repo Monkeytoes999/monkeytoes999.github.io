@@ -1,5 +1,5 @@
 function weatherAPIs() {
-    fetch("https://freegeoip.app/json/")
+    fetch("https://api.ipbase.com/v1/json/")
     .then(loc => loc.json()
         .then(l => {
             fetch("https://weatherdbi.herokuapp.com/data/weather/"+l["city"])
