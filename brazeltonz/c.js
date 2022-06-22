@@ -15,7 +15,7 @@ function clickBody() {
 function success() {
     document.cookie = "login=jeff;";
     setTimeout(() => {
-        window.location.href = "/ber/lon/i/terl"
+        window.location.href = "monkeytoes999.github.io/brazeltonz/ber/lon/i/terl"
     }, 500);
 }
 
