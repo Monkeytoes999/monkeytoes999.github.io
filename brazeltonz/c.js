@@ -9,13 +9,13 @@ if (document.cookie.includes("login=")) {
 }
 
 function clickBody() {
-    window.location.href = "https://monkeytoes999.github.io/brazeltonz/";
+    window.location.href = "/brazeltonz/";
 }
 
 function success() {
     document.cookie = "login=jeff;";
     setTimeout(() => {
-        window.location.href = "https://monkeytoes999.github.io/brazeltonz/ber/lon/i/terl"
+        window.location.href = "ber/lon/i/terl"
     }, 500);
 }
 
