@@ -1,6 +1,5 @@
 function clickBody() {
-    window.location.href = "index.html";
-    console.log('Page clicked')
+    window.location.href = "monkeytoes999.github.io/brazeltonz/";
 }
 
 function success() {
