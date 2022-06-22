@@ -3,7 +3,7 @@ function clickBody() {
 }
 
 function success() {
-    document.cookie = "login=jeff; expires=Thu, 7 Dec 2017 12:00:00 UTC;";
+    document.cookie = "login=jeff;";
 }
 
 function buttonClick() {
