@@ -3,7 +3,7 @@ if (document.cookie.includes("login=")) {
     let i = 0;
     for (i = 0; !cookies[i].includes("login="); i++);
     la = cookies[i].substring(6)
-    if (la = "kriffen"){
+    if (la == "kriffen"){
         success();
     }
 }
