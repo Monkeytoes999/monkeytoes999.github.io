@@ -19,7 +19,7 @@
         </div>
     </body>
     <div class="login-form">
-        <form>
+        <form action="javascript:void(0);">
             <h1 style="text-align:center">Login</h1>
             <div class="content">
                 <div class="input-field">
@@ -32,9 +32,11 @@
             </div>
             <div class="action">
                 <button onclick="buttonClick()">Sign in</button>
-                <button>Register</button>
+                <button onclick="registerButton()">Register</button>
             </div>
         </form>
+        <small id ="incorrect" style="background-color:#F7EF99; text-align: center; color:red" hidden=true>Invalid email or password.</small>
+        <small id ="registerFail" style="background-color:#F7EF99; text-align: center; color:red" hidden=true>We cannot take new users at this time.</small> 
     </div>
     <footer">
         <p class="footer" style="position: fixed; width: 100%; padding:15px; font-size: small; background-color: #7CC6FE;">Brazeltonz's Secure Banking, N.A. ©2022 Brazeltonz's Corporation. Updated 06/2022 | <a href="/brazeltonz/info">link</a></p>

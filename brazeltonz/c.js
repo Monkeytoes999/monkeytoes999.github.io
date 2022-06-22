@@ -1,22 +1,16 @@
-if (document.cookie.includes("login=")) {
-    cookies = document.cookie.split("; ");
-    let i = 0;
-    for (i = 0; !cookies[i].includes("login="); i++);
-    la = cookies[i].substring(6)
-    if (la == "kriffen"){
-        success();
-    }
-}
-
 function clickBody() {
     window.location.href = "/brazeltonz/";
 }
 
 function success() {
-    document.cookie = "login=jeff;";
     setTimeout(() => {
         window.location.href = "ber/lon/i/terl"
     }, 500);
+}
+
+function failure() {
+    document.getElementById("registerFail").hidden = true;
+    document.getElementById("incorrect").hidden = false;
 }
 
 function buttonClick() {
@@ -24,9 +18,18 @@ function buttonClick() {
     const p = document.getElementById("pass")
     if (e.value == "kriffen@gmail.com"){
         if (p.value == "L38Snen#$s#ms@ldEan#lwkEmA39fj@mFFe#1"){
-            document.cookie = "login=kriffen; expires=Thu, 7 Dec 2056 12:00:00 UTC;"
+            success();
+        } else {
+            failure();
         }
-    } 
+    } else {
+        failure();
+    }
+}
+
+function registerButton(){
+    document.getElementById("incorrect").hidden = true;
+    document.getElementById("registerFail").hidden = false;
 }
 
 function resetPassword() {
