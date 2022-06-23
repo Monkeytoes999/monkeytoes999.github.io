@@ -1,5 +1,4 @@
 .login-form {
-  background: #fff;
   width: 500px;
   margin: 65px auto;
   display: -webkit-box;
@@ -8,7 +7,6 @@
   -webkit-box-direction: normal;
           flex-direction: column;
   border-radius: 4px;
-  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
 }
 .login-form h1 {
   padding: 35px 35px 0 35px;
