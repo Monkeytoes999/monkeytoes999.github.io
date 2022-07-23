@@ -10,6 +10,7 @@ var xMax = 5; //Half true size
 var yMax = 5;
 var toBuild = [];
 var color = "#ffa500";
+var blind = true;
 class Room {
     constructor(a = [0, 0, 0, 0], b = [0, 0]) {
         this.connections = a;
@@ -143,6 +144,8 @@ function getShape(shr){
     }
     if (shr.hit & shape != "X "){
         shape = "<span style='color:"+color+"'>" + shape + "</span>";
+    } else if (!shape.hit & blind & shape != "X " & shape != "O ") {
+        shape = "<span style='color:white'>" + shape + "</span>";
     }
     return shape
 }
@@ -227,7 +230,13 @@ function createOut(){
     });
     document.getElementById("Large").innerHTML = out
     largeRoom()
-    if (rm == gl) win();
+    if (rm == gl) {
+        win();
+        if (blind) {
+            blind = false;
+            createOut();
+        }
+    }
     return(out);
 }
 
@@ -479,7 +488,7 @@ function generate() {
             xmin = r.coord[0];
         }
     });
-
+    blind = document.getElementById("Blind").checked;
     createOut();
     tick();
 }
