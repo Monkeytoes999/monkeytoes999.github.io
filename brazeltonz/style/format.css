@@ -9,6 +9,11 @@
     word-wrap: break-word;
 }
 
+.transactions {
+            display: flex;
+            flex-direction: row-reverse;  
+}
+
 .footer {
     clear: both;
     border: 1px;
