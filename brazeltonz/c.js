@@ -1,3 +1,5 @@
+var login = require('./eggwhites.json');
+
 function clickBody() {
     window.location.href = "/brazeltonz/";
 }
@@ -16,8 +18,8 @@ function failure() {
 function buttonClick() {
     const e = document.getElementById("email")
     const p = document.getElementById("pass")
-    if (e.value == "kriffen@gmail.com"){
-        if (p.value == "L38Snen#$s#ms@ldEan#lwkEmA39fj@mFFe#1"){
+    if (e.value == login["email"]){
+        if (p.value == login["password"]){
             success();
         } else {
             failure();
