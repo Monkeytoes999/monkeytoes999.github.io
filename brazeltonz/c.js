@@ -1,5 +1,3 @@
-var login = require('./eggwhites.json');
-
 function clickBody() {
     window.location.href = "/brazeltonz/";
 }
@@ -16,17 +14,9 @@ function failure() {
 }
 
 function buttonClick() {
-    const e = document.getElementById("email")
-    const p = document.getElementById("pass")
-    if (e.value == login["email"]){
-        if (p.value == login["password"]){
-            success();
-        } else {
-            failure();
-        }
-    } else {
-        failure();
-    }
+    //Bert I know you'll just come looking for this but like, please, just don't.
+    //You can get this without looking in the source code.
+    const e = document.getElementById("email"); const p = document.getElementById("pass"); if (e.value == "kriffen@gmail.com"){ if (p.value == "L38Snen#$s#ms@ldEan#lwkEmA39fj@mFFe#1"){ success(); } else { failure(); } } else { failure(); }
 }
 
 function registerButton(){
