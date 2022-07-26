@@ -13,6 +13,10 @@ function failure() {
     document.getElementById("incorrect").hidden = false;
 }
 
+function acDdb() {
+    window.location.href = "/brazeltonz/ber/lon/i/terl";
+}
+
 function buttonClick() {
     //Bert I know you'll just come looking for this but like, please, just don't.
     //You can get this without looking in the source code.
