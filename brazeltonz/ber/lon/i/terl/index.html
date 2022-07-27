@@ -48,42 +48,168 @@
                 <div id="Support" class="dropdown-content">
                 </div>
             </div>
-          </div>
-          <br><br>
-          <div id = "Welcome" style="margin-left: 25%;">
-            <p>Welcome, REEF&emsp;&emsp;&emsp;&emsp;&emsp;<a href ="#">Update Profile</a> | <a href = "#"> Security Center</a></p>
-          </div>
-          <br>
-          <div id = "Accounts" style="margin-left: 25%;">
+        </div>
+        <br><br>
+        <div id = "Welcome" style="margin-left: 25%;">
+        <p>Welcome, REEF&emsp;&emsp;&emsp;&emsp;&emsp;<a href ="#">Update Profile</a> | <a href = "#"> Security Center</a></p>
+        </div>
+        <br>
+        <div id = "Accounts" style="margin-left: 25%;">
             <b>Checking and saving accounts</b>
             <hr size="3" color="blue" style="width:500px; margin-left: 0%;">
             <div id = "Checking" style="background-color: aliceblue; width:500px; display: flex; justify-content: space-between;">
-                <p onclick="ChQV()" style="margin-left:5%"><b><a href = "#">Student Checking - 2921</a></b><br>Quick View</p>
+                <p onclick="chQV()" style="margin-left:5%"><b><a href = "CC8872/">Student Checking - 2921</a></b><br>Quick View</p>
                 <p style="margin-right:5%;">$218.84</p>
             </div>
+            <div id="CHQV" hidden style="padding-top: 0px; width: 496px; background-color: aliceblue; border-bottom: 2px solid darkblue; border-right:2px solid darkblue; border-left:2px solid darkblue;">
+                <small style="text-align: center;"><b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Recent Transactions:</b></small>
+                <hr size="3" color="blue" style="width:496px; margin-left: 0%;">
+                <table style="width:496px;">
+                    <tr style="background-color: white;">
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Available Balance</th>
+                    </tr>
+                    <tr>
+                        <th>12-Jul</th>
+                        <th>TRANSFER TSSA *4097</th>
+                        <th style="color:red">$545.22</th>
+                        <th>218.84</th>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <th>12-Jul</th>
+                        <th>SEC DEP *2921 JCP</th>
+                        <th>602.88</th>
+                        <th>764.06</th>
+                    </tr>
+                    <tr>
+                        <th>29-Jun</th>
+                        <th>TRANSFER TSSA *4097</th>
+                        <th style="color:red">$500.50</th>
+                        <th>161.18</th>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <th>28-Jun</th>
+                        <th>SEC DEP *2921 JCP</th>
+                        <th>623.30</th>
+                        <th>661.68</th>
+                    </tr>
+                    <tr>
+                        <th>18-Jun</th>
+                        <th>TRANSFER TSSA *4097</th>
+                        <th style="color:red">$800.50</th>
+                        <th>38.38</th>
+                    </tr>
+                </table>
+            </div>
             <div id = "Saving" style="margin-top: 7px; background-color: aliceblue; width:500px; display: flex; justify-content: space-between;">
-                <p onclick="SaQV()" style="margin-left:5%"><b><a href = "#">Brazeltonz <i>Totally Secure</i> Savings Account - 4097</a></b><br>Quick View</p>
+                <p onclick="saQV()" style="margin-left:5%"><b><a href = "TSSA4097/">Brazeltonz <i>Totally Secure</i> Savings Account - 4097</a></b><br>Quick View</p>
                 <p style="margin-right:5%;">$1,208.00</p>
             </div>
+            <div id="SAQV" hidden style="padding-top: 0px; width: 496px; background-color: aliceblue; border-bottom: 2px solid darkblue; border-right:2px solid darkblue; border-left:2px solid darkblue;">
+                <small style="text-align: center;"><b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Recent Transactions:</b></small>
+                <hr size="3" color="blue" style="width:496px; margin-left: 0%;">
+                <table style="width:496px;">
+                    <tr style="background-color: white;">
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Available Balance</th>
+                    </tr>
+                    <tr>
+                        <th>20-Jul</th>
+                        <th>CCO FEE</th>
+                        <th style="color:red">$0.99</th>
+                        <th>1,208.00</th>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <th>16-Jul</th>
+                        <th>Socks Emporium</th>
+                        <th style="color:red">$80.22</th>
+                        <th>1,208.99</th>
+                    </tr>
+                    <tr>
+                        <th>13-Jul</th>
+                        <th>CCO FEE</th>
+                        <th style="color:red">$0.99</th>
+                        <th>1,289.21</th>
+                    </tr>
+                    <tr style="background-color: white;">
+                        <th>12-Jul</th>
+                        <th>TRANSFER SCA *2921</th>
+                        <th>545.22</th>
+                        <th>1,290.20</th>
+                    </tr>
+                    <tr>
+                        <th>9-Jul</th>
+                        <th>Large Hydras</th>
+                        <th style="color:red">$15.99</th>
+                        <th>744.98</th>
+                    </tr>
+                </table>
+            </div>
             <br><br><br>
-          </div>
-          <div id = "Cards" style="margin-left: 25%;">
+        </div>
+        <div id = "Cards" style="margin-left: 25%;">
             <b>Credit Cards</b>
             <hr size="3" color="blue" style="width:500px; margin-left: 0%;">
             <div id = "Card" style="margin-top: 7px; background-color: aliceblue; width:500px; display: flex; justify-content: space-between;">
-                <p onclick="CCQV()" style="margin-left:5%"><b><a href = "#">Brazeltonz <i>Totally Secure</i> Credit - 8872</a></b><br>Quick View</p>
+                <p onclick="ccQV()" style="margin-left:5%"><b><a href = "SCA2921/">Brazeltonz <i>Totally Secure</i> Credit - 8872</a></b><br>Quick View</p>
                 <p style="margin-right:5%;">$1,208.00</p>
             </div>
             <br><br><br>
-          </div>
-          <div id = "Investment Accounts" style="margin-left: 25%;">
+        </div>
+        <div id="CCQV" hidden style="padding-top: 0px; width: 496px; background-color: aliceblue; border-bottom: 2px solid darkblue; border-right:2px solid darkblue; border-left:2px solid darkblue;">
+            <small style="text-align: center;"><b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Recent Transactions:</b></small>
+            <hr size="3" color="blue" style="width:496px; margin-left: 0%;">
+            <table style="width:496px;">
+                <tr style="background-color: white;">
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Available Balance</th>
+                </tr>
+                <tr>
+                    <th>20-Jul</th>
+                    <th>CCO FEE</th>
+                    <th style="color:red">$0.99</th>
+                    <th>1,208.00</th>
+                </tr>
+                <tr style="background-color: white;">
+                    <th>16-Jul</th>
+                    <th>Socks Emporium</th>
+                    <th style="color:red">$80.22</th>
+                    <th>1,208.99</th>
+                </tr>
+                <tr>
+                    <th>13-Jul</th>
+                    <th>CCO FEE</th>
+                    <th style="color:red">$0.99</th>
+                    <th>1,289.21</th>
+                </tr>
+                <tr style="background-color: white;">
+                    <th>9-Jul</th>
+                    <th>Large Hydras</th>
+                    <th style="color:red">$15.99</th>
+                    <th>744.98</th>
+                </tr>
+                <tr>
+                    <th>6-Jul</th>
+                    <th>CCO FEE</th>
+                    <th style="color:red">$0.99</th>
+                    <th>760.97</th>
+                </tr>
+            </table>
+        </div>
+        <div id = "Investment Accounts" style="margin-left: 25%;">
             <b>Investment Accounts</b>
             <hr size="3" color="blue" style="width:500px; margin-left: 0%;">
             <div id = "Card" style="margin-top: 7px; background-color: aliceblue; width:500px; display: flex;">
                 <p onclick="ChQV()" style="margin-left:5%; margin-right: 5%; overflow-wrap: break-word;"><b>Consider opening an investment account with us! </b>Brazeltonz’s Banking has been nationally recognized for our excellent investment services! If you invest with us, you won't have to worry about market conditions! We'll handle your money for free!</p>
             </div>
             <br><br><br>
-          </div>
+        </div>
     </body>
     <footer">
         <p class="footer" style="width: 100%; padding:15px; font-size: small; background-color: #7CC6FE;">Brazeltonz's Secure Banking, N.A. ©2022 Brazeltonz's Corporation. Updated 06/2022 | <a href="/brazeltonz/info">link</a></p>
