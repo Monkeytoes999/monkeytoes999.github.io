@@ -1,3 +1,8 @@
+var ch = false;
+var sa = false;
+var cc = false;
+
+
 function clickBody() {
     window.location.href = "/brazeltonz/";
 }
@@ -18,17 +23,20 @@ function acDdb() {
 }
 
 function chQV(){
-    document.getElementById("CHQV").hidden = false;
+    document.getElementById("CHQV").hidden = ch;
+    ch = !ch;
 }
 
 
 function saQV(){
-    document.getElementById("SAQV").hidden = false;
+    document.getElementById("SAQV").hidden = sa;
+    sa = !sa;
 }
 
 
 function ccQV(){
-    document.getElementById("CCQV").hidden = false;
+    document.getElementById("CCQV").hidden = cc;
+    cc = !cc;
 }
 
 function buttonClick() {
