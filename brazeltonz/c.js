@@ -64,3 +64,23 @@ function resetPassword() {
     .then(res=> console.log(res))
     .catch(err => console.error(err));
 }
+
+function chPass(){
+    document.getElementById("resetP").hidden = false;
+}
+
+function chUrm(){
+    document.getElementById("resetU").hidden = false;
+}
+
+function chEml(){
+    document.getElementById("resetE").hidden = false;
+}
+
+function chPhm(){
+    document.getElementById("resetPh").hidden = false;
+}
+
+function chAdr(){
+    document.getElementById("resetA").hidden = false;
+}
