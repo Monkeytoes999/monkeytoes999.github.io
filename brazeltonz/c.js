@@ -26,6 +26,10 @@ function acDdb() {
     window.location.href = "/brazeltonz/ber/lon/i/terl/prof";
 }
 
+function ivDdb() {
+    window.location.href = "/brazeltonz/ber/lon/i/terl/inv";
+}
+
 function chQV(){
     document.getElementById("CHQV").hidden = ch;
     ch = !ch;
