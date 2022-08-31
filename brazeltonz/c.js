@@ -22,7 +22,7 @@ function acDdb() {
     window.location.href = "/brazeltonz/ber/lon/i/terl";
 }
 
-function acDdb() {
+function spDdb() {
     window.location.href = "/brazeltonz/ber/lon/i/terl/prof";
 }
 
