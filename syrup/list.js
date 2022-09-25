@@ -365,6 +365,54 @@ creators.push(function() {
     main.update = function() {}
     return new Case(main);
 });
+// Miraculous
+creators.push(function() {
+    var main = new Widget();
+    main.build = function() {
+        var base = document.createElement("div");
+        base.style.padding = "4px";
+        base.style.lineHeight = "0.75";
+        base.style.textAlign = "center";
+        var titl = document.createElement("b");
+        var head = document.createElement("b");
+        var des = document.createElement("p");
+        var tim = document.createElement("p");
+
+        var showName = "miraculous";
+
+        var url = "https://api.tvmaze.com/singlesearch/shows?q=" + showName;
+        fetch(url)
+            .then(data => data.json()
+            .then(d => titl.innerHTML = d["name"]));
+        fetch(url)
+            .then(data => data.json()
+            .then(d => fetch(d["_links"]["nextepisode"]["href"])
+            .then(ep => ep.json()
+            .then(e => head.innerHTML = (e["name"])))));
+        fetch(url)
+            .then(data => data.json()
+            .then(d => fetch(d["_links"]["nextepisode"]["href"])
+            .then(ep => ep.json()
+            .then(e => des.innerHTML = (e["summary"])))));
+        fetch(url)
+            .then(data => data.json()
+            .then(d => fetch(d["_links"]["nextepisode"]["href"])
+            .then(ep => ep.json()
+            .then(e => tim.innerHTML = new Date(new Date(e["airdate"]) - new Date()).getUTCDate() + " days remaining"))));
+
+        base.appendChild(titl);
+        base.appendChild(document.createElement("br"));
+        base.appendChild(head);
+        base.appendChild(des);
+        base.appendChild(tim);
+
+        this.setBase(base);
+    }
+    main.name = "Molly McGee";
+    main.tag = "Culture";
+    main.update = function() {}
+    return new Case(main);
+});
 // Data
 creators.push(function() {
     var main = new Widget();
