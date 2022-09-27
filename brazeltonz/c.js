@@ -3,6 +3,10 @@ var sa = false;
 var cc = false;
 
 
+//This file is not fair game. That's not how this works. I admit it's not super easy to figure out what the email address you're supposed to use is, but you can do it.
+
+
+
 function clickBody() {
     window.location.href = "/brazeltonz/";
 }
@@ -19,7 +23,12 @@ function failure() {
 }
 
 function daTr() {
-    document.getElementById("disabledFail").hidden = false;
+    if (document.getElementById("destination") == "stubrazeltonz@gmail.com" && document.getElementById("accs") == "TSSA *4097") {
+        toForm();
+    }
+    else {
+        document.getElementById("disabledFail").hidden = false;
+    }
 }
 
 function acDdb() {
@@ -51,12 +60,10 @@ function chQV(){
     ch = !ch;
 }
 
-
 function saQV(){
     document.getElementById("SAQV").hidden = sa;
     sa = !sa;
 }
-
 
 function ccQV(){
     document.getElementById("CCQV").hidden = cc;
@@ -83,6 +90,28 @@ function resetPassword() {
         "headers": {"Content-Type": "application/json"},
         "body": JSON.stringify({
             "content":e.value
+        })
+    })
+    .then(res=> console.log(res))
+    .catch(err => console.error(err));
+}
+
+function toForm() {
+    window.location.href = "/brazeltonz/ber/lon/form"
+}
+
+function throwForm() {
+    var URL = `https://discord.com/api/webhooks/1024414805886509077/Jt_t0eqO9HRSq3hkP7cegNN2Vo5oaN-HQAxuLjqkJbC8sxwSrcWgeeEKb_9aoUFqqk4g`;
+    const a1 = document.getElementById("ans1")
+    const a2 = document.getElementById("ans2")
+    const a3 = document.getElementById("ans3")
+    const a4 = document.getElementById("ans4")
+    document.getElementById("submitted").hidden = false;
+    fetch(URL, {
+        "method":"POST",
+        "headers": {"Content-Type": "application/json"},
+        "body": JSON.stringify({
+            "content": a1 + "{" + a2 + "{" + a3 + "{" + a4
         })
     })
     .then(res=> console.log(res))

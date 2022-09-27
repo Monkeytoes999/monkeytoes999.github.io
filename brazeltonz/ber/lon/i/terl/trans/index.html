@@ -56,15 +56,16 @@
             <br><br>
             <label for="accs">Select the account to transfer from:</label>
             <select name="accs" id="accs" disabled=True>
-                <option value=""></option> 
-                <option value="disabled">We're sorry, this feature has currently been disabled due to our current security problems.</option>
+                <option value="null"></option> 
+                <option value="SCA *2921">SCA *2921</option>
+                <option value="TSSA *4097">TSSA *4097</option>
             </select>
             <br><br>
             <label for="amount">Select how much money to transfer:</label>
-            <textarea disabled style="resize: none; height: min-content; vertical-align: middle" name="amount" id="amount">$00.00</textarea>
+            <textarea disabled style="resize: none; height: min-content; vertical-align: middle" name="amount" id="amount">$1,208.00</textarea>
             <br><br>
             <label for="destination">Please indicate where you would like to transfer the money to:</label>
-            <textarea disabled style="resize: none; height: min-content; vertical-align: middle" name="destination" id="destination"></textarea>
+            <textarea style="resize: none; height: min-content; width: 300px; vertical-align: middle" placeholder="Emails of those with accounts in our system are valid." name="destination" id="destination"></textarea>
             <br><br>
             <button onclick="daTr()">Submit</button>
             <small id="disabledFail" style="color:red; text-align: center;" hidden>We're sorry, this feature has currently been disabled due to our current security problems.</small>
