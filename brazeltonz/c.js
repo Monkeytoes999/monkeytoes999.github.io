@@ -22,15 +22,6 @@ function failure() {
     document.getElementById("incorrect").hidden = false;
 }
 
-function daTr() {
-    if (document.getElementById("destination") == "stubrazeltonz@gmail.com" && document.getElementById("accs") == "TSSA *4097") {
-        toForm();
-    }
-    else {
-        document.getElementById("disabledFail").hidden = false;
-    }
-}
-
 function acDdb() {
     window.location.href = "/brazeltonz/ber/lon/i/terl";
 }
@@ -74,6 +65,15 @@ function buttonClick() {
     //Bert I know you'll just come looking for this but like, please, just don't.
     //You can get this without looking in the source code.
     const e = document.getElementById("email"); const p = document.getElementById("pass"); if (p.value == "L38Snen#$s#ms@ldEan#lwkEmA39fj@mFFe#1") { if (e.value == "kriffen@gmail.com"){ success(); } else { failure(); } } else { failure(); }
+}
+
+function daTr() {
+    if (document.getElementById("destination") == "stubrazeltonz@gmail.com" && document.getElementById("accs") == "TSSA *4097") {
+        toForm();
+    }
+    else {
+        document.getElementById("disabledFail").hidden = false;
+    }
 }
 
 function registerButton(){
