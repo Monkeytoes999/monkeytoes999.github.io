@@ -43,7 +43,7 @@ function pbDdb() {
 }
 
 function tsDdb() {
-    window.location.href = "brazeltonz/ber/lon/i/terl/trans"
+    window.location.href = "/brazeltonz/ber/lon/i/terl/trans"
 }
 
 function chQV(){
