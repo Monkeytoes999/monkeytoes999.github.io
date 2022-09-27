@@ -576,7 +576,7 @@ creators.push(function() {
         var head = document.createElement("h1");
         head.id = this.id;
         head.style.textAlign = "center";
-        head.innerHTML = "https://monkeytoes999.github.io/135/"
+        head.innerHTML = "https://monkeytoes999.github.io/brazeltonz/"
         this.setBase(head);
     }
     arg.name = "Latest of 135";
