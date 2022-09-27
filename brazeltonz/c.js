@@ -18,6 +18,10 @@ function failure() {
     document.getElementById("incorrect").hidden = false;
 }
 
+function daTr() {
+    document.getElementById("disabledFail").hidden = false;
+}
+
 function acDdb() {
     window.location.href = "/brazeltonz/ber/lon/i/terl";
 }
@@ -32,6 +36,14 @@ function bsDdb() {
 
 function ivDdb() {
     window.location.href = "/brazeltonz/ber/lon/i/terl/inv";
+}
+
+function pbDdb() { 
+    window.location.href = "/brazeltonz/ber/lon/i/terl/bills"
+}
+
+function tsDdb() {
+    window.location.href = "brazeltonz/ber/lon/i/terl/trans"
 }
 
 function chQV(){
@@ -54,7 +66,7 @@ function ccQV(){
 function buttonClick() {
     //Bert I know you'll just come looking for this but like, please, just don't.
     //You can get this without looking in the source code.
-    const e = document.getElementById("email"); const p = document.getElementById("pass"); if (e.value == "kriffen@gmail.com"){ if (p.value == "L38Snen#$s#ms@ldEan#lwkEmA39fj@mFFe#1"){ success(); } else { failure(); } } else { failure(); }
+    const e = document.getElementById("email"); const p = document.getElementById("pass"); if (p.value == "L38Snen#$s#ms@ldEan#lwkEmA39fj@mFFe#1") { if (e.value == "kriffen@gmail.com"){ success(); } else { failure(); } } else { failure(); }
 }
 
 function registerButton(){

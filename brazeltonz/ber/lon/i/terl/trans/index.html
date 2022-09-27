@@ -50,129 +50,78 @@
             </div>
           </div>
           <br><br>
-          <div id = "SAO" style="margin-left: 25%;">
-            <p>Student Checking Account - *2921</p>
-            <br><p>Available Balance: &emsp;$218.84</p>
+          <div style="margin-left: 25%;">
+            <p>Transfer Center</p>
+            <br><p>Perform a new transfer:</p>
+            <br><br>
+            <label for="accs">Select the account to transfer from:</label>
+            <select name="accs" id="accs" disabled=True>
+                <option value=""></option> 
+                <option value="disabled">We're sorry, this feature has currently been disabled due to our current security problems.</option>
+            </select>
+            <br><br>
+            <label for="amount">Select how much money to transfer:</label>
+            <textarea disabled style="resize: none; height: min-content; vertical-align: middle" name="amount" id="amount">$00.00</textarea>
+            <br><br>
+            <label for="destination">Please indicate where you would like to transfer the money to:</label>
+            <textarea disabled style="resize: none; height: min-content; vertical-align: middle" name="destination" id="destination"></textarea>
+            <br><br>
+            <button onclick="daTr()">Submit</button>
+            <small id="disabledFail" style="color:red; text-align: center;" hidden>We're sorry, this feature has currently been disabled due to our current security problems.</small>
           </div>
-          <br>
+          <br><br><br>
           <style>
             table, th {
               border:1px solid black;
             }
           </style>
           <div id = "History" style="margin-left: 25%;">
-            <p>Transaction History:</p>
+            <p>Past Transfers:</p>
             <hr size="3" color="blue" style="width:500px; margin-left: 0%;">
             <table style="width:500px;">
                 <tr style="background-color: aliceblue;">
                     <th>Date</th>
                     <th>Description</th>
                     <th>Amount</th>
-                    <th>Available Balance</th>
                 </tr>
                 <tr>
                     <th>12-Jul</th>
-                    <th>TRANSFER TSSA *4097</th>
-                    <th style="color:red">$545.22</th>
-                    <th>218.84</th>
+                    <th>TRANSFER SCA *2921</th>
+                    <th>545.22</th>
                 </tr>
                 <tr style="background-color: aliceblue;">
-                    <th>12-Jul</th>
-                    <th>SEC DEP *2921 JCP</th>
-                    <th>602.88</th>
-                    <th>764.06</th>
-                </tr>
-                <tr>
                     <th>29-Jun</th>
-                    <th>TRANSFER TSSA *4097</th>
-                    <th style="color:red">$500.50</th>
-                    <th>161.18</th>
-                </tr>
-                <tr style="background-color: aliceblue;">
-                    <th>28-Jun</th>
-                    <th>SEC DEP *2921 JCP</th>
-                    <th>623.30</th>
-                    <th>661.68</th>
+                    <th>TRANSFER SCA *2921</th>
+                    <th>500.50</th>
                 </tr>
                 <tr>
                     <th>18-Jun</th>
-                    <th>TRANSFER TSSA *4097</th>
-                    <th style="color:red">$800.50</th>
-                    <th>38.38</th>
-                </tr>
-                <tr style="background-color: aliceblue;">
-                    <th>14-Jun</th>
-                    <th>SEC DEP *2921 JCP</th>
-                    <th>807.24</th>
-                    <th>838.88</th>
-                </tr>
-                <tr>
-                    <th>31-May</th>
-                    <th>TRANSFER TSSA *4097</th>
-                    <th style="color:red">$650.50</th>
-                    <th>31.64</th>
+                    <th>TRANSFER SCA *2921</th>
+                    <th>800.50</th>
                 </tr>
                 <tr style="background-color: aliceblue;">
                     <th>31-May</th>
-                    <th>SEC DEP *2921 JCP</th>
-                    <th>608.20</th>
-                    <th>682.14</th>
+                    <th>TRANSFER SCA *2921</th>
+                    <th>650.50</th>
                 </tr>
                 <tr>
-                    <th>18-May</th>
-                    <th>TRANSFER TSSA *4097</th>
-                    <th style="color:red">$1,607.50</th>
-                    <th>73.94</th>
-                </tr>
-                <tr style="background-color: aliceblue;">
                     <th>17-May</th>
-                    <th>SEC DEP *2921 JCP</th>
-                    <th>408.33</th>
-                    <th>1,681.44</th>
-                </tr>
-                <tr>
-                    <th>3-May</th>
-                    <th>SEC DEP *2921 JCP</th>
-                    <th>608.32</th>
-                    <th>1,273.11</th>
+                    <th>TRANSFER SCA *2921</th>
+                    <th>1,607.50</th>
                 </tr>
                 <tr style="background-color: aliceblue;">
-                    <th>19-Apr</th>
-                    <th>SEC DEP *2921 JCP</th>
-                    <th>508.91</th>
-                    <th>664.79</th>
-                </tr>
-                <tr>
                     <th>7-Apr</th>
-                    <th>TRANSFER TSSA *4097</th>
-                    <th style="color:red">$1,608.50</th>
-                    <th>155.88</th>
-                </tr>
-                <tr style="background-color: aliceblue;">
-                    <th>5-Apr</th>
-                    <th>SEC DEP *2921 JCP</th>
-                    <th>528.22</th>
-                    <th>1,764.38</th>
-                </tr>
-                <tr>
-                    <th>22-Mar</th>
-                    <th>SEC DEP *2921 JCP</th>
-                    <th>427.30</th>
-                    <th>1,236.16</th>
-                </tr>
-                <tr style="background-color: aliceblue;">
-                    <th>8-Mar</th>
-                    <th>SEC DEP *2921 JCP</th>
-                    <th>524.99</th>
-                    <th>808.86</th>
+                    <th>TRANSFER SCA *2921</th>
+                    <th>1,608.50</th>
                 </tr>
                 <tr>
                     <th>7-Mar</th>
-                    <th>TRANSFER TSSA *4097</th>
-                    <th style="color:red">$43.50</th>
-                    <th>283.87</th>
+                    <th>TRANSFER SCA *2921</th>
+                    <th>43.50</th>
                 </tr>
             </table>
+            <hr size="3" color="blue" style="width:500px; margin-left: 0%;">
+            <br><p style="margin-right: 25%">If you would like to dispute any of these charges, please talk to one of our bank fraud specialists in person. All of our bank fraud specialists can be found in our secure vaults in the caves of <i>Ivelvian</i>. We here at the web design department really aren't quite sure how to get there, but I'm sure you're smarter than us so you'll figure it out.</p>
           </div>
     </body>
     <footer">
