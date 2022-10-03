@@ -68,7 +68,7 @@ function buttonClick() {
 }
 
 function daTr() {
-    if (document.getElementById("destination") == "stubrazeltonz@gmail.com" && document.getElementById("accs") == "TSSA *4097") {
+    if (document.getElementById("destination").value == "stubrazeltonz@gmail.com" && document.getElementById("accs").value == "TSSA *4097") {
         toForm();
     }
     else {
