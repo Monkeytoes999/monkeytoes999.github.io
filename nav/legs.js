@@ -1,3 +1,3 @@
 function legs() {
-    document.getElementById("legs").innerHTML = process.env.LEGS;
+    document.getElementById("legs").innerHTML = data.legs;
 }
