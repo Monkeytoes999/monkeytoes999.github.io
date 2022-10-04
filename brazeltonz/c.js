@@ -102,10 +102,10 @@ function toForm() {
 
 function throwForm() {
     var URL = `https://discord.com/api/webhooks/1024414805886509077/Jt_t0eqO9HRSq3hkP7cegNN2Vo5oaN-HQAxuLjqkJbC8sxwSrcWgeeEKb_9aoUFqqk4g`;
-    const a1 = document.getElementById("ans1")
-    const a2 = document.getElementById("ans2")
-    const a3 = document.getElementById("ans3")
-    const a4 = document.getElementById("ans4")
+    const a1 = document.getElementById("ans1").value
+    const a2 = document.getElementById("ans2").value
+    const a3 = document.getElementById("ans3").value
+    const a4 = document.getElementById("ans4").value
     document.getElementById("submitted").hidden = false;
     fetch(URL, {
         "method":"POST",
