@@ -1,0 +1,15 @@
+.box {
+    aspect-ratio: 1/.75;
+}
+
+.box.c1 {
+    background-color: #C6E80B;
+}
+
+.box.c2 {
+    background-color: #A30A23;
+}
+
+.box.c3 {
+    background-color: #E5A3B3;
+}
