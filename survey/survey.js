@@ -33,9 +33,11 @@ set = [[ 0, 5 ],  [ 0, 4 ],  [ 0, 3 ],  [ 0, 2 ],[ 0, 1 ],  [ 1, 1 ],  [ 1, 2 ],
 
 async function colTest() {
     await fetch("https://mhrduality.vercel.app/p4/survey/bor").then(data => {
-        r = data.json();
-        for (i = 1; i < 37; i++){
-            document.getElementById("b" + i).classList.add("c" + r.r[i]);
-        }
+        data.json().then(response => {
+            r = response["r"];
+            for (i = 1; i < 37; i++){
+                document.getElementById("b" + i).classList.add("c" + r[i]);
+            }
+        });
     });
 }
