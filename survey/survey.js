@@ -53,8 +53,8 @@ async function refresh() {
             }
             document.getElementById("lives").innerHTML = "Failures left in attempt: " + response["fails"];
             document.getElementById("time").innerHTML = "Time left in attempt: " + Math.ceil((response["expiration"] - Date.now())/(1000*60));
+            question();
         });
-        question();
     });
 }
 
@@ -69,10 +69,18 @@ async function question() {
 async function guess() {
     let ans = prompt(currentQ, "answer");
     if (ans != "" && ans != null) {
+        ans = ans.toLowerCase();
         await fetch("https://mhrduality.vercel.app/p4/survey/AC" + currentData["or"][currentData["on"]] + "%60%60" + ans).then(data => {
         data.json().then(response => {
             document.getElementById("res").innerHTML = response["r"];
         });
     });
     }    
+}
+
+async function prev(box) {
+    bint = parseInt(box.substring(1)) - 1;
+    if (bint < currentData["on"]) {
+        alert("Q: " + currentData["qah"][bint]["q"] + "\n A: " + currentData["qah"][bint]["a"]);
+    } 
 }
