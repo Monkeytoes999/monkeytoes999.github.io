@@ -37,7 +37,6 @@ runner();
 
 
 function runner() {
-    console.log("RUNN")
     setTimeout(() => {
         refresh();
         runner();
@@ -76,7 +75,6 @@ async function guess() {
             data.json().then(response => {
                 document.getElementById("res").innerHTML = response["r"];
             });
-            refresh();
         });
     }    
 }
@@ -84,6 +82,6 @@ async function guess() {
 async function prev(box) {
     bint = parseInt(box.substring(1)) - 1;
     if (bint < currentData["on"]) {
-        alert("Q: " + currentData["qah"][bint]["q"] + "\n A: " + currentData["qah"][bint]["a"]);
+        alert("Q: " + currentData["qah"][bint]["q"] + "\nA: " + currentData["qah"][bint]["a"]);
     } 
 }
