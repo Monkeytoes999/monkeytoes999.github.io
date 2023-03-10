@@ -53,6 +53,7 @@ async function refresh() {
             }
             document.getElementById("lives").innerHTML = "Failures left in attempt: " + response["fails"];
             document.getElementById("time").innerHTML = "Time left in attempt: " + Math.ceil((response["expiration"] - Date.now())/(1000*60));
+            document.getElementById("QN").innerHTML = "Question " + (currentData["on"] + 1);
             question();
             document.getElementById("res").innerHTML = ""
         });
