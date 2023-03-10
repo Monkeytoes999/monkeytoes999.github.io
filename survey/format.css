@@ -3,13 +3,40 @@
 }
 
 .box.c1 {
-    background-color: #C6E80B;
+    background-color: #07832c;
 }
 
 .box.c2 {
-    background-color: #A30A23;
+    background-color: #0876a1;
 }
 
 .box.c3 {
-    background-color: #E5A3B3;
+    background-color: #dbd96d;
 }
+
+.box.c4 {
+    background-color: #043b14;
+}
+
+.box.c5 {
+    background-color: #075472;
+}
+
+.box.c6 {
+    background-color: #d6d307;
+}
+
+.but {
+    width: 100%;
+    border: none;
+    padding: 18px;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #a7f8b5;
+    color: #08522d;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 0;
+    letter-spacing: 0.2px;
+    outline: 0;
+  }

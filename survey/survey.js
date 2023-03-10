@@ -28,16 +28,51 @@
 //         coordsStr.push("" + (tx + 1) + "," + ty)
 //     }
 // }
+// console.log(coords.toString())
 
-set = [[ 0, 5 ],  [ 0, 4 ],  [ 0, 3 ],  [ 0, 2 ],[ 0, 1 ],  [ 1, 1 ],  [ 1, 2 ],  [ 2, 2 ],[ 2, 3 ],  [ 2, 4 ],  [ 3, 4 ],  [ 3, 3 ],[ 4, 3 ],  [ 5, 3 ],  [ 5, 4 ],  [ 6, 4 ],[ 6, 5 ],  [ 6, 6 ],  [ 7, 6 ],  [ 8, 6 ],[ 8, 5 ],  [ 8, 4 ],  [ 9, 4 ],  [ 9, 5 ],[ 10, 5 ], [ 10, 6 ], [ 10, 7 ], [ 10, 8 ],[ 11, 8 ], [ 12, 8 ], [ 13, 8 ], [ 14, 8 ],[ 14, 7 ], [ 14, 6 ], [ 15, 6 ], [ 15, 7 ],[ 15, 8 ]]
+var currentData = {};
+var currentQ = "";
+refresh();
+runner();
 
-async function colTest() {
+
+function runner() {
+    setTimeout(() => {
+        refresh();
+        runner();
+    }, 15000);
+}
+
+async function refresh() {
     await fetch("https://mhrduality.vercel.app/p4/survey/bor").then(data => {
         data.json().then(response => {
+            currentData = response;
             r = response["r"];
             for (i = 1; i < 37; i++){
-                document.getElementById("b" + i).classList.add("c" + r[i]);
+                document.getElementById("b" + i).classList.add("c" + r[i - 1]);
             }
+            document.getElementById("lives").innerHTML = "Failures left in attempt: " + response["fails"];
+            document.getElementById("time").innerHTML = "Time left in attempt: " + Math.ceil((response["expiration"] - Date.now())/(1000*60));
+        });
+        question();
+    });
+}
+
+async function question() {
+    await fetch("https://mhrduality.vercel.app/p4/survey/GQ" + currentData["or"][currentData["on"]]).then(data => {
+        data.json().then(response => {
+            currentQ = response;
         });
     });
+}
+
+async function guess() {
+    let ans = prompt(currentQ, "answer");
+    if (ans != "" && ans != null) {
+        await fetch("https://mhrduality.vercel.app/p4/survey/AC" + currentData["or"][currentData["on"]] + "%60%60" + ans).then(data => {
+        data.json().then(response => {
+            document.getElementById("res").innerHTML = response["r"];
+        });
+    });
+    }    
 }
