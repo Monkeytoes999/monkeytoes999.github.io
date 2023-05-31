@@ -20,7 +20,6 @@ function th35Rnd() {
     e = Math.floor(Math.random()*ds.length)
     d = ds.splice(e, 1)[0];
     document.getElementById("35" + d).hidden = true;
-    console.log(e, d)
     ar.push(d);
     d = ar.splice(Math.floor(Math.random()*ar.length), 1)[0];
     document.getElementById("35" + d).hidden = false;
@@ -28,8 +27,15 @@ function th35Rnd() {
 }
 
 function upd() {
-    setTimeout(() => {
-        th35Rnd();
-        upd();
-    }, 100);
+    try {
+        setTimeout(() => {
+            th35Rnd();
+            upd();
+        }, 100);
+    } catch {
+        setTimeout(() => {
+            th35Rnd();
+            upd();
+        }, 100);
+    }
 }
