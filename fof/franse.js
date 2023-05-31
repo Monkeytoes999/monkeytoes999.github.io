@@ -26,7 +26,7 @@ function th35Rnd() {
     e = Math.floor(Math.random()*ar.length)
     d = ar.splice(e, 1)[0];
     if (d != undefined) {
-        document.getElementById("35" + d).hidden = true;
+        document.getElementById("35" + d).hidden = false;
         ds.push(d);
     }
 }
