@@ -37,3 +37,23 @@ function upd() {
         upd();
     }, 100);
 }
+
+function DayTwo() {
+    document.getElementById("wrp").hidden = true;
+    document.getElementById("d2").hidden = false;
+}
+
+async function D2S() {
+    field = document.getElementById('d1T').value
+    if (field != undefined && field.length > 0){
+        await fetch("https://mhrduality.vercel.app/p5/d1/" + field).then(data => {
+            data.json().then(response => {
+                r = response["r"];
+                if (r == "y"){
+                    document.getElementById('d2E').src = response["f"];
+                    document.getElementById('d2E').hidden = false;
+                }
+            });
+        });
+    }
+}
