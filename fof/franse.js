@@ -122,3 +122,38 @@ async function D3S() {
         });
     }
 }
+
+d4c = 0;
+
+function DayFour() {
+    document.getElementById("wrp").hidden = true;
+    document.getElementById("d4").hidden = false;
+    document.getElementById("D4M").value = d4c
+    if (d4c >=35) {
+        document.getElementById("D4CH").hidden = false;
+    }
+}
+
+function Home() {
+    d4c += 1;
+    if (d4c > 35) {
+        d4c = 35;
+    }
+    document.getElementById("d4").hidden = true;
+    document.getElementById("wrp").hidden = false;
+}
+
+async function D4S() {
+    field = document.getElementById('DFI').value
+    if (field != undefined && field.length > 0){
+        await fetch("https://mhrduality.vercel.app/p5/d3/" + field).then(data => {
+            data.json().then(response => {
+                r = response["r"];
+                if (r == "YE"){
+                    document.getElementById('D4E').src = response["f"];
+                    document.getElementById('D4E').hidden = false;
+                }
+            });
+        });
+    }
+}

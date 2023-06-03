@@ -28,3 +28,7 @@ button {
     -webkit-transition: all .3s;
     transition: all .3s;
   }
+
+  meter::-webkit-meter-bar {
+    background-color: black;
+  }
