@@ -19,7 +19,8 @@
             <button style="background-color: #FFFFFF; color: rgb(0,85,164); width: 20%; position: fixed; margin-top: 370px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DayTwo()" >Day Two</button>
             <button style="background-color: #FFFFFF; color: rgb(0,85,164); width: 20%; position: fixed; margin-top: 450px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DayThree()">Day Three</button>
             <button style="background-color: #FFFFFF; color: rgb(0,85,164); width: 20%; position: fixed; margin-top: 530px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DayFour()">Day Four</button>
-            <button style="background-color: #FFFFFF; color: grey; width: 20%; position: fixed; margin-top: 610px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DayFive()" disabled>Day Five</button>
+            <button style="background-color: #FFFFFF; color: rgb(0,85,164); width: 20%; position: fixed; margin-top: 610px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DayFive()">Day Five</button>
+            <button style="background-color: #FFFFFF; color: grey; width: 20%; position: fixed; margin-top: 690px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DaySix()" disabled>Day Six</button>
         </wr>
         <wr id="d1" hidden>
             <p style="color: black; font-size: 4.89vw; position: fixed; margin-top: 520.07px; margin-left: 75.65%;" id="350"><b>THE 35</b></p>
@@ -190,6 +191,91 @@
                 <button style="background-color: #FFFFFF; color: rgb(239,65,53); width: 20%; position: fixed; margin-top: 600px; margin-left: 39.8%; font-size: 1.8vw;" onclick="Home()">Go Back</button>
                 <meter id="D4M" value="0" min="0" max="35" style="width: 100%; margin-top: 250px;"></meter>
             </div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+        </wr>
+        <wr id="d5" hidden>
+            <button style="background-color: rgb(190,20,30); color: #3cff00fb; position: fixed; top: 85vh; left: 79vw; width: 9vmax" onclick="home()">Main Menu</button>
+            <h1 style="font-size: 2.55vmax; position: fixed; top: 15vh; left:35.5vw">Bakéry De' Yũmmy Fräns</h1>
+            <h2 hidden id="counter" style="position: fixed; top: 23vh; left: 35.8vw">Customers served: </h2>
+            <div hidden id="tabs">
+                <button style="background-color:powderblue; color: rgb(6, 189, 213); width:7vmax; position: fixed; left: 40.5vw; top: 82vh" onclick="Orders()">Customers??</button>
+                <button style="background-color:powderblue; color: rgb(6, 189, 213); width:7vmax; position: fixed; left: 50.5vw; top: 82vh" onclick="Food()">fooooooods</button>
+            </div>
+            <div id="bko">
+                <div id="cp3">
+                    <bd id="bd" style="width:0px; height: 100px; border:3px solid black; position: fixed; top:51.5vh; left:49vw;"></bd>
+                    <hd id="hd" style="width:3vmax; height: 3vmax; background-color: black; position: fixed; bottom:48.5vh; left:47.7vw; border-radius: 3vmax; display: inline-block"></hd>
+                    <ar id="ar1" style="width:0px; height: 50px; border:3px solid black; position: fixed; top:53vh; left:50vw; transform: rotate(45deg);"></ar>
+                    <ar id="ar2" style="width:0px; height: 50px; border:3px solid black; position: fixed; top:53vh; left:48vw; transform: rotate(135deg);"></ar>
+                    <div id="cp3txt">
+                        <tb style="width:0px; height: 50px; border:3px solid grey; position: fixed; top:42.6vh; left:51.8vw; transform: rotate(51deg);"></tb>
+                        <button style="background-color:grey; color: #FFFFFF; width:7vmax; position: fixed; left: 51.5vw; top: 40vh" onclick="ord()">Hělp Mé</button>
+                        <tb id="tbF" hidden style="height:35px; background-color:grey; color: #FFFFFF; width:7vmax; position: fixed; left: 51.5vw; top: 40vh; text-align: center; padding-top:16px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px;">Fööd</tb>
+                        <tb id="cusY" hidden style="height:35px; background-color:grey; color: #FFFFFF; width:7vmax; position: fixed; left: 51.5vw; top: 40vh; text-align: center; padding-top:16px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px;">Yům</tb>
+                        <tb id="ouch" hidden style="height:35px; background-color:grey; color: #FFFFFF; width:7vmax; position: fixed; left: 51.5vw; top: 40vh; text-align: center; padding-top:16px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px;">Ǒw</tb>
+                    </div>
+                    <box hidden id = "bqFeed" style="width:4vw; height: 1vh; border: 2px solid #7c4d07; border-radius: 50px; position: fixed; top:57.2vh; left:41.8vw; background-color: #eec07b; transform: rotate(0)">
+                        <ln style="width:0px; height: 1.6vh; border:1px solid #7c4d07; position: absolute; top:-.4vh; left:1.6vw; transform: rotate(51deg);"></ln>
+                    </box>
+                    <box hidden id="bagFeed" style="width:3vw; height:3vh; border-top: 10px solid powderblue; border-left: 2px solid black; border-right: 2px solid black; border-bottom: 2px solid black; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; position: fixed; top:55.8vh; left:39.8vw;">
+                        <box style="position: absolute; background-color: blue; width: 3.01vw; height:2vh; left:vw; top:1vh"></box>
+                        <ln style="width:3.1vw; height:0px; border: 1px solid rgb(24, 136, 173); position: absolute; left: -.1vw; top: -.4vh;"></ln>
+                        <ln style="width:3.1vw; height:0px; border: 1px solid rgb(24, 136, 173); position: absolute; left: -.1vw; top: -.8vh;"></ln>
+                    </box> 
+                    <box style="width:28vw; height: 200px; border:3px solid; position: fixed; top:60vh; left:35.5vw; border-color: rgb(6, 189, 213); border-bottom:rgb(6, 189, 213); background-color:powderblue;"></box>
+                </div>
+                <button hidden id="delivery" style="background-color: rgb(38, 160, 201); color: black; position: fixed; top: 67vh; left: 43.9vw; width:11vw" onclick="Delivery()">Delivery Mode: Handing</button>
+                <div hidden id="day">
+                    <input id="bred" style="background-color: grey; padding:0; padding-left: 10px; width: 6vw; color: black; height:20px; position: fixed; top: 74vh; left: 43.9vw;"></input>
+                    <button id="d5b" style="background-color: grey; padding:0; width: 4vw; color: black; height:20px; position: fixed; top: 74vh; left: 50.9vw; " onclick="D5T()">Check</button>
+                </div>
+            </div>
+            <div id="kit" hidden>
+                <div id="bq">
+                    <box id = "bqGrab" style="width:4vw; height: 1vh; border: 2px solid #7c4d07; border-radius: 50px; position: fixed; top:57.2vh; left:41.8vw; background-color: #eec07b;">
+                        <ln style="width:0px; height: 1.6vh; border:1px solid #7c4d07; position: fixed; top:57vh; left:43.8vw; transform: rotate(51deg);"></ln>
+                    </box>
+                    <box style="width:4vw; height: 1vh; border: 2px solid #7c4d07; border-radius: 50px; position: fixed; top:58.6vh; left:44.2vw; background-color: #eec07b;">
+                        <ln style="width:0px; height: 1.6vh; border:1px solid #7c4d07; position: fixed; top:58.4vh; left:46.2vw; transform: rotate(51deg);"></ln>
+                    </box>
+                    <box style="width:4vw; height: 1vh; border: 2px solid #7c4d07; border-radius: 50px; position: fixed; top:58.6vh; left:39.8vw; background-color: #eec07b;">
+                        <ln style="width:0px; height: 1.6vh; border:1px solid #7c4d07; position: fixed; top:58.4vh; left:41.8vw; transform: rotate(51deg);"></ln>
+                    </box>
+                    <box style="width:4vw; height: 1vh; border: 2px solid #7c4d07; border-radius: 50px; position: fixed; top:55.8vh; left:35.5vw; background-color: #eec07b;">
+                        <ln style="width:0px; height: 1.6vh; border:1px solid #7c4d07; position: fixed; top:55.6vh; left:37.5vw; transform: rotate(135deg);"></ln>
+                    </box>
+                    <box style="width:4vw; height: 1vh; border: 2px solid #7c4d07; border-radius: 50px; position: fixed; top:57.2vh; left:35.5vw; background-color: #eec07b;">
+                        <ln style="width:0px; height: 1.6vh; border:1px solid #7c4d07; position: fixed; top:57vh; left:37.5vw; transform: rotate(135deg);"></ln>
+                    </box>
+                    <box style="width:4vw; height: 1vh; border: 2px solid #7c4d07; border-radius: 50px; position: fixed; top:58.6vh; left:35.5vw; background-color: #eec07b;">
+                        <ln style="width:0px; height: 1.6vh; border:1px solid #7c4d07; position: fixed; top:58.4vh; left:37.5vw; transform: rotate(51deg);"></ln>
+                    </box>
+                </div>
+                <div id="bw" hidden>
+                    <box id="bw1" style="width:3vw; height:3vh; border-top: 10px solid powderblue; border-left: 2px solid black; border-right: 2px solid black; border-bottom: 2px solid black; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; position: fixed; top:55.8vh; left:43.8vw;">
+                        <box style="position: fixed; background-color: blue; width: 3.01vw; height:2vh; left:43.9vw; top:57.8vh"></box>
+                        <ln style="width:3.1vw; height:0px; border: 1px solid rgb(24, 136, 173); position: fixed; top: 56vh; left: 43.8vw;"></ln>
+                        <ln style="width:3.1vw; height:0px; border: 1px solid rgb(24, 136, 173); position: fixed; top: 56.3vh; left: 43.8vw;"></ln>
+                    </box>
+                    <box id="bw2" style="width:3vw; height:3vh; border-top: 10px solid powderblue; border-left: 2px solid black; border-right: 2px solid black; border-bottom: 2px solid black; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; position: fixed; top:55.8vh; left:39.8vw;">
+                        <box style="position: fixed; background-color: blue; width: 3.01vw; height:2vh; left:39.9vw; top:57.8vh"></box>
+                        <ln style="width:3.1vw; height:0px; border: 1px solid rgb(24, 136, 173); position: fixed; top: 56vh; left: 39.8vw;"></ln>
+                        <ln style="width:3.1vw; height:0px; border: 1px solid rgb(24, 136, 173); position: fixed; top: 56.3vh; left: 39.8vw;"></ln>
+                    </box>
+                    <box id="bw3" style="width:3vw; height:3vh; border-top: 10px solid powderblue; border-left: 2px solid black; border-right: 2px solid black; border-bottom: 2px solid black; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; position: fixed; top:55.8vh; left:35.8vw;">
+                        <box style="position: fixed; background-color: blue; width: 3.01vw; height:2vh; left:35.9vw; top:57.8vh"></box>
+                        <ln style="width:3.1vw; height:0px; border: 1px solid rgb(24, 136, 173); position: fixed; top: 56vh; left: 35.8vw;"></ln>
+                        <ln style="width:3.1vw; height:0px; border: 1px solid rgb(24, 136, 173); position: fixed; top: 56.3vh; left: 35.8vw;"></ln>
+                    </box>
+                </div>
+                <box style="width:0; height: 0; position: fixed; top:54vh; left:55.5vw; border-color:rgb(86, 85, 7); border-right: 3.3vw solid transparent; border-left: 3.3vw solid transparent; border-top: 20vh solid grey;"></box>
+                <box style="width:7vw; height: 1vh; border: 2px solid black; border-radius: 50px; position: fixed; top:53.4vh; left:55.2vw; background-color: black;"></box>
+                <box style="width:28vw; height: 200px; border:3px solid; position: fixed; top:60vh; left:35.5vw; border-color:rgb(4, 16, 113); border-bottom:black; background-color:rgb(6, 189, 213);"></box>
+                <button id ="bqBUT" style="padding: 0; width:4vw; height: 1vh; border: 2px solid transparent; border-radius: 50px; position: fixed; top:57.2vh; left:41.8vw; background-color: transparent;" onclick="ClBq()"></button>
+                <button hidden id ="bw1BUT" style="padding: 0; width:3.3vw; height: 4.2vh; border-top: 10px solid transparent; border-top-left-radius: 0px; border-top-right-radius: 0px; border-left: 2px solid transparent; border-right: 2px solid transparent; border-bottom: 2px solid transparent; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; position: fixed; top:55.8vh; left:43.8vw; background-color: transparent;" onclick="BW1()"></button>
+                <button hidden id ="bw2BUT" style="padding: 0; width:3.3vw; height: 4.2vh; border-top: 10px solid transparent; border-top-left-radius: 0px; border-top-right-radius: 0px; border-left: 2px solid transparent; border-right: 2px solid transparent; border-bottom: 2px solid transparent; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; position: fixed; top:55.8vh; left:39.8vw; background-color: transparent;" onclick="BW2()"></button>
+                <button hidden id ="bw3BUT" style="padding: 0; width:3.3vw; height: 4.2vh; border-top: 10px solid transparent; border-top-left-radius: 0px; border-top-right-radius: 0px; border-left: 2px solid transparent; border-right: 2px solid transparent; border-bottom: 2px solid transparent; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; position: fixed; top:55.8vh; left:35.8vw; background-color: transparent;" onclick="BW3()"></button>
+            </div>
+            <embed id="DE5" style="color: black; font-size: 3vw; position: fixed; left:3vw; top:60vh; width: 25vw; height: 32vh; visibility: hidden" src="day1.txt">
         </wr>
     </body>
     <footer>
