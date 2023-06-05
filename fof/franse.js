@@ -285,7 +285,8 @@ function retreat() {
         }, 2000);
     } else if (tut == 5) {
         setTimeout(() => {
-            document.getElementById("delivery").hidden = true;
+            document.getElementById("delivery").hidden = false;
+            document.getElementById("bagFeed").hidden = true;
             tut = tut + 1
             document.getElementById("counter").innerHTML = "Customers served: " + tut;
             alert("You've unlocked fast mode! You know the number you need to get to at this point, so here's a way to skip the animation!");
