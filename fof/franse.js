@@ -283,7 +283,7 @@ function retreat() {
             document.getElementById("counter").innerHTML = "Customers served: 2"
             emerge();
         }, 2000);
-    } else if (tut == 5) {
+    } else if (tut == 4) {
         setTimeout(() => {
             document.getElementById("delivery").hidden = false;
             document.getElementById("bagFeed").hidden = true;
@@ -292,7 +292,7 @@ function retreat() {
             alert("You've unlocked fast mode! You know the number you need to get to at this point, so here's a way to skip the animation!");
             emerge();
         }, 2000);
-    } else if (tut == 35) {
+    } else if (tut == 34) {
         setTimeout(() => {
             document.getElementById("day").hidden = true;
             tut = tut + 1
