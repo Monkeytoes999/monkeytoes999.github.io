@@ -294,7 +294,8 @@ function retreat() {
         }, 2000);
     } else if (tut == 34) {
         setTimeout(() => {
-            document.getElementById("day").hidden = true;
+            document.getElementById("day").hidden = false;
+            document.getElementById("bagFeed").hidden = true;
             tut = tut + 1
             document.getElementById("counter").innerHTML = "Customers served: " + tut;
             emerge();
