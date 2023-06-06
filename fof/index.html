@@ -12,7 +12,7 @@
     <body style="background-color:rgb(0,85,164); width:98.5%;">
         <div style="width: 40%; background-color: rgb(239,65,53); position: fixed; margin-top:-20px; margin-left:66.66%; height: 1000%"></div>
         <div style="width: 33.33%; background-color: #FFFFFF; position: fixed; margin-top:-20px; margin-left:33.33%; height: 1000%"></div>
-        <wr id="wrp">
+        <wr id="wrp" hidden>
             <p style="color: black; font-size: 3.86vw; position: fixed; margin-top: 84px; margin-left: 33.5%;"><b>Welcome to FRANS</b></p>
             <p style="color: black; font-size: 2.02vw; position: fixed; margin-top: 213px; margin-left: 38%">Please select the day to view</p>
             <button style="background-color: #FFFFFF; color: rgb(0,85,164); width: 20%; position: fixed; margin-top: 290px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DayOne()">Day One</button>
@@ -192,7 +192,7 @@
                 <meter id="D4M" value="0" min="0" max="35" style="width: 100%; margin-top: 250px;"></meter>
             </div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
         </wr>
-        <wr id="d5" hidden>
+        <wr id="d5">
             <button style="background-color: rgb(190,20,30); color: #3cff00fb; position: fixed; top: 85vh; left: 79vw; width: 9vmax" onclick="home()">Main Menu</button>
             <h1 style="font-size: 2.55vmax; position: fixed; top: 15vh; left:35.5vw">Bakéry De' Yũmmy Fräns</h1>
             <h2 hidden id="counter" style="position: fixed; top: 23vh; left: 35.8vw">Customers served: </h2>
@@ -206,11 +206,21 @@
                     <hd id="hd" style="width:3vmax; height: 3vmax; background-color: black; position: fixed; bottom:48.5vh; left:47.7vw; border-radius: 3vmax; display: inline-block"></hd>
                     <ar id="ar1" style="width:0px; height: 50px; border:3px solid black; position: fixed; top:53vh; left:50vw; transform: rotate(45deg);"></ar>
                     <ar id="ar2" style="width:0px; height: 50px; border:3px solid black; position: fixed; top:53vh; left:48vw; transform: rotate(135deg);"></ar>
+                    <ha hidden id="ha" style="position: fixed; top:46vh;">
+                        <har style="position: absolute; left: 50.4vw; width:0px; height: 50px; background-color: gold; border:1px solid gold; transform: rotate(145deg);"></har>
+                        <har style="position: absolute; left: 50.1vw; width:0px; height: 50px; background-color: gold; border:1px solid gold; transform: rotate(160deg);"></har>
+                        <har style="position: absolute; left: 50.2vw; width:0px; height: 50px; background-color: gold; border:1px solid gold; transform: rotate(153deg);"></har>
+                        <har style="position: absolute; left: 47.1vw; width:0px; height: 50px; background-color: gold; border:1px solid gold; transform: rotate(35deg);"></har>
+                        <har style="position: absolute; left: 47.4vw; width:0px; height: 50px; background-color: gold; border:1px solid gold; transform: rotate(20deg);"></har>
+                        <har style="position: absolute; left: 47.3vw; width:0px; height: 50px; background-color: gold; border:1px solid gold; transform: rotate(28deg);"></har>
+                        <har style="position: absolute; left: 47.7vw; width:40px; height: 12px; top:.05vh; border-radius: 30px; background-color: gold; border:1px solid gold;"></har>
+                    </ha>
                     <div id="cp3txt">
                         <tb style="width:0px; height: 50px; border:3px solid grey; position: fixed; top:42.6vh; left:51.8vw; transform: rotate(51deg);"></tb>
                         <button style="background-color:grey; color: #FFFFFF; width:7vmax; position: fixed; left: 51.5vw; top: 40vh" onclick="ord()">Hělp Mé</button>
                         <tb id="tbF" hidden style="height:35px; background-color:grey; color: #FFFFFF; width:7vmax; position: fixed; left: 51.5vw; top: 40vh; text-align: center; padding-top:16px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px;">Fööd</tb>
                         <tb id="cusY" hidden style="height:35px; background-color:grey; color: #FFFFFF; width:7vmax; position: fixed; left: 51.5vw; top: 40vh; text-align: center; padding-top:16px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px;">Yům</tb>
+                        <tb id="cusYu" hidden style="height:35px; background-color:grey; color: #FFFFFF; width:7vmax; position: fixed; left: 51.5vw; top: 40vh; text-align: center; padding-top:16px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px;">Nót fööd ;l(</tb>
                         <tb id="ouch" hidden style="height:35px; background-color:grey; color: #FFFFFF; width:7vmax; position: fixed; left: 51.5vw; top: 40vh; text-align: center; padding-top:16px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px;">Ǒw</tb>
                     </div>
                     <box hidden id = "bqFeed" style="width:4vw; height: 1vh; border: 2px solid #7c4d07; border-radius: 50px; position: fixed; top:57.2vh; left:41.8vw; background-color: #eec07b; transform: rotate(0)">

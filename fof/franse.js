@@ -256,6 +256,7 @@ function retreat() {
     document.getElementById("cusY").hidden = true;
     document.getElementById("cp3txt").hidden = true;
     document.getElementById("ouch").hidden = true;
+    document.getElementById("cusYu").hidden = true;
     for (i = 0; i < 150; i++){
         setTimeout(() => {
             document.getElementById("bd").style.top = parseFloat(document.getElementById("bd").style.top.substring(0, 4)) - -.1 + "vh";
@@ -264,8 +265,14 @@ function retreat() {
             document.getElementById("ar2").style.top = parseFloat(document.getElementById("ar2").style.top.substring(0, 4)) - -.1 + "vh";
             document.getElementById("bqFeed").style.top = parseFloat(document.getElementById("bqFeed").style.top.substring(0, 4)) - -.1 + "vh";
             document.getElementById("bagFeed").style.top = parseFloat(document.getElementById("bagFeed").style.top.substring(0,4)) - -.1 + "vh";
+            document.getElementById("ha").style.top = parseFloat(document.getElementById("ha").style.top.substring(0,4)) - -.1 + "vh";
         }, i*10);
     }
+    setTimeout(() => {
+        document.getElementById("ha").hidden = true;
+        document.getElementById("ar2").hidden = false;
+        document.getElementById("ar1").hidden = false;
+    }, 2000);
     if (tut == 0) {
         setTimeout(() => {
             document.getElementById("bqFeed").hidden = true;
@@ -312,6 +319,17 @@ function retreat() {
 
 hCount = 3
 function emerge() {
+    if (Math.random() > .7) {
+        document.getElementById("ha").hidden = false;
+    }
+    document.getElementById("ar1").style.transform = "rotate(" + (Math.random()*10+40) + "deg)";
+    document.getElementById("ar2").style.transform = "rotate(" + (Math.random()*10+130) + "deg)";
+    if (Math.random() > .91) { 
+        document.getElementById("ar1").hidden = true;
+    }
+    if (Math.random() > .91) { 
+        document.getElementById("ar2").hidden = true;
+    }
     for (i = 0; i < 150; i++){
         setTimeout(() => {
             document.getElementById("bd").style.top = parseFloat(document.getElementById("bd").style.top.substring(0, 4)) - .1 + "vh";
@@ -320,6 +338,7 @@ function emerge() {
             document.getElementById("ar2").style.top = parseFloat(document.getElementById("ar2").style.top.substring(0, 4)) - .1 + "vh";
             document.getElementById("bqFeed").style.top = parseFloat(document.getElementById("bqFeed").style.top.substring(0, 4)) - .1 + "vh";
             document.getElementById("bagFeed").style.top = parseFloat(document.getElementById("bagFeed").style.top.substring(0,4)) - .1 + "vh";
+            document.getElementById("ha").style.top = parseFloat(document.getElementById("ha").style.top.substring(0,4)) - .1 + "vh";
         }, i*10);
     }
     document.getElementById("bagFeed").style.left = "39.8vw"
@@ -335,6 +354,23 @@ function emerge() {
             document.getElementById("bw3").hidden = false;
             document.getElementById("bw3BUT").hidden = false;    
             hCount = 0
+            if (tut > 2) {
+                if (Math.random() > .5) {
+                    document.getElementById("bw1").style.borderTop = "10px solid palegreen";
+                } else {
+                    document.getElementById("bw1").style.borderTop = "10px solid powderblue";
+                }
+                if (Math.random() > .5) {
+                    document.getElementById("bw2").style.borderTop = "10px solid palegreen";
+                } else {
+                    document.getElementById("bw2").style.borderTop = "10px solid powderblue";
+                }
+                if (Math.random() > .5) {
+                    document.getElementById("bw3").style.borderTop = "10px solid palegreen";
+                } else {
+                    document.getElementById("bw3").style.borderTop = "10px solid powderblue";
+                }
+            }
         }
     }, 2000)
 }
@@ -344,6 +380,7 @@ function BW1() {
         document.getElementById("bw1").hidden = true;
         document.getElementById("bw1BUT").hidden = true;
         document.getElementById("bagFeed").hidden = false;
+        document.getElementById("bagFeed").style.borderTop = document.getElementById("bw1").style.borderTop;
         hCount = hCount + 1;
     }
     haveBag = true;
@@ -359,6 +396,7 @@ function BW2() {
         document.getElementById("bw2").hidden = true;
         document.getElementById("bw2BUT").hidden = true;
         document.getElementById("bagFeed").hidden = false;
+        document.getElementById("bagFeed").style.borderTop = document.getElementById("bw2").style.borderTop;
         hCount = hCount + 1;
     }
     haveBag = true;
@@ -374,6 +412,7 @@ function BW3() {
         document.getElementById("bw3").hidden = true;
         document.getElementById("bw3BUT").hidden = true;
         document.getElementById("bagFeed").hidden = false;
+        document.getElementById("bagFeed").style.borderTop = document.getElementById("bw3").style.borderTop;
         hCount = hCount + 1;
     }
     haveBag = true;
@@ -407,7 +446,15 @@ function bagTime() {
                 bagTime();
             } else {
                 document.getElementById("tbF").hidden = true;
-                document.getElementById("cusY").hidden = false;
+                if (tut < 2) {
+                    document.getElementById("cusY").hidden = false;
+                } else {
+                    if (Math.random() < .95) {
+                        document.getElementById("cusY").hidden = false;
+                    } else {
+                        document.getElementById("cusYu").hidden = false;
+                    }
+                }
                 setTimeout(() => {
                     retreat();
                 }, 1000);
@@ -416,7 +463,7 @@ function bagTime() {
     } else {
         document.getElementById("bagFeed").style.left = "47.5vw";
         document.getElementById("bagFeed").style.top = "46.5vh";
-        document.getElementById("bagFeed").style.top = "rotate(" + Math.random()*360 + "deg)";
+        document.getElementById("bagFeed").style.transform = "rotate(" + Math.random()*360 + "deg)";
         document.getElementById("tbF").hidden = true;
         document.getElementById("ouch").hidden = false;
         setTimeout(() => {
