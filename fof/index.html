@@ -7,12 +7,13 @@
         <link rel="icon" type="image/x-icon" href="favicon.ico">
 
         <link rel = "stylesheet" type = "text/css" href = "style.css"/>
+        <link href="https://fonts.cdnfonts.com/css/seaford" rel="stylesheet">
         <title>Franse</title>
     </head>
     <body style="background-color:rgb(0,85,164); width:98.5%;">
         <div style="width: 40%; background-color: rgb(239,65,53); position: fixed; margin-top:-20px; margin-left:66.66%; height: 1000%"></div>
         <div style="width: 33.33%; background-color: #FFFFFF; position: fixed; margin-top:-20px; margin-left:33.33%; height: 1000%"></div>
-        <wr id="wrp">
+        <wr  id="wrp" style="overflow-y: scroll">
             <p style="color: black; font-size: 3.86vw; position: fixed; margin-top: 84px; margin-left: 33.5%;"><b>Welcome to FRANS</b></p>
             <p style="color: black; font-size: 2.02vw; position: fixed; margin-top: 213px; margin-left: 38%">Please select the day to view</p>
             <button style="background-color: #FFFFFF; color: rgb(0,85,164); width: 20%; position: fixed; margin-top: 290px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DayOne()">Day One</button>
@@ -20,7 +21,8 @@
             <button style="background-color: #FFFFFF; color: rgb(0,85,164); width: 20%; position: fixed; margin-top: 450px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DayThree()">Day Three</button>
             <button style="background-color: #FFFFFF; color: rgb(0,85,164); width: 20%; position: fixed; margin-top: 530px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DayFour()">Day Four</button>
             <button style="background-color: #FFFFFF; color: rgb(0,85,164); width: 20%; position: fixed; margin-top: 610px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DayFive()">Day Five</button>
-            <button style="background-color: #FFFFFF; color: grey; width: 20%; position: fixed; margin-top: 690px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DaySix()" disabled>Day Six</button>
+            <button style="background-color: #FFFFFF; color: rgb(0,85,164); width: 20%; position: fixed; margin-top: 690px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DaySix()">Day Six</button>
+            <button style="background-color: #FFFFFF; color: grey; width: 20%; position: fixed; margin-top: 770px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DaySeven()" disabled>The Finale</button>
         </wr>
         <wr id="d1" hidden>
             <p style="color: black; font-size: 4.89vw; position: fixed; margin-top: 520.07px; margin-left: 75.65%;" id="350"><b>THE 35</b></p>
@@ -286,6 +288,354 @@
                 <button hidden id ="bw3BUT" style="padding: 0; width:3.3vw; height: 4.2vh; border-top: 10px solid transparent; border-top-left-radius: 0px; border-top-right-radius: 0px; border-left: 2px solid transparent; border-right: 2px solid transparent; border-bottom: 2px solid transparent; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; position: fixed; top:55.8vh; left:35.8vw; background-color: transparent;" onclick="BW3()"></button>
             </div>
             <embed id="DE5" style="color: black; font-size: 3vw; position: fixed; left:3vw; top:60vh; width: 25vw; height: 32vh; visibility: hidden" src="day1.txt">
+        </wr>
+        <wr hidden id="d6">
+            <div id="footBlood">
+                <bd style="position: fixed; width: 1vw; height: 1vw; border-radius: 1vw; background-color: rgb(207, 35, 35); top: 86vh; left: 41.2vw;"></bd>
+                <bd style="position: fixed; width: 1vw; height: 1vw; border-radius: 1vw; background-color: rgb(207, 35, 35); top: 86vh; left: 40vw;"></bd>
+                <bd style="position: fixed; width: 1vw; height: 1vw; border-radius: 1vw; background-color: rgb(207, 35, 35); top: 86vh; left: 38.5vw;"></bd>
+                <bd style="position: fixed; width: 1vw; height: 1vw; border-radius: 1vw; background-color: rgb(207, 35, 35); top: 86vh; left: 36.4vw;"></bd>
+                <bd style="position: fixed; width: 1vw; height: 1vw; border-radius: 1vw; background-color: rgb(207, 35, 35); top: 86vh; left: 33.2vw;"></bd>
+                <bd style="position: fixed; width: 1vw; height: 1vw; border-radius: 1vw; background-color: rgb(207, 35, 35); top: 86vh; left: 40vw;"></bd>
+                <bd style="position: fixed; width: 1vw; height: 1vw; border-radius: 1vw; background-color: rgb(207, 35, 35); top: 86vh; left: 38vw;"></bd>
+                <bd style="position: fixed; width: 1vw; height: 1vw; border-radius: 1vw; background-color: rgb(207, 35, 35); top: 86vh; left: 35vw;"></bd>
+                <bc id="bloodcover" style="position: fixed; width: 12.2vw; height: 3vh; top: 85vh; left: 30vw; background-color: #FFFFFF;"></bc>
+            </div>
+            <div hidden id="dummy" style="position:fixed; left:0vw"></div>
+            <button id="home" style="background-color: rgb(190,20,30); color: #3cff00fb; position: fixed; top: 85vh; left: 79vw; width: 9vmax" onclick="home()">Main Menu</button>
+            <div id="tree">
+                <brc style="position: fixed; top: 65vh; left: 44.5vw; width:8vw; height: 3vmax; background-color: rgb(134, 90, 34); transform: rotate(30deg)"></brc>
+                <brc id="treehand" style="position: fixed; top: 67vh; right: 54.5vw; width:0vw; height: 0vh; background-color: rgb(134, 90, 34); clip-path: polygon(93% 0, 100% 0, 7% 100%, 0% 100%);"></brc> 
+                <bark style="position: fixed; top: 55vh; left: 50.5vw; width:10vw; height: 33vh; background-color: burlywood; border-bottom-left-radius: 1.5vw; border-bottom-right-radius: 1.5vw;"></bark>
+                <lv id="lv1" style="position: fixed; top: 56vh; left: 54vw; width:8vw; height: 8vw; background-color: green; border-radius: 8vw;"></lv>
+                <lv id="lv2" style="position: fixed; top: 52vh; left: 49vw; width:10vw; height: 10vw; background-color: green; border-radius: 10vw;"></lv>
+                <lv id="lv3" style="position: fixed; top: 53vh; left: 52vw; width:11vw; height: 11vw; background-color: rgb(15, 66, 15); border-radius: 11vw;"></lv>
+                <lv id="lv4" style="position: fixed; top: 56vh; left: 56vw; width:7vw; height: 7vw; background-color: rgb(36, 94, 36); border-radius: 7vw;"></lv>
+                <lv id="lv5" style="position: fixed; top: 54vh; left: 51vw; width:8vw; height: 8vw; background-color: rgb(9, 180, 9); border-radius: 8vw;"></lv>
+                <lv id="lv6" style="position: fixed; top: 57vh; left: 53vw; width:5vw; height: 5vw; background-color: rgb(12, 105, 12); border-radius: 5vw;"></lv>
+                <lv id="lv7" style="position: fixed; top: 52vh; left: 55vw; width:7vw; height: 7vw; background-color: rgb(29, 201, 29); border-radius: 7vw;"></lv>
+            </div>
+            <div hidden id="txt6">
+                <tip id="txt6t" style="position: fixed; left: 36.9vw; top:66.2vh; width: 0px; height: 0px; background-color: transparent; border-top: 2vmax solid grey; border-right: .8vmax solid transparent; border-left: .8vmax solid transparent; transform: rotate(330deg);"></tip>
+                <box id="txtbx" style="overflow-wrap: anywhere; position: fixed; background-color: grey; border: 1.4vh solid grey; left: 35vw; top: 62.8vh; width: 4vw; height: 1.8vh; border-radius: 1vw; font-family: 'Rubik', sans-serif; font-size: .9vh;">Hělp Mé</box>
+            </div>
+            <div hidden id="txtM">
+                <tip style="position: fixed; left: 75.9vw; top: 80.2vh; width: 0px; height: 0px; background-color: transparent; border-top: 2vmax solid grey; border-right: .8vmax solid transparent; border-left: .8vmax solid transparent; transform: rotate(330deg);"></tip>
+                <box style="position: fixed; background-color: grey; left: 72vw; top: 75.8vh; width: 6vw; height: 5.4vh; border-radius: 1vw; font-family: 'Rubik', sans-serif; font-size: 1.3vh;">
+                    <p id="txtbxM" style="position: absolute; left: -.2vw; text-align: center;">Can I get a redesign?</p>
+                </box>
+            </div>
+            <div hidden id="txtS">
+                <tip style="position: fixed; left: 45.4vw; top: 73.6vh; width: 0px; height: 0px; background-color: transparent; border-top: 2vmax solid grey; border-right: .8vmax solid transparent; border-left: .8vmax solid transparent; transform: rotate(310deg);"></tip>
+                <box style="position: fixed; background-color: grey; left: 43.1vw; top: 70vh; width: 4vw; height: 5.4vh; border-radius: 1vw; font-family: 'Rubik', sans-serif; font-size: 1.22vh;">
+                    <p id="txtbxS" style="position: absolute; left: -.2vw; padding-top: .1vh; padding-left: .2vw; text-align: center;">It's quite hot out.</p>
+                </box>
+            </div>
+            <div hidden id="txtSn">
+                <tip style="position: fixed; left: 38.4vw; top: 31.4vh; width: 0px; height: 0px; background-color: transparent; border-top: 2vmax solid grey; border-right: .8vmax solid transparent; border-left: .8vmax solid transparent; transform: rotate(160deg);"></tip>
+                <box style="position: fixed; background-color: grey; left: 37.4vw; top: 33vh; width: 6vw; height: 5.4vh; border-radius: 1vw; font-family: 'Rubik', sans-serif; font-size: 1.22vh;">
+                    <p id="txtbxSn" style="position: absolute; left: -.2vw; padding-top: .5vh; padding-left: .6vw; text-align: center;">░▒▓▓▒░▒▓░▒</p>
+                </box>
+            </div>
+            <div hidden id="perp" style="position: fixed; top: 73vh; left:40vw; transform: rotate(0deg);">
+                <bd id="bd5" style="width:0px; height: 9.4vh; border:.15vmax solid black; position:absolute;"></bd>
+                <hd id="hd5" style="width:3vmax; height: 3vmax; background-color:black; position: absolute; top:-3vh; left:-1.3vw; border-radius: 3vmax;"></hd>
+                <ar id="ar15" style="width:0px; height: 2.6vmax; border:.15vmax solid black; position: absolute; top:1.5vh; left:1vw; transform: rotate(45deg);"></ar>
+                <ar id="ar25" style="width:0px; height: 2.6vmax; border:.15vmax solid black; position: absolute; top:1.5vh; left:-1vw; transform: rotate(135deg);"></ar>
+                <ar id="lg1" style="width:0px; height: 2.86vmax; border:.15vmax solid black; position: absolute; top:9vh; left:.9vw; transform: rotate(145deg);"></ar>
+                <ar id="lg2" style="width:0px; height: 2.86vmax; border:.15vmax solid black; position: absolute; top:9vh; left:-.9vw; transform: rotate(35deg);"></ar>
+            </div>
+            <div hidden id="bbhat" style="position: fixed; left: 38.7vw; top:70vh">
+                <rim style="position: absolute; top: .8vmax; left: 2.8vw; width:1.5vmax; height: .2vmax; background-color: rgb(123, 0, 190); border:.19vmax solid rgb(123, 0, 190); "></rim>
+                <hat style="position: absolute; width:3vmax; height: 1.3vmax; background-color: rgb(232, 4, 4); border-top-left-radius: 3vmax; border-top-right-radius: 3vmax;"></ha>
+                <bbl style="position: absolute; top: -.5vh; left: 1.25vw; width:.2vw; height: .2vw; background-color: black; border:.15vmax solid black; border-radius: .25vmax;"></bbl>
+            </div>
+            <div hidden id="spear" style="position: fixed; left: 41.9vw; top: 72vh;">
+                <hdl style="position: absolute; width: .2vmax; height: 6vmax; background-color: rgb(148, 185, 198); transform: rotate(10deg)"></hdl>
+                <tip style="position: absolute; left:.2vw; top:-0.8vh; width: 0px; height: 0px; background-color: transparent; border-top: 1vmax solid rgb(190, 178, 8); border-right: .4vmax solid transparent; border-left: .4vmax solid transparent; transform: rotate(190deg);">
+            </div>
+            <div hidden id="nametag" style="position: fixed; left: 39.2vw; top: 77vh;">
+                <re style="position: absolute; width: 1.8vmax; height: 1.5vmax; background-color: white; font-size: 0.5vmax; border: .1vmax solid grey"><br>Jefferson</re>
+                <re style="position: absolute; width: 1.88vmax; height: .5vmax; background-color: red;"></re>
+            </div>
+            <div id="frans" style="position: fixed; left: 40vw; top: 76vh">
+                <box hidden id = "bqcallback" style="width:4vw; height: 1vh; border: 2px solid #7c4d07; border-radius: 50px; position: absolute; background-color: #eec07b; transform: rotate(280deg)">
+                    <ln style="width:0px; height: 1.6vh; border:1px solid #7c4d07; position: absolute; top:-.4vh; left:1.6vw; transform: rotate(51deg);"></ln>
+                </box>
+                <box hidden id="bagcallback" style="width:3vw; height:3vh; border-top: 10px solid powderblue; border-left: 2px solid black; border-right: 2px solid black; border-bottom: 2px solid black; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; position: absolute; top:-5.6vh; left:-1.4vw;">
+                    <box style="position: absolute; background-color: blue; width: 3.01vw; height:2vh; left:vw; top:1vh"></box>
+                    <ln style="width:3.1vw; height:0px; border: 1px solid rgb(24, 136, 173); position: absolute; left: -.1vw; top: -.4vh;"></ln>
+                    <ln style="width:3.1vw; height:0px; border: 1px solid rgb(24, 136, 173); position: absolute; left: -.1vw; top: -.8vh;"></ln>
+                </box> 
+            </div>
+            <div hidden id="skates" style="position: fixed; left: 41.2vw; top: 86vh;">
+                <sk style="position: absolute; background-color: rgb(201, 118, 10); height: 2vh; width: 2vw"></sk>
+                <sk style="position: absolute; background-color: #FFFFFF; height: 2.5vh; width: 2.5vh; border-radius: 2.5vh; left: 1.2vw; top: -1.2vh;"></sk>
+                <sk style="position: absolute; left: -3vw; background-color: rgb(201, 118, 10); height: 2vh; width: 2vw"></sk>
+                <sk style="position: absolute; background-color: #FFFFFF; height: 2.5vh; width: 2.5vh; border-radius: 2.5vh; left: -2vw; top: -1.2vh;"></sk>
+                <sk style="position: absolute; background-color: #FFFFFF; height: 1.2vh; width: 1.2vh; border: .2vh solid black; border-radius: 1.2vh; left: -1.8vw; top: 2vh;"></sk>
+                <sk style="position: absolute; background-color: #FFFFFF; height: 1.2vh; width: 1.2vh; border: .2vh solid black; border-radius: 1.2vh; left: -3vw; top: 2vh;"></sk>
+                <sk style="position: absolute; background-color: #FFFFFF; height: 1.2vh; width: 1.2vh; border: .2vh solid black; border-radius: 1.2vh; left: vw; top: 2vh;"></sk>
+                <sk style="position: absolute; background-color: #FFFFFF; height: 1.2vh; width: 1.2vh; border: .2vh solid black; border-radius: 1.2vh; left: 1.2vw; top: 2vh;"></sk>
+            </div>
+            <div hidden id="pusher" style="position: fixed; top: 73vh; left:35vw;">
+                <bd id="bd5" style="width:0px; height: 9.4vh; border:.15vmax solid black; position:absolute;"></bd>
+                <hd id="hd5" style="width:3vmax; height: 3vmax; background-color:black; position: absolute; top:-3vh; left:-1.3vw; border-radius: 3vmax;"></hd>
+                <ar id="ar125" style="width:0px; height: 4.4vw; border:.15vmax solid black; position: absolute; top:1.5vh; left:2.3vw; transform: rotate(80deg);"></ar>
+                <ar id="ar225" style="width:0px; height: 4.4vw; border:.15vmax solid black; position: absolute; top:1.5vh; left:2.3vw; transform: rotate(100deg);"></ar>
+                <ar id="lg1" style="width:0px; height: 2.86vmax; border:.15vmax solid black; position: absolute; top:9vh; left:.9vw; transform: rotate(145deg);"></ar>
+                <ar id="lg2" style="width:0px; height: 2.86vmax; border:.15vmax solid black; position: absolute; top:9vh; left:-.9vw; transform: rotate(35deg);"></ar>
+            </div>
+            <div hidden id="dead" style="position: fixed; top: 84vh; left:46vw; transform: rotate(165deg);">
+                <bd id="bd5" style="width:0px; height: 9.4vh; border:.15vmax solid black; position:absolute;"></bd>
+                <hd id="hd5" style="width:3vmax; height: 3vmax; background-color:black; position: absolute; top:-3vh; left:-1.3vw; border-radius: 3vmax;"></hd>
+                <ar id="ar325" style="width:0px; height: 2.4vw; border:.15vmax solid black; position: absolute; top:1.5vh; left:-1.3vw; transform: rotate(80deg);"></ar>
+                <ar id="ar425" style="width:0px; height: 2.4vw; border:.15vmax solid black; position: absolute; top:1.5vh; left:-1.3vw; transform: rotate(100deg);"></ar>
+                <ar id="lg1" style="width:0px; height: 2.86vmax; border:.15vmax solid black; position: absolute; top:9vh; left:.9vw; transform: rotate(145deg);"></ar>
+                <ar id="lg1" style="width:0px; height: .86vmax; border:.15vmax solid rgb(207, 35, 35);; position: absolute; top:12.1vh; left:1.4vw; transform: rotate(145deg);"></ar>
+                <ar id="lg2" style="width:0px; height: 2.86vmax; border:.15vmax solid black; position: absolute; top:9vh; left:-.9vw; transform: rotate(35deg);"></ar>
+            </div>
+            <div hidden id="tear" style="position: fixed; top: 72.8vh; left: 40.5vw;">
+                <twl style="width:.5vmax; left: .1vw; top: -.1.7vh; height: .5vmax; background-color:lightblue; position: absolute; border-bottom-right-radius: .5vmax; transform: rotate(30deg);"></twl>
+                <tw style="width:.7vmax; height: .7vmax; background-color:lightblue; position: absolute; border-radius: .7vmax;"></tw>
+            </div>
+            <div hidden id="bird" style="position: fixed; top: 82vh; left: 37vw;">
+                <bk style="position: absolute; left: 2.4vw; top: .4vh; height: 3.4vh; width: 1.4vw; background-color: rgb(189, 117, 9); clip-path: polygon(0 4%, 100% 34%, 0 42%);"></bk>
+                <lg style="position: absolute; left: 0.3vw; top: 2.4vh; height: 3vw; width: 2.5vw; background-color: rgb(214, 214, 19); clip-path: polygon(37% 19%, 48% 18%, 49% 44%, 61% 51%, 57% 56%, 49% 51%, 43% 64%, 39% 52%, 29% 53%, 27% 47%, 37% 45%);"></lg>
+                <lg style="position: absolute; left: 1.2vw; top: 2.4vh; height: 3vw; width: 2.5vw; background-color: rgb(214, 214, 19); clip-path: polygon(37% 19%, 48% 18%, 49% 44%, 61% 51%, 57% 56%, 49% 51%, 43% 64%, 39% 52%, 29% 53%, 27% 47%, 37% 45%);"></lg>
+                <bd style="position: absolute; background-color: tomato; width: 4vw; height: 4vh; clip-path: circle(30% at 50% 50%);"></bd>
+                <ey style="position: absolute; left: 1.7vw; top: 1vh; background-color: black; width: 1vw; height: 1vh; clip-path: circle(30% at 50% 50%);"></ey>
+                <tl style="position: absolute; left: -1.1vw; top: .4vh; height: 4vh; width: 3vw; background-color: tomato; clip-path: polygon(100% 0, 100% 81%, 0 100%);"></tl>
+            </div>
+            <div hidden id="hair" style="position: fixed; top: 69.9vh; left: 39vw;">
+                <har style="position: absolute; left: 2.9vw; width:0px; height: 50px; background-color: gold; border:1px solid gold; transform: rotate(145deg);"></har>
+                <har style="position: absolute; left: 2.6vw; width:0px; height: 50px; background-color: gold; border:1px solid gold; transform: rotate(160deg);"></har>
+                <har style="position: absolute; left: 2.7vw; width:0px; height: 50px; background-color: gold; border:1px solid gold; transform: rotate(153deg);"></har>
+                <har style="position: absolute; left: -.6vw; width:0px; height: 50px; background-color: gold; border:1px solid gold; transform: rotate(35deg);"></har>
+                <har style="position: absolute; left: -.4vw; width:0px; height: 50px; background-color: gold; border:1px solid gold; transform: rotate(20deg);"></har>
+                <har style="position: absolute; left: -.5vw; width:0px; height: 50px; background-color: gold; border:1px solid gold; transform: rotate(28deg);"></har>
+                <har style="position: absolute; width:40px; height: 12px; top:.05vh; border-radius: 30px; background-color: gold; border:1px solid gold;"></har>
+            </div>
+            <div hidden id="hair2" style="position: fixed; top: 69.9vh; left: 39vw;">
+                <har style="position: absolute; left: -.3vw; top: 1.8vh; background-color: gold; width: 3vw; height: 4vh; border-bottom-left-radius: .7vw; border-bottom-right-radius: .7vw;"></har>
+                <bd style="width:0px; top: 3.1vh; left: 1vw; height: 9.4vh; border:.15vmax solid black; position:absolute;"></bd>
+                <hd style="width:3vmax; height: 3vmax; background-color:black; position: absolute; top:.1vh; left:-.3vw; border-radius: 3vmax;"></hd>
+                <har style="position: absolute; width:3vw; height: 6vw; top:.05vh; left: -.3vw; border-top-right-radius: 30px; border-top-left-radius: 30px; background-color: transparent; border-bottom: 0px; border-top:1vh solid gold;"></har>
+            </div>
+            <div hidden id="stop" style="position: fixed; top: 66.7vh; left: 41.9vw; transform: rotate(11deg);">
+                <pst style="position: absolute; width: 1vw; height: 10vh; background-color: grey; left: .9vw; top: 4.8vh;"></pst>
+                <sgn style="position: absolute; width: 5vh; height: 5vh; background-color: red; clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);">
+                    <p style="position: absolute; left: .35vw; color: #FFFFFF;">STOP</p>
+                </sgn>
+                <hol style="position: absolute; left: .95vw; top: 6.6vh; width: 1.5vh; height: 1.5vh; background-color: #FFFFFF; border-radius: 1.5vh;"></hol>
+                <hol style="position: absolute; left: .95vw; top: 11.3vh; width: 1.5vh; height: 1.5vh; background-color: #FFFFFF; border-radius: 1.5vh;"></hol>
+            </div>
+            <div id="cookie" style="position: fixed; top: 73vh; left: 26.4vw;">
+                <cki style="position: absolute; background-color: #E7CE96; width: 4vh; height: 4vh; border-radius: 4vh; border: 1px solid #89674a"></cki>
+                <chk style="position: absolute; left: .2vw; top: 2vh; background-color: #84563C; width: 1vh; height: 1vh; border-radius: 1vh;">
+                <chk style="position: absolute; left: .8vw; top: -1.3vh; background-color: #84563C; width: 1vh; height: 1vh; border-radius: 1vh;">
+                <chk style="position: absolute; left: .3vw; top: 1.5vh; background-color: #84563C; width: 1vh; height: 1vh; border-radius: 1vh;">  
+            </div>
+            <div hidden id="glasses" style="position: fixed; top: 71.0vh; left: 41vw;">
+                <lens style="position: absolute; background-color: rgb(214, 214, 214); width: 1vh; height: 1vh; border: .5vh solid rgb(8, 146, 105); border-radius: 1.5vh;"></lens>
+                <frm style="position: absolute; background-color: rgb(8, 146, 105); width: 1vw; height: .3vh; top:.75vh; left: -1.5vh"></frm>
+                <frm style="position: absolute; border: .37vh solid rgb(8, 146, 105); width: .43vh; height: .43vh; border-radius: .6vh; border-bottom-color: transparent; border-right-color: transparent; transform: rotate(340deg); left: -2vh; top: .76vh;"></frm>
+            </div>
+            <div hidden id="wand" style="position: fixed; left: 42.3vw; top: 72vh; transform: rotate(10deg)">
+                <hdl style="position: absolute; width: .2vmax; height: 3vmax; background-color: rgb(45, 6, 221); "></hdl>
+                <cld style="position: absolute; width: .7vw; height: 1vh; top:-.1vh; left: -.23vw; background-color: grey;"></cld>
+                <tip style="position: absolute; left: -.1vw; top:-2.5vh; width: 1vw; height: 3vh; background-color: rgb(199, 199, 81); clip-path: polygon(50% 0%, 44% 18%, 23% 37%, 34% 50%, 46% 70%, 22% 100%, 23% 79%, 32% 66%, 8% 33%); transform: rotate(0deg);">
+            </div>
+            <div hidden id="cloud" style="position: fixed; left: 50vw; top: 20vh;">
+                <div id="rain">
+                    <rawn id="rd0" style="position: absolute; left: 5vw; top: 3vh;">
+                        <twl style="width:1vw; left: .2vw; top: -.1vh; height: 1vw; background-color:lightblue; position: absolute; border-bottom-right-radius: 2vw; transform: rotate(30deg);"></twl>
+                        <tw style="width:1.6vw; height: 1.6vw; background-color:lightblue; position: absolute; border-radius: 1.6vw;"></tw>
+                    </rawn>
+                    <rawn id="rd1" style="position: absolute; left: 3vw; top: 12vh">
+                        <twl style="width:1vw; left: .2vw; top: -.1vh; height: 1vw; background-color:lightblue; position: absolute; border-bottom-right-radius: 2vw; transform: rotate(30deg);"></twl>
+                        <tw style="width:1.6vw; height: 1.6vw; background-color:lightblue; position: absolute; border-radius: 1.6vw;"></tw>
+                    </rawn>
+                    <rawn id="rd2" style="position: absolute; left: 7vw; top: 8vh">
+                        <twl style="width:1vw; left: .2vw; top: -.1vh; height: 1vw; background-color:lightblue; position: absolute; border-bottom-right-radius: 2vw; transform: rotate(30deg);"></twl>
+                        <tw style="width:1.6vw; height: 1.6vw; background-color:lightblue; position: absolute; border-radius: 1.6vw;"></tw>
+                    </rawn>
+                    <rawn id="rd3" style="position: absolute; left: 1vw; top: 24vh">
+                        <twl style="width:1vw; left: .2vw; top: -.1vh; height: 1vw; background-color:lightblue; position: absolute; border-bottom-right-radius: 2vw; transform: rotate(30deg);"></twl>
+                        <tw style="width:1.6vw; height: 1.6vw; background-color:lightblue; position: absolute; border-radius: 1.6vw;"></tw>
+                    </rawn>
+                    <rawn id="rd4" style="position: absolute; left: 5vw; top: 17vh;">
+                        <twl style="width:1vw; left: .2vw; top: -.1vh; height: 1vw; background-color:lightblue; position: absolute; border-bottom-right-radius: 2vw; transform: rotate(30deg);"></twl>
+                        <tw style="width:1.6vw; height: 1.6vw; background-color:lightblue; position: absolute; border-radius: 1.6vw;"></tw>
+                    </rawn>
+                    <rawn id="rd5" style="position: absolute; left: 3vw; top: 0vh">
+                        <twl style="width:1vw; left: .2vw; top: -.1vh; height: 1vw; background-color:lightblue; position: absolute; border-bottom-right-radius: 2vw; transform: rotate(30deg);"></twl>
+                        <tw style="width:1.6vw; height: 1.6vw; background-color:lightblue; position: absolute; border-radius: 1.6vw;"></tw>
+                    </rawn>
+                    <rawn id="rd6" style="position: absolute; left: 7vw; top: 28vh">
+                        <twl style="width:1vw; left: .2vw; top: -.1vh; height: 1vw; background-color:lightblue; position: absolute; border-bottom-right-radius: 2vw; transform: rotate(30deg);"></twl>
+                        <tw style="width:1.6vw; height: 1.6vw; background-color:lightblue; position: absolute; border-radius: 1.6vw;"></tw>
+                    </rawn>
+                    <rawn id="rd7" style="position: absolute; left: 1vw; top: 6vh">
+                        <twl style="width:1vw; left: .2vw; top: -.1vh; height: 1vw; background-color:lightblue; position: absolute; border-bottom-right-radius: 2vw; transform: rotate(30deg);"></twl>
+                        <tw style="width:1.6vw; height: 1.6vw; background-color:lightblue; position: absolute; border-radius: 1.6vw;"></tw>
+                    </rawn>
+                </div>
+                <div id="condensate">
+                    <lv style="position: absolute; width:8vw; height: 8vw; background-color: rgb(71, 71, 71); border-radius: 8vw; left: 1.4vw; top: -.4vh"></lv>
+                    <lv style="position: absolute; width:8vw; height: 8vw; background-color: rgb(185, 185, 185); border-radius: 8vw; left: 2.2vw; top: -4vh"></lv>
+                    <lv style="position: absolute; width:8vw; height: 8vw; background-color: rgb(233, 233, 233); border-radius: 8vw; left: 2.3vw; top: -1vh"></lv>
+                    <lv style="position: absolute; width:8vw; height: 8vw; background-color: rgb(128, 128, 128); border-radius: 8vw; left: 2vw; top: 1vh"></lv>
+                    <lv style="position: absolute; width:8vw; height: 8vw; background-color: rgb(104, 104, 104); border-radius: 8vw; left: -.2vw; top: 1.7vh"></lv>
+                    <lv style="position: absolute; width:8vw; height: 8vw; background-color: rgb(160, 160, 160); border-radius: 8vw; left: 1.7vw; top: 1.3vh"></lv>
+                    <lv style="position: absolute; width:8vw; height: 8vw; background-color: rgb(139, 139, 139); border-radius: 8vw; left: 4.1vw; top: 1.7vh"></lv>
+                    <lv style="position: absolute; width:8vw; height: 8vw; background-color: rgb(158, 158, 158); border-radius: 8vw; left: -1vw; top: -1.3vh"></lv>
+                    <lv style="position: absolute; width:8vw; height: 8vw; background-color: rgb(156, 156, 156); border-radius: 8vw; left: 1vw; top: -1vh"></lv>
+                    <lv style="position: absolute; width:8vw; height: 8vw; background-color: rgb(29, 29, 29); border-radius: 8vw; left: 2.8vw; top: 2vh"></lv>
+                    <lv style="position: absolute; width:8vw; height: 8vw; background-color: rgb(170, 170, 170); border-radius: 8vw;"></lv>
+                    <lv style="position: absolute; width:8vw; height: 8vw; background-color: rgb(80, 80, 80); border-radius: 8vw; left: 1.5vw; top: -1vh"></lv>
+                    <lv style="position: absolute; width:8vw; height: 8vw; background-color: rgb(161, 161, 161); border-radius: 8vw; left: .6vw; top: 3vh"></lv>
+                </div>
+            </div>
+            <div id="claw" style="position: fixed; left: 0vw; top: 104vh">
+                <ar style="position: absolute; top: 1vh; left:-1vw; width: 1vw; height: 20vh; background-color: saddlebrown; transform: rotate(20deg)"></ar>
+                <cl style="position: absolute; width: 3vw; height: 4vh; background-color: saddlebrown; clip-path: polygon(70% 0, 59% 35%, 90% 1%, 72% 48%, 56% 49%, 23% 99%, 33% 45%, 22% 44%, 52% 0, 41% 35%);"></cl>
+            </div>
+            <div id="strings" style="position: fixed; left: 41.9vw; top: -80vh;">
+                <ste style="position: absolute; background-color: black; height: 75.5vh; width: .1vw;"></ste>
+                <ste style="position: absolute; background-color: black; left: -3.7vw; height: 75.5vh; width: .1vw;"></ste>
+            </div>
+            <div hidden id="bln" style="position: fixed; left: 42vw; top: 67vh;">
+                <rbn style="position: absolute; background-color: black; height: 8.5vh; width: .1vw;"></rbn>
+                <bln style="position: absolute; background-color: rgb(80, 210, 233); left: -.9vw; top: -3vh; height: 5.5vh; width: 2vw; clip-path: ellipse(33% 47% at 48% 53%);"></bln>
+            </div>
+            <div hidden id="sun" style="position: fixed; left: -4vw; top: -27vh;">
+                <sun style="position: absolute; background-color: yellow; width: 34vmax; height: 34vmax; border-radius: 34vmax;"></sun>
+                <bam style="position: absolute; background-color: yellow; left: 17vw; width: 1vw; height: 66.4vh; transform: rotate(90deg)"></bam>
+                <bam style="position: absolute; background-color: yellow; left: 17vw; width: 1vw; height: 66.4vh; transform: rotate(110deg)"></bam>
+                <bam style="position: absolute; background-color: yellow; left: 17vw; width: 1vw; height: 66.4vh; transform: rotate(130deg)"></bam>
+                <bam style="position: absolute; background-color: yellow; left: 17vw; width: 1vw; height: 66.4vh; transform: rotate(150deg)"></bam>
+                <bam style="position: absolute; background-color: yellow; left: 17vw; width: 1vw; height: 66.4vh; transform: rotate(170deg)"></bam>
+            </div>
+            <div hidden id="hw" style="position: fixed; left: 42.1vw; top: 73vh;">
+                <shet style="position: absolute; outline: .1vw solid grey; background-color: #FFFFFF; width: 2vw; height: 6vh;">
+                    <p style="color: rgb(31, 30, 9); font-size: xx-small; text-align: center;">My HW<br><br>1+1 = 2</p>
+                </shet>
+                <grd id="grd" hidden style="position: absolute; outline: .1vw solid red; background-color: transparent; color: red; width: 1vw; height: 1.1vw; border-radius: 1vw; left: .9vw; top: .1vh">
+                    <p id="Lgrd" style="margin-top: -.1vh; margin-left: .2vw"></p>
+                </grd>
+            </div>
+            <div hidden id="jobP" style="position: fixed; left: 38.2vw; top: 70.6vh;">
+                <pstr style="position: absolute; height: 8vh; width: 3.6vw; background-color: #FFFFFF; border: .3vh solid black;">
+                    <p style="margin-top: .4vh; font-size: x-small"><b>Help Wanted</b></p>
+                    <p style="margin-top: -.8vh; font-size: xx-small">HTML Coder<br>No experience needed<br>1% Equity<br>-- Mongo</p>
+                </pstr>
+            </div>
+            <div hidden id="phone" style="position: fixed; left: 52.8vw; top: 70.4vh; transform: rotate(30deg)">
+                <phn style="position: absolute; background-color: rgb(143, 21, 112); width: 2.7vw; height: 5vh; clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 35% 100%, 60% 50%, 35% 0);"></phn>
+            </div>
+            <div hidden id="cptr" style="position: fixed; left: 40.6vw; top: 70.5vh;">
+                <cpt style="position: absolute; background-color: silver; width: 3vw; height: 6vh; clip-path: polygon(83% 0, 100% 0, 100% 100%, 0 100%, 0 87%, 83% 87%);"></cpt>
+                <scrn style="position: absolute; background-color: mediumturquoise; width: .2vw; height: 5.2vh; left: 2.4vw; top: .01vh"></scrn>
+                <keb style="position: absolute; background-color: black; width: 2.4vw; height: .3vh; top: 5vh;"></keb>
+            </div>
+            <div id="dab">
+                <db hidden id="dbl" style="width:0px; height: 5vmax; border:.15vmax solid black; position: fixed; top:67.8vh; left:40.2vw; transform: rotate(135deg);"></db>
+                <db hidden id="dbr" style="width:0px; height: 5vmax; border:.15vmax solid black; position: fixed; top:67.6vh; left:39.8vw; transform: rotate(45deg);"></db>
+            </div>
+            <div hidden id="hdps" style="position: fixed; left: 38.3vw; top: 68.7vh">
+                <div hidden id="music">
+                    <qrt id="qn1" style="position: absolute; top: 0vh; left: 4.5vw;">
+                        <stm style="position: absolute; height: 2vh; width: .2vw; background-color: black;"></stm>
+                        <dot style="left: -.4vmax; top: 1.7vh; position: absolute; height: .6vmax; width: .6vmax; border-radius: .6vmax; background-color: black;"></dot>
+                    </qrt>
+                    <qrt id="qn2" style="position: absolute; top: -3vh; left: 3.4vw;">
+                        <stm style="position: absolute; height: 2vh; width: .2vw; background-color: black;"></stm>
+                        <dot style="left: -.4vmax; top: 1.7vh; position: absolute; height: .6vmax; width: .6vmax; border-radius: .6vmax; background-color: black;"></dot>
+                    </qrt>
+                    <qrt id="qn3" style="position: absolute; top: 2.3vh; left: 3vw;">
+                        <stm style="position: absolute; height: 2vh; width: .2vw; background-color: black;"></stm>
+                        <dot style="left: -.4vmax; top: 1.7vh; position: absolute; height: .6vmax; width: .6vmax; border-radius: .6vmax; background-color: black;"></dot>
+                    </qrt>
+                    <qrt id="qn4" style="position: absolute; top: 0vh; left: 1.4vw;">
+                        <stm style="position: absolute; height: 2vh; width: .2vw; background-color: black;"></stm>
+                        <dot style="left: -.4vmax; top: 1.7vh; position: absolute; height: .6vmax; width: .6vmax; border-radius: .6vmax; background-color: black;"></dot>
+                    </qrt>
+                    <qrt id="qn5" style="position: absolute; top: -1.3vh; left: .4vw;">
+                        <stm style="position: absolute; height: 2vh; width: .2vw; background-color: black;"></stm>
+                        <dot style="left: -.4vmax; top: 1.7vh; position: absolute; height: .6vmax; width: .6vmax; border-radius: .6vmax; background-color: black;"></dot>
+                    </qrt>
+                    <qrt id="qn6" style="position: absolute; top: 2.3vh; left: -.4vw;">
+                        <stm style="position: absolute; height: 2vh; width: .2vw; background-color: black;"></stm>
+                        <dot style="left: -.4vmax; top: 1.7vh; position: absolute; height: .6vmax; width: .6vmax; border-radius: .6vmax; background-color: black;"></dot>
+                    </qrt>
+                </div>
+                <tpb style="position: absolute; background-color: transparent; height: 3vmax; width: 3vmax; border-radius: 3vmax; border: .4vmax solid green; border-bottom-color: transparent; border-left-color: transparent; transform: rotate(315deg)"></tpb>
+                <ler style="position: absolute; left: -.3vw; top: 2.5vh; height: 3vh; width: .9vw; background-color: rgb(110, 184, 0); border: .0vmax solid rgb(110, 184, 0); border-top-left-radius: 3vh; border-bottom-left-radius: 3vh;"></ler>
+                <rer style="position: absolute; left: 3.15vw; top: 2.5vh; height: 3vh; width: .9vw; background-color: rgb(110, 184, 0); border: .0vmax solid rgb(110, 184, 0); border-top-right-radius: 3vh; border-bottom-right-radius: 3vh;"></rer>
+            </div>
+            <div hidden id="msth" style="position: fixed; left: 38.7vw; top: 71.7vh">
+                <har style="position: absolute; background-color: #84563C; height: 3vh; width: 3vw; clip-path: polygon(4% 66%, 10% 63%, 15% 60%, 18% 59%, 22% 54%, 26% 52%, 31% 51%, 37% 49%, 39% 46%, 43% 49%, 47% 49%, 52% 49%, 57% 47%, 60% 47%, 64% 47%, 68% 48%, 73% 49%, 77% 50%, 81% 55%, 86% 55%, 91% 56%, 95% 57%, 99% 58%, 100% 61%, 98% 63%, 94% 63%, 88% 66%, 84% 66%, 80% 65%, 78% 65%, 74% 64%, 71% 64%, 65% 63%, 61% 61%, 59% 61%, 56% 60%, 51% 60%, 44% 61%, 42% 61%, 40% 63%, 32% 66%, 28% 66%, 26% 67%, 21% 68%, 19% 69%, 14% 69%, 9% 70%, 8% 70%);"></har>
+            </div>
+            <div hidden id="helping">
+                <button style="position: relative; opacity: .9; background-color: palegreen; color: rgb(4, 77, 26); width: 10vw; left: 38vw; top: 38vh; height: 5vh; font-size: 1.4vh;" onclick="helped()">Sure</button>
+                <button style="position: relative; opacity: .9; background-color: palevioletred; color: rgb(75, 1, 1); width: 10vw; left: 41vw; top: 38vh; height: 5vh; font-size: 1.4vh;" onclick="denied()">Nah</button>
+            </div>
+            <div hidden id="ev" style="position: fixed; left: 36.6vw; top: 70.5vh;">
+                <img src="./D6A/30.png" style = "height: 18vh;">
+            </div>
+            <div hidden id="etb" style="position: fixed; left: 41.7vw; top: 70.5vh;">
+                <cb style="position: absolute; background-color: blue; width: 3.5vw; height: 6.2vh; clip-path: polygon(0 100%, 75% 100%, 76% 56%, 39% 10%, 0 56%);">
+                    <p style="position: absolute; color: red; font-size: .47vw; top: 3.8vh;">Eldritch Taco</p>
+                </cb>
+                <etc style="position: absolute; left: .7vw; top: 2.2vh; background-color: red; width: 1.6vw; height: 2vh; clip-path: polygon(33% 50%, 44% 51%, 62% 47%, 67% 37%, 60% 22%, 67% 12%, 77% 11%, 86% 21%, 93% 38%, 85% 59%, 67% 70%, 52% 70%, 56% 94%, 16% 93%, 29% 69%, 19% 65%, 8% 54%, 6% 43%, 10% 32%, 17% 24%, 1% 18%, 0 9%, 10% 0, 26% 3%, 34% 17%, 32% 35%);"></etc>
+                <ete style="position: absolute; left: .87vw; top: 2.3vh; background-color: white; width: .2vmax; height: .2vmax; border-radius: 1vmax;"></ete>
+                <cf style="position: absolute; background-color: lightblue; width: .7vw; height: 2vh; clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); left:.4vw; top: .3vh; transform: rotate(28deg); border-top-left-radius: 10vh; border-bottom-left-radius: 10vh; border-bottom-right-radius: 10vh;"></cf>
+            </div>
+            <div hidden id="sls" style="position: fixed; left: 40vw; top: 73vh;">
+                <bd id="sbd5" style="width:0px; height: 9.4vh; border:.15vmax solid black; position:absolute;"></bd>
+                <hd id="shd5" style="width:3vmax; height: 3vmax; background-color:black; position: absolute; top:-3vh; left:-1.3vw; border-radius: 3vmax;"></hd>
+                <ar id="sar15" style="width:0px; height: 2.6vmax; border:.15vmax solid black; position: absolute; top:1.5vh; left:1vw; transform: rotate(45deg);"></ar>
+                <ar id="sar25" style="width:0px; height: 2.6vmax; border:.15vmax solid black; position: absolute; top:1.5vh; left:-1vw; transform: rotate(135deg);"></ar>
+                <ar id="slg1" style="width:0px; height: 2.86vmax; border:.15vmax solid black; position: absolute; top:9vh; left:.9vw; transform: rotate(145deg);"></ar>
+                <ar id="slg2" style="width:0px; height: 2.86vmax; border:.15vmax solid black; position: absolute; top:9vh; left:-.9vw; transform: rotate(35deg);"></ar>
+            </div>
+            <div hidden id="bff" style="position: fixed; left: 38.6vw; top: 75vh;">
+                <skr style="position: absolute; background-color: lightskyblue; width: 3vmax; height: 3vmax; border-radius: 3vmax;">
+                    <p style="position: absolute; top: .8vmax; left: .15vmax; font-size: .6vmax">BFF</p>
+                </skr>
+                <tr>
+                    <brc style="position: absolute; top: 1.2vh; left: .8vw; width:.8vw; height: .3vmax; background-color: rgb(134, 90, 34); transform: rotate(30deg)"></brc>
+                    <bark style="position: absolute; top: .7vh; left: 1.4vw; width:1.0vw; height: 2.7vh; background-color: burlywood; border-bottom-left-radius: .35vw; border-bottom-right-radius: .35vw;"></bark>
+                    <lv style="position: absolute; top: .4vh; left: 1.6vw; width:.8vw; height: .8vw; background-color: green; border-radius: 8vw;"></lv>
+                    <lv style="position: absolute; top: .2vh; left: 1.3vw; width:1.0vw; height: 1.0vw; background-color: green; border-radius: 10vw;"></lv>
+                    <lv style="position: absolute; top: .3vh; left: 1.5vw; width:1.1vw; height: 1.1vw; background-color: rgb(15, 66, 15); border-radius: 11vw;"></lv>
+                    <lv style="position: absolute; top: .4vh; left: 1.7vw; width:.7vw; height: .7vw; background-color: rgb(36, 94, 36); border-radius: 7vw;"></lv>
+                    <lv style="position: absolute; top: .6vh; left: 1.4vw; width:.8vw; height: .8vw; background-color: rgb(9, 180, 9); border-radius: 8vw;"></lv>
+                    <lv style="position: absolute; top: .3vh; left: 1.8vw; width:.5vw; height: .5vw; background-color: rgb(12, 105, 12); border-radius: 5vw;"></lv>
+                    <lv style="position: absolute; top: .2vh; left: 1.3vw; width:.7vw; height: .7vw; background-color: rgb(29, 201, 29); border-radius: 7vw;"></lv>
+                </tr>
+                
+            </div>
+            <div hidden id="pstht" style="position: fixed; left: 38.3vw; top:71vh; transform: rotate(-20deg);">
+                <rim style="position: absolute; top: .8vmax; left: 2.8vw; width:1.5vmax; height: .2vmax; background-color: black; border:.19vmax solid black; "></rim>
+                <hat style="position: absolute; width:3vmax; height: 1.3vmax; background-color: rgb(0,85,164); border-top-left-radius: 3vmax; border-top-right-radius: 3vmax;"></ha>
+            </div>
+            <div hidden id="d6Eb">
+                <input id="tbtn" style="background-color: grey; padding:0; padding-left: 10px; width: 6vw; color: black; height:20px; position: fixed; top: 57vh; left: 37vw;"></input>
+                <button id="d6b" style="background-color: grey; padding:0; width: 4vw; color: black; height:20px; position: fixed; top: 59vh; left: 38.3vw; " onclick="D6T()">Check</button>
+            </div>
+            <div hidden id="grybl" style="position: fixed; left: 41.6vw; top: 76vh;">
+                <gb id="gbi" style="position: absolute; background-color: gray; width: 1.4vmax; height: 1.4vmax; border-radius: 5000vmax;"></gb>
+            </div>
+            <div hidden id="pstbx" style="position: fixed; left: 41.2vw; top: 75vh;">
+                <obx style="position: absolute; width: 2vmax; height: 2vmax; background-color: #eec07b; border: .1vmax solid #89674a"></obx>
+                <flp id="flp1" style="position: absolute; left: vw; width: 1.3vmax; height: .4vh; background-color: #89674a;"></flp>
+                <flp id="flp2" style="position: absolute; left: .9vw; width: 1.3vmax; height: .4vh; background-color: #89674a;"></flp>
+            </div>
+            <div id="BIGWALLOFBLUE" style="background-color: rgb(0,85,164); position: fixed; left:-.5vw; top: 0vh; width: 34.3vw; height: 100vh;">
+            </div>
+            <embed id="TE6" src="day1.txt" style="visibility: hidden; position: fixed; width: 33vw; height: 98vh;">
         </wr>
     </body>
     <footer>

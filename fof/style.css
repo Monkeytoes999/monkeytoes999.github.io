@@ -12,8 +12,6 @@ button {
     border-top-right-radius: 4px;
     letter-spacing: 0.2px;
     outline: 0;
-    -webkit-transition: all .3s;
-    transition: all .3s;
   }
 
   input {
@@ -29,8 +27,7 @@ button {
     border-top-right-radius: 4px;
     letter-spacing: 0.2px;
     outline: 0;
-    -webkit-transition: all .3s;
-    transition: all .3s;
+
   }
 
   meter::-webkit-meter-bar {
