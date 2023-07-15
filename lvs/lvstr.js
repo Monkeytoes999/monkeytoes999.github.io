@@ -10,22 +10,22 @@ function lobsterToggle() {
     base.classList.toggle("active");
 }
 
-function tasty() {
-    fetch('https://mhrduality.vercel.app/lv/whtasty');
+async function tasty() {
+    await fetch('https://mhrduality.vercel.app/lv/whtasty');
 }
 
-function reloading() {
-    fetch('https://mhrduality.vercel.app/lv/whreloading');
+async function reloading() {
+    await fetch('https://mhrduality.vercel.app/lv/whreloading');
 }
 
-function kostimo() {
-    fetch('https://mhrduality.vercel.app/lv/whkostimo');
+async function kostimo() {
+    await fetch('https://mhrduality.vercel.app/lv/whkostimo');
 }
 
-function awYeah() {
-    fetch('https://mhrduality.vercel.app/lv/whawyeah');
+async function awYeah() {
+    await fetch('https://mhrduality.vercel.app/lv/whawyeah');
 }
 
-function discord() {
-    fetch('https://mhrduality.vercel.app/lv/whdiscord');
+async function discord() {
+    await fetch('https://mhrduality.vercel.app/lv/whdiscord');
 }
