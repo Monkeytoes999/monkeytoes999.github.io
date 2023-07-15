@@ -5,3 +5,7 @@ function lobsterOn() {
 function lobsterOff() {
     fetch('https://mhrduality.vercel.app/lv/lbc0');
 }
+
+function tasty() {
+    fetch('https://mhrduality.vercel.app/lv/whtasty');
+}
