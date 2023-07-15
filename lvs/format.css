@@ -23,3 +23,15 @@ iframe {
     height: 100%;
     float: left;
 }
+
+.board {
+    margin: 5px;
+}
+.toggles {
+    width: 50%;
+    float: left;
+}
+.sounds {
+    width: 50%;
+    float: left;
+}
