@@ -25,3 +25,7 @@ function kostimo() {
 function awYeah() {
     fetch('https://mhrduality.vercel.app/lv/whawyeah');
 }
+
+function discord() {
+    fetch('https://mhrduality.vercel.app/lv/whdiscord');
+}
