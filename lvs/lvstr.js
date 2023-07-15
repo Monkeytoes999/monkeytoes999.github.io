@@ -14,6 +14,14 @@ function tasty() {
     fetch('https://mhrduality.vercel.app/lv/whtasty');
 }
 
+function reloading() {
+    fetch('https://mhrduality.vercel.app/lv/whreloading');
+}
+
+function kostimo() {
+    fetch('https://mhrduality.vercel.app/lv/whkostimo');
+}
+
 function awYeah() {
     fetch('https://mhrduality.vercel.app/lv/whawyeah');
 }
