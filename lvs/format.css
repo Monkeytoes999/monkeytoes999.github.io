@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    font-family: "Alata";
+}
+body {
+    margin: 0px;
+    background-color: black;
+}
+iframe {
+    border: 0px;
+}
+
+.top {
+    height: 50vh;
+}
+.video {
+    width: 70%;
+    height: 100%;
+    float: left;
+}
+.chat {
+    width: 30%;
+    height: 100%;
+    float: left;
+}
