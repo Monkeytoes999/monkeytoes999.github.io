@@ -1,13 +1,13 @@
 function lobsterToggle() {
     var base = document.getElementById("lobster");
-    var lobster = base.classList.contains("active");
+    var lobster = false; //base.classList.contains("active");
     if (lobster) {
         fetch('https://mhrduality.vercel.app/lv/lbc0');
     } else {
         fetch('https://mhrduality.vercel.app/lv/lbc1');
     }
-    lobster = !lobster;
-    base.classList.toggle("active");
+    //lobster = !lobster;
+    //base.classList.toggle("active");
 }
 
 async function tasty() {
