@@ -18,4 +18,5 @@ const BUTTONS = [
     new Button("Turn the Lights Off", "sound", "https://mhrduality.vercel.app/lv/whlights"),
     new Button("Sounds that Hurt Garm", "sound", "https://mhrduality.vercel.app/lv/whtorture"),
     new Button("You Clod", "sound", "https://mhrduality.vercel.app/lv/whclod"),
+    new Button("Cooking", "sound", "https://mhrduality.vercel.app/lv/cooking"),
 ];
