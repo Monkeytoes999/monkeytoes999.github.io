@@ -11,6 +11,7 @@ button {
     width: 100px;
     height: 40px;
     font-size: 13px;
+    margin-right: 4px;
 }
 button:hover {
     cursor: pointer;
@@ -21,9 +22,9 @@ button.active {
     color: var(--accent);
 }
 
-.animate {
+button:active {
     margin-left: 2.5px;
-    margin-right: 2.5px;
+    margin-right: 6.5px;
     margin-top: 1px;
     width: 95px;
     height: 38px;

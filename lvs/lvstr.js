@@ -9,23 +9,10 @@ function lobsterToggle() {
     //lobster = !lobster;
     //base.classList.toggle("active");
 }
-
-async function tasty() {
-    await fetch('https://mhrduality.vercel.app/lv/whtasty');
-}
-
-async function reloading() {
-    await fetch('https://mhrduality.vercel.app/lv/whreloading');
-}
-
-async function kostimo() {
-    await fetch('https://mhrduality.vercel.app/lv/whkostimo');
-}
-
-async function awYeah() {
-    await fetch('https://mhrduality.vercel.app/lv/whawyeah');
-}
-
-async function discord() {
-    await fetch('https://mhrduality.vercel.app/lv/whdiscord');
-}
+const BUTTONS = [
+    new Button("Tasty", "sound", "https://mhrduality.vercel.app/lv/whtasty"),
+    new Button("Reloading", "sound", "https://mhrduality.vercel.app/lv/whreloading"),
+    new Button("Kostimo", "sound", "https://mhrduality.vercel.app/lv/whkostimo"),
+    new Button("Aw Yeah", "sound", "https://mhrduality.vercel.app/lv/whawyeah"),
+    new Button("Discord Ping", "sound", "https://mhrduality.vercel.app/lv/whdiscord")
+];
