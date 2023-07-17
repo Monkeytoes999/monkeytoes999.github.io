@@ -1,0 +1,28 @@
+.banner {
+    margin: 0px;
+    padding: 6px;
+    background-color: var(--accent);
+    height: 50px;
+}
+.banner h1 {
+    margin: 0px;
+    padding: 0px;
+    width: 600px;
+    float: left;
+}
+
+.login {
+    float: right;
+}
+.login button {
+    float: right;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: black;
+    color: var(--accent);
+    text-align: center;
+    transition: 0.0234s;
+    width: 140px;
+    height: 40px;
+    font-size: 13px;
+}
