@@ -14,5 +14,8 @@ const BUTTONS = [
     new Button("Reloading", "sound", "https://mhrduality.vercel.app/lv/whreloading"),
     new Button("Kostimo", "sound", "https://mhrduality.vercel.app/lv/whkostimo"),
     new Button("Aw Yeah", "sound", "https://mhrduality.vercel.app/lv/whawyeah"),
-    new Button("Discord Ping", "sound", "https://mhrduality.vercel.app/lv/whdiscord")
+    new Button("Discord Ping", "sound", "https://mhrduality.vercel.app/lv/whdiscord"),
+    new Button("Turn the Lights Off", "sound", "https://mhrduality.vercel.app/lv/whlights"),
+    new Button("Sounds that Hurt Garm", "sound", "https://mhrduality.vercel.app/lv/whtorture"),
+    new Button("You Clod", "sound", "https://mhrduality.vercel.app/lv/whclod"),
 ];

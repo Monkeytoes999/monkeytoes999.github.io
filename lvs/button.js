@@ -1,5 +1,4 @@
 function Button(name, type, link) {
-    console.log("cow")
     var base = document.createElement("button");
     base.classList.add("effectButton");
     base.innerText = name;
