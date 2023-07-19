@@ -28,10 +28,13 @@ iframe {
     margin: 5px;
 }
 .toggles {
-    width: 50%;
     float: left;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
 }
 .sounds {
+    display: flex;
+    flex-direction: row;
     width: 50%;
-    float: left;
 }
