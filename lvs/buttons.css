@@ -23,10 +23,5 @@ button.active {
 }
 
 button:active {
-    margin-left: 2.5px;
-    margin-right: 6.5px;
-    margin-top: 1px;
-    width: 95px;
-    height: 38px;
-    font-size: calc(0.95 * 13px);
+    filter: brightness(90%);
 }

@@ -13,9 +13,12 @@
 
         <link href='https://fonts.googleapis.com/css?family=Alata' rel='stylesheet'>
         <!-- My format -->
-        <link rel = "stylesheet" type = "text/css" href = "format.css"/>
-        <link rel = "stylesheet" type = "text/css" href = "buttons.css"/>
-        <link rel = "stylesheet" type = "text/css" href = "login.css"/>
+        <link rel="stylesheet" type="text/css" href="format.css"/>
+        <link rel="stylesheet" type="text/css" href="buttons.css"/>
+        <link rel="stylesheet" type="text/css" href="login.css"/>
+        <link rel="stylesheet" type="text/css" href="captcha.css"/>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
     <body>
         <div class="content">
@@ -43,9 +46,35 @@
                 </div>
             </div>
         </div>
+        <div class="backgroundBlur" id="captcha" style="display: none;">
+            <div class="captcha">
+                <div class="captcha-header">
+                    <text>Select all images with a</text>
+                    <h1>silly little guy</h1>
+                    <text>Click verify once there are none left.</text>
+                </div>
+                <div class="captcha-images">
+                    <img src="https://cataas.com/cat?width=600&height=600" id="catPic0">
+                    <img src="https://cataas.com/cat?width=600&height=600" id="catPic1">
+                    <img src="https://cataas.com/cat?width=600&height=600" id="catPic2">
+                    <img src="https://cataas.com/cat?width=600&height=600" id="catPic3">
+                    <img src="https://cataas.com/cat?width=600&height=600" id="catPic4">
+                    <img src="https://cataas.com/cat?width=600&height=600" id="catPic5">
+                    <img src="https://cataas.com/cat?width=600&height=600" id="catPic6">
+                    <img src="https://cataas.com/cat?width=600&height=600" id="catPic7">
+                    <img src="https://cataas.com/cat?width=600&height=600" id="catPic8">
+                </div>
+                <div class="captcha-buttons">
+                    <button class="material-symbols-outlined" onclick="makeCaptcha()">refresh</button>
+                    <text id="capFail"></text>
+                    <button class="verifys" onclick="verify()">Verify</button>
+                </div>
+            </div>
+        </div>
     </body>
     <footer>
-        <script src = "button.js" type = "text/javascript"></script>
-        <script src = "lvstr.js" type = "text/javascript"></script>
+        <script src="button.js" type="text/javascript"></script>
+        <script src="captcha.js" type="text/javascript"></script>
+        <script src="lvstr.js" type="text/javascript"></script>
     </footer>
 </html>
