@@ -32,6 +32,7 @@
 .captcha-images img {
     width: 100%;
     height: 100%;
+    aspect-ratio: 1/1;
 }
 .captcha-buttons {
     display: flex;
@@ -48,18 +49,6 @@
     color: white;
     background-color: var(--captcha);
     border: 1px solid var(--captcha);
-}
-@keyframes shake {
-    0% { rotate: 0deg;}
-    2% { rotate: 1deg;}
-    4% { rotate: -1deg;}
-    6% { rotate: 1deg;}
-    8% { rotate: -1deg;}
-    10% { rotate: 0deg;}
-}
-#capFail {
-    color: red;
-    animation: shake 3s infinite;
 }
 .silly {
     border: 4px solid var(--captcha);

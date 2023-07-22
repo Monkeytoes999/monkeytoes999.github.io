@@ -22,3 +22,7 @@ const BUTTONS = [
     new Button("Owl House", "sound", "https://mhrduality.vercel.app/lv/whowlh"),
     new Button("Pew pew", "sound", "https://mhrduality.vercel.app/lv/whpew"),
 ];
+
+makeCaptcha();
+const TIMETOCHECK = 60; // Minutes between captchas
+setInterval(makeCaptcha, 60*1000*TIMETOCHECK);
