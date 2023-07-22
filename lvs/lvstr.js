@@ -20,4 +20,5 @@ const BUTTONS = [
     new Button("You Clod", "sound", "https://mhrduality.vercel.app/lv/whclod"),
     new Button("Cooking", "sound", "https://mhrduality.vercel.app/lv/whcooking"),
     new Button("Owl House", "sound", "https://mhrduality.vercel.app/lv/whowlh"),
+    new Button("Pew pew", "sound", "https://mhrduality.vercel.app/lv/whpew"),
 ];
