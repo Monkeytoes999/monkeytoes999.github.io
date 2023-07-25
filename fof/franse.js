@@ -1667,7 +1667,7 @@ window.addEventListener("keyup", function(event) {
 function rd7() {
     for (i = 0; i < 7; i++){
         if (i > onLvl) {
-            document.getElementById('7lvs' + i).disabled = true;
+            //document.getElementById('7lvs' + i).disabled = true;
         }
     }
 }
@@ -1769,7 +1769,7 @@ function jump() {
     }, 300);
 }
 
-async function D6T() {
+async function D7T() {
     field = document.getElementById('tfbthe').value;
     if (field != undefined && field.length > 0) {
         await fetch("https://mhrduality.vercel.app/p5/d6/" + field).then(data => {
