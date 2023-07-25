@@ -1776,8 +1776,8 @@ async function D6T() {
             data.json().then(response => {
                 r = response["r"];
                 if (r == "THEFINALE"){
-                    document.getElementById('TE6').src = response["f"];
-                    document.getElementById('TE6').style.visibility = "visible";
+                    document.getElementById('TE7').src = response["f"];
+                    document.getElementById('TE7').style.visibility = "visible";
                 }
             });
         });
