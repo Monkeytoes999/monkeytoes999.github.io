@@ -161,6 +161,8 @@ async function D4S() {
 function home() {
     document.getElementById("d5").hidden = true;
     document.getElementById("d6").hidden = true;
+    document.getElementById("d7").hidden = true;
+    d7A = false;
     document.getElementById("wrp").hidden = false;
 }
 
@@ -1632,4 +1634,152 @@ function slsRev() {
             }, 10000);
         }, 25*10);
     }, moveObjLD("sls", 40, 73, 7) + 750);
+}
+
+onLvl = 0;
+function DaySeven() {
+    document.getElementById("wrp").hidden = true;
+    document.getElementById("d7").hidden = false;
+    cookies = document.cookie.split("; ");
+    for (val in cookies) {
+        if (cookies[val].split("=")[0] == "d7lv") {
+            onLvl = cookies[val].split("=")[1];
+        }
+    }
+    rd7()
+}
+
+down7 = {"KeyA": false, "KeyQ": false, "KeyE": false, "KeyD": false};
+window.addEventListener("keydown", function(event) {
+    let code = event.code;
+    if (!down7[code]) {
+        down7[code] = true;
+    }
+    d7Loop();
+});
+
+window.addEventListener("keyup", function(event) {
+    let code = event.code;
+    down7[code] = false;
+    d7Loop();
+});
+
+function rd7() {
+    for (i = 0; i < 7; i++){
+        if (i > onLvl) {
+            document.getElementById('7lvs' + i).disabled = true;
+        }
+    }
+}
+
+function term() {
+    document.getElementById("7perFld").hidden = true;
+    document.getElemenyById("7lv1E").hidden = true;
+    document.getElemenyById("7lv2M").hidden = true;
+    document.getElemenyById("7lv3P").hidden = true;
+    document.getElemenyById("7lv4C").hidden = true;
+    document.getElemenyById("7lv5M").hidden = true;
+    document.getElemenyById("7lv6S").hidden = true;
+    document.getElemenyById("7lv7A").hidden = true;
+    document.getElementById("7lvs").hidden = false;
+}
+
+function tut() {
+    document.getElementById("7lvs").hidden = true;
+    document.getElementById("7perFld").hidden = false;
+    document.getElementById("7lv1E").hidden = false;
+}
+
+jumping = false;
+bkc = false;
+bgi7 = 1;
+looped = false;
+function d7Loop() {
+    if (down7["KeyA"]) {
+        document.getElementById("7psAb").style.backgroundColor = "#E7CE96";
+        if (!jumping) {
+            jumping = true;
+            jump();
+        }
+    } else {
+        document.getElementById("7psAb").style.backgroundColor = "#e8e9ec";
+    }
+    if (down7["KeyQ"]) {
+        document.getElementById("7psQb").style.backgroundColor = "#E7CE96";
+        document.getElementById("p77a1u").hidden = false;
+        document.getElementById("p77a1d").hidden = true;
+    } else {
+        document.getElementById("7psQb").style.backgroundColor = "#e8e9ec";
+        document.getElementById("p77a1d").hidden = false;
+        document.getElementById("p77a1u").hidden = true;
+    }
+    if (down7["KeyE"]) {
+        document.getElementById("7psEb").style.backgroundColor = "#E7CE96";
+        document.getElementById("p77a2u").hidden = false;
+        document.getElementById("p77a2d").hidden = true;
+    } else {
+        document.getElementById("7psEb").style.backgroundColor = "#e8e9ec";
+        document.getElementById("p77a2d").hidden = false;
+        document.getElementById("p77a2u").hidden = true;
+    }
+    if (down7["KeyD"]) {
+        document.getElementById("7psDb").style.backgroundColor = "#E7CE96";
+        if (!bkc){
+            bgi7 = (bgi7+1)%36
+            if (bgi7 == 0){
+                bgi7 = 1;
+                document.getElementById("d7Eb").hidden = false;
+            }
+            document.getElementById("d7bgpic").src = "./D7PS/" + bgi7 + ".jpg";
+            bkc = true;
+        }
+    } else {
+        if (bkc){
+            bkc = false;
+        }
+        document.getElementById("7psDb").style.backgroundColor = "#e8e9ec";
+    }
+}
+
+function jump() {
+    bdp7ds = ["p77bd", "p77a1d", "p77a2d", "p77l1d", "p77l2d"];
+    bdp7us = ["p77hd", "p77a1u", "p77a2u"]
+    for (i = 0; i < 10; i ++){
+        setTimeout(() => {
+            for (el in bdp7ds) {
+                document.getElementById(bdp7ds[el]).style.top = (parseInt(document.getElementById(bdp7ds[el]).style.top.substring(0, 2)) - 1) + "vh";
+            }
+            for (el in bdp7us) {
+                document.getElementById(bdp7us[el]).style.bottom = (parseInt(document.getElementById(bdp7us[el]).style.bottom.substring(0, 2)) + 1) + "vh";            
+            }
+        }, 15*i);
+    }
+    for (i = 0; i < 10; i ++){
+        setTimeout(() => {
+            for (el in bdp7ds) {
+                document.getElementById(bdp7ds[el]).style.top = (parseInt(document.getElementById(bdp7ds[el]).style.top.substring(0, 2)) + 1) + "vh";
+            }
+            for (el in bdp7us) {
+                document.getElementById(bdp7us[el]).style.bottom = (parseInt(document.getElementById(bdp7us[el]).style.bottom.substring(0, 2)) - 1) + "vh";            
+            }
+        }, 150 + 15*i);
+    }
+    setTimeout(() => {
+        jumping = false;
+    }, 300);
+}
+
+async function D6T() {
+    field = document.getElementById('tfbthe').value;
+    if (field != undefined && field.length > 0) {
+        await fetch("https://mhrduality.vercel.app/p5/d6/" + field).then(data => {
+            data.json().then(response => {
+                r = response["r"];
+                if (r == "THEFINALE"){
+                    document.getElementById('TE6').src = response["f"];
+                    document.getElementById('TE6').style.visibility = "visible";
+                }
+            });
+        });
+    }
 }

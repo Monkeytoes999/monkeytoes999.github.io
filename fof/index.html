@@ -13,7 +13,7 @@
     <body style="background-color:rgb(0,85,164); width:98.5%;">
         <div style="width: 40%; background-color: rgb(239,65,53); position: fixed; margin-top:-20px; margin-left:66.66%; height: 1000%"></div>
         <div style="width: 33.33%; background-color: #FFFFFF; position: fixed; margin-top:-20px; margin-left:33.33%; height: 1000%"></div>
-        <wr  id="wrp" style="overflow-y: scroll">
+        <wr id="wrp" style="overflow-y: scroll">
             <p style="color: black; font-size: 3.86vw; position: fixed; margin-top: 84px; margin-left: 33.5%;"><b>Welcome to FRANS</b></p>
             <p style="color: black; font-size: 2.02vw; position: fixed; margin-top: 213px; margin-left: 38%">Please select the day to view</p>
             <button style="background-color: #FFFFFF; color: rgb(0,85,164); width: 20%; position: fixed; margin-top: 290px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DayOne()">Day One</button>
@@ -22,7 +22,7 @@
             <button style="background-color: #FFFFFF; color: rgb(0,85,164); width: 20%; position: fixed; margin-top: 530px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DayFour()">Day Four</button>
             <button style="background-color: #FFFFFF; color: rgb(0,85,164); width: 20%; position: fixed; margin-top: 610px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DayFive()">Day Five</button>
             <button style="background-color: #FFFFFF; color: rgb(0,85,164); width: 20%; position: fixed; margin-top: 690px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DaySix()">Day Six</button>
-            <button style="background-color: #FFFFFF; color: grey; width: 20%; position: fixed; margin-top: 770px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DaySeven()" disabled>The Finale</button>
+            <button style="background-color: #FFFFFF; color: rgb(0,85,164); width: 20%; position: fixed; margin-top: 770px; margin-left: 39.8%; font-size: 1.8vw;" onclick="DaySeven()">The Finale</button>
         </wr>
         <wr id="d1" hidden>
             <p style="color: black; font-size: 4.89vw; position: fixed; margin-top: 520.07px; margin-left: 75.65%;" id="350"><b>THE 35</b></p>
@@ -289,7 +289,7 @@
             </div>
             <embed id="DE5" style="color: black; font-size: 3vw; position: fixed; left:3vw; top:60vh; width: 25vw; height: 32vh; visibility: hidden" src="day1.txt">
         </wr>
-        <wr hidden id="d6">
+        <wr id="d6" hidden>
             <div id="footBlood">
                 <bd style="position: fixed; width: 1vw; height: 1vw; border-radius: 1vw; background-color: rgb(207, 35, 35); top: 86vh; left: 41.2vw;"></bd>
                 <bd style="position: fixed; width: 1vw; height: 1vw; border-radius: 1vw; background-color: rgb(207, 35, 35); top: 86vh; left: 40vw;"></bd>
@@ -636,6 +636,49 @@
             <div id="BIGWALLOFBLUE" style="background-color: rgb(0,85,164); position: fixed; left:-.5vw; top: 0vh; width: 34.3vw; height: 100vh;">
             </div>
             <embed id="TE6" src="day1.txt" style="visibility: hidden; position: fixed; width: 33vw; height: 98vh;">
+        </wr>
+        <wr hidden id="d7">
+            
+            <div hidden id="7lvls">
+                <button style="position: fixed; top: 30vh; left: 48.5vw; width: 3vmax; height: 3vmax; font-size: 2vmax; padding: 0px"><strong>1</strong></button>
+                <button style="position: fixed; top: 40vh; left: 43.5vw; width: 3vmax; height: 3vmax; font-size: 2vmax; padding: 0px"><strong>2</strong></button>
+                <button style="position: fixed; top: 40vh; left: 48.5vw; width: 3vmax; height: 3vmax; font-size: 2vmax; padding: 0px"><strong>3</strong></button>
+                <button style="position: fixed; top: 40vh; left: 53.5vw; width: 3vmax; height: 3vmax; font-size: 2vmax; padding: 0px"><strong>4</strong></button>
+                <button style="position: fixed; top: 50vh; left: 46vw; width: 3vmax; height: 3vmax; font-size: 2vmax; padding: 0px"><strong>5</strong></button>
+                <button style="position: fixed; top: 50vh; left: 51vw; width: 3vmax; height: 3vmax; font-size: 2vmax; padding: 0px"><strong>6</strong></button>
+                <button style="position: fixed; top: 60vh; left: 48.5vw; width: 3vmax; height: 3vmax; font-size: 2vmax; padding: 0px"><strong>7</strong></button>
+            </div>
+            <div>
+                <img id="d7bgpic" src="./D7PS/1.jpg"; style="height: 100vh; width: 100vw; position: fixed; left: 0; top: 0;">
+            </div>
+            <div 7perFld>
+                <div id="per77">
+                    <div id="p77bd" style="position: fixed; background-color: grey; top: 52vh; left: 49vw; height: 13vh; width: .5vw;"></div>
+                    <div id="p77hd" style="position: fixed; background-color: grey; bottom: 47.5vh; left: 47.9vw; height: 2.6vmax; width: 2.6vmax; border-radius: 10vmax;"></div>
+                    <div id="p77a1d" style="position: fixed; background-color: grey; top: 55vh; right: 50.7vw; height: 5vh; width: 2vw; clip-path: polygon(85% 0%, 100% 0%, 15% 100%, 0% 100%);"></div>
+                    <div hidden id="p77a1u" style="position: fixed; background-color: grey; bottom: 44.5vh; right: 50.7vw; height: 5vh; width: 2vw; clip-path: polygon(0 15%, 0 30%, 100% 100%, 100% 85%);"></div>
+                    <div id="p77a2d" style="position: fixed; background-color: grey; top: 55vh; left: 49.2vw; height: 5vh; width: 2vw; clip-path: polygon(15% 0%, 0% 0%, 85% 100%, 100% 100%);"></div>
+                    <div hidden id="p77a2u" style="position: fixed; background-color: grey; bottom: 44.5vh; left: 49.2vw; height: 5vh; width: 2vw; clip-path: polygon(0 85%, 0 100%, 100% 30%, 100% 15%);"></div>
+                    <div id="p77l1d" style="position: fixed; background-color: grey; top: 65vh; right: 49.8vw; height: 5vh; width: 3vw; clip-path: polygon(60% 0%, 75% 0%, 15% 100%, 0% 100%);"></div>
+                    <div id="p77l2d" style="position: fixed; background-color: grey; top: 65vh; left: 49vw; height: 5vh; width: 3vw; clip-path: polygon(15% 0%, 0% 0%, 60% 100%, 75% 100%);"></div>
+                </div>
+                <div id="7psAb" class="BLK" style="position: fixed; top: 80vh; left: 38vw; width: 3vmax; height: 3vmax; font-size: 2vmax; padding: 0px;" disabled><strong>
+                    <p style="position: absolute; left: .7vmax; top: -1.7vmax;">A</p>
+                </strong></button>
+                <div id="7psQb" class="BLK" style="position: fixed; top: 80vh; left: 45vw; width: 3vmax; height: 3vmax; font-size: 2vmax; padding: 0px" disabled><strong>
+                    <p style="position: absolute; left: .7vmax; top: -1.7vmax">Q</p>
+                </strong></button>
+                <div id="7psEb" class="BLK" style="position: fixed; top: 80vh; left: 52vw; width: 3vmax; height: 3vmax; font-size: 2vmax; padding: 0px" disabled><strong>
+                    <p style="position: absolute; left: .7vmax; top: -1.7vmax">E</p>
+                </strong></button>
+                <div id="7psDb" class="BLK" style="position: fixed; top: 80vh; left: 59vw; width: 3vmax; height: 3vmax; font-size: 2vmax; padding: 0px" disabled><strong>
+                    <p style="position: absolute; left: .7vmax; top: -1.7vmax">D</p>
+                </strong></button>
+            </div>
+            <div hidden id="d7Eb">
+                <input id="tfbthe" style="background-color: grey; padding:0; padding-left: 10px; width: 6vw; color: black; height:20px; position: fixed; top: 57vh; left: 37vw;"></input>
+                <button id="d7b" style="background-color: grey; padding:0; width: 4vw; color: black; height:20px; position: fixed; top: 59vh; left: 38.3vw; " onclick="D7T()">Check</button>
+            </div>
         </wr>
     </body>
     <footer>
