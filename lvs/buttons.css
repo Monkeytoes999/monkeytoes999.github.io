@@ -2,7 +2,7 @@
     --accent: #34eb9e;
 }
 button {
-    border: 1px solid var(--accent);
+    border-width: 0px;
     border-radius: 3px;
     background-color: var(--accent);
     color: black;
@@ -11,18 +11,32 @@ button {
     width: 100px;
     height: 40px;
     font-size: 13px;
-    margin-right: 4px;
-    margin-bottom: 4px;
+    margin: 2px;
 }
 button:hover {
     cursor: pointer;
 }
 button.active {
-    border: 1px solid var(--accent);
     background-color: black;
     color: var(--accent);
 }
 
 button:active {
     filter: brightness(90%);
+}
+
+.category {
+    overflow: hidden;
+
+    border-width: 0px;
+    border-radius: 3px;
+    color: black;
+    text-align: center;
+    transition: 1s;
+    width: 104px;
+    height: 44px;
+}
+
+.category:hover {
+    width: fit-content;
 }
