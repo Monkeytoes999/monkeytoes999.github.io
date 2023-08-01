@@ -31,6 +31,7 @@ const BUTTONS = [
     new Button("Cooking", "sound", "https://mhrduality.vercel.app/lv/whcooking", ["TV Shows", "Long Stuff"]),
     new Button("Owl House", "sound", "https://mhrduality.vercel.app/lv/whowlh", ["TV Shows"]),
     new Button("Pew pew", "sound", "https://mhrduality.vercel.app/lv/whpew", ["Video Games", "RNG Groups"]),
+    new Button("Fingertips", "sound", "https://mhrduality.vercel.app/lv/whfingertips", ["Music"]),
 ];
 
 // makeCaptcha(); // Figure out a way to disable for just me
