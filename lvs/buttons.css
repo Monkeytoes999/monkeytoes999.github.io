@@ -36,7 +36,3 @@ button:active {
     width: 104px;
     height: 44px;
 }
-
-.category:hover {
-    width: fit-content;
-}
