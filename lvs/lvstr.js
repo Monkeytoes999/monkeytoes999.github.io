@@ -17,7 +17,7 @@ const SOUND_CATS = [
     new Category("Video Games", "#34beeb"),
     new Category("Sound", "#34beeb"),
     new Category("Long Stuff", "#34beeb"),
-    new Category("Rate Limitted", "#34beeb"),
+    new Category("Rate Limited", "#34beeb"),
 ];
 const BUTTONS = [
     new Button("Tasty", "sound", "https://mhrduality.vercel.app/lv/whtasty", ["Single Words", "Video Games"]),
@@ -26,7 +26,7 @@ const BUTTONS = [
     new Button("Aw Yeah", "sound", "https://mhrduality.vercel.app/lv/whawyeah", ["Single Words", "Music"]),
     new Button("Discord Ping", "sound", "https://mhrduality.vercel.app/lv/whdiscord", ["Sound"]),
     new Button("Lights Off", "sound", "https://mhrduality.vercel.app/lv/whlights", ["Music"]),
-    new Button("Hurt Garm", "sound", "https://mhrduality.vercel.app/lv/whtorture", ["Long Stuff", "Rate Limitted"]),
+    new Button("Hurt Garm", "sound", "https://mhrduality.vercel.app/lv/whtorture", ["Long Stuff", "Rate Limited"]),
     new Button("You Clod", "sound", "https://mhrduality.vercel.app/lv/whclod", ["TV Shows"]),
     new Button("Cooking", "sound", "https://mhrduality.vercel.app/lv/whcooking", ["TV Shows", "Long Stuff"]),
     new Button("Owl House", "sound", "https://mhrduality.vercel.app/lv/whowlh", ["TV Shows"]),
