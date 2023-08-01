@@ -2,8 +2,9 @@ function Category(name, color) {
     this.name = name;
     this.color = color;
 
+    this.open = false;
+
     this.element = document.createElement("div");
-    const MEOW = this.element;
     this.element.classList.add("category");
 
     this.element.id = this.name;
@@ -12,17 +13,17 @@ function Category(name, color) {
     this.button.innerText = this.name;
     this.button.style.backgroundColor = this.color;
     this.element.appendChild(this.button);
+
+    const HERE = this;
     this.button.onclick = function (e) {
-        var cow = MEOW;
-        if (cow.style.width == "fit-content") {
-            cow.style.backgroundColor = color + "00";
-            cow.style.height = "44px";
-            cow.style.width = "104px";
+        if (HERE.open) {
+            HERE.element.style.backgroundColor = color + "00";
+            HERE.element.style.width = "104px";
         } else {
-            cow.style.backgroundColor = color + "50";
-            cow.style.height = "fit-content";
-            cow.style.width = "fit-content";
+            HERE.element.style.backgroundColor = color + "90";
+            HERE.element.style.width = HERE.element.childNodes.length*104 + "px"
         }
+        HERE.open = !HERE.open;
     }
 
     document.getElementById("sounds").appendChild(this.element);

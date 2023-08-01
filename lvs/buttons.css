@@ -28,11 +28,10 @@ button:active {
 .category {
     overflow: hidden;
 
-    border-width: 0px;
-    border-radius: 3px;
+    border-radius: 0px;
     color: black;
-    text-align: center;
-    transition: 1s;
+    text-align: left;
     width: 104px;
     height: 44px;
+    transition: 0.5s;
 }

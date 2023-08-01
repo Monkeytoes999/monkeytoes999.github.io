@@ -10,14 +10,14 @@ function lobsterToggle() {
     //base.classList.toggle("active");
 }
 const SOUND_CATS = [
-    new Category("Single Words", "#34beeb"),
-    new Category("RNG Groups", "#34beeb"),
-    new Category("TV Shows", "#34beeb"),
-    new Category("Music", "#34beeb"),
-    new Category("Video Games", "#34beeb"),
-    new Category("Sound", "#34beeb"),
-    new Category("Long Stuff", "#34beeb"),
-    new Category("Rate Limited", "#34beeb"),
+    new Category("Single Words", "#00ff70"),
+    new Category("RNG Groups", "#9e34eb"),
+    new Category("TV Shows", "#70beff"),
+    new Category("Music", "#eb6eeb"),
+    new Category("Video Games", "#eb3434"),
+    new Category("Sound", "#ebeb34"),
+    new Category("Long Stuff", "#34aed0"),
+    new Category("Rate Limited", "#eb9e34"),
 ];
 const BUTTONS = [
     new Button("Tasty", "sound", "https://mhrduality.vercel.app/lv/whtasty", ["Single Words", "Video Games"]),
