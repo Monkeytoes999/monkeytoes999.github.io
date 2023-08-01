@@ -12,6 +12,7 @@ button {
     height: 40px;
     font-size: 13px;
     margin-right: 4px;
+    margin-bottom: 4px;
 }
 button:hover {
     cursor: pointer;

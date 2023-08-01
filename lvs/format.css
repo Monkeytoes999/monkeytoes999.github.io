@@ -31,11 +31,13 @@ iframe {
     float: left;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 50%;
 }
 .sounds {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 50%;
 }
 
