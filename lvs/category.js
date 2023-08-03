@@ -16,12 +16,13 @@ function Category(name, color) {
 
     const HERE = this;
     this.button.onclick = function (e) {
-        if (HERE.open) {
-            HERE.element.style.backgroundColor = color + "00";
-            HERE.element.style.width = "104px";
-        } else {
-            HERE.element.style.backgroundColor = color + "90";
-            HERE.element.style.width = HERE.element.childNodes.length*104 + "px"
+        var list = document.getElementsByClassName(HERE.name.replaceAll(" ","-"));
+        for (let i = 0; i < list.length; i++) {
+            if (HERE.open) {
+                list[i].style.display = "none";
+            } else {
+                list[i].style.display = "block";
+            }
         }
         HERE.open = !HERE.open;
     }
