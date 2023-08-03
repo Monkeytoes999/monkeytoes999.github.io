@@ -10,7 +10,7 @@ function lobsterToggle() {
     //base.classList.toggle("active");
 }
 const SOUND_CATS = [
-    new Category("Single Words", "#00ff70"),
+    new Category("Key Phrases", "#00ff70"),
     new Category("RNG Groups", "#9e34eb"),
     new Category("TV Shows", "#70beff"),
     new Category("Music", "#eb6eeb"),
@@ -20,10 +20,10 @@ const SOUND_CATS = [
     new Category("Rate Limited", "#eb9e34"),
 ];
 const BUTTONS = [
-    new Button("Tasty", "sound", "https://mhrduality.vercel.app/lv/whtasty", ["Single Words", "Video Games"]),
-    new Button("Reloading", "sound", "https://mhrduality.vercel.app/lv/whreloading", ["Single Words", "Video Games"]),
+    new Button("Tasty", "sound", "https://mhrduality.vercel.app/lv/whtasty", ["Key Phrases", "Video Games"]),
+    new Button("Reloading", "sound", "https://mhrduality.vercel.app/lv/whreloading", ["Key Phrases", "Video Games"]),
     new Button("Kostimo", "sound", "https://mhrduality.vercel.app/lv/whkostimo", ["RNG Groups"]),
-    new Button("Aw Yeah", "sound", "https://mhrduality.vercel.app/lv/whawyeah", ["Single Words", "Music"]),
+    new Button("Aw Yeah", "sound", "https://mhrduality.vercel.app/lv/whawyeah", ["Key Phrases", "Music"]),
     new Button("Discord Ping", "sound", "https://mhrduality.vercel.app/lv/whdiscord", ["Sound"]),
     new Button("Lights Off", "sound", "https://mhrduality.vercel.app/lv/whlights", ["Music"]),
     new Button("Hurt Garm", "sound", "https://mhrduality.vercel.app/lv/whtorture", ["Long Stuff", "Rate Limited"]),
