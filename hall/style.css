@@ -1,0 +1,75 @@
+.banner {
+  height: 80%;
+  width: 7%;
+  background-color: red;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 50% 100%, 0 90%);
+}
+
+.bannerBack {
+  height: 81%;
+  width: 8%;
+  background-color: rgb(1, 240, 168);
+  clip-path: polygon(0 0, 100% 0, 100% 89%, 50% 100%, 50% 100%, 0 89%);
+}
+
+.md1 {
+  position: fixed;
+  top: 40%;
+  left: 40.5%;
+  width: 20%;
+}
+
+.md2 {
+  position: fixed;
+  top: 48%;
+  left: 40.5%;
+  width: 20%;
+}
+
+.md3 {
+  position: fixed;
+  top: 87%;
+  left: 40.5%;
+  width: 20%;
+}
+
+.navR {
+  position: fixed;
+  top: 87%;
+  left: 80%;
+  width: 4%;
+  height: 6%;
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+  padding: 0px;
+  border-radius: 0px;;
+}
+
+.navL {
+  position: fixed;
+  top: 87%;
+  right: 80%;
+  width: 4%;
+  height: 6%;
+  clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+  padding: 0px;
+  border-radius: 0px;;
+}
+
+button {
+  width: 100%;
+  border: none;
+  padding: 18px;
+  cursor: pointer;
+  color: #777;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  letter-spacing: 0.2px;
+  outline: 0;
+  background-color: rgb(195, 245, 236); 
+  color: #000000; 
+  font-size: 2vh; 
+  font-family: Seaford; 
+  border-radius: 3vw;
+}

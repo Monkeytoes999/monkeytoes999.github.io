@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:site_name" content="Thank you for visiting the Hall of Firsts">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+        <link rel = "stylesheet" type = "text/css" href = "style.css"/>
+        <link href="https://fonts.cdnfonts.com/css/seaford" rel="stylesheet">
+        <title>The Hall</title>
+    </head>
+    <body>
+        <div id="background" style="position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; background-color: darkslategray;">
+            <div class="bannerBack"; style="position: fixed; left: 14.5%; top: 0%;"></div>
+            <div class="banner"; id="banner1" style="position: fixed; left: 15%; top: 0%"></div>
+            <p id="LBT" style="position: fixed; left: 17%; top: 2%; font-size: 8vh; color: blue">.<br>.<br>.<br>C<br>H<br>A<br></p>
+            <div class="bannerBack"; style="position: fixed; right: 14.5%; top: 0%;"></div>
+            <div class="banner"; id="banner2" style="position: fixed; right: 15%; top: 0%"></div>
+            <p id="RBT" style="position: fixed; right: 17%; top: 2%; font-size: 8vh; color: blue">.<br>.<br>.<br>V<br>E<br>R<br></p>
+        </div>
+        <div id="mnWcl">
+            <h1 style="position: fixed; top:12%; left: 32%; text-align: center; font-size: 3vw; color:rgb(79, 233, 7)">Welcome to The Hall of Firsts</h1>
+            <button class="md1" onclick="help()">What is this page?</button>
+            <button class="md2" onclick="hall()">Explore the hall<button>
+        </div>
+        <div id="help" hidden>
+            <p style="position: fixed; left: 33%; top: 13%; color:rgb(142, 224, 104); font-size: 1.3vw;">
+            Howdy.<br>
+            Welcome to the latest run in the <i>magic</i> that is a Graham Iceberg page<br><br>
+            You know how there are a bunch of things that are like, "Pencils"?<br>
+            Things that are like, extremely obvious and you encounter quickly?<br>
+            So right. That's what I'm going to be covering here.<br><br>
+
+            Anything that isn't in the 35 category for some dumb reason - <br>
+            <i>I'm looking at you, Attire</i> - will be getting an explanation in this page.<br>
+            I'll be releasing these one by one, but I have a decent backlog of them.<br>
+            24 hours max, less if you all acknowledge them
+            </p>
+            <button class="md2" onclick="home()">Main Page</button>
+        </div>
+        <div id="ibs" hidden>
+            <h1 id="hdi" style="position: fixed; width: 40%; height: 10%; left: 46%; top: 12%; font-size: 2vw; color:rgb(190, 218, 125)">Iceberg 111</h1>
+            <p id="ibR" style="position: fixed; width: 35%; height: 20%; left: 35%; top: 20%; font-size: 1.5vw; color:rgb(255, 252, 96)">TMBG</p>
+            <p id="iSD" style="position: fixed; width: 35%; height: 20%; left: 35%; top: 30%; font-size: 1.5vw; color:rgb(255, 252, 96); overflow-wrap: break-word;">Short Description: Hi there, this is a test of the text-wrapping system. You shouldn't be reading this anyway.</p>
+            <p id="iRP" style="position: fixed; width: 35%; height: 20%; left: 35%; top: 55%; font-size: 1.5vw; color:rgb(255, 252, 96)">Relevant People: NA, NA, NA, NA, NA, NA, NA</p>
+            <p id="ibV" style="position: fixed; width: 35%; height: 20%; left: 35%; top: 60%; font-size: 1.5vw; color:rgb(255, 252, 96)">Video Link: ssssssssssssssssssssssssssssss</p>
+            <button class="md3" onclick="home()">Main Page</button>
+            <button class="navL" onclick="ibL()" disabled></button>
+            <button class="navR" onclick="ibR()" disabled></button>
+        </div>
+    </body>
+    <footer>
+        <script src = "hall.js" type = "text/javascript"></script>
+    </footer>
+</html>
