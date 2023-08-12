@@ -10,13 +10,14 @@ function home() {
 }
 
 ibNum = 1;
-totAdded = 1;
+totAdded = 2;
 ibNms = [111, 112, 113, 114, 212, 213, 311, 312, 411, 413];
 //SE, 2/17
 ibNas = ["TMBG", "Straws", "Pencils", "Swedish", "Calculators", "Cubing", "Temperature", "Eating Paper", "Pockets", "Peanut Butter"];
-ibRp = ["NA"];//DELETE THIS BEFORE PUSHING - ["NA", "NA", "NA", "Martin, Petunia, Aster", "Bert", "Clive", "NA", "NA", "NA"];
-ibShD = ["They Might Be Giants - an alt rock band that I grew up listening to quite frequently through my father. I've been to two live shows and they're the main source of my musical taste, with their tracks taking up over 75% of my personal music library last I checked."];
-ibVd = ["https://youtu.be/dW7y-Ao4mSg"];
+ibRp = ["NA", "NA"];
+ibShD = ["They Might Be Giants - an alt rock band that I grew up listening to quite frequently through my father. I've been to two live shows and they're the main source of my musical taste, with their tracks taking up over 75% of my personal music library last I checked.",
+"Straws are an unreasonably high percentage of aquatic litter for being a useless tube. It's not even the turtle thing, it's bigger than that. There's no real reason for us to use straws as much as we do, at least not plastic ones. Use glass if you need to. I've written school reports on straws at least once a year since 10th."];
+ibVd = ["https://youtu.be/dW7y-Ao4mSg", "https://youtu.be/hZ9asyBt-04"];
 
 function hall() {
     document.getElementById("mnWcl").hidden = true;
@@ -26,11 +27,17 @@ function hall() {
 
 
 function ibL() {
-    console.log("IBL")
+    if (ibNum > 1){
+        ibNum--;
+        udt();
+    }
 }
 
 function ibR() {
-    console.log("IBR")
+    if (ibNum < totAdded) {
+        ibNum++;
+        udt();
+    }
 }
 
 function udt() {
