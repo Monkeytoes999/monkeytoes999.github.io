@@ -37,4 +37,7 @@ const BUTTONS = [
 
 // makeCaptcha(); // Figure out a way to disable for just me
 const TIMETOCHECK = 60; // Minutes between captchas
+fetch("https://mhrduality.vercel.app/lv/src")
+        .then(data => data.json()
+        .then(d => document.getElementById("VIDEO").src = d["v"]));
 setInterval(makeCaptcha, 60*1000*TIMETOCHECK);
