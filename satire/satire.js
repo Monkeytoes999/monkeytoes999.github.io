@@ -2,7 +2,7 @@ active = false;
 tick();
 
 function tick() {
-    goal = 1701579600000;
+    goal = 1703221199000;
     distance = goal - Date.now()
     days = Math.floor(distance / (1000 * 60 * 60 * 24));
     hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -36,6 +36,7 @@ function spinny(j) {
         }
     } else {
         active = false;
+        document.getElementById('ball1').hidden = true;
         woop();
     }
 }
@@ -83,27 +84,28 @@ function woop() {
 }
 
 function celebrate(j) {
-    document.getElementById("tire").hidden = false;
+    document.getElementById("gGun").hidden = false;
     if (j == 3) {
-        document.getElementById("nope").hidden = false;
+        document.getElementById("use").hidden = false;
     }
     if (j == 6) {
+        document.getElementById("lock").hidden = false;
         document.getElementById("clock").hidden = false;
     }
-    i = 0
-    for (rot = 0; rot < 180; rot++){
+    i = -15
+    for (rot = 0; rot < 30; rot++){
     setTimeout(() => {
-        document.getElementById('tire').style.transform = 'rotate(' + i + 'deg)';
+        document.getElementById('gGun').style.transform = 'rotate(' + i + 'deg)';
         i++;
     }, rot*10);
     }
-    for (rot = 180; rot > 0; rot--){
+    for (rot = 30; rot > 0; rot--){
         setTimeout(() => {
-            document.getElementById('tire').style.transform = 'rotate(' + i + 'deg)';
+            document.getElementById('gGun').style.transform = 'rotate(' + i + 'deg)';
             i--;
-        }, rot*10 + 1800);
+        }, rot*10 + 300);
     }
     setTimeout(() => {
         celebrate(j + 1)
-    }, 3600);
+    }, 600);
 }
