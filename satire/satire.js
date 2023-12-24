@@ -80,6 +80,7 @@ function tick() {
 }
 
 function roundTrigger() {
+    console.log(round);
     coins = coins + completionBonus;
     incoming = true;
     if (round < 6) {
@@ -116,6 +117,9 @@ function roundTrigger() {
             completionBonus = 7;
             break;
         default:
+            enemies = [];
+            delays = [];
+            completionBonus = 0;
             win();
     }
     round = round + 1;
