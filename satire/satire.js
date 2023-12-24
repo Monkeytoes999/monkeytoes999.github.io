@@ -253,7 +253,7 @@ function prize() {
     chance = Math.random();
     pzWin = 0;
     while (chance > chances[pzWin]){
-        win++;
+        pzWin++;
     }
     if (!skins.includes(pzWin + 1)) {
         skins.push(pzWin + 1);
