@@ -251,16 +251,16 @@ function prize() {
     chances = [.5, .675, .85, .95, 1];
     winDesc = ["Common Grey Polo", "Uncommon Green TMBG Shirt", "Uncommon Blue TMBG Shirt", "Rare 'The Meats' Shirt", "Legendary Math Competition Shirt"]
     chance = Math.random();
-    win = 0;
-    while (chance > chances[win]){
+    pzWin = 0;
+    while (chance > chances[pzWin]){
         win++;
     }
-    if (!skins.includes(win + 1)) {
-        skins.push(win + 1);
+    if (!skins.includes(pzWin + 1)) {
+        skins.push(pzWin + 1);
     }
     document.getElementById("gGun").hidden = false;
-    document.getElementById("gGun").src = skinPngs[win + 1];
-    document.getElementById("youWon").innerHTML = winDesc[win];
+    document.getElementById("gGun").src = skinPngs[pzWin + 1];
+    document.getElementById("youWon").innerHTML = winDesc[pzWin];
     document.getElementById("youWon").hidden = false;
     svToCookies();
     setTimeout(() => {
