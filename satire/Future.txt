@@ -1,6 +1,9 @@
 Planned features:
 
-Upgrades
-Different Berts
-In-game currency
-Rarity Symbols
+Explosives ?
+
+Bullet Types ?
+- Pierce
+- Type Specific
+
+Sort shirts by rarity

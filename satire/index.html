@@ -13,18 +13,18 @@
     <body style="background-color:rgb(138, 186, 230); width:98.5%;">
         <div id="gatcha">
             <div id="gambler">
-                <bd style="position: absolute; left: 30vmin; width: 15vmin; height: 50vmin; top: 30vmin; background-color: rgb(175, 238, 190); border: 5px solid rgb(31, 25, 25)"></bd>
-                <bak style="position: absolute; left: 25vmin; width: 25vmin; height: 25vmin; top: 20vmin; border-radius: 25vmin; background-color: rgb(255, 0, 217); border: 5px solid rgb(31, 25, 25);"></bak>
+                <bd id="gambBody" style="position: absolute; left: 30vmin; width: 15vmin; height: 50vmin; top: 30vmin; background-color: rgb(175, 238, 190); border: 5px solid rgb(31, 25, 25)"></bd>
+                <bak id="gambDisk" style="position: absolute; left: 25vmin; width: 25vmin; height: 25vmin; top: 20vmin; border-radius: 25vmin; background-color: rgb(255, 0, 217); border: 5px solid rgb(31, 25, 25);"></bak>
                 <balls>
                     <ball id="ball1" style="position: absolute; left: 35.5vmin; width: 5vmin; height: 5vmin; top: 40.75vmin; border-radius: 5vmin; background-color: red;"></ball>
                     <ball style="position: absolute; left: 31vmin; width: 5vmin; height: 5vmin; top: 39.25vmin; border-radius: 5vmin; background-color: red;"></ball>
                     <ball style="position: absolute; left: 40vmin; width: 5vmin; height: 5vmin; top: 39.25vmin; border-radius: 5vmin; background-color: red;"></ball>
                     <ball style="position: absolute; left: 34.5vmin; width: 5vmin; height: 5vmin; top: 35.85vmin; border-radius: 5vmin; background-color: red;"></ball>
                     <ball style="position: absolute; left: 27.25vmin; width: 5vmin; height: 5vmin; top: 36vmin; border-radius: 5vmin; background-color: red;"></ball>
-                    <ball style="position: absolute; left: 30.75vmin; width: 5vmin; height: 5vmin; top: 32.5vmin; border-radius: 5vmin; background-color: red;"></ball>
+                    <ball id="ball6" style="position: absolute; left: 30.75vmin; width: 5vmin; height: 5vmin; top: 32.5vmin; border-radius: 5vmin; background-color: red;"></ball>
                 </balls>
                 <fnt id='gambler_f' style="transform: rotate(0deg); position: absolute; left: 25vmin; width: 25vmin; height: 25vmin; top: 20vmin; border-radius: 25vmin; background-color: rgb(249, 248, 238); opacity: .7; border: 5px solid rgb(31, 25, 25);">
-                    <window style="position: absolute; left: 8.75vmin; width: 7.5vmin; height: 7.5vmin; top: 17.6vmin; border-radius: 7.5vmin; background-color: rgb(255, 0, 217); opacity: .7;"></window>
+                    <window id="gambWindow" style="position: absolute; left: 8.75vmin; width: 7.5vmin; height: 7.5vmin; top: 17.6vmin; border-radius: 7.5vmin; background-color: rgb(255, 0, 217); opacity: .7;"></window>
                 </fnt>
                 <arm id="g_arm" style="position: absolute; left: 36.25vmin; width: 2.5vmin; height: 30vmin; top: 48vmin;">
                     <top style="position: absolute; left: 0; top: 0; width: 2.5vmin; height: 15vmin; background-color: silver; border-top: 5px solid rgb(31, 25, 25); border-left: 5px solid rgb(31, 25, 25); border-right: 5px solid rgb(31, 25, 25);"></top>
@@ -39,24 +39,33 @@
                 <ballb id="ballb" style="position: absolute; left: 70vmin; width: 5vmin; height: 2.5vmin; top: 43.25vmin; border-radius: 0 0 5vmin 5vmin; background-color: red;" hidden></ballb>
             </delivery>
             <div id="cost">
-                <img id="coins" style="position: absolute; left: 38vmin; top: 68vmin; height: 70px; width: 60px;" src="coin.png">
+                <img id="coins" style="position: absolute; left: 38vmin; top: 68vmin; height: 70px; width: 60px;" src="decor/coin.png">
                 <p id="price" style="position: absolute; left: 32vmin; top: 64vmin; font-size: xxx-large; font-family: Seaford; color: red">75</p>                
             </div>
-            <img id="stg" style="position: absolute; left: 830px; top: 750px; height: 60px; width: 130px;" src="stg.png">
+            <img id="stg" style="position: absolute; left: 830px; top: 750px; height: 60px; width: 130px;" src="decor/stg.png">
             <button id="stgB" style="position: absolute; left: 830px; top: 750px; height: 60px; width: 130px; opacity: 0%" onClick="toStg()"></button>
-            <img id="gsc" style="position: absolute; left: 600px; top: 750px; height: 60px; width: 100px;" src="gsc.png">
+            <img id="gsc" style="position: absolute; left: 600px; top: 750px; height: 60px; width: 100px;" src="decor/gsc.png">
             <button id="gscB" style="position: absolute; left: 600px; top: 750px; height: 60px; width: 100px; opacity: 0%" onClick="toCol()"></button>
-            <img id="gGun" style="position: absolute; left: 70vmin; top: 35vmin; height: 231px; width: 99px" src="gGun.png" hidden>
+            <img id="gGun" style="position: absolute; left: 70vmin; top: 35vmin; height: 231px; width: 99px" src="shirts/gGun.png" hidden>
             <p id="youWon" style="position: absolute; left: 58vmin; top: 28vmin; width: 300px; font-size: large; font-family: Seaford; text-align: center;" hidden></p>
+            <div id="arrowD" style="position: absolute; left: 30.75vmin; top: 83vmin; height: 100px; width: 150px; clip-path: polygon(0 50%, 0 0, 100% 0, 100% 50%, 66% 50%, 66% 100%, 33% 100%, 33% 50%); background-color: black;" hidden></div>
+            <button id="gambDownB" style="position: absolute; left: 30.75vmin; top: 83vmin; height: 100px; width: 150px; clip-path: polygon(0 50%, 0 0, 100% 0, 100% 50%, 66% 50%, 66% 100%, 33% 100%, 33% 50%); background-color: black; opacity: 0%;" onClick="gambDown()" hidden></button>
+            <div id="arrowU" style="position: absolute; left: 30.75vmin; top: 8vmin; height: 100px; width: 150px; clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 66% 50%, 66% 0%, 33% 0%, 33% 50%); background-color: black;" hidden></div>
+            <button id="gambUpB" style="position: absolute; left: 30.75vmin; top: 8vmin; height: 100px; width: 150px; clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 66% 50%, 66% 0%, 33% 0%, 33% 50%); background-color: black; opacity: 0%;" onClick="gambUp()" hidden></button>
         </div>
         <div> 
-            <img id="coins" style="position: absolute; left: 575px; top: 100px; height: 70px; width: 60px;" src="coin.png">
+            <img id="coins" style="position: absolute; left: 575px; top: 100px; height: 70px; width: 60px;" src="decor/coin.png">
             <p style="position: absolute; left: 645px; top: 83px; font-size: xx-large; font-family: Seaford;">x</p>
             <p id="coinValue" style="position: absolute; left: 670px; top: 59px; font-size: xxx-large; font-family: Seaford;">0</p>
-            <img style="position: absolute; left: 800px; top: 100px; height: 70px; width: 70px;" src="atire.png">
+            <img style="position: absolute; left: 800px; top: 100px; height: 70px; width: 70px;" src="decor/atire.png">
             <button style="position: absolute; left: 800px; top: 100px; height: 70px; width: 70px; opacity: 0%;" onClick="notes()"></button>
-            <img style="position: absolute; left: 925px; top: 100px; height: 70px; width: 47px;" src="skPlaceholder.png">
+            <img style="position: absolute; left: 925px; top: 100px; height: 70px; width: 47px;" src="decor/skPlaceholder.png">
             <button style="position: absolute; left: 925px; top: 100px; height: 70px; width: 47px; opacity: 0%;" onClick="HTP()"></button>
+            <div id="igc" hidden>
+                <img style="position: absolute; left: 350px; top: 100px; height: 70px; width: 70px;" src="decor/igc.png">
+                <p style="position: absolute; left: 435px; top: 83px; font-size: xx-large; font-family: Seaford;">x</p>
+                <p id="igcVal" style="position: absolute; left: 455px; top: 59px; font-size: xxx-large; font-family: Seaford;">0</p>
+            </div>
         </div>
         <div id="stage" hidden>
             <div id="pit">
@@ -85,46 +94,58 @@
                 <sp2 id="s24" style="position: absolute; left: 1000px; top: 404px; height: 10px; width: 20px; background-color: aqua;"></sp2>
                 <sp2 id="s25" style="position: absolute; left: 1000px; top: 434px; height: 10px; width: 20px; background-color: aqua;"></sp2>
             </div>
-            <img id="gGunT" style="position: absolute; left: 650px; top: 350px; height: 231px; width: 99px; transform: rotateY(180deg);" src="gGun.png">
-            <img id="gtg" style="position: absolute; left: 850px; top: 500px; height: 170px; width: 90px;" src="gtc.png">
+            <img id="gGunT" style="position: absolute; left: 650px; top: 350px; height: 231px; width: 99px; transform: rotateY(180deg);" src="shirts/gGun.png">
+            <img id="gtg" style="position: absolute; left: 850px; top: 500px; height: 170px; width: 90px;" src="decor/gtc.png">
             <p id="loss" style="position: absolute; left: 560px; top: 200px; font-size: xx-large; font-family: Seaford;" hidden>You Lost! Try again?</p>
             <p id="win" style="position: absolute; left: 560px; top: 200px; font-size: xx-large; font-family: Seaford;" hidden>You Won! Play again?</p>
             <p id="roundAlert" style="position: absolute; left: 642px; top: 200px; font-size: xx-large; font-family: Seaford;" hidden>Round 1</p>
             <p id="wait" style="position: absolute; left: 300px; top: 700px; font-size: xx-large; font-family: Seaford;" hidden>Please wait for the round to finish (I'll try to fix this for later)</p>
-            <button id="starter" style="position: absolute; left: 425px; top: 525px; font-size: x-large; font-family: Seaford;" onClick="start()">Start!</button>
+            <div id="starter">
+                <button id="lv0" style="position: absolute; left: 375px; top: 525px; width: 200px; font-size: x-large; font-family: Seaford;" onClick="start(0)">Easier</button>
+                <button id="lv1" style="position: absolute; left: 375px; top: 625px; width: 200px; font-size: x-large; font-family: Seaford;" onClick="start(0)">Easy</button>
+            </div>
             <button id="gambB" style="position: absolute; left: 850px; top: 500px; height: 170px; width: 90px; opacity: 0%" onClick="toGamb()"></button>
+            <div id="gunStats" hidden>
+                <p id="fireSpeed" style="position: absolute; left: 375px; top: 475px; font-size: xx-large; font-family: Seaford;">Fire Speed: 250ms</p>
+                <p id="dmgPerBul" style="position: absolute; left: 775px; top: 475px; font-size: xx-large; font-family: Seaford;">Bullet Damage: 1</p>
+                <button id="fireB" style="position: absolute; left: 450px; top: 625px; font-size: large; font-family: Seaford; border: 0px; background-color: lightcoral;" onClick="upgFire()">Upgrade</button>
+                <button id="dmgB" style="position: absolute; left: 825px; top: 625px; font-size: large; font-family: Seaford; border: 0px; background-color: mintcream;" onClick="upgDmg()">Upgrade</button>
+                <div id="upgCost">
+                    <img style="position: absolute; left: 700px; top: 620px; height: 70px; width: 70px;" src="decor/igc.png">
+                    <p id="upgPrice" style="position: absolute; left: 625px; top: 580px; font-size: xxx-large; font-family: Seaford; color: red">25</p>                
+                </div>
+            </div>
         </div>
         <div id="collection" hidden>
-            <img id="gtg" style="position: absolute; left: 850px; top: 500px; height: 170px; width: 90px;" src="gtc.png">
+            <img id="gtg" style="position: absolute; left: 850px; top: 500px; height: 170px; width: 90px;" src="decor/gtc.png">
             <button id="gambB" style="position: absolute; left: 850px; top: 500px; height: 170px; width: 90px; opacity: 0%" onClick="toGamb()"></button>
-            <img id="stg" style="position: absolute; left: 830px; top: 750px; height: 60px; width: 130px;" src="stg.png">
+            <img id="stg" style="position: absolute; left: 830px; top: 750px; height: 60px; width: 130px;" src="decor/stg.png">
             <button id="stgB" style="position: absolute; left: 830px; top: 750px; height: 60px; width: 130px; opacity: 0%" onClick="toStg()"></button>
-            <img id="colSkin" style="position: absolute; left: 400px; top: 350px; height: 231px; width: 99px" src="gGun.png">
+            <img id="colSkin" style="position: absolute; left: 400px; top: 350px; height: 231px; width: 99px" src="shirts/gGun.png">
             <div id="arrowR" style="position: absolute; left: 575px; top: 400px; height: 150px; width: 100px; clip-path: polygon(50% 0, 0 0, 0 100%, 50% 100%, 50% 66%, 100% 66%, 100% 33%, 50% 33%); background-color: black;"></div>
             <button id="arRB" style="position: absolute; left: 575px; top: 400px; height: 150px; width: 100px; clip-path: polygon(50% 0, 0 0, 0 100%, 50% 100%, 50% 66%, 100% 66%, 100% 33%, 50% 33%); background-color: black; opacity: 0%;" onClick="colSkin('R')"></button>
             <div id="arrowL" style="position: absolute; left: 225px; top: 400px; height: 150px; width: 100px; clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%, 50% 66%, 0% 66%, 0% 33%, 50% 33%); background-color: black;"></div>
             <button id="arRL" style="position: absolute; left: 225px; top: 400px; height: 150px; width: 100px; clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%, 50% 66%, 0% 66%, 0% 33%, 50% 33%); background-color: black; opacity: 0%;" onClick="colSkin('L')"></button>
             <button id="skChs" style="position: absolute; left: 370px; top: 650px; font-size: x-large; min-width: 150px; font-family: Seaford;" onClick="chooseSkin()" disabled>Selected</button> 
+            <img id="cRarity" style="position: absolute; left: 280px; top: 654px; height: 60px; width: 60px" src="decor/cSymb.png">
         </div>
         <div id="notes" style="position: absolute; left: 150px; top: 100px; width: 400px; height: 800px; background-color: rgb(215, 196, 172); border-radius: 30px;" hidden>
-            <img style="position: absolute; left: 305px; top: 25px; height: 70px; width: 70px;" src="atire.png">
-            <button style="position: absolute; left: 305px; top: 25px; height: 70px; width: 70px; opacity: 0%;" onClick="closeNotes()"></button>
-            <p style="position: absolute; padding-right: 25px; left: 35px; top: 35px; font-size: large; font-family: Seaford;">v1.0 - 12/23/23 - Dev Log</p>
-            <p style="position: absolute; padding-right: 25px; left: 25px; top: 100px; font-size: medium; font-family: Seaford;">Well howdy there!<br>It uh... it's really been quite some time huh. Sorry about that. I really do need to start churning a whole lot more of these out over the course the next few months if we're going to get where I'd like to get for 05/20/24. This project, if you haven't yet figured it out, will essentially give you attire. And this is one of the most obvious places I've done a little conversation like this so - <i>Welcome to the chaos, -1 random people who find this page</i> - I personally think this is one of the more interesting creations I've done for the iceberg stuff overall so far. We'll see how it goes, but I think I'm going to go for about four - five updates to this? With a new 'difficulty' per day or something. Link to explanation video upon completion of the final 'level'. I don't really know how to make this hard without being impossible. There's not a lot of strategy here. Maybe I'll introduce upgrades... hm... coins... hmmmmm... <i>in-game currency?</i> expect some version of this. But yeah anyway right now you've just been getting different shirts - this trend is likely to continue as, well, I don't own a lot of different style leggings / trousers. But yeah I know there will be like, two instances of a creation of me wearing pants. Rarity groups have meaning that I'll explain in the post-video. SO anyway, I have to go do more things. I keep finding more stuff to tack onto this release version.<br><br><i>Dev Note: This is a pretty good play on Graham vs. Bert, but it's quite unrelated.</i></p>           
+            <p style="position: absolute; padding-right: 25px; left: 35px; top: 35px; font-size: large; font-family: Seaford;">v1.1 - 12/27/23 - Dev Log</p>
+            <!-- <p style="position: absolute; padding-right: 25px; left: 25px; top: 100px; font-size: medium; font-family: Seaford;">Well howdy there!<br>It uh... it's really been quite some time huh. Sorry about that. I really do need to start churning a whole lot more of these out over the course the next few months if we're going to get where I'd like to get for 05/20/24. This project, if you haven't yet figured it out, will essentially give you attire. And this is one of the most obvious places I've done a little conversation like this so - <i>Welcome to the chaos, -1 random people who find this page</i> - I personally think this is one of the more interesting creations I've done for the iceberg stuff overall so far. We'll see how it goes, but I think I'm going to go for about four - five updates to this? With a new 'difficulty' per day or something. Link to explanation video upon completion of the final 'level'. I don't really know how to make this hard without being impossible. There's not a lot of strategy here. Maybe I'll introduce upgrades... hm... coins... hmmmmm... <i>in-game currency?</i> expect some version of this. But yeah anyway right now you've just been getting different shirts - this trend is likely to continue as, well, I don't own a lot of different style leggings / trousers. But yeah I know there will be like, two instances of a creation of me wearing pants. Rarity groups have meaning that I'll explain in the post-video. SO anyway, I have to go do more things. I keep finding more stuff to tack onto this release version.<br><br><i>Dev Note: This is a pretty good play on Graham vs. Bert, but it's quite unrelated.</i></p>            -->
+            <p style="position: absolute; padding-right: 25px; left: 25px; top: 100px; font-size: medium; font-family: Seaford;">Howdy. I'll probably be pumping these out a lot faster at this point because the goal is to kinda have (at least) one project a month from this point forward. This is uh, not a great amount of content to try to get you to consume and interact with but also May is a lot closer than I'm happy about and so a minimum of five more projects is nothing compared to the amount of information I feel the need to spout. We might have to do a couple more powerpoint presentation nights for the sake of having stuff. <br>Changes that I made overall this time: The stage is now kinda randomly generated. I'm not entirely happy with it because it causes a ton of clusters but that's really what 'difficulty' means here anyway. I also added upgrades. I don't think you should be able to beat the new level with just one upgrade path, I did try to test to make sure that wasn't possible. I don't know if that's the best way to do this but it's what I did. I also increased the chances of hitting the rarer things. Well, at least one of the rarer things. I may have ended up decreasing one a bit in order to get the other one higher. In any case, you should see less polos this time around. Price drops on the gamble boxes are likely to continue as new updates, and thus collection of everything should get easier.<br>Again, scream at me about bugs and feature ideas. I'm very open to changing things. </p>
         </div>
         <div id="HTP" style="position: absolute; left: 150px; top: 100px; width: 400px; height: 800px; background-color: rgb(227, 157, 131); border: 1px solid black; border-radius: 30px;" hidden>
-            <img style="position: absolute; left: 305px; top: 25px; height: 70px; width: 47px;" src="skPlaceholder.png">
-            <button style="position: absolute; left: 305px; top: 25px; height: 70px; width: 47px; opacity: 0%;" onClick="closeHTP()"></button>
-            <p style="position: absolute; padding-right: 25px; left: 25px; top: 35px; font-size: large; font-family: Seaford;">Shuku Sha - How to Play - v1.0</p>
-            <p style="position: absolute; padding-right: 25px; left: 25px; top: 100px; font-size: x-large; font-family: Seaford;">Uh oh, you fell in salt. The goal of the game is to shoot all of the incoming Berts before they reach you. If you don't they take you back to their lair and crown you king. Different types of Berts have different health values, and will give different amounts of gold on death. Be careful though, shooting a wall will make you lose a coin!<br><br>As of v1.0, there are two types of Bert: <br>Common Bert: 1 HP - 1 Gold<br>Lovestruck Bert: 3 HP - 2 Gold<br><br>Movement:<br>Turn Left: A<br>Turn Right: D<br>Fire: Spacebar<br><br> </p>           
+            <p style="position: absolute; padding-right: 25px; left: 25px; top: 35px; font-size: large; font-family: Seaford;">Shuku Sha - How to Play - v1.1</p>
+            <!-- <p style="position: absolute; padding-right: 25px; left: 25px; top: 100px; font-size: x-large; font-family: Seaford;">Uh oh, you fell in salt. The goal of the game is to shoot all of the incoming Berts before they reach you. If you don't they take you back to their lair and crown you king. Different types of Berts have different health values, and will give different amounts of gold on death. Be careful though, shooting a wall will make you lose a coin!<br><br>As of v1.0, there are two types of Bert: <br>Common Bert: 1 HP - 1 Gold<br>Lovestruck Bert: 3 HP - 2 Gold<br><br>Movement:<br>Turn Left: A<br>Turn Right: D<br>Fire: Spacebar<br><br> </p>            -->
+            <p style="position: absolute; padding-right: 25px; left: 25px; top: 100px; font-size: medium; font-family: Seaford;">Uh oh, you fell in salt. The goal of the game is to shoot all of the incoming Berts before they reach you. If you don't they take you back to their lair and crown you king. Different types of Berts have different health values, and will give different amounts of gems on death. These gems can be spent on upgrades.<br>You get some gold each time you clear a wave, and you also get three gold for clearing a wave without shooting a wall.<br><br>As of v1.1, there are four types of Bert: <br>Common Bert: 1 HP - 1 Gem<br>Lovestruck Bert: 3 HP - 2 Gems<br>Smug Bert: 5 HP - 3 Gems<br>??? Bert: ?? HP - ?? Gems<br><br>Movement:<br>Turn Left: A<br>Turn Right: D<br>Fire: Spacebar<br><br>Upgrades:<br>Upgrades increase linearly in cost by 25 gems and price is shared between both types.<br>Firing Speed: Makes you able to shoot faster by 50ms. <br>Bullet Damage: Increases the damage of the bullet by 1 HP, and adds 75ms to firing speed.<br><br>Stages:<br>There are currently two stages. Beating the first will unlock the second, and beating the second will unlock a new skin gamble tower.</p>
         </div>
         <div id="children"></div>
         <div id="bullets"></div>
         <div id="prelim">
-            <img id="tire" style="position: absolute; left: 58vmin; top: 35vmin; height: 40vmin; width: 40vmin;" src="atire.png" hidden>
+            <img id="tire" style="position: absolute; left: 58vmin; top: 35vmin; height: 40vmin; width: 40vmin;" src="decor/atire.png" hidden>
             <p id="badjoke" style="position: absolute; left: 30vmin; top: 30vmin; transform: rotateY(90deg); font-size: 7vmin; color:whitesmoke">[Insert good looking animation]</p>
             <p id="use" style="position: absolute; left: 55vmin; top: 50vmin; transform: rotate(0deg); font-size: 8vmin; color:whitesmoke" hidden>Use in game</p>
-            <img id="lock" style="position: absolute; left: 90vmin; top: 40vmin; width: 50px; height: 50px;" src="lock.png" hidden>
+            <img id="lock" style="position: absolute; left: 90vmin; top: 40vmin; width: 50px; height: 50px;" src="decor/lock.png" hidden>
             <p id="nope" style="position: absolute; left: 15vmin; top: 30vmin; transform: rotate(-30deg); font-size: 12vmin; color:whitesmoke" hidden>That's not quite right.</p>
             <p id="clock" style="position: absolute; left: 59vmin; top: 74vmin; font-size: 7vmin; color:whitesmoke" hidden>That's not quite right.</p>
         </div>
