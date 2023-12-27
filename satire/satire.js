@@ -590,10 +590,10 @@ function toCol() {
 }
 
 function svToCookies() {
-    document.cookie = "coins=" + coins;
-    document.cookie = "skins=" + skins;
-    document.cookie = "defSk=" + defSkin;
-    document.cookie = "sWins=" + beaten;
+    document.cookie = "coins=" + coins + "; expires=Thu, 7 Dec 2056 12:00:00 UTC;";
+    document.cookie = "skins=" + skins + "; expires=Thu, 7 Dec 2056 12:00:00 UTC;";
+    document.cookie = "defSk=" + defSkin + "; expires=Thu, 7 Dec 2056 12:00:00 UTC;";
+    document.cookie = "sWins=" + beaten + "; expires=Thu, 7 Dec 2056 12:00:00 UTC;";
 }
 
 function loadFromCookies() {

@@ -7,3 +7,4 @@ Bullet Types ?
 - Type Specific
 
 Sort shirts by rarity
+Bullet color by strength
