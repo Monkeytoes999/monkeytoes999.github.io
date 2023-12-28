@@ -563,6 +563,10 @@ function toGamb() {
     document.getElementById("gatcha").hidden = false;
     document.getElementById("stage").hidden = true;
     document.getElementById("collection").hidden = true;
+    if (beaten.includes(1)) {
+        document.getElementById("arrowD").hidden = false;
+        document.getElementById("gambDownB").hidden = false;
+    }
 }
 
 function toStg() {
