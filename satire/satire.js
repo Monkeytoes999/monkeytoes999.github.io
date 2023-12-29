@@ -122,6 +122,42 @@ function tick() {
     }
 }
 
+
+function spawners() {
+    switch (spc){
+        case 0:
+            document.getElementById("s12").hidden = false;
+            document.getElementById("s13").hidden = false;
+            document.getElementById("s14").hidden = false;
+            document.getElementById("s15").hidden = false;
+            document.getElementById("s22").hidden = false;
+            document.getElementById("s23").hidden = false;
+            document.getElementById("s24").hidden = false;
+            document.getElementById("s25").hidden = false;
+            break;
+        case 1:
+            document.getElementById("s11").hidden = true;
+            document.getElementById("s21").hidden = true;
+            break;
+        case 2:
+            document.getElementById("s12").hidden = true;
+            document.getElementById("s13").hidden = true;
+            document.getElementById("s14").hidden = true;
+            document.getElementById("s15").hidden = true;
+            document.getElementById("s22").hidden = true;
+            document.getElementById("s23").hidden = true;
+            document.getElementById("s24").hidden = true;
+            document.getElementById("s25").hidden = true;
+            break;
+        case 3:
+            document.getElementById("s11").hidden = false;
+            document.getElementById("s21").hidden = false;
+            break;
+    }
+    spc = (spc + 1) % 4;
+}
+
+//Round
 function roundTrigger() {
     console.log(round);
     coins = coins + completionBonus;
@@ -236,40 +272,41 @@ function roundTrigger() {
 }
 
 
-function spawners() {
-    switch (spc){
-        case 0:
-            document.getElementById("s12").hidden = false;
-            document.getElementById("s13").hidden = false;
-            document.getElementById("s14").hidden = false;
-            document.getElementById("s15").hidden = false;
-            document.getElementById("s22").hidden = false;
-            document.getElementById("s23").hidden = false;
-            document.getElementById("s24").hidden = false;
-            document.getElementById("s25").hidden = false;
-            break;
-        case 1:
-            document.getElementById("s11").hidden = true;
-            document.getElementById("s21").hidden = true;
-            break;
-        case 2:
-            document.getElementById("s12").hidden = true;
-            document.getElementById("s13").hidden = true;
-            document.getElementById("s14").hidden = true;
-            document.getElementById("s15").hidden = true;
-            document.getElementById("s22").hidden = true;
-            document.getElementById("s23").hidden = true;
-            document.getElementById("s24").hidden = true;
-            document.getElementById("s25").hidden = true;
-            break;
-        case 3:
-            document.getElementById("s11").hidden = false;
-            document.getElementById("s21").hidden = false;
-            break;
+function rngSpawner(credits, difficulty, bonus, maxDelay) {
+    completionBonus = bonus;
+    if (difficulty == 14) {
+        new Bert(Math.random() > .5? "l" : "r", 85);
+        rngSpawner(0, 0, bonus, maxDelay);
+    } else if (credits > 100) {
+        canSpawn = [0];
+        cost = [100, 300, 500];
+        health = [1, 3, 5];
+        if (credits > 300) {
+            canSpawn.push(1);
+        }
+        if (credits > 500 && difficulty > 1) {
+            canSpawn.push(2);
+        }
+        if (difficulty > 2){
+            if (credits > 300) {
+                canSpawn.push(1);
+            }
+            if (credits > 500) {
+                canSpawn.push(2);
+            }
+        }
+        choice = canSpawn[Math.floor(Math.random()*canSpawn.length)];
+        credits = credits - cost[choice];
+        new Bert(Math.random() > .5? "l" : "r", health[choice]);
+        setTimeout(() => {
+            rngSpawner(credits, difficulty, bonus, maxDelay);
+        }, Math.random()*(maxDelay-100) + 100);
+    } else {
+        incoming = false;
     }
-    spc = (spc + 1) % 4;
 }
 
+//Gatcha
 function spinny(j) {
     speed = [1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3]
     if (j < 9) {
@@ -370,6 +407,43 @@ function prize() {
     }, 5000);
 }
 
+function gambUp() {
+    changeGamb(skinSet - 1);
+    document.getElementById("arrowD").hidden = false;
+    document.getElementById("gambDownB").hidden = false;
+}
+
+function gambDown() {
+    changeGamb(skinSet + 1);
+    document.getElementById("arrowU").hidden = false;
+    document.getElementById("gambUpB").hidden = false;
+}
+
+function changeGamb(id) {
+    skinSet = id;
+    windColors = ["rgb(255, 0, 217)", "rgb(22, 102, 214)"];
+    bodyColors = ["rgb(175, 238, 190)", "rgb(113, 18, 207)"];
+    document.getElementById("ball6").hidden = !(id == 0);
+    document.getElementById("gambBody").style.backgroundColor = bodyColors[id];
+    document.getElementById("gambDisk").style.backgroundColor = windColors[id];
+    document.getElementById("gambWindow").style.backgroundColor = windColors[id];
+    document.getElementById("price").innerHTML = gambCosts[skinSet];
+    if (coins >= gambCosts[skinSet]) {
+        document.getElementById("price").style.color = "black";
+    } else {
+        document.getElementById("price").style.color = "red";
+    }
+    if (skinSet == 1) {
+        document.getElementById("arrowD").hidden = true;
+        document.getElementById("gambDownB").hidden = true;
+    }
+    if (skinSet == 0) {
+        document.getElementById("arrowU").hidden = true;
+        document.getElementById("gambUpB").hidden = true;
+    }
+}
+
+//Classes
 class Bert {
     constructor(side, health){
         if (side == "l") {
@@ -471,25 +545,8 @@ class Bullet {
     }
 }
 
-function lose() {
-    document.getElementById("gunStats").hidden = true;
-    rActive = false;
-    document.getElementById("loss").hidden = false;
-    if (incoming) {
-      document.getElementById("wait").hidden = false;
-      setTimeout(() => {
-        lose();
-      }, 1000);
-    } else {
-        document.getElementById("wait").hidden = true;
-        document.getElementById("starter").hidden = false;
-        document.getElementById("gambB").hidden = false;
-        document.getElementById("igc").hidden = true;
-        document.getElementById("gtg").hidden = false;
-        svToCookies();
-    }
-}
 
+//Round Start / Stop
 function start(dff) {
     ch = [];
     bul = [];
@@ -526,11 +583,9 @@ function win() {
         beaten.push(difficulty);
     }
     if (beaten.includes(0)) {
-        document.getElementById("lv0").innerHTML = "Easier";
-        document.getElementById("lv1").innerHTML = "Easy";
+        document.getElementById("lv1").innerHTML = "Drizzle";
         document.getElementById("lv1").disabled = false;
     } else {
-        document.getElementById("lv0").innerHTML = "Easy";
         document.getElementById("lv1").innerHTML = "Locked";
         document.getElementById("lv1").disabled = true;
     }
@@ -546,6 +601,26 @@ function win() {
     svToCookies();
 }
 
+function lose() {
+    document.getElementById("gunStats").hidden = true;
+    rActive = false;
+    document.getElementById("loss").hidden = false;
+    if (incoming) {
+      document.getElementById("wait").hidden = false;
+      setTimeout(() => {
+        lose();
+      }, 1000);
+    } else {
+        document.getElementById("wait").hidden = true;
+        document.getElementById("starter").hidden = false;
+        document.getElementById("gambB").hidden = false;
+        document.getElementById("igc").hidden = true;
+        document.getElementById("gtg").hidden = false;
+        svToCookies();
+    }
+}
+
+//Transition
 function toGamb() {
     el = document.getElementById("children");
     while (el.firstChild) {
@@ -563,7 +638,7 @@ function toGamb() {
     document.getElementById("gatcha").hidden = false;
     document.getElementById("stage").hidden = true;
     document.getElementById("collection").hidden = true;
-    if (beaten.includes(1)) {
+    if (beaten.includes(1) && skinSet == 0) {
         document.getElementById("arrowD").hidden = false;
         document.getElementById("gambDownB").hidden = false;
     }
@@ -593,6 +668,8 @@ function toCol() {
     document.getElementById("cRarity").src = "decor/" + rSymbs[defSkin];
 }
 
+
+//Cookies
 function svToCookies() {
     document.cookie = "coins=" + coins + "; expires=Thu, 7 Dec 2056 12:00:00 UTC;";
     document.cookie = "skins=" + skins + "; expires=Thu, 7 Dec 2056 12:00:00 UTC;";
@@ -632,6 +709,8 @@ function loadFromCookies() {
     }
 }
 
+
+//Collection
 function colSkin(dir) {
     if (dir == "R") {
         skinPointer = skinPointer + 1;
@@ -667,6 +746,8 @@ function chooseSkin() {
     svToCookies();
 }
 
+
+//Menus
 function notes() {
     document.getElementById("notes").hidden = !document.getElementById("notes").hidden;
     document.getElementById("HTP").hidden = true;
@@ -677,40 +758,7 @@ function HTP() {
     document.getElementById("notes").hidden = true;
 }
 
-function rngSpawner(credits, difficulty, bonus, maxDelay) {
-    completionBonus = bonus;
-    if (difficulty == 14) {
-        new Bert(Math.random() > .5? "l" : "r", 85);
-        rngSpawner(0, 0, bonus, maxDelay);
-    } else if (credits > 100) {
-        canSpawn = [0];
-        cost = [100, 300, 500];
-        health = [1, 3, 5];
-        if (credits > 300) {
-            canSpawn.push(1);
-        }
-        if (credits > 500 && difficulty > 1) {
-            canSpawn.push(2);
-        }
-        if (difficulty > 2){
-            if (credits > 300) {
-                canSpawn.push(1);
-            }
-            if (credits > 500) {
-                canSpawn.push(2);
-            }
-        }
-        choice = canSpawn[Math.floor(Math.random()*canSpawn.length)];
-        credits = credits - cost[choice];
-        new Bert(Math.random() > .5? "l" : "r", health[choice]);
-        setTimeout(() => {
-            rngSpawner(credits, difficulty, bonus, maxDelay);
-        }, Math.random()*(maxDelay-100) + 100);
-    } else {
-        incoming = false;
-    }
-}
-
+//Upgrades
 function upgFire() {
     igcVal = igcVal - upgCost;
     if (!upgDelay) { 
@@ -732,40 +780,4 @@ function upgDmg() {
     }
     document.getElementById("fireSpeed").innerHTML = "Fire Speed: " + fireSpeed*50 + "ms";
     document.getElementById("dmgPerBul").innerHTML = "Bullet Damage: " + bulletDamage;
-}
-
-function gambUp() {
-    changeGamb(skinSet - 1);
-    document.getElementById("arrowD").hidden = false;
-    document.getElementById("gambDownB").hidden = false;
-}
-
-function gambDown() {
-    changeGamb(skinSet + 1);
-    document.getElementById("arrowU").hidden = false;
-    document.getElementById("gambUpB").hidden = false;
-}
-
-function changeGamb(id) {
-    skinSet = id;
-    windColors = ["rgb(255, 0, 217)", "rgb(22, 102, 214)"];
-    bodyColors = ["rgb(175, 238, 190)", "rgb(113, 18, 207)"];
-    document.getElementById("ball6").hidden = !(id == 0);
-    document.getElementById("gambBody").style.backgroundColor = bodyColors[id];
-    document.getElementById("gambDisk").style.backgroundColor = windColors[id];
-    document.getElementById("gambWindow").style.backgroundColor = windColors[id];
-    document.getElementById("price").innerHTML = gambCosts[skinSet];
-    if (coins >= gambCosts[skinSet]) {
-        document.getElementById("price").style.color = "black";
-    } else {
-        document.getElementById("price").style.color = "red";
-    }
-    if (skinSet == 1) {
-        document.getElementById("arrowD").hidden = true;
-        document.getElementById("gambDownB").hidden = true;
-    }
-    if (skinSet == 0) {
-        document.getElementById("arrowU").hidden = true;
-        document.getElementById("gambUpB").hidden = true;
-    }
 }

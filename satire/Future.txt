@@ -8,3 +8,27 @@ Bullet Types ?
 
 Sort shirts by rarity
 Bullet color by strength
+
+Upgrade choices
+ - 2 per game
+ - Stats list instead of the stupid stuff we got now
+    - Bullet speed
+    - Bullet damage
+    - Fire speed
+    - Pierce damage
+    - Pierce frequency
+    - Gem multiplier
+    - Bonus coins per round
+    - Perfect round bonus
+ 
+ - Pierce frequency
+ - Pierce damage
+ - Money (igc)
+ - Money (coins) -> Extreme penalization in some way, per level.
+ - Travel speed
+ - Slow??
+ - Sentries???
+
+ Enemies
+  - Faster 
+  - 
