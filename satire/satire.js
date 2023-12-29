@@ -762,7 +762,6 @@ class Bert {
                 enemyKills.push(this.type);
             }
         }
-        console.log(this.id, this.health)
         if (typ == "f") {
             this.frozen = freezeDur;
         }
@@ -826,7 +825,6 @@ class Bullet {
         let btI = 0;
         ch.forEach((bt) => {
             if (this.health > 0 && !this.hitIdxs.includes(bt.id)) {
-                console.log(bt.id);
                 if (document.getElementById(bt.id) != null) {
                     let el1 = document.getElementById(this.id).getBoundingClientRect();
                     let el2 = document.getElementById(bt.id).getBoundingClientRect();
@@ -1310,7 +1308,6 @@ function chooseUpg(upId) {
 }
 
 function deselectUpg(selN) {
-    console.log(selN);
     chUpgrades[selN] = -1;
     document.getElementById("upgSel" + (selN+1)).src = "";
 }
