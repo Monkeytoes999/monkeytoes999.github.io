@@ -30,5 +30,5 @@ Upgrade choices
  - Sentries???
 
  Enemies
-  - Faster 
+  - Faster
   - 
