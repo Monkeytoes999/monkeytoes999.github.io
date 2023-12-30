@@ -391,22 +391,24 @@ function roundTrigger() {
                 } else {
                     bossHealths = [8500, 11600, 20100];
                     EBMulti = Math.floor(Math.random()*3);
-                    rngSpawner(bossHealths[EBMulti]*Math.ceil(endlessDifficulty/7), bossNames[EBMulti], endlessRunningBonus, 2000 + 10000/endlessDifficulty);
+                    rngSpawner(bossHealths[EBMulti]*Math.ceil(endlessDifficulty/3.5), bossNames[EBMulti], endlessRunningBonus, 2000 + 10000/endlessDifficulty);
                 }
             } else if (round % 5 == 0 && Math.random() > .8) {
-                rngSpawner(endlessDifficulty*Math.ceil(Math.random()*5)*400, "onlyFast", endlessRunningBonus, 1000);
+                rngSpawner(endlessDifficulty*Math.ceil(Math.random()*5)*800, "onlyFast", endlessRunningBonus, 1000);
             } else {
-                rngSpawner(endlessDifficulty*Math.ceil(Math.random()*5)*600, endlessDifficulty, endlessRunningBonus, Math.random()*2000 + 5000/endlessDifficulty);
+                rngSpawner(endlessDifficulty*Math.ceil(Math.random()*5)*1200, endlessDifficulty, endlessRunningBonus, Math.random()*2000 + 5000/endlessDifficulty);
             }
         }, 5000);
         round = round + 1;
-        endlessRunningBonus = endlessRunningBonus + Math.round(endlessDifficulty/2);
+        endlessRunningBonus = Math.round(endlessRunningBonus*.5) + Math.round(endlessDifficulty/2);
         if (round % 2 == 0) {
             endlessDifficulty = endlessDifficulty + 1;
         }
+        if (round % 10 == 0) {
+            movSpeed = movSpeed + 1;
+        }
     }
 }
-
 
 function rngSpawner(credits, difficulty, bonus, maxDelay) {
     completionBonus = bonus;
@@ -453,7 +455,7 @@ function rngSpawner(credits, difficulty, bonus, maxDelay) {
         }, Math.random()*(maxDelay-100) + 100);
     } else if (credits >= 100) {
         canSpawn = [0];
-        cost = [100, 300, 500, 1000, 400, 8500, 11600];
+        cost = [100, 300, 500, 1000, 400, 2000, 3000];
         health = [1, 3, 5, 10, 4, 85, 116];
         if (credits > 300) {
             canSpawn.push(1);
@@ -487,10 +489,10 @@ function rngSpawner(credits, difficulty, bonus, maxDelay) {
                 canSpawn.push(4);
             }
         }
-        if (difficulty > 15 && credits > 8500) {
+        if (difficulty > 15 && credits > 5000) {
             canSpawn.push(5);
         }
-        if (difficulty > 20 && credits > 11600) {
+        if (difficulty > 20 && credits > 6000) {
             canSpawn.push(6);
         }
         choice = canSpawn[Math.floor(Math.random()*canSpawn.length)];
@@ -662,7 +664,7 @@ class Bert {
         this.div = document.createElement("img");
         this.div.style = "position: absolute; width: 50px; height: 50px; top: 399px; left: " + this.x + "px;";
         this.div.id = this.id;
-        this.movSpeed = 3;
+        this.movSpeed = movSpeed;
         this.frozen = 0;
         switch (health) {
             case 1:
@@ -679,7 +681,7 @@ class Bert {
                 this.worth = 5;
                 this.type = 5;
                 this.div.src = "b6.png";
-                this.movSpeed = 7;
+                this.movSpeed = movSpeed + 4;
                 break;
             case 5:
                 this.worth = 3;
@@ -690,13 +692,13 @@ class Bert {
                 this.worth = 5;
                 this.type = 4;
                 this.div.src = "b5.png";
-                this.movSpeed = 2;
+                this.movSpeed = movSpeed - 1;
                 break;
             case 16:
                 this.worth = 20;
                 this.type = 6;
                 this.div.src = "b7.png";
-                this.movSpeed = 6;
+                this.movSpeed = movSpeed + 3;
                 break;
             case 85:
                 this.worth = 15;
@@ -889,6 +891,7 @@ function start(dff) {
     bulletsFired = 0;
     gemMultiplier = 1;
     extraGold = 0;
+    movSpeed = 3;
     document.getElementById("fireSpeed").innerHTML = "Fire Speed: " + fireSpeed*50 + "ms";
     document.getElementById("dmgPerBul").innerHTML = "Bullet Damage: " + bulletDamage;
     switch (specialType) {
