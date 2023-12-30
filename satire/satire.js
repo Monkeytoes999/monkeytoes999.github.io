@@ -393,7 +393,7 @@ function roundTrigger() {
                     EBMulti = Math.floor(Math.random()*3);
                     rngSpawner(bossHealths[EBMulti]*Math.ceil(endlessDifficulty/7), bossNames[EBMulti], endlessRunningBonus, 2000 + 10000/endlessDifficulty);
                 }
-            } else if (round % 5 && Math.random() > .8) {
+            } else if (round % 5 == 0 && Math.random() > .8) {
                 rngSpawner(endlessDifficulty*Math.ceil(Math.random()*5)*400, "onlyFast", endlessRunningBonus, 1000);
             } else {
                 rngSpawner(endlessDifficulty*Math.ceil(Math.random()*5)*600, endlessDifficulty, endlessRunningBonus, Math.random()*2000 + 5000/endlessDifficulty);
