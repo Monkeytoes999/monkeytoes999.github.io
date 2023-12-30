@@ -121,7 +121,7 @@ function tick() {
         document.getElementById("upg1").disabled = false;
         document.getElementById("upg2").style.backgroundColor = "mintcream";
         document.getElementById("upg2").disabled = false;
-        if (chUpgrades[0] == "FSP") { 
+        if (chUpgrades[0] == 0) { 
             if (fireSpeed > 1) {
                 document.getElementById("upg1").style.backgroundColor = "mintcream";
                 document.getElementById("upg1").disabled = false;
@@ -130,7 +130,7 @@ function tick() {
                 document.getElementById("upg1").disabled = true;
             }
         }
-        if (chUpgrades[1] == "FSP") { 
+        if (chUpgrades[1] == 0) { 
             if (fireSpeed > 1) {
                 document.getElementById("upg2").style.backgroundColor = "mintcream";
                 document.getElementById("upg2").disabled = false;
@@ -139,7 +139,7 @@ function tick() {
                 document.getElementById("upg2").disabled = true;
             }
         }
-        if (chUpgrades[0] == "SFQ") { 
+        if (chUpgrades[0] == 2) { 
             if (specialFrequency != 1) {
                 document.getElementById("upg1").style.backgroundColor = "mintcream";
                 document.getElementById("upg1").disabled = false;
@@ -148,7 +148,7 @@ function tick() {
                 document.getElementById("upg1").disabled = true;
             }
         }
-        if (chUpgrades[1] == "SFQ") { 
+        if (chUpgrades[1] == 2) { 
             if (specialFrequency != 1) {
                 document.getElementById("upg2").style.backgroundColor = "mintcream";
                 document.getElementById("upg2").disabled = false;
@@ -1217,7 +1217,7 @@ function upgDmg() {
         igcVal = igcVal - upgCost;
         bulletDamage = bulletDamage + 1;
         upgCost = upgCost + 25;
-        fireSpeed = fireSpeed + 1.5;
+        fireSpeed = fireSpeed + 1;
     }
     document.getElementById("fireSpeed").innerHTML = "Fire Speed: " + fireSpeed*50 + "ms";
     document.getElementById("dmgPerBul").innerHTML = "Bullet Damage: " + bulletDamage;
