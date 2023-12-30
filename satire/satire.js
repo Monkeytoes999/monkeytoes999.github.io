@@ -934,6 +934,8 @@ function win() {
     document.getElementById("gambB").hidden = false;
     document.getElementById("igc").hidden = true;
     document.getElementById("gtg").hidden = false;
+    document.getElementById("gtl").hidden = false;
+    document.getElementById("gtlB").hidden = false;
     svToCookies();
 }
 
@@ -953,6 +955,8 @@ function lose() {
         document.getElementById("gambB").hidden = false;
         document.getElementById("igc").hidden = true;
         document.getElementById("gtg").hidden = false;
+        document.getElementById("gtl").hidden = false;
+        document.getElementById("gtlB").hidden = false;
         svToCookies();
     }
 }
