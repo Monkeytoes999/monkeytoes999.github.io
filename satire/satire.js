@@ -924,6 +924,20 @@ function win() {
         document.getElementById("lv1").innerHTML = "Locked";
         document.getElementById("lv1").disabled = true;
     }
+    if (beaten.includes(1)) {
+        document.getElementById("lv2").innerHTML = "Mild";
+        document.getElementById("lv2").disabled = false;
+    } else {
+        document.getElementById("lv2").innerHTML = "Locked";
+        document.getElementById("lv2").disabled = true;
+    }
+    if (beaten.includes(2)) {
+        document.getElementById("endless").innerHTML = "Endless";
+        document.getElementById("endless").disabled = false;
+    } else {
+        document.getElementById("endless").innerHTML = "Locked";
+        document.getElementById("endless").disabled = true;
+    }
     document.getElementById("gunStats").hidden = true;
     document.getElementById("upgrades").hidden = true;
     document.getElementById("coinValue").innerHTML = coins;
