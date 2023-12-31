@@ -5,14 +5,15 @@ eid = 0;
 ch = [];
 bul = [];
 movSpeed = 3;
+tpSpeed = 2;
 facing = "l";
 fire = true;
 to = 0;
 coins = 0;
 skins = [0];
-availableSkins = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-skinPngs = ["gGun.png", "greyP.png", "gTMBG.png", "bTMBG.png", "meats.png", "math.png", "navyP.png", "LTT.png", "yTMBG.png", "hp.png", "history.png", "aquarium.png", "yLatin.png", "moes.png", "rBrusters.png", "seaworld.png"];
-rSymbs = ["cSymb.png", "cSymb.png", "uSymb.png", "uSymb.png", "rSymb.png", "lSymb.png", "cSymb.png", "uSymb.png", "uSymb.png", "rSymb.png", "lSymb.png", "cSymb.png", "uSymb.png", "uSymb.png", "rSymb.png", "lSymb.png"];
+availableSkins = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
+skinPngs = ["gGun.png", "greyP.png", "gTMBG.png", "bTMBG.png", "meats.png", "math.png", "navyP.png", "LTT.png", "yTMBG.png", "hp.png", "history.png", "aquarium.png", "yLatin.png", "moes.png", "rBrusters.png", "seaworld.png", "blueP.png", "bLatin.png", "hitchhikers.png", "LTTp.png", "5k.png", "cloak.png"];
+rSymbs = ["cSymb.png", "cSymb.png", "uSymb.png", "uSymb.png", "rSymb.png", "lSymb.png", "cSymb.png", "uSymb.png", "uSymb.png", "rSymb.png", "lSymb.png", "cSymb.png", "uSymb.png", "uSymb.png", "rSymb.png", "lSymb.png", "uSymb.png", "uSymb.png", "uSymb.png", "rSymb.png", "lSymb.png", "mSymb.png"];
 defSkin = 0;
 skinPointer = 0;
 incoming = false;
@@ -28,22 +29,25 @@ upgCost = 25;
 upgDelay = false;
 fireDown = false;
 skinSet = 0;
-gambCosts = [25, 75, 150];
+gambCosts = [25, 75, 150, 250, 0];
 beaten = [];
 enemyKills = [];
 logEntry = 0;
 upgradeFunctions = [upgFire, upgDmg, upgSpBFreq, upgPierceAmt, upgFreezeDur, upgGemMulti, upgExGold];
 upgradePngs = ["fireSpeed.png", "damageUp.png", "spFrequency.png", "pierceUp.png", "freezeDur.png", "gemMulti.png", "extraCoins.png"];
-chUpgrades = [0, 1];
+upgradeNames = ["Increase Fire Speed", "Increase Damage", "Increase Special Bullet Frequency", "Increase Pierce Amount", "Increase Freeze Duration", "Increase Gem Multiplier", "Increase Gold Multiplier"];
+chUpgrades = [0, 1, 2];
 specialFrequency = 0;
 bulletsFired = 0;
 specialType = "f";
 freezeDur = 0;
 pierceAmount = 0;
 gemMultiplier = 1;
-extraGold = 0;
+extraGold = 1;
 endlessDifficulty = 1;
 endlessRunningBonus = 5;
+gameOver = false;
+winDesc = ["Common Black Polo", "Common Grey Polo", "Uncommon Green TMBG Shirt", "Uncommon Blue TMBG Shirt", "Rare 'The Meats' Shirt", "Legendary Math Competition Shirt", "Common Navy Polo", "Uncommon LTT! Shirt", "Uncommon Yellow TMBG Shirt", "Rare Harry Potter Shirt", "Legendary History Fair Shirt", "Common Aquarium Shirt", "Uncommon Yellow Latin Club Shirt", "Uncommon Moes Shirt", "Rare Brusters Shirt", "Legendary SeaWorld Shirt", "Uncommon Blue Polo", "Uncommon Blue Latin Club Shirt", "Uncommon Hitchhikers Shirt", "Rare LTT! Performance Outfit", "Legendary 5K Shirt", "The Cloak"];
 document.getElementById("price").innerHTML = gambCosts[skinSet];
 loadFromCookies();
 
@@ -117,52 +121,74 @@ function tick() {
 
     if (igcVal >= upgCost) {
         document.getElementById("upgPrice").style.color = "white";
-        document.getElementById("upg1").style.backgroundColor = "mintcream";
         document.getElementById("upg1").disabled = false;
-        document.getElementById("upg2").style.backgroundColor = "mintcream";
         document.getElementById("upg2").disabled = false;
+        document.getElementById("upg3").disabled = false;
+        document.getElementById("upg1").classList.remove("upgOff");
+        document.getElementById("upg2").classList.remove("upgOff");
+        document.getElementById("upg3").classList.remove("upgOff");
         if (chUpgrades[0] == 0) { 
             if (fireSpeed > 1) {
-                document.getElementById("upg1").style.backgroundColor = "mintcream";
                 document.getElementById("upg1").disabled = false;
+                document.getElementById("upg1").classList.remove("upgOff");
             } else {
-                document.getElementById("upg1").style.backgroundColor = "lightcoral";
+                document.getElementById("upg1").classList.add("upgOff");
                 document.getElementById("upg1").disabled = true;
             }
         }
         if (chUpgrades[1] == 0) { 
             if (fireSpeed > 1) {
-                document.getElementById("upg2").style.backgroundColor = "mintcream";
                 document.getElementById("upg2").disabled = false;
+                document.getElementById("upg2").classList.remove("upgOff");
             } else {
-                document.getElementById("upg2").style.backgroundColor = "lightcoral";
+                document.getElementById("upg2").classList.add("upgOff");
                 document.getElementById("upg2").disabled = true;
+            }
+        }
+        if (chUpgrades[1] == 0) { 
+            if (fireSpeed > 1) {
+                document.getElementById("upg3").disabled = false;
+                document.getElementById("upg3").classList.remove("upgOff");
+            } else {
+                document.getElementById("upg3").classList.add("upgOff");
+                document.getElementById("upg3").disabled = true;
             }
         }
         if (chUpgrades[0] == 2) { 
             if (specialFrequency != 1) {
-                document.getElementById("upg1").style.backgroundColor = "mintcream";
                 document.getElementById("upg1").disabled = false;
+                document.getElementById("upg1").classList.remove("upgOff");
             } else {
-                document.getElementById("upg1").style.backgroundColor = "lightcoral";
+                document.getElementById("upg1").classList.add("upgOff");
                 document.getElementById("upg1").disabled = true;
             }
         }
         if (chUpgrades[1] == 2) { 
             if (specialFrequency != 1) {
-                document.getElementById("upg2").style.backgroundColor = "mintcream";
                 document.getElementById("upg2").disabled = false;
+                document.getElementById("upg2").classList.remove("upgOff");
             } else {
-                document.getElementById("upg2").style.backgroundColor = "lightcoral";
+                document.getElementById("upg2").classList.add("upgOff");
                 document.getElementById("upg2").disabled = true;
+            }
+        }
+        if (chUpgrades[2] == 2) { 
+            if (specialFrequency != 1) {
+                document.getElementById("upg3").disabled = false;
+                document.getElementById("upg3").classList.remove("upgOff");
+            } else {
+                document.getElementById("upg3").classList.add("upgOff");
+                document.getElementById("upg3").disabled = true;
             }
         }
     } else {
         document.getElementById("upgPrice").style.color = "red";
-        document.getElementById("upg1").style.backgroundColor = "lightcoral";
+        document.getElementById("upg1").classList.add("upgOff");
         document.getElementById("upg1").disabled = true;
-        document.getElementById("upg2").style.backgroundColor = "lightcoral";
+        document.getElementById("upg2").classList.add("upgOff");
         document.getElementById("upg2").disabled = true;
+        document.getElementById("upg3").classList.add("upgOff");
+        document.getElementById("upg3").disabled = true;
     }
     upgDelay = false;
 
@@ -214,15 +240,14 @@ function spawners() {
 
 //Round
 function roundTrigger() {
-    coins = coins + completionBonus;
-    coins = coins + extraGold;
+    coins = coins + completionBonus*extraGold;
     if (perfectRound && round > 1) {
         coins = coins + 3;
     }
     perfectRound = true;
     document.getElementById("perfRound").style.color = "black";
     incoming = true;
-    maxRounds = [6, 8, 11, Infinity];
+    maxRounds = [6, 8, 11, 16, Infinity];
     if (round < maxRounds[difficulty]) {
         document.getElementById("roundAlert").innerHTML = "Round " + round;
         document.getElementById("roundAlert").hidden = false;
@@ -383,8 +408,94 @@ function roundTrigger() {
         }
         round = round + 1;
     } else if (difficulty == 3) {
+        switch(round) {
+            case 1:
+                setTimeout(() => {
+                    rngSpawner(6000, "tpI", 10, 5000);
+                }, 5000);
+                break;
+            case 2:
+                setTimeout(() => {
+                    rngSpawner(9000, 8, 12, 1000);
+                }, 5000);
+                break;
+            case 3:
+                setTimeout(() => {
+                    rngSpawner(10000, 8, 15, 500);
+                }, 5000);
+                break;
+            case 4:
+                setTimeout(() => {
+                    rngSpawner(9000, "robI", 20, 5000);
+                }, 5000);
+                break;
+            case 5:
+                tpSpeed = tpSpeed + 1;
+                setTimeout(() => {
+                    rngSpawner(15000, 9, 20, 2000);
+                }, 5000);
+                break;
+            case 6:
+                setTimeout(() => {
+                    rngSpawner(15500, 10, 25, 2500);
+                }, 5000);
+                break;
+            case 7:
+                setTimeout(() => {
+                    rngSpawner(6000, "spI", 20, 3000);
+                }, 5000);
+                break;
+            case 8:
+                setTimeout(() => {
+                    rngSpawner(20000, 10, 30, 2500);
+                }, 5000);
+                break;
+            case 9:
+                tpSpeed = tpSpeed + 1;
+                setTimeout(() => {
+                    rngSpawner(30000, 15, 35, 2500);
+                }, 5000);
+                break;
+            case 10:
+                setTimeout(() => {
+                    rngSpawner(30000, 15, 35, 2000);
+                }, 5000);
+                break;
+            case 11:
+                setTimeout(() => {
+                    rngSpawner(40000, 15, 35, 1500);
+                }, 5000);
+                break;
+            case 12:
+                setTimeout(() => {
+                    rngSpawner(50000, 20, 35, 2500);
+                }, 5000);
+                break;
+            case 13:
+                setTimeout(() => {
+                    rngSpawner(60000, 20, 35, 2000);
+                }, 5000);
+                break;
+            case 14:
+                tpSpeed = tpSpeed + 1;
+                setTimeout(() => {
+                    rngSpawner(70000, 20, 35, 1500);
+                }, 5000);
+                break;
+            case 15:
+                setTimeout(() => {
+                    rngSpawner(49900, "boss3", 50, 0);
+                }, 5000);
+                break;
+            default:
+                win();
+                incoming = false;
+                break;
+        }
+        round = round + 1;
+    } else if (difficulty == 4) {
+        bossNames = ["boss1", "boss2", "b12"];
         setTimeout(() => {
-            bossNames = ["boss1", "boss2", "b12"];
             if (round % 7 == 0) {
                 if (round == 7) {
                     rngSpawner(8500, "boss1", 22, 100);
@@ -395,24 +506,41 @@ function roundTrigger() {
                 }
             } else if (round % 5 == 0 && Math.random() > .8) {
                 rngSpawner(endlessDifficulty*Math.ceil(Math.random()*5)*800, "onlyFast", endlessRunningBonus, 1000);
+            } else if (round % 5 == 0 && Math.random() > .8) {
+                rngSpawner(Math.round(endlessDifficulty/2)*Math.ceil(Math.random()*2)*1500, "tpI", endlessRunningBonus, 1500);
+            } else if (round % 5 == 0 && Math.random() > .8) {
+                rngSpawner(Math.round(endlessDifficulty/2)*Math.ceil(Math.random()*2)*2000, "spI", endlessRunningBonus, 1500);
+            } else if (round % 5 == 0 && Math.random() > .8) {
+                rngSpawner(Math.round(endlessDifficulty/4)*9000, "robI", endlessRunningBonus, 1500);
             } else {
                 rngSpawner(endlessDifficulty*Math.ceil(Math.random()*5)*1200, endlessDifficulty, endlessRunningBonus, Math.random()*2000 + 5000/endlessDifficulty);
             }
         }, 5000);
         round = round + 1;
-        endlessRunningBonus = Math.round(endlessRunningBonus*.5) + Math.round(endlessDifficulty/2);
+        endlessRunningBonus = Math.min(Math.round(endlessRunningBonus*.5) + Math.round(endlessDifficulty/2) + round, 50);
         if (round % 2 == 0) {
-            endlessDifficulty = endlessDifficulty + 1;
+            endlessDifficulty = endlessDifficulty + Math.ceil(Math.random()*2);
         }
         if (round % 10 == 0) {
-            movSpeed = movSpeed + 1;
+            if (Math.random() > .5) {
+                movSpeed = movSpeed + 2;
+            } else {
+                tpSpeed = tpSpeed + 1;
+            }
         }
+        if (round == 14) {
+            bossNames.push("boss3")
+        }
+    } else if (difficulty == 5) {
+        rngSpawner(0, "test", 0, 0);
     }
 }
 
 function rngSpawner(credits, difficulty, bonus, maxDelay) {
     completionBonus = bonus;
-    if (difficulty == "boss1" && credits > 0) {
+    if (gameOver) {
+      incoming = false;
+    } else if (difficulty == "boss1" && credits > 0) {
         new Bert(Math.random() > .5? "l" : "r", 85);
         setTimeout(() => {
             rngSpawner(credits - 8500, "boss1", bonus, maxDelay);
@@ -432,10 +560,34 @@ function rngSpawner(credits, difficulty, bonus, maxDelay) {
         setTimeout(() => {
             rngSpawner(credits - 20100, "b12", bonus, maxDelay);
         }, Math.random()*(maxDelay - 100) + 100);
+    } else if (difficulty == "boss3" && credits > 0) {
+        new Bert(Math.random() > .5? "l" : "r", 184);
+        setTimeout(() => {
+            rngSpawner(credits - 49900, "boss3", bonus, maxDelay);
+        }, Math.random()*(maxDelay - 500) + 500);
     } else if (difficulty == "test") {
-        new Bert("r", 10);
-        new Bert("l", 4);
-        rngSpawner(0, 0, bonus, maxDelay);
+        new Bert("r", 90);
+        setTimeout(() => {
+            rngSpawner(0, 1, bonus, maxDelay);
+        }, 10000);
+    } else if (difficulty == "spI" && credits > 0) {
+        new Bert(Math.random() > .5? "l" : "r", 20);
+        setTimeout(() => {
+            rngSpawner(credits - 2000, "spI", bonus, maxDelay);
+        }, Math.random()*(maxDelay - 500) + 500);
+    } else if (difficulty == "robI" && credits > 0) {
+        new Bert(Math.random() > .5? "l" : "r", 45);
+        setTimeout(() => {
+            new Bert(Math.random() > .5? "l" : "r", 45);
+        }, 5500);
+        setTimeout(() => {
+            rngSpawner(credits - 9000, "tpI", bonus, maxDelay);
+        }, Math.random()*(maxDelay - 100) + 100);
+    } else if (difficulty == "tpI" && credits > 0) {
+        new Bert(Math.random() > .5? "l" : "r", 15);
+        setTimeout(() => {
+            rngSpawner(credits - 1500, "tpI", bonus, maxDelay);
+        }, Math.random()*(maxDelay - 500) + 500);
     } else if (difficulty == "slowI" && credits > 0) {
         new Bert("r", 10);
         new Bert("l", 1);
@@ -455,12 +607,12 @@ function rngSpawner(credits, difficulty, bonus, maxDelay) {
         }, Math.random()*(maxDelay-100) + 100);
     } else if (credits >= 100) {
         canSpawn = [0];
-        cost = [100, 300, 500, 1000, 400, 2000, 3000];
-        health = [1, 3, 5, 10, 4, 85, 116];
-        if (credits > 300) {
+        cost = [100, 300, 500, 1000, 400, 5000, 6000, 0, 1500, 4500, 2000, 7000];
+        health = [1, 3, 5, 10, 4, 85, 100, 16, 15, 45, 20, 184];
+        if (credits > 300 && difficulty < 8) {
             canSpawn.push(1);
         }
-        if (credits > 500 && difficulty > 1) {
+        if (credits > 500 && difficulty > 1 && difficulty < 15) {
             canSpawn.push(2);
         }
         if (difficulty > 2 && difficulty < 6) {
@@ -481,12 +633,27 @@ function rngSpawner(credits, difficulty, bonus, maxDelay) {
                 canSpawn.push(4);
             }
         }
-        if (difficulty > 5) {
+        if (difficulty > 5 && difficulty < 8) {
             if (credits > 1000) {
                 canSpawn.push(3);
             }
             if (credits > 400) {
                 canSpawn.push(4);
+            }
+        }
+        if (difficulty > 7) {
+            if (credits > 1500) {
+                canSpawn.push(8);
+            }
+        }
+        if (difficulty > 9) {
+            if (credits > 4500) {
+                canSpawn.push(9);
+            }
+        }
+        if (difficulty > 11) {
+            if (credits > 2000){
+                canSpawn.push(10);
             }
         }
         if (difficulty > 15 && credits > 5000) {
@@ -585,7 +752,12 @@ function woop(j) {
 
 function prize() {
     chances = [.35, .533, .716, .9, 1];
-    winDesc = ["Common Grey Polo", "Uncommon Green TMBG Shirt", "Uncommon Blue TMBG Shirt", "Rare 'The Meats' Shirt", "Legendary Math Competition Shirt", "Common Navy Polo", "Uncommon LTT! Shirt", "Uncommon Yellow TMBG Shirt", "Rare Harry Potter Shirt", "Legendary History Fair Shirt", "Common Aquarium Shirt", "Uncommon Yellow Latin Club Shirt", "Uncommon Moes Shirt", "Rare Brusters Shirt", "Legendary SeaWorld Shirt"];
+    if (skinSet == 3) {
+        chances = [.25, .5, .75, .9, 1];
+    }
+    if (skinSet == 4) {
+        chances = [1];
+    }
     chance = Math.random();
     pzWin = 0;
     while (chance > chances[pzWin]){
@@ -597,9 +769,12 @@ function prize() {
     }
     document.getElementById("gGun").hidden = false;
     document.getElementById("gGun").src = "shirts/" + skinPngs[pzWin + 1];
-    document.getElementById("youWon").innerHTML = winDesc[pzWin];
+    document.getElementById("youWon").innerHTML = winDesc[pzWin + 1];
     document.getElementById("youWon").hidden = false;
     svToCookies();
+    if (availableSkins.length == skins.length) {
+        document.getElementById("validation").hidden = false;
+    }
     setTimeout(() => {
         document.getElementById("gGun").hidden = true;
         document.getElementById("youWon").hidden = true;
@@ -627,19 +802,21 @@ function gambDown() {
 
 function changeGamb(id) {
     skinSet = id;
-    windColors = ["rgb(255, 0, 217)", "rgb(22, 102, 214)", "rgb(227, 151, 50)"];
-    bodyColors = ["rgb(175, 238, 190)", "rgb(113, 18, 207)", "rgb(7, 217, 200)"];
+    windColors = ["rgb(255, 0, 217)", "rgb(22, 102, 214)", "rgb(227, 151, 50)", "rgb(231, 163, 54)", "white"];
+    bodyColors = ["rgb(175, 238, 190)", "rgb(113, 18, 207)", "rgb(7, 217, 200)", "rgb(176, 148, 233)", "white"];
     document.getElementById("ball6").hidden = !(id == 0);
+    document.getElementById("nBall1").hidden = skinSet == 4;
     document.getElementById("gambBody").style.backgroundColor = bodyColors[id];
     document.getElementById("gambDisk").style.backgroundColor = windColors[id];
     document.getElementById("gambWindow").style.backgroundColor = windColors[id];
+    gambCosts[4] = coins;
     document.getElementById("price").innerHTML = gambCosts[skinSet];
     if (coins >= gambCosts[skinSet]) {
         document.getElementById("price").style.color = "black";
     } else {
         document.getElementById("price").style.color = "red";
     }
-    if ((skinSet == 1 && !beaten.includes(2)) || skinSet == 2) {
+    if ((skinSet == 1 && !beaten.includes(2)) || (skinSet == 2 && !beaten.includes(3)) || (skinSet == 3 && (skins.length < (availableSkins.length - 1))) || skinSet == 4) {
         document.getElementById("arrowD").hidden = true;
         document.getElementById("gambDownB").hidden = true;
     }
@@ -651,12 +828,12 @@ function changeGamb(id) {
 
 //Classes
 class Bert {
-    constructor(side, health){
+    constructor(side, health, atx) {
         if (side == "l") {
-            this.x = 365;
+            this.x = atx || 365;
             this.dir = 1;
         } else {
-            this.x = 985;
+            this.x = atx || 985;
             this.dir = -1;
         }
         this.id = "ch" + eid;
@@ -666,6 +843,13 @@ class Bert {
         this.div.id = this.id;
         this.movSpeed = movSpeed;
         this.frozen = 0;
+        this.tp = false;
+        this.faster = false;
+        this.health = health;
+        this.max = health;
+        this.recharge = 20;
+        this.shield = -1;
+        this.summon = -1;
         switch (health) {
             case 1:
                 this.worth = 1;
@@ -694,11 +878,32 @@ class Bert {
                 this.div.src = "b5.png";
                 this.movSpeed = movSpeed - 1;
                 break;
+            case 15:
+                this.worth = 10;
+                this.type = 8;
+                this.div.src = "b9.png";
+                this.movSpeed = tpSpeed;
+                this.tp = true;
+                break;
             case 16:
                 this.worth = 20;
                 this.type = 6;
                 this.div.src = "b7.png";
                 this.movSpeed = movSpeed + 3;
+                break;
+            case 20:
+                this.worth = 15;
+                this.type = 10;
+                this.div.src = "b11_1.png";
+                this.movSpeed = movSpeed + 2;
+                this.shield = 3;
+                break;
+            case 45:
+                this.worth = 30;
+                this.type = 9;
+                this.div.src = "b10.png";
+                this.movSpeed = movSpeed - 1;
+                this.faster = true;
                 break;
             case 85:
                 this.worth = 15;
@@ -709,7 +914,15 @@ class Bert {
                 this.worth = 25;
                 this.type = 7;
                 this.div.src = "b8.png"
-                this.movSpeed = 2;
+                this.movSpeed = movSpeed - 1;
+                break;
+            case 184:
+                this.worth = 30;
+                this.type = 11;
+                this.div.src = "b1.png";
+                this.faster = true;
+                this.movSpeed = movSpeed - 1;
+                this.summon = 4;
                 break;
             default:
                 this.worth = 0;
@@ -719,17 +932,22 @@ class Bert {
         document.getElementById("children").appendChild(this.div);
         this.step = 0;
         this.y = 400;
-        this.health = health;
         ch.push(this);
     }
 
     move() {
-        if (this.frozen > 0) {
-            this.x = this.x + this.dir*this.movSpeed - 1;
-            this.y = this.y - (this.movSpeed > 3 ? 3 : this.movSpeed);
-            if (this.step > 2) {
-                this.y = this.y + 2*((this.movSpeed > 3 ? 3 : this.movSpeed));
+        if (this.shield == 0 && this.recharge > 0) {
+            this.recharge = this.recharge - 1;
+            if (this.recharge == 0) {
+                this.shield = 3;
+                this.recharge = 20;
+                this.div.src = "b11_1.png";
             }
+        }
+        if (this.faster) {
+            this.movSpeed = Math.min(3*(this.max/this.health), 15);
+        }
+        if (this.frozen > 0) {
             this.frozen = this.frozen - 1;
         } else {
             this.x = this.x + this.dir*this.movSpeed;
@@ -737,19 +955,46 @@ class Bert {
             if (this.step > 2) {
                 this.y = this.y + 2*(this.movSpeed > 3 ? 3 : this.movSpeed);
             }
-        }
-        this.step = (this.step + 1) % 6;
-        if (document.getElementById(this.id) != null) {
-            document.getElementById(this.id).style = "position: absolute; width: 50px; height: 50px; top: " + this.y + "px; left: " + this.x + "px;";
-        }
-        if ((this.x < 749 && this.dir == -1) || (this.x > 600 && this.dir == 1)) {
-            lose();
+            this.step = (this.step + 1) % 6;
+            if (document.getElementById(this.id) != null) {
+                document.getElementById(this.id).style = "position: absolute; width: 50px; height: 50px; top: " + this.y + "px; left: " + this.x + "px;";
+            }
+            if ((this.x < 749 && this.dir == -1) || (this.x > 600 && this.dir == 1)) {
+                lose();
+            }
         }
     }
 
     hit(idx, typ) {
-        this.health = this.health - bulletDamage;
+        if (this.shield > 0){
+            this.shield = this.shield - 1;
+            if (this.shield == 0) {
+                this.div.src = "b11_2.png";
+            }
+        } else {
+            this.health = this.health - bulletDamage;
+        }
+        if (this.summon > 0) {
+            if (this.health/this.max <.75 && this.summon == 4) {
+                this.summon = this.summon - 1;
+                this.spawner(4);
+                this.div.src = "b12.png";
+            }
+            if (this.health/this.max <.5 && this.summon == 3) {
+                this.summon = this.summon - 1;
+                this.spawner(3);
+            }
+            if (this.health/this.max <.25 && this.summon == 2) {
+                this.summon = this.summon - 1;
+                this.spawner(2);
+                this.div.src = "b10.png";
+            }
+        }
+
         if (this.health <= 0) {
+            if (this.summon == 1) {
+                this.spawner(1);
+            }
             idx = 0;
             ch.forEach((bt) => {
                 if (bt.id == this.id){
@@ -763,11 +1008,56 @@ class Bert {
             if (!enemyKills.includes(this.type)) {
                 enemyKills.push(this.type);
             }
+        } else if (this.tp) {
+            let calcDist = 0;
+            if (this.dir == 1){
+                calcDist = 600 - this.x;
+            } else {
+                calcDist = this.x - 749;
+            }
+            this.teleport(calcDist);
         }
         if (typ == "f") {
             this.frozen = freezeDur;
         }
     }
+
+    spawner(lvl) {
+        switch (lvl) {
+            case 4:
+                new Bert(this.side, 45, this.x + 30*this.dir);
+                new Bert(this.side, 20, this.x + 35*this.dir);
+                break;
+            case 3:
+                new Bert(this.side, 15, this.x + 30*this.dir);
+                new Bert(this.side, 15, this.x + 35*this.dir);
+                new Bert(this.side, 15, this.x + 40*this.dir);
+                break;
+            case 2:
+                new Bert(this.side, 15, this.x + 30*this.dir);
+                new Bert(this.side, 20, this.x - 33*this.dir);
+                new Bert(this.side, 15, this.x + 25*this.dir);
+                new Bert(this.side, 20, this.x - 30*this.dir);
+                break;
+            case 1:
+                new Bert(this.side, 45, this.x - 30*this.dir);
+                new Bert(this.side, 45, this.x - 35*this.dir);
+                new Bert(this.side, 45, this.x - 40*this.dir);
+                break;
+        }
+    }
+
+    teleport(dist) {
+        let newDir = Math.round(Math.random());
+        if (newDir == 0){
+            this.dir = 1;
+            this.x = 600 - dist + Math.round(Math.random()*tpSpeed*2) - 1;
+        } else {
+            this.dir = -1;
+            this.x = 749 + dist - Math.round(Math.random()*tpSpeed*2) - 1;
+        }
+        document.getElementById(this.id).style = "position: absolute; width: 50px; height: 50px; top: " + this.y + "px; left: " + this.x + "px;";
+    } 
 }
 
 class Bullet {
@@ -873,10 +1163,18 @@ function start(dff) {
     document.getElementById("gtg").hidden = true;
     document.getElementById("gtu").hidden = true;
     document.getElementById("upgB").hidden = true;
-    document.getElementById("upg1Img").src = "upgs/" + upgradePngs[chUpgrades[0]];
+    let timgId = 'url(upgs/' + upgradePngs[chUpgrades[0]] + ')';
+    document.getElementById("upg1").style.backgroundImage = timgId;
     document.getElementById("upg1").onclick = upgradeFunctions[chUpgrades[0]];
-    document.getElementById("upg2Img").src = "upgs/" + upgradePngs[chUpgrades[1]];
+    document.getElementById("upg1").title = upgradeNames[chUpgrades[0]];
+    timgId = 'url(upgs/' + upgradePngs[chUpgrades[1]] + ')';
+    document.getElementById("upg2").style.backgroundImage = timgId;
     document.getElementById("upg2").onclick = upgradeFunctions[chUpgrades[1]];
+    document.getElementById("upg2").title = upgradeNames[chUpgrades[1]];
+    timgId = 'url(upgs/' + upgradePngs[chUpgrades[2]] + ')';
+    document.getElementById("upg3").style.backgroundImage = timgId;
+    document.getElementById("upg3").onclick = upgradeFunctions[chUpgrades[2]];
+    document.getElementById("upg3").title = upgradeNames[chUpgrades[2]];
     round = 1;
     rActive = true;
     completionBonus = 0;
@@ -890,8 +1188,9 @@ function start(dff) {
     specialFrequency = 0;
     bulletsFired = 0;
     gemMultiplier = 1;
-    extraGold = 0;
+    extraGold = 1;
     movSpeed = 3;
+    tpSpeed = 2;
     document.getElementById("fireSpeed").innerHTML = "Fire Speed: " + fireSpeed*50 + "ms";
     document.getElementById("dmgPerBul").innerHTML = "Bullet Damage: " + bulletDamage;
     switch (specialType) {
@@ -911,7 +1210,7 @@ function start(dff) {
     document.getElementById("dmgPerBul").innerHTML = "Bullet Damage: " + bulletDamage;
     document.getElementById("freezeDur").innerHTML = "Freeze Duration: 0ms";
     document.getElementById("gemMulti").innerHTML = "Gem Multiplier: " + gemMultiplier + "x";
-    document.getElementById("extraCoins").innerHTML = "Bonus Coins per Round: 0";
+    document.getElementById("extraCoins").innerHTML = "Gold Multiplier: " + extraGold + "x";
     document.getElementById("perfRound").style.color = "black";
     tick();
 }
@@ -935,11 +1234,15 @@ function win() {
         document.getElementById("lv2").disabled = true;
     }
     if (beaten.includes(2)) {
+        document.getElementById("lv3").innerHTML = "Holy Carp";
+        document.getElementById("lv3").disabled = false;
         document.getElementById("endless").innerHTML = "Endless";
         document.getElementById("endless").disabled = false;
     } else {
         document.getElementById("endless").innerHTML = "Locked";
         document.getElementById("endless").disabled = true;
+        document.getElementById("lv3").innerHTML = "Locked";
+        document.getElementById("lv3").disabled = true;
     }
     document.getElementById("gunStats").hidden = true;
     document.getElementById("upgrades").hidden = true;
@@ -1024,11 +1327,15 @@ function toStg() {
         document.getElementById("lv2").disabled = true;
     }
     if (beaten.includes(2)) {
+        document.getElementById("lv3").innerHTML = "Holy Carp";
+        document.getElementById("lv3").disabled = false;
         document.getElementById("endless").innerHTML = "Endless";
         document.getElementById("endless").disabled = false;
     } else {
         document.getElementById("endless").innerHTML = "Locked";
         document.getElementById("endless").disabled = true;
+        document.getElementById("lv3").innerHTML = "Locked";
+        document.getElementById("lv3").disabled = true;
     }
 }
 
@@ -1039,14 +1346,15 @@ function toCol() {
     skinPointer = defSkin;
     document.getElementById("colSkin").src = "shirts/" + skinPngs[defSkin];
     document.getElementById("cRarity").src = "decor/" + rSymbs[defSkin];
+    document.getElementById("shirtName").innerHTML = winDesc[defSkin];
 }
 
 function toLog() {
-    logSrcs = ["b1.png", "b2.png", "b3.png", "b4.png", "b5.png", "b6.png", "b7.png", "b8.png"];
-    logNames = ["Common Bert", "Lovestruck Bert", "Smug Bert", "Emotionally Confused Bert", "Slightly Nausious Bert", "Rebellious Bert", "Fedora Twin: Speedy", "Fedora Twin: Beefy"];
-    logHealths = [1, 3, 5, 85, 10, 4, 16, 100];
-    logIgcs = [1, 2, 3, 15, 5, 5, 20, 25];
-    logDscs = ["This Bert has only two things on his mind: salt and mints. Unfortunately you smell like salt after falling into that pit, and he's a bit peckish.", "You seem to remind this Bert of someone from his past, and apparently it was someone who really meant a lot to him.", "This Bert recently got a bad grade on an exam, but insists it wasn't his fault. The professor seemed to have wanted him to show his work, but he just did it all in his head.", "This Bert isn't quite sure how to feel about everything that's been happening to him recently, but he does know that it's a good idea to take that out on somebody else, so he's coming for your attention and validation.", "This Bert just had to deal with a banana that his roommate left in the freezer in his fridge. He hopes that licking your arm will make him feel better.", "This Bert felt the need to show everyone that he's the one in control of his life choices, but kinda regrets the decision after the fact. He'll never admit it though.", "This alternate reality Bert and his identical twin found magical fedoras in their backyard. His provides him with the gift of speed.", "This alternate reality Bert and his identical twin found magical fedoras in their backyard. His greatly boosts his endurance, but at the price of his walk speed."];
+    logSrcs = ["b1.png", "b2.png", "b3.png", "b4.png", "b5.png", "b6.png", "b7.png", "b8.png", "b9.png", "b10.png", "b11_1.png", "b12.png"];
+    logNames = ["Common Bert", "Lovestruck Bert", "Smug Bert", "Emotionally Confused Bert", "Slightly Nausious Bert", "Rebellious Bert", "Fedora Twin: Speedy", "Fedora Twin: Beefy", "Teleporting Bert", "Robotic Bert", "Spiritual Bert", "Cyborg Bert"];
+    logHealths = [1, 3, 5, 85, 10, 4, 16, 100, 15, 45, 20, 184];
+    logIgcs = [1, 2, 3, 15, 5, 5, 20, 25, 8, 8, 8, 30];
+    logDscs = ["This Bert has only two things on his mind: salt and mints. Unfortunately you smell like salt after falling into that pit, and he's a bit peckish.", "You seem to remind this Bert of someone from his past, and apparently it was someone who really meant a lot to him.", "This Bert recently got a bad grade on an exam, but insists it wasn't his fault. The professor seemed to have wanted him to show his work, but he just did it all in his head.", "This Bert isn't quite sure how to feel about everything that's been happening to him recently, but he does know that it's a good idea to take that out on somebody else, so he's coming for your attention and validation.", "This Bert just had to deal with a banana that his roommate left in the freezer in his fridge. He hopes that licking your arm will make him feel better.", "This Bert felt the need to show everyone that he's the one in control of his life choices, but kinda regrets the decision after the fact. He'll never admit it though.", "This alternate reality Bert and his identical twin found magical fedoras in their backyard. His provides him with the gift of speed.", "This alternate reality Bert and his identical twin found magical fedoras in their backyard. His greatly boosts his endurance, but at the price of his walk speed.", "This Bert has been the subject of a number of experiments, most significantly causing him to have an extreme and uncontrollable nerve response. Some believe that his metabolism externally regulated.", "This heavy machine is built to last, but its motors can barely handle its weight. It thanks you for helping it shed some extraneous mass.", "This Bert discovered a diety while meditating one day. Not any well known diety though, specifically the diety of blocking three heavy impacts per spiritually fueled adrenaline rush.", "This Bert is responsible for the state of many of the more irregular Berts and shares many traits with the robots he created. "];
     document.getElementById("gatcha").hidden = true;
     document.getElementById("collection").hidden = true;
     document.getElementById("logbook").hidden = false;
@@ -1062,12 +1370,45 @@ function toLog() {
 }
 
 function toUpg() {
+    el = document.getElementById("children");
+    while (el.firstChild) {
+        el.removeChild(el.lastChild);
+    }
+    el = document.getElementById("bullets");
+    while (el.firstChild) {
+        el.removeChild(el.lastChild);
+    }
+    if (chUpgrades[2] == null) {
+        chUpgrades = [0, 1, 2];
+    }
     document.getElementById("stage").hidden = true;
     document.getElementById("upgradeBook").hidden = false;
     document.getElementById("upgSel1").src = "upgs/" + upgradePngs[chUpgrades[0]];
     document.getElementById("upgSel2").src = "upgs/" + upgradePngs[chUpgrades[1]];
+    document.getElementById("upgSel3").src = "upgs/" + upgradePngs[chUpgrades[2]];
     document.getElementById("upgPB").style.backgroundColor = specialType == "p" ? "lightgreen" : "pink";
     document.getElementById("upgFB").style.backgroundColor = specialType == "f" ? "lightgreen" : "pink";
+    if (chUpgrades[0] == -1) {
+        document.getElementById("upgSel1").src = "";
+        document.getElementById("upgSel1B").disabled = true;
+    } else {
+        document.getElementById("up" + chUpgrades[0] + "i").hidden = true;
+        document.getElementById("up" + chUpgrades[0] + "b").hidden = true;
+    }
+    if (chUpgrades[1] == -1) {
+        document.getElementById("upgSel2").src = "";
+        document.getElementById("upgSel2B").disabled = true;
+    } else {
+        document.getElementById("up" + chUpgrades[1] + "i").hidden = true;
+        document.getElementById("up" + chUpgrades[1] + "b").hidden = true;
+    }
+    if (chUpgrades[2] == -1 || chUpgrades[2] == null) {
+        document.getElementById("upgSel3").src = "";
+        document.getElementById("upgSel3B").disabled = true;
+    } else {
+        document.getElementById("up" + chUpgrades[2] + "i").hidden = true;
+        document.getElementById("up" + chUpgrades[2] + "b").hidden = true;
+    }
 }
 
 //Cookies
@@ -1123,6 +1464,9 @@ function loadFromCookies() {
         document.getElementById("arrowD").hidden = false;
         document.getElementById("gambDownB").hidden = false;
     }
+    if (availableSkins.length == skins.length) {
+        document.getElementById("validation").hidden = false;
+    }
 }
 
 
@@ -1146,13 +1490,14 @@ function colSkin(dir) {
             document.getElementById("skChs").innerHTML = "Select";
             document.getElementById("skChs").disabled = false;
         }
+        document.getElementById("shirtName").innerHTML = winDesc[skinPointer];
     } else {
         document.getElementById("colSkin").src = "decor/skPlaceholder.png";
         document.getElementById("skChs").innerHTML = "Hidden";
         document.getElementById("skChs").disabled = true;
+        document.getElementById("shirtName").innerHTML = "???";
     }
     document.getElementById("cRarity").src = "decor/" + rSymbs[skinPointer];
-    
 }
 
 function chooseSkin() {
@@ -1164,17 +1509,17 @@ function chooseSkin() {
 
 //Logbook
 function moveLog(dir) {
-    logSrcs = ["b1.png", "b2.png", "b3.png", "b4.png", "b5.png", "b6.png", "b7.png", "b8.png"];
-    logNames = ["Common Bert", "Lovestruck Bert", "Smug Bert", "Emotionally Confused Bert", "Slightly Nausious Bert", "Rebellious Bert", "Fedora Twin: Speedy", "Fedora Twin: Beefy"];
-    logHealths = [1, 3, 5, 85, 10, 4, 16, 100];
-    logIgcs = [1, 2, 3, 15, 5, 5, 20, 25];
-    logDscs = ["This Bert has only two things on his mind: salt and mints. Unfortunately you smell like salt after falling into that pit, and he's a bit peckish.", "You seem to remind this Bert of someone from his past, and apparently it was someone who really meant a lot to him.", "This Bert recently got a bad grade on an exam, but insists it wasn't his fault. The professor seemed to have wanted him to show his work, but he just did it all in his head.", "This Bert isn't quite sure how to feel about everything that's been happening to him recently, but he does know that it's a good idea to take that out on somebody else, so he's coming for your attention and validation.", "This Bert just had to deal with a banana that his roommate left in the freezer in his fridge. He hopes that licking your arm will make him feel better.", "This Bert felt the need to show everyone that he's the one in control of his life choices, but kinda regrets the decision after the fact. He'll never admit it though.", "This alternate reality Bert and his identical twin found magical fedoras in their backyard. His provides him with the gift of speed.", "This alternate reality Bert and his identical twin found magical fedoras in their backyard. His greatly boosts his endurance, but at the price of his walk speed."];
+    logSrcs = ["b1.png", "b2.png", "b3.png", "b4.png", "b5.png", "b6.png", "b7.png", "b8.png", "b9.png", "b10.png", "b11_1.png", "b12.png"];
+    logNames = ["Common Bert", "Lovestruck Bert", "Smug Bert", "Emotionally Confused Bert", "Slightly Nausious Bert", "Rebellious Bert", "Fedora Twin: Speedy", "Fedora Twin: Beefy", "Teleporting Bert", "Robotic Bert", "Spiritual Bert", "Cyborg Bert"];
+    logHealths = [1, 3, 5, 85, 10, 4, 16, 100, 15, 45, 20, 184];
+    logIgcs = [1, 2, 3, 15, 5, 5, 20, 25, 8, 8, 8, 30];
+    logDscs = ["This Bert has only two things on his mind: salt and mints. Unfortunately you smell like salt after falling into that pit, and he's a bit peckish.", "You seem to remind this Bert of someone from his past, and apparently it was someone who really meant a lot to him.", "This Bert recently got a bad grade on an exam, but insists it wasn't his fault. The professor seemed to have wanted him to show his work, but he just did it all in his head.", "This Bert isn't quite sure how to feel about everything that's been happening to him recently, but he does know that it's a good idea to take that out on somebody else, so he's coming for your attention and validation.", "This Bert just had to deal with a banana that his roommate left in the freezer in his fridge. He hopes that licking your arm will make him feel better.", "This Bert felt the need to show everyone that he's the one in control of his life choices, but kinda regrets the decision after the fact. He'll never admit it though.", "This alternate reality Bert and his identical twin found magical fedoras in their backyard. His provides him with the gift of speed.", "This alternate reality Bert and his identical twin found magical fedoras in their backyard. His greatly boosts his endurance, but at the price of his walk speed.", "This Bert has been the subject of a number of experiments, most significantly causing him to have an extreme and uncontrollable nerve response. Some believe that his metabolism externally regulated.", "This heavy machine is built to last, but its motors can barely handle its weight. It thanks you for helping it shed some extraneous mass.", "This Bert discovered a diety while meditating one day. Not any well known diety though, specifically the diety of blocking three heavy impacts per spiritually fueled adrenaline rush.", "This Bert is responsible for the state of many of the more irregular Berts and shares many traits with the robots he created. "];
     if (dir == "R") { 
         logEntry = logEntry + 1;
     } else {
         logEntry = logEntry - 1;
     }
-    if (logEntry == 7) {
+    if (logEntry == 11) {
         document.getElementById("lArrowR").hidden = true;
         document.getElementById("lArRB").hidden = true;
     } else if (logEntry == 0) {
@@ -1194,6 +1539,15 @@ function moveLog(dir) {
         document.getElementById("blHlth").innerHTML = logHealths[logEntry];
         document.getElementById("blIgc").innerHTML = logIgcs[logEntry];
         document.getElementById("blDsc").innerHTML = logDscs[logEntry];
+        if (logEntry == 10) {
+            setTimeout(() => {
+                eleven(1);
+            }, 1500)
+        } else if (logEntry == 11) {
+            setTimeout(() => {
+                twelve(1);
+            }, 1500)
+        }
     } else {
         document.getElementById("blPlaceholder").hidden = false;
         document.getElementById("blImg").hidden = true;
@@ -1202,6 +1556,43 @@ function moveLog(dir) {
         document.getElementById("blHlth").innerHTML = "?";
         document.getElementById("blIgc").innerHTML = "?";
         document.getElementById("blDsc").innerHTML = "You have not killed this enemy yet!";
+    }
+}
+
+function eleven(ver) {
+    if (logEntry == 10) {
+        if (ver == 0) {
+            document.getElementById("blImg").src = "b11_1.png";
+            setTimeout(() => {
+                eleven(1);
+            }, 1500);
+        } else {
+            document.getElementById("blImg").src = "b11_2.png";
+            setTimeout(() => {
+                eleven(0);
+            }, 1500);
+        }
+    }
+}
+
+function twelve(ver) {
+    if (logEntry == 11) {
+        if (ver == 0) {
+            document.getElementById("blImg").src = "b1.png";
+            setTimeout(() => {
+                twelve(1);
+            }, 1500);
+        } else if (ver == 1){
+            document.getElementById("blImg").src = "b12.png";
+            setTimeout(() => {
+                twelve(2);
+            }, 1500);
+        } else {
+            document.getElementById("blImg").src = "b10.png";
+            setTimeout(() => {
+                twelve(0);
+            }, 1500);
+        }
     }
 }
 
@@ -1246,24 +1637,27 @@ function upgSpBFreq() {
         upgCost = upgCost + 25;
         specialFrequency = specialFrequency - 1;
         bulletsFired = 0;
-        if (specialFrequency == -1) {
-            specialFrequency = 5;
-        }
-        document.getElementById("spBulFrq").innerHTML = "Special Bullet Frequency: " + specialFrequency + " Bullets";
         switch (specialType) {
             case "p":
                 if (pierceAmount == 0) {
                     pierceAmount = 1;
                     document.getElementById("bulPierceCnt").innerHTML = "Bullet Pierce: 1";
                 }
+                if (specialFrequency == -1) {
+                    specialFrequency = 5;
+                }
                 break;
             case "f":
                 if (freezeDur == 0) {
-                    freezeDur = 7;
+                    freezeDur = 4;
                     document.getElementById("freezeDur").innerHTML = "Freeze Duration: 1050ms";
+                }
+                if (specialFrequency == -1) {
+                    specialFrequency = 8;
                 }
                 break;
         }
+        document.getElementById("spBulFrq").innerHTML = "Special Bullet Frequency: " + specialFrequency + " Bullets";
     }
 }
 
@@ -1288,12 +1682,12 @@ function upgFreezeDur() {
         igcVal = igcVal - upgCost;
         upgCost = upgCost + 25;
         if (freezeDur == 0) {
-            freezeDur = 7;
-            specialFrequency = 5;
+            freezeDur = 4;
+            specialFrequency = 8;
             bulletsFired = 0;
             document.getElementById("spBulFrq").innerHTML = "Special Bullet Frequency: " + specialFrequency + " Bullets";
         } else {
-            freezeDur = freezeDur + 5;
+            freezeDur = freezeDur + 2;
         }
     }
     document.getElementById("freezeDur").innerHTML = "Freeze Duration: " + freezeDur*150 + "ms";
@@ -1312,25 +1706,46 @@ function upgExGold() {
     if (!upgDelay) {
         igcVal = igcVal - upgCost;
         upgCost = upgCost + 25;
-        extraGold = extraGold + 3;
+        extraGold = extraGold + .2;
     }
-    document.getElementById("extraCoins").innerHTML = "Bonus Coins per Round: " + extraGold;
+    document.getElementById("extraCoins").innerHTML = "Gold Multiplier: " + extraGold + "x";
 }
 
 function chooseUpg(upId) {
     if (chUpgrades[0] == -1) {
-        chUpgrades[0] = upId;
-        document.getElementById("upgSel1").src = "upgs/" + upgradePngs[upId];
+        if (!document.getElementById("up" + upId + "i").hidden) {
+            chUpgrades[0] = upId;
+            document.getElementById("upgSel1").src = "upgs/" + upgradePngs[upId];
+            document.getElementById("upgSel1B").disabled = false;
+            document.getElementById("up" + upId + "i").hidden = true;
+            document.getElementById("up" + upId + "b").hidden = true;
+        }
     } else if (chUpgrades[1] == -1) {
-        chUpgrades[1] = upId;
-        document.getElementById("upgSel2").src = "upgs/" + upgradePngs[upId];
+        if (!document.getElementById("up" + upId + "i").hidden) {
+            chUpgrades[1] = upId;
+            document.getElementById("upgSel2").src = "upgs/" + upgradePngs[upId];
+            document.getElementById("upgSel2B").disabled = false;
+            document.getElementById("up" + upId + "i").hidden = true;
+            document.getElementById("up" + upId + "b").hidden = true;
+        }
+    } else if (chUpgrades[2] == -1 || chUpgrades[2] == null) {
+        if (!document.getElementById("up" + upId + "i").hidden) {
+            chUpgrades[2] = upId;
+            document.getElementById("upgSel3").src = "upgs/" + upgradePngs[upId];
+            document.getElementById("upgSel3B").disabled = false;
+            document.getElementById("up" + upId + "i").hidden = true;
+            document.getElementById("up" + upId + "b").hidden = true;
+        }
     }
     svToCookies();
 }
 
 function deselectUpg(selN) {
+    document.getElementById("up" + chUpgrades[selN] + "i").hidden = false;
+    document.getElementById("up" + chUpgrades[selN] + "b").hidden = false;
     chUpgrades[selN] = -1;
     document.getElementById("upgSel" + (selN+1)).src = "";
+    document.getElementById("upgSel" + (selN+1) + "B").disabled = true;
 }
 
 function spType(which) {
@@ -1345,4 +1760,12 @@ function spType(which) {
     document.getElementById("upgPB").style.backgroundColor = (specialType == "p" ? "lightgreen" : "pink");
     document.getElementById("upgFB").style.backgroundColor = (specialType == "f" ? "lightgreen" : "pink");
     svToCookies();
+}
+
+//End
+function validation() {
+    pass = prompt("Please enter the message I sent you on 8/30/22 10:13 PM. If you didn't recieve one, scream at me.");
+    fetch("https://mhrduality.vercel.app/str/val/" + pass)
+    .then(data => data.json()
+    .then(d => window.open(d['u'], '_blank').focus()));
 }
