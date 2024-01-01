@@ -416,7 +416,7 @@ function roundTrigger() {
                 break;
             case 2:
                 setTimeout(() => {
-                    rngSpawner(9000, 8, 12, 1000);
+                    rngSpawner(9000, 7, 12, 1000);
                 }, 5000);
                 break;
             case 3:
