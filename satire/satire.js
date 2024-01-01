@@ -945,7 +945,7 @@ class Bert {
             }
         }
         if (this.faster) {
-            this.movSpeed = Math.min(3*(this.max/this.health), 15);
+            this.movSpeed = Math.min(3*(this.max/this.health), 11);
         }
         if (this.frozen > 0) {
             this.frozen = this.frozen - 1;
