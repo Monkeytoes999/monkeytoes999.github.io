@@ -1653,7 +1653,7 @@ function upgSpBFreq() {
                     document.getElementById("freezeDur").innerHTML = "Freeze Duration: 1050ms";
                 }
                 if (specialFrequency == -1) {
-                    specialFrequency = 8;
+                    specialFrequency = 6;
                 }
                 break;
         }
@@ -1683,7 +1683,7 @@ function upgFreezeDur() {
         upgCost = upgCost + 25;
         if (freezeDur == 0) {
             freezeDur = 4;
-            specialFrequency = 8;
+            specialFrequency = 6;
             bulletsFired = 0;
             document.getElementById("spBulFrq").innerHTML = "Special Bullet Frequency: " + specialFrequency + " Bullets";
         } else {
