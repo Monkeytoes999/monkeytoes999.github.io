@@ -416,12 +416,12 @@ function roundTrigger() {
                 break;
             case 2:
                 setTimeout(() => {
-                    rngSpawner(9000, 7, 12, 1000);
+                    rngSpawner(7000, 7, 12, 1000);
                 }, 5000);
                 break;
             case 3:
                 setTimeout(() => {
-                    rngSpawner(10000, 8, 15, 500);
+                    rngSpawner(8000, 8, 15, 500);
                 }, 5000);
                 break;
             case 4:
@@ -608,7 +608,7 @@ function rngSpawner(credits, difficulty, bonus, maxDelay) {
     } else if (credits >= 100) {
         canSpawn = [0];
         cost = [100, 300, 500, 1000, 400, 5000, 6000, 0, 1400, 3500, 2000, 7000];
-        health = [1, 3, 5, 10, 4, 85, 100, 16, 14, 45, 20, 184];
+        health = [1, 3, 5, 10, 4, 85, 100, 16, 14, 35, 20, 184];
         if (credits > 300 && difficulty < 8) {
             canSpawn.push(1);
         }
