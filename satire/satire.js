@@ -411,7 +411,7 @@ function roundTrigger() {
         switch(round) {
             case 1:
                 setTimeout(() => {
-                    rngSpawner(6000, "tpI", 10, 5000);
+                    rngSpawner(5600, "tpI", 10, 5000);
                 }, 5000);
                 break;
             case 2:
@@ -447,13 +447,13 @@ function roundTrigger() {
                 break;
             case 8:
                 setTimeout(() => {
-                    rngSpawner(20000, 10, 30, 2500);
+                    rngSpawner(16000, 10, 30, 2500);
                 }, 5000);
                 break;
             case 9:
                 tpSpeed = tpSpeed + 1;
                 setTimeout(() => {
-                    rngSpawner(30000, 15, 35, 2500);
+                    rngSpawner(20000, 15, 35, 2500);
                 }, 5000);
                 break;
             case 10:
@@ -576,17 +576,17 @@ function rngSpawner(credits, difficulty, bonus, maxDelay) {
             rngSpawner(credits - 2000, "spI", bonus, maxDelay);
         }, Math.random()*(maxDelay - 500) + 500);
     } else if (difficulty == "robI" && credits > 0) {
-        new Bert(Math.random() > .5? "l" : "r", 45);
+        new Bert(Math.random() > .5? "l" : "r", 35);
         setTimeout(() => {
-            new Bert(Math.random() > .5? "l" : "r", 45);
+            new Bert(Math.random() > .5? "l" : "r", 35);
         }, 5500);
         setTimeout(() => {
             rngSpawner(credits - 9000, "tpI", bonus, maxDelay);
         }, Math.random()*(maxDelay - 100) + 100);
     } else if (difficulty == "tpI" && credits > 0) {
-        new Bert(Math.random() > .5? "l" : "r", 15);
+        new Bert(Math.random() > .5? "l" : "r", 14);
         setTimeout(() => {
-            rngSpawner(credits - 1500, "tpI", bonus, maxDelay);
+            rngSpawner(credits - 1400, "tpI", bonus, maxDelay);
         }, Math.random()*(maxDelay - 500) + 500);
     } else if (difficulty == "slowI" && credits > 0) {
         new Bert("r", 10);
@@ -607,8 +607,8 @@ function rngSpawner(credits, difficulty, bonus, maxDelay) {
         }, Math.random()*(maxDelay-100) + 100);
     } else if (credits >= 100) {
         canSpawn = [0];
-        cost = [100, 300, 500, 1000, 400, 5000, 6000, 0, 1500, 4500, 2000, 7000];
-        health = [1, 3, 5, 10, 4, 85, 100, 16, 15, 45, 20, 184];
+        cost = [100, 300, 500, 1000, 400, 5000, 6000, 0, 1400, 3500, 2000, 7000];
+        health = [1, 3, 5, 10, 4, 85, 100, 16, 14, 45, 20, 184];
         if (credits > 300 && difficulty < 8) {
             canSpawn.push(1);
         }
@@ -642,12 +642,12 @@ function rngSpawner(credits, difficulty, bonus, maxDelay) {
             }
         }
         if (difficulty > 7) {
-            if (credits > 1500) {
+            if (credits > 1400) {
                 canSpawn.push(8);
             }
         }
         if (difficulty > 9) {
-            if (credits > 4500) {
+            if (credits > 3500) {
                 canSpawn.push(9);
             }
         }
@@ -878,7 +878,7 @@ class Bert {
                 this.div.src = "b5.png";
                 this.movSpeed = movSpeed - 1;
                 break;
-            case 15:
+            case 14:
                 this.worth = 10;
                 this.type = 8;
                 this.div.src = "b9.png";
@@ -895,10 +895,10 @@ class Bert {
                 this.worth = 15;
                 this.type = 10;
                 this.div.src = "b11_1.png";
-                this.movSpeed = movSpeed + 2;
+                this.movSpeed = movSpeed + 1;
                 this.shield = 3;
                 break;
-            case 45:
+            case 35:
                 this.worth = 30;
                 this.type = 9;
                 this.div.src = "b10.png";
@@ -1025,24 +1025,24 @@ class Bert {
     spawner(lvl) {
         switch (lvl) {
             case 4:
-                new Bert(this.side, 45, this.x + 30*this.dir);
+                new Bert(this.side, 35, this.x + 30*this.dir);
                 new Bert(this.side, 20, this.x + 35*this.dir);
                 break;
             case 3:
-                new Bert(this.side, 15, this.x + 30*this.dir);
-                new Bert(this.side, 15, this.x + 35*this.dir);
-                new Bert(this.side, 15, this.x + 40*this.dir);
+                new Bert(this.side, 14, this.x + 30*this.dir);
+                new Bert(this.side, 14, this.x + 35*this.dir);
+                new Bert(this.side, 14, this.x + 40*this.dir);
                 break;
             case 2:
-                new Bert(this.side, 15, this.x + 30*this.dir);
+                new Bert(this.side, 14, this.x + 30*this.dir);
                 new Bert(this.side, 20, this.x - 33*this.dir);
-                new Bert(this.side, 15, this.x + 25*this.dir);
+                new Bert(this.side, 14, this.x + 25*this.dir);
                 new Bert(this.side, 20, this.x - 30*this.dir);
                 break;
             case 1:
-                new Bert(this.side, 45, this.x - 30*this.dir);
-                new Bert(this.side, 45, this.x - 35*this.dir);
-                new Bert(this.side, 45, this.x - 40*this.dir);
+                new Bert(this.side, 35, this.x - 30*this.dir);
+                new Bert(this.side, 35, this.x - 35*this.dir);
+                new Bert(this.side, 35, this.x - 40*this.dir);
                 break;
         }
     }
@@ -1352,9 +1352,9 @@ function toCol() {
 function toLog() {
     logSrcs = ["b1.png", "b2.png", "b3.png", "b4.png", "b5.png", "b6.png", "b7.png", "b8.png", "b9.png", "b10.png", "b11_1.png", "b12.png"];
     logNames = ["Common Bert", "Lovestruck Bert", "Smug Bert", "Emotionally Confused Bert", "Slightly Nausious Bert", "Rebellious Bert", "Fedora Twin: Speedy", "Fedora Twin: Beefy", "Teleporting Bert", "Robotic Bert", "Spiritual Bert", "Cyborg Bert"];
-    logHealths = [1, 3, 5, 85, 10, 4, 16, 100, 15, 45, 20, 184];
-    logIgcs = [1, 2, 3, 15, 5, 5, 20, 25, 8, 8, 8, 30];
-    logDscs = ["This Bert has only two things on his mind: salt and mints. Unfortunately you smell like salt after falling into that pit, and he's a bit peckish.", "You seem to remind this Bert of someone from his past, and apparently it was someone who really meant a lot to him.", "This Bert recently got a bad grade on an exam, but insists it wasn't his fault. The professor seemed to have wanted him to show his work, but he just did it all in his head.", "This Bert isn't quite sure how to feel about everything that's been happening to him recently, but he does know that it's a good idea to take that out on somebody else, so he's coming for your attention and validation.", "This Bert just had to deal with a banana that his roommate left in the freezer in his fridge. He hopes that licking your arm will make him feel better.", "This Bert felt the need to show everyone that he's the one in control of his life choices, but kinda regrets the decision after the fact. He'll never admit it though.", "This alternate reality Bert and his identical twin found magical fedoras in their backyard. His provides him with the gift of speed.", "This alternate reality Bert and his identical twin found magical fedoras in their backyard. His greatly boosts his endurance, but at the price of his walk speed.", "This Bert has been the subject of a number of experiments, most significantly causing him to have an extreme and uncontrollable nerve response. Some believe that his metabolism externally regulated.", "This heavy machine is built to last, but its motors can barely handle its weight. It thanks you for helping it shed some extraneous mass.", "This Bert discovered a diety while meditating one day. Not any well known diety though, specifically the diety of blocking three heavy impacts per spiritually fueled adrenaline rush.", "This Bert is responsible for the state of many of the more irregular Berts and shares many traits with the robots he created. "];
+    logHealths = [1, 3, 5, 85, 10, 4, 16, 100, 14, 35, 20, 184];
+    logIgcs = [1, 2, 3, 15, 5, 5, 20, 25, 10, 30, 15, 30];
+    logDscs = ["This Bert has only two things on his mind: salt and mints. Unfortunately you smell like salt after falling into that pit, and he's a bit peckish.", "You seem to remind this Bert of someone from his past, and apparently it was someone who really meant a lot to him.", "This Bert recently got a bad grade on an exam, but insists it wasn't his fault. The professor seemed to have wanted him to show his work, but he just did it all in his head.", "This Bert isn't quite sure how to feel about everything that's been happening to him recently, but he does know that it's a good idea to take that out on somebody else, so he's coming for your attention and validation.", "This Bert just had to deal with a banana that his roommate left in the freezer in his fridge. He hopes that licking your arm will make him feel better.", "This Bert felt the need to show everyone that he's the one in control of his life choices, but kinda regrets the decision after the fact. He'll never admit it though.", "This alternate reality Bert and his identical twin found magical fedoras in their backyard. His provides him with the gift of speed.", "This alternate reality Bert and his identical twin found magical fedoras in their backyard. His greatly boosts his endurance, but at the price of his walk speed.", "This Bert has been the subject of a number of experiments, most significantly causing him to have an extreme and uncontrollable nerve response. Some believe that his metabolism is externally regulated.", "This heavy machine is built to last, but its motors can barely handle its weight. It thanks you for helping it shed some extraneous mass.", "This Bert discovered a diety while meditating one day. Not any well known diety though, specifically the diety of blocking three heavy impacts per spiritually fueled adrenaline rush.", "This Bert is responsible for the state of many of the more irregular Berts and shares many traits with the robots he created. "];
     document.getElementById("gatcha").hidden = true;
     document.getElementById("collection").hidden = true;
     document.getElementById("logbook").hidden = false;
@@ -1511,9 +1511,9 @@ function chooseSkin() {
 function moveLog(dir) {
     logSrcs = ["b1.png", "b2.png", "b3.png", "b4.png", "b5.png", "b6.png", "b7.png", "b8.png", "b9.png", "b10.png", "b11_1.png", "b12.png"];
     logNames = ["Common Bert", "Lovestruck Bert", "Smug Bert", "Emotionally Confused Bert", "Slightly Nausious Bert", "Rebellious Bert", "Fedora Twin: Speedy", "Fedora Twin: Beefy", "Teleporting Bert", "Robotic Bert", "Spiritual Bert", "Cyborg Bert"];
-    logHealths = [1, 3, 5, 85, 10, 4, 16, 100, 15, 45, 20, 184];
-    logIgcs = [1, 2, 3, 15, 5, 5, 20, 25, 8, 8, 8, 30];
-    logDscs = ["This Bert has only two things on his mind: salt and mints. Unfortunately you smell like salt after falling into that pit, and he's a bit peckish.", "You seem to remind this Bert of someone from his past, and apparently it was someone who really meant a lot to him.", "This Bert recently got a bad grade on an exam, but insists it wasn't his fault. The professor seemed to have wanted him to show his work, but he just did it all in his head.", "This Bert isn't quite sure how to feel about everything that's been happening to him recently, but he does know that it's a good idea to take that out on somebody else, so he's coming for your attention and validation.", "This Bert just had to deal with a banana that his roommate left in the freezer in his fridge. He hopes that licking your arm will make him feel better.", "This Bert felt the need to show everyone that he's the one in control of his life choices, but kinda regrets the decision after the fact. He'll never admit it though.", "This alternate reality Bert and his identical twin found magical fedoras in their backyard. His provides him with the gift of speed.", "This alternate reality Bert and his identical twin found magical fedoras in their backyard. His greatly boosts his endurance, but at the price of his walk speed.", "This Bert has been the subject of a number of experiments, most significantly causing him to have an extreme and uncontrollable nerve response. Some believe that his metabolism externally regulated.", "This heavy machine is built to last, but its motors can barely handle its weight. It thanks you for helping it shed some extraneous mass.", "This Bert discovered a diety while meditating one day. Not any well known diety though, specifically the diety of blocking three heavy impacts per spiritually fueled adrenaline rush.", "This Bert is responsible for the state of many of the more irregular Berts and shares many traits with the robots he created. "];
+    logHealths = [1, 3, 5, 85, 10, 4, 16, 100, 14, 35, 20, 184];
+    logIgcs = [1, 2, 3, 15, 5, 5, 20, 25, 10, 30, 15, 30];
+    logDscs = ["This Bert has only two things on his mind: salt and mints. Unfortunately you smell like salt after falling into that pit, and he's a bit peckish.", "You seem to remind this Bert of someone from his past, and apparently it was someone who really meant a lot to him.", "This Bert recently got a bad grade on an exam, but insists it wasn't his fault. The professor seemed to have wanted him to show his work, but he just did it all in his head.", "This Bert isn't quite sure how to feel about everything that's been happening to him recently, but he does know that it's a good idea to take that out on somebody else, so he's coming for your attention and validation.", "This Bert just had to deal with a banana that his roommate left in the freezer in his fridge. He hopes that licking your arm will make him feel better.", "This Bert felt the need to show everyone that he's the one in control of his life choices, but kinda regrets the decision after the fact. He'll never admit it though.", "This alternate reality Bert and his identical twin found magical fedoras in their backyard. His provides him with the gift of speed.", "This alternate reality Bert and his identical twin found magical fedoras in their backyard. His greatly boosts his endurance, but at the price of his walk speed.", "This Bert has been the subject of a number of experiments, most significantly causing him to have an extreme and uncontrollable nerve response. Some believe that his metabolism is externally regulated.", "This heavy machine is built to last, but its motors can barely handle its weight. It thanks you for helping it shed some extraneous mass.", "This Bert discovered a diety while meditating one day. Not any well known diety though, specifically the diety of blocking three heavy impacts per spiritually fueled adrenaline rush.", "This Bert is responsible for the state of many of the more irregular Berts and shares many traits with the robots he created. "];
     if (dir == "R") { 
         logEntry = logEntry + 1;
     } else {
