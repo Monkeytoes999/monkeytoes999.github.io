@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:site_name" content="Sleep">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+        <link rel = "stylesheet" type = "text/css" href = "style.css"/>
+        <link href="https://fonts.cdnfonts.com/css/seaford" rel="stylesheet">
+        <title>Stratego</title>
+    </head>
+    <body style="background-color:rgb(138, 186, 230); width:98.5%;">
+        <div id="gameBoard">
+            <div id="TempParent" style="height: 50px; width: 50px;"></div>
+            <div id="grid" style="position: fixed; height: 40vmin; width: 50vmin; left: 25vmin; top: 25vmin;">
+
+            </div>
+        </div>
+        <div id="ConfirmSetup" style="position: fixed; top: 87vmin; left: 30vmin;" hidden>
+            <button id="ConfirmSetupButton" style="padding: 18px; cursor: pointer; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; letter-spacing: 0.2px; outline: 0; font-size: 2vh; font-family: Seaford; border-radius: 3vw; background-color: rgb(195, 245, 236);" onclick="internalConfirmSetup()">Confirm your setup and start the game?</button>
+        </div>
+        <div id="FriendlyBase" style="position: fixed; height: 15vmin; width: 50vmin; left: 25vmin; top: 70vmin"></div>
+        <div id="EnemyBase" style="position: fixed; height: 15vmin; width: 50vmin; left: 25vmin; top: 5vmin"></div>
+        <p id="playerTeam" style="width: 0px; height: 0px; position: fixed; left: 0; top: 0;" hidden>0</p>
+    </body>
+    <footer>
+        <script src = "stratego.js" type = "module"></script>
+        <script src = "gamePiece.js" type = "module"></script>
+        <script src = "board.js" type = "module"></script>
+    </footer>
+</html>
