@@ -397,8 +397,11 @@ function writeData() {
         if (playerTurn == -1) {
             playerTurn = Math.round(Math.random());
         }
-        playerTurn = !playerTurn;
-        playerTurn = playerTurn*1;
+        if (playerTurn == 0) {
+            playerTurn = 1;
+        } else if (playerTurn == 1) {
+            playerTurn = 0;
+        }
     }
     document.getElementById("TurnNotice").innerHTML = "Waiting - " + lastInfo;
     fetch("https://hack-box.vercel.app/stratego", {method: "POST", headers: {'Content-Type': 'application/json'}, body: JSON.stringify({"slots": slots, "player1": player1Bank, "player2": player2Bank, "playerTurn": playerTurn, "returnPiece": returnPiece, "lastMove": lastInfo, "specialHighlight": specialHighlight})});
