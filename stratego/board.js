@@ -9,6 +9,9 @@ var friendlyPieceNames;
 var setupTeam;
 var setupPieceHolder;
 var playerTurn;
+var returnPiece = [];
+var lastInfo = "No moves yet.";
+var specialHighlight = [];
 
 export function draw(team) {
     setupTeam = team;
@@ -34,11 +37,11 @@ function drawGrid() {
             slotButton.disabled = true;
             space.appendChild(slotButton);
             document.getElementById("grid").appendChild(space);
-            slots[i][j] = new gp.GamePiece(i, j);
-            if (playerTeam == 0) {
-                slots = swapSlots(slots);
-            }
+            slots[i][j] = new gp.GamePiece(i, j);       
         }
+    }
+    if (setupTeam == 0) {
+        slots = swapSlots(slots);
     }
     let volcs = [[3, 2], [3, 3], [4, 2], [4, 3], [3, 6], [3, 7], [4, 6], [4, 7]];
     for (let i = 0; i < volcs.length; i++) {
@@ -233,9 +236,39 @@ function setupReturnBank(id) {
     setupDefense(setupTeam);
 }
 
+export function returnBank(piece) {
+    let source = piece.id;
+    let team = piece.team;
+    banks[team].push(piece);
+    let j = 0;
+    let pieceTypes = [gp.Flag, gp.Trap, gp.Slayer, gp.Scout, gp.Dwarf, gp.Elf, gp.Beast, gp.Sorceress, gp.BeastRider, gp.Knight, gp.Mage, gp.Dragon];
+    let pieceCounts = [1, 7, 8, 12, 17, 19, 21, 23, 26, 28, 29, 30];
+    for (let i = 0; i < 30; i++) {
+        if (i >= pieceCounts[j]) {
+            j++;
+        }
+        let tester = team + ""  + pieceTypes[j].name + "" + (pieceCounts[j]-i);
+        let baseName = "EnemyBase";
+        let yOffset = 5;
+        if (team == setupTeam) {
+            baseName = "FriendlyBase";
+            yOffset = 70;
+        } 
+        if (tester == source) {
+            document.getElementById(baseName).appendChild(document.getElementById(source));
+            document.getElementById(source).style = "position: fixed; width: 4vmin; height: 4vmin; top: " + (yOffset + Math.floor(i/10)*5) + "vmin; left: " + (25 + (i%10)*5) + "vmin; background-color: " + teamColors[team] + ";";
+            document.getElementById("PB" + source).disabled = true;
+        }
+    }
+    player1Bank = banks[0];
+    player2Bank = banks[1];
+    return [banks[0], banks[1]];
+}
+
 export function ConfirmSetup(team) {
     setupTeam = team;
     document.getElementById("ConfirmSetup").hidden = true;
+    document.getElementById("TurnNotice").hidden = false;
 
     for (let i = 5; i < 8; i++) {
         for (let j = 0; j < 10; j++) {
@@ -296,23 +329,58 @@ export function awaitTurn(team) {
         player1Bank = data.player1;
         player2Bank = data.player2;
         playerTurn = data.playerTurn;
+        lastInfo = data.lastMove;
         banks = [player1Bank, player2Bank];
-        console.log(banks);
+        returnPiece = data.returnPiece;
+        if (returnPiece != null && returnPiece.length > 0) {
+            returnPiece.forEach(retP => {
+                returnBank(retP);
+            });
+        }
+        returnPiece = [];
         redraw(slots);
-        return [slots, player1Bank, player2Bank, playerTurn];
+        specialHighlight = data.specialHighlight;
+        while (document.getElementById("specialHighlights").hasChildNodes()) {
+            document.getElementById("specialHighlights").removeChild(document.getElementById("specialHighlights").firstChild);
+        }
+        if (specialHighlight != null && specialHighlight.length > 0) {
+            specialHighlight.forEach(spot => {
+                let tempChild = document.createElement("div");
+                tempChild.style = "position: fixed; width: 4vmin; height: 4vmin; background-color: yellow; opacity: 0.7; clip-path: circle(25% at 50% 50%);";
+                tempChild.style.left = document.getElementById(spot.id).style.left;
+                tempChild.style.top = document.getElementById(spot.id).style.top;
+
+                document.getElementById("specialHighlights").appendChild(tempChild);
+            });
+        }
+        specialHighlight = [];
+        return [slots, player1Bank, player2Bank, playerTurn, lastInfo];
     });
 }
 
 export function endTurn(upd) {
-    [slots, player1Bank, player2Bank, setupTeam] = upd;
-    if (setupTeam == 0) {
+    [slots, player1Bank, player2Bank, setupTeam, lastInfo, specialHighlight] = upd;
+    while (document.getElementById("specialHighlights").hasChildNodes()) {
+        document.getElementById("specialHighlights").removeChild(document.getElementById("specialHighlights").firstChild);
+    }
+    if (specialHighlight != null && specialHighlight.length > 0) {
+        specialHighlight.forEach(spot => {
+            let tempChild = document.createElement("div");
+            tempChild.style = "position: fixed; width: 4vmin; height: 4vmin; background-color: yellow; opacity: 0.7; clip-path: circle(25% at 50% 50%);";
+            tempChild.style.left = document.getElementById(spot.id).style.left;
+            tempChild.style.top = document.getElementById(spot.id).style.top;
+
+            document.getElementById("specialHighlights").appendChild(tempChild);
+        });
+    }
+    if (setupTeam == 0) {   
         slots = swapSlots(slots);
         writeData();
         slots = swapSlots(slots);
     } else {
         writeData();
     }
-} 
+}
 
 function readData() {
     return fetch('https://hack-box.vercel.app/stratego').then(res => {
@@ -332,6 +400,10 @@ function writeData() {
         playerTurn = !playerTurn;
         playerTurn = playerTurn*1;
     }
-    console.log(slots);
-    fetch("https://hack-box.vercel.app/stratego", {method: "POST", headers: {'Content-Type': 'application/json'}, body: JSON.stringify({"slots": slots, "player1": player1Bank, "player2": player2Bank, "playerTurn": playerTurn})});
+    document.getElementById("TurnNotice").innerHTML = "Waiting - " + lastInfo;
+    fetch("https://hack-box.vercel.app/stratego", {method: "POST", headers: {'Content-Type': 'application/json'}, body: JSON.stringify({"slots": slots, "player1": player1Bank, "player2": player2Bank, "playerTurn": playerTurn, "returnPiece": returnPiece, "lastMove": lastInfo, "specialHighlight": specialHighlight})});
+}
+
+export function addRetP(p) {
+    returnPiece.push(p);
 }
