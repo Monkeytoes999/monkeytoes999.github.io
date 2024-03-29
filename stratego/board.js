@@ -12,6 +12,7 @@ var playerTurn;
 var returnPiece = [];
 var lastInfo = "No moves yet.";
 var specialHighlight = [];
+var gameStarted = false;
 
 export function draw(team) {
     setupTeam = team;
@@ -320,6 +321,7 @@ export function swapSlots(inp) {
 
 export function awaitTurn(team) {
     console.log("waitingForTurn")
+    gameStarted = true;
     return readData().then(data => {
         slots = data.slots;
         console.log(slots);
@@ -391,9 +393,11 @@ function readData() {
 }
 
 function writeData() {
-    if (player1Bank.length == 30 || player2Bank.length == 30) {
+    if ((player1Bank.length == 30 || player2Bank.length == 30) && (!gameStarted)) {
         playerTurn = -1;
+        gameStarted = true;
     } else {
+        console.log("SHOULD NEVER BE -1");
         if (playerTurn == -1) {
             playerTurn = Math.round(Math.random());
         }
