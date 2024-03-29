@@ -272,6 +272,8 @@ function movePiece(to, from) {
     if (checkSameTeam(to.occupant, piece) == 1) {
         return false;
     } else {
+        specialHighlight.push(piece);
+        specialHighlight.push(to.occupant);
         return pieceCombat(piece, to.occupant);
     }
 }
@@ -404,6 +406,11 @@ function specialTwoSpaces() {
                                     validPath = true;
                                 }
                                 if (xDifference == 3 && (l == 3 || l == 4)) {
+                                    validPath = true;
+                                }
+                            }
+                            if (xDifference + yDifference == 4) {
+                                if (xDifference == 2 && yDifference == 2){
                                     validPath = true;
                                 }
                             }
