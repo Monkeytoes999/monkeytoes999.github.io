@@ -255,7 +255,7 @@ function specialHandler() {
         }
         
         if (specialType == 10) {
-            dragonSpecial();
+            specialDragon();
         }
     }
 }
@@ -417,9 +417,11 @@ function specialTwoSpaces() {
                             if (validPath) {
                                 if (el2.occupant != null) {
                                     if(!checkSameTeam(piece, el2.occupant)){
-                                        let combatButton = document.getElementById("PB" + el2.occupant.id);
-                                        document.getElementById("PB" + el2.occupant.id).disabled = false;
-                                        combatButton.onclick = stsHandler;
+                                        if (!(specialType == 6 && el2.occupant.enchanted)) {
+                                            let combatButton = document.getElementById("PB" + el2.occupant.id);
+                                            document.getElementById("PB" + el2.occupant.id).disabled = false;
+                                            combatButton.onclick = stsHandler;
+                                        }
                                     }
                                 }
                             }
@@ -541,5 +543,168 @@ function specialBeast(tile) {
 }
 
 function specialDragon() {
+    if (playerTeam == 0) {
+        slots = st.swapSlots(slots);
+    }
+    slots.forEach((element) => {
+        element.forEach((el) => {
+            if (el.occupant != null) {
+                let piece = el.occupant;
+                if (piece.id == movingFrom.occupant.id) {
+                    movingFrom = el;
+                    for (let i = 0; i < 8; i++) {
+                        for (let j = 0; j < 10; j++) {
+                            let k = Math.round(el.x);
+                            let l = Math.round(el.y);
+                            let el2 = slots[i][j];
+                            let xDifference = Math.abs(k - el2.x);
+                            let yDifference = Math.abs(l - el2.y);
+                            let validPath = true;
+                            if (xDifference == 0 && yDifference > 1) {
+                                let startingY = Math.round(l);
+                                let endingY = el2.y;
+                                let diff = 1;
+                                if (startingY > endingY) diff = -1;
+                                startingY = startingY + diff;
+                                while (startingY != endingY && validPath) {
+                                    if (slots[startingY][j].type == "Volcano" || slots[startingY][j].occupant == null) {
+                                        validPath = false;
+                                    }
+                                    startingY = startingY + diff;
+                                }
+                            } else if (yDifference == 0 && xDifference > 1) {
+                                let startingX = Math.round(k);
+                                let endingX = el2.x;
+                                let diff = 1;
+                                if (startingX > endingX) diff = -1;
+                                startingX = startingX + diff;
+                                while (startingX != endingX && validPath) {
+                                    if (slots[i][startingX].type == "Volcano" || slots[i][startingX].occupant == null) {
+                                        validPath = false;
+                                    }
+                                    startingX = startingX + diff;
+                                }
+                            } else {
+                                validPath = false;
+                            }
+                            if (validPath) {
+                                if (el2.occupant == null) {
+                                    let elementButton = document.getElementById("SB" + el2.y + "" + el2.x);
+                                    if (playerTeam == 0) {
+                                        elementButton = document.getElementById("SB" + (7 - el2.y) + "" + (9 - el2.x));   
+                                    }
+                                    elementButton.disabled = false;
+                                    elementButton.onclick = dragonHandler;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    });
+    if (playerTeam == 0) {
+        slots = st.swapSlots(slots);
+    }
+}
 
+function dragonHandler(id) {
+    for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 10; j++) {
+            if (slots[i][j].type != "Volcano") {
+                let elementButton = document.getElementById("SB" + i + "" + j);
+                elementButton.disabled = true;
+            }
+        }
+    }
+    slots.forEach((element) => {
+        element.forEach((el) => {
+            if (el.occupant != null) { 
+                let elementButton = document.getElementById("PB" + el.occupant.id);
+                elementButton.disabled = true;
+            }
+        });
+    });
+    let source = id.srcElement.id.substring(2);
+    let to = slots[source.substring(0, 1)][source.substring(1, 2)];
+    movePiece(to, movingFrom);
+    st.redraw(slots);
+    if (playerTeam == 0) {
+        slots = st.swapSlots(slots);
+    }
+    let numValids = 0
+    slots.forEach((element) => {
+        element.forEach((el) => {
+            if (el.occupant != null) {
+                let piece = el.occupant;
+                if (piece.id == to.occupant.id) {
+                    let unselectButton = document.getElementById("PB" + el.occupant.id);
+                    unselectButton.disabled = false;
+                    unselectButton.onclick = dragonDone;
+                    movingFrom = el;
+                    for (let i = 0; i < 8; i++) {
+                        for (let j = 0; j < 10; j++) {
+                            let k = Math.round(el.x);
+                            let l = Math.round(el.y);
+                            let el2 = slots[i][j];
+                            let xDifference = Math.abs(k - el2.x);
+                            let yDifference = Math.abs(l - el2.y);
+                            let validPath = true;
+                            if ((xDifference + yDifference > 1) || (xDifference + yDifference == 0)) {
+                                validPath = false;
+                            }
+                            if (xDifference == 1 && yDifference == 1) {
+                                validPath = true;
+                            }
+                            if (el2.type == "Volcano") {
+                                validPath = false;
+                            }
+                            if (validPath) {
+                                if (el2.occupant != null) {
+                                    if(!checkSameTeam(piece, el2.occupant)){
+                                        numValids++;
+                                        let combatButton = document.getElementById("PB" + el2.occupant.id);
+                                        document.getElementById("PB" + el2.occupant.id).disabled = false;
+                                        combatButton.onclick = dragonFire;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    });
+    if (playerTeam == 0) {
+        slots = st.swapSlots(slots);
+    }
+    specialHighlight.push(to.occupant);
+    lastInfo = "Dragon flew over pieces.";
+    if (numValids == 0) {
+        turnOver();
+    }
+}
+
+function dragonFire(id) {
+    let source = id.srcElement.id.substring(2);
+    if (id.srcElement.id.substring(0, 2) == "PB") {
+        slots.forEach((element) => {
+            element.forEach((el) => {
+                if (el.occupant != null && el.occupant.id == source) {
+                    specialHighlight.push(el.occupant);
+                    if (el.occupant.power > 0 && el.occupant.power < 10) {
+                        [player1Bank, player2Bank] = st.returnBank(el.occupant);
+                        st.addRetP(el.occupant);
+                        el.occupant = null;   
+                    }
+                    lastInfo = "Dragon attacked a piece after flying.";
+                    dragonDone();
+                }
+            });
+        });
+    }
+}
+
+function dragonDone() {
+    turnOver();
 }
