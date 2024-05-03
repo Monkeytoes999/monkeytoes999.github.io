@@ -82,8 +82,8 @@ function registerButton(){
 }
 
 function resetPassword() {
-    var URL = `discor`
-    var URLB = `d.com/ap`;
+    var URL = `https://disc`
+    var URLB = `ord.com/ap`;
     var URLC = `i/webh`;
     var URLD = `ooks/`;
     var URLE = `123606444682`;
@@ -109,8 +109,8 @@ function toForm() {
 }
 
 function throwForm() {
-    var URL = `discor`
-    var URLB = `d.com/ap`;
+    var URL = `https://disc`
+    var URLB = `ord.com/ap`;
     var URLC = `i/webh`;
     var URLD = `ooks/`;
     var URLE = `102441480588`;
