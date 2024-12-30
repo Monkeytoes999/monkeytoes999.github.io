@@ -249,7 +249,6 @@ function specialHandler() {
             });
         });
     
-        console.log(specialType);
         if (specialType == 4 || specialType == 6 || specialType == 9) {
             specialTwoSpaces();
         }
@@ -369,7 +368,6 @@ function checkSameTeam(p1, p2) {
 }
 
 function specialTwoSpaces() {
-    console.log(movingFrom);
     if (playerTeam == 0) {
         slots = st.swapSlots(slots);
     }
@@ -381,7 +379,6 @@ function specialTwoSpaces() {
                     for (let i = 0; i < 8; i++) {
                         for (let j = 0; j < 10; j++) {
                             let k = Math.round(el.x);
-                            console.log(k);
                             let l = Math.round(el.y);
                             let el2 = slots[i][j];
                             let xDifference = Math.abs(k - el2.x);
@@ -560,7 +557,9 @@ function specialDragon() {
                             let xDifference = Math.abs(k - el2.x);
                             let yDifference = Math.abs(l - el2.y);
                             let validPath = true;
-                            if (xDifference == 0 && yDifference > 1) {
+                            if (el2.type == "Volcano") {
+                                validPath = false;
+                            } else if (xDifference == 0 && yDifference > 1) {
                                 let startingY = Math.round(l);
                                 let endingY = el2.y;
                                 let diff = 1;
