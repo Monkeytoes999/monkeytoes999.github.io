@@ -576,7 +576,7 @@ creators.push(function() {
         var head = document.createElement("h1");
         head.id = this.id;
         head.style.textAlign = "center";
-        head.innerHTML = "https://youtu.be/0mJ9BtjwlDs"
+        head.innerHTML = "Please refer to the Masterdoc instead."
         this.setBase(head);
     }
     arg.name = "Latest of 135";
