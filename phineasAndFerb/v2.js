@@ -1,0 +1,1305 @@
+import {Connection} from './connection.js';
+import {Song} from './song.js';
+import {Character} from './character.js';
+import {Bit} from './bit.js';
+import {Episode} from './episode.js';
+
+
+{//Characters
+    //Flynn-Fletcher
+    var Phineas = new Character("Phineas Flynn", "Phineas", "Phineas", "Flynn-Fletcher", "#FF0000");
+    var Ferb = new Character("Ferb Fletcher", "Ferb", "Ferb", "Flynn-Fletcher", "#104110");
+    var Candace = new Character("Candace Flynn", "Candace", "Candace", "Flynn-Fletcher", "#cb6c00");
+    var Linda = new Character("Linda Flynn-Fletcher", "Linda", "Linda", "Flynn-Fletcher", "#FF0000");
+    var Lawrence = new Character("Lawrence Fletcher", "Lawrence", "Lawrence", "Flynn-Fletcher", "#FF0000");
+    var Perry = new Character("Perry the Platypus", "Perry", "Perry", "Flynn-Fletcher", "#1fd0bb");
+
+    //The Gang
+    var Baljeet = new Character("Baljeet Tjinder", "Baljeet", "Baljeet", "Gang", "#FF0000");
+    var Buford = new Character("Buford Van Stomm", "Buford", "Buford", "Gang", "#000000");
+    var Isabella = new Character("Isabella Garcia-Shapiro", "Isabella", "Isabella", "Gang", "#dc3292");
+
+    //B Plot
+    var Carl = new Character("Carl Karl", "Carl", "Carl", "B-Plot", "#FF0000");
+    var Doof = new Character("Dr. Heinz Doofensmirtz", "Doof", "Doof", "B-Plot", "#FF0000");
+    var Monogram = new Character("Major Francis Monogram", "Monogram", "Monogram", "B-Plot", "#FF0000");
+    var Vanessa = new Character("Vanessa Doofensmirtz", "Vanessa", "Vanessa", "B-Plot", "#000000");
+    
+    //Candace Crew
+    var Jenny = new Character("Jenny Brown", "Jenny", "Jenny", "Candace Crew", "#FF0000");
+    var Jeremy = new Character("Jeremy Johnson", "Jeremy", "Jeremy", "Candace Crew", "#FF0000");
+    var Stacy = new Character("Stacy Hirano", "Stacy", "Stacy", "Candace Crew", "#FF0000");
+
+    //FIRESIDE GIRLS [troop 46231]
+    var Adyson = new Character("Adyson Sweetwater", "Adyson", "Adyson", "Fireside", "#FF0000");
+    var Ginger = new Character("Ginger Hirano", "Ginger", "Ginger", "Fireside", "#FF0000");
+    var Holly = new Character("Holly", "Holly", "Holly", "Fireside", "#FF0000");
+    var Gretchen = new Character("Gretchen", "Gretchen", "Gretchen", "Fireside", "#FF0000");
+    var Katie = new Character("Katie", "Katie", "Katie", "Fireside", "#FF0000");
+    var Milly = new Character("Milly", "Milly", "Milly", "Fireside", "#FF0000");
+
+    //Family
+    var Johnson = new Character("Mrs. Johnson", "Johnson", "Mrs. Johnson", "Family", "#FF0000");
+    var Hirano = new Character("Margaret Hirano", "Hirano", "Dr. Hirano", "Family", "#FF0000");
+    var Suzy = new Character("Suzy Johnson", "Suzy", "Suzy", "Family", "#FF0000");
+    var Vivian = new Character("Vivian Garcia-Shapiro", "Vivian", "Mrs. Garcia-Shapiro", "Family", "#FF0000");
+    var DoofMom = new Character("Mrs. Doofensmirtz", "DoofMom", "Mrs. Doofensmirtz", "Family", "#FF0000");
+    var DoofDad = new Character("Mr. Doofensmirtz", "DoofDad", "Mr. Doofensmirtz", "Family", "#FF0000");
+
+    //Recurring
+    var BEngineer = new Character("Building Engineer", "BEngineer", "Building Engineer", "Recurring", "#FF0000");
+    var Construction = new Character("Construction Dude", "Construction", "Construction Dude", "Recurring", "#22559A");
+    var Dave = new Character("Dave", "Dave", "Dave", "Recurring", "#55A833");
+    var Rick = new Character("Rick", "Rick", "Rick", "Recurring", "#fe4c31");
+    var Stanky = new Character("Stanky Dog", "Stanky", "Stanky", "Recurring", "#dacd38");
+    var Kenny = new Character("Kenny the Neighbor", "Kenny", "Kenny", "Recurring", "#FF0000")
+    var Haney = new Character("Haney", "Haney", "Haney", "Recurring", "#FFFFFF");
+
+    //Background Kids
+    var Dimitri = new Character("Dimitri Popaunicolas", "Dimitri", "Dimitri", "Background Kids", "#FF0000");
+    var Django = new Character("Django Brown", "Django", "Django", "Background Kids", "#FF0000");
+    var DumbassGinger = new Character("Stupid Fricking Ginger Kid", "DumbassGinger", "Redhead", "Background Kids", "#FF0000");
+    var FricknNerd = new Character("Big Ol' Nerd Stereotype", "FricknNerd", "Nerd", "Background Kids", "#FF0000");
+    var Kris = new Character("Kris [NOT CANON]", "Kris", "Kris", "Background Kids", "#FF0000")
+    var Logan = new Character("Logan McKeen [NOT CANON]", "Logan", "Logan", "Background Kids", "#0000FF");
+    var Pedro = new Character("Pedro", "Pedro", "Pedro", "Background Kids", "#FF0000");
+    var Sally = new Character("Sally", "Sally", "Sally", "Background Kids", "#FF0000");
+    var Sam = new Character("Sam", "Sam", "Sam", "Background Kids", "#FF0000");
+    var Tilly = new Character("Tilly [NOT CANON]", "Tilly", "Tilly", "Background Kids", "#48d4aa");
+    var Timmy = new Character("Timmy", "Timmy", "Timmy", "Background Kids", "#7a0b03");
+
+    //Background Not Kids
+    var Beehive = new Character("Beehive Haircut", "Beehive", "Beehive", "BackgroundNotKids", "#ff7a22");
+    var FishingHat = new Character("Fishing Hat Guy", "FishingHat", "Fishing Hat Guy", "BackgroundNotKids", "#7b6f31");
+    var Lily = new Character("Lily [NOT CANON]", "Lily", "Lily", "BackgroundNotKids", "#83d12a");
+    var Bob = new Character("Bob", "Bob", "Bob", "BackgroundNotKids", "#941bdaff")
+    var TheaterEmployee = new Character("Movie Theater Employee", "TheaterEmployee", "Theater Employee", "BackgroundNotKids", "#d8c414")
+
+    //OWCA
+    var AgentChicken = new Character("Agent C. [Chicken]", "AgentChicken", "Agent C.", "OWCA", "#FF0000");
+    var AgentDog = new Character("Agent D. [Dog]", "Agent", "Agent D.", "OWCA", "#FF0000");
+    var AgentEagle = new Character("Agent E. [Eagle]", "Agent", "Agent E.", "OWCA", "#FF0000");
+    var AgentFrog = new Character("Ferdinand the Frog", "Agent", "Agent F.", "OWCA", "#FF0000");
+    var AgentKangaroo = new Character("Agent K. [Kangaroo]", "Agent", "Agent K.", "OWCA", "#FF0000");
+    var AgentKitty = new Character("Agent K. [Kitty]", "Agent", "Agent K.", "OWCA", "#FF0000");
+    var AgentOwl = new Character("Agent O. [Owl]", "Agent", "Agent O.", "OWCA", "#FF0000");
+    var AgentPanda = new Character("Peter the Panda", "Agent", "Agent P.", "OWCA", "#FF0000");
+    var AgentPig = new Character("Agent P. [Pig]", "Agent", "Agent P.", "OWCA", "#FF0000");
+    var Pinky = new Character("Pinky the Chiuahua", "Agent", "Agent P.", "OWCA", "#FF0000");
+    var AgentRacoon1 = new Character("Agent R. [Racoon] #1", "Agent", "Agent R.", "OWCA", "#744a36");
+
+    //One-Offs
+    var ParkRanger = new Character("Rushmore Park Ranger", "ParkRanger", "Park Ranger", "OneOff", "#514c33");
+    var Oga = new Character("Oga", "Oga", "Oga", "OneOff", "#bbec96");
+    var Bobby = new Character("Bobby Nelson", "Bobby", "Bobby Nelson", "OneOff", "#b50a93")
+    var DD = new Character("Derek Dukensson", "DD", "D.D.", "OneOff", "#FF0000");
+
+    //Song People
+    var dannyJacob = new Character("Danny Jacob", "dannyJacob", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
+}
+
+{//Family Handler
+  Phineas.addFamily(Ferb);
+  Phineas.addFamily(Candace);
+  Phineas.addFamily(Linda);
+  Phineas.addFamily(Lawrence);
+  Phineas.addFamily(Perry);
+
+  Ferb.addFamily(Candace);
+  Ferb.addFamily(Linda);
+  Ferb.addFamily(Lawrence);
+  Ferb.addFamily(Perry);
+
+  Candace.addFamily(Linda);
+  Candace.addFamily(Lawrence);
+  Candace.addFamily(Perry);
+
+  Linda.addFamily(Lawrence);
+  Linda.addFamily(Perry);
+
+  Lawrence.addFamily(Perry);
+
+  Isabella.addFamily(Vivian);
+
+  Stacy.addFamily(Ginger);
+  Stacy.addFamily(Hirano);
+
+  Ginger.addFamily(Hirano);
+
+  Jeremy.addFamily(Johnson);
+  Jeremy.addFamily(Suzy);
+
+  Doof.addFamily(DoofDad);
+  Doof.addFamily(DoofMom);
+  Doof.addFamily(Vanessa);
+
+  DoofDad.addFamily(DoofMom);
+
+  Lily.addFamily(Tilly);
+}
+
+{//BITS
+  var notMuch = new Bit("They don't do much.");
+  var gonnaDo = new Bit("I know what we're gonna do today");
+  var wellConditionally = new Bit("This time I'm gonna be in charge");
+  var whatchaDoin = new Bit("Whatcha doin'");
+  var wherePerry = new Bit("Where's Perry?");
+  var lindana = new Bit("I'm Lindana [Background music]", false);
+  var littleYoung = new Bit("Aren't you a little young to be _");
+  var andBy = new Bit("I MEAN COMPLETELY _");
+  var bird = new Bit("I'm not convinced this is a thing.", false);
+  var curseYou = new Bit("CURSE YOU PERRY THE PLATYPUS");
+  var aPlatypus = new Bit("PERRY THE PLATYPUS?!");
+  var ohTherePerry = new Bit("Oh, there you are");
+  var selfDestruct = new Bit("NO NOT THAT BUTTON", false);
+}
+
+//EPISODES
+{//1
+    var episode1Songs = [];
+    var episode1Characters = [
+        Phineas,
+        Ferb,
+        Perry,
+        Linda,
+        Candace,
+        Stacy,
+        Isabella,
+        Monogram,
+        Doof,
+        BEngineer,
+        Pedro,
+        DumbassGinger,
+        Sam,
+        Logan,
+        Ginger,
+        Katie,
+    ];
+    var episode1Interactions = [
+        new Connection(Phineas, Ferb, 6),
+        new Connection(Phineas, Perry, 6),
+        new Connection(Phineas, Linda, 6),
+        new Connection(Phineas, Candace, 6),
+        new Connection(Phineas, Isabella, 6),
+        new Connection(Phineas, BEngineer, 6),
+        new Connection(Phineas, DumbassGinger, 6),
+        new Connection(Phineas, Pedro, 6),
+        new Connection(Phineas, Sam, 6),
+
+        new Connection(Ferb, Perry, 6),
+        new Connection(Ferb, Isabella, 6),
+        new Connection(Ferb, Linda, 6),
+        new Connection(Ferb, Isabella, 6),
+        new Connection(Ferb, BEngineer, 1),
+        new Connection(Ferb, DumbassGinger, 6),
+        new Connection(Ferb, Pedro, 6),
+        new Connection(Ferb, Sam, 6),
+
+        new Connection(Perry, Linda, 1),
+        new Connection(Perry, Candace, 1),
+        new Connection(Perry, Monogram, 6),
+        new Connection(Perry, Doof, 6),
+        new Connection(Perry, DumbassGinger, 1),
+        new Connection(Perry, Pedro, 1),
+        new Connection(Perry, Sam, 1),
+        new Connection(Perry, Isabella, 6),
+
+        new Connection(Linda, Candace, 6),
+        
+        new Connection(Candace, Stacy, 6),
+        new Connection(Candace, Jeremy, 5),
+
+        new Connection(Stacy, Jeremy, 2),
+
+        new Connection(Isabella, Pedro, 1),
+        new Connection(Isabella, Dimitri, 1),
+        new Connection(Isabella, Sam, 1),
+        new Connection(Isabella, Katie, 1),
+        new Connection(Isabella, Ginger, 1),
+        new Connection(Isabella, Logan, 1),
+        new Connection(Isabella, DumbassGinger, 1),
+        new Connection(Isabella, Candace, 2),
+
+        new Connection(Monogram, Doof, 4),
+
+        new Connection(Pedro, Dimitri, 6),
+        new Connection(Pedro, Sam, 1),
+        new Connection(Pedro, Katie, 1),
+        new Connection(Pedro, Ginger, 1),
+        new Connection(Pedro, Logan, 1),
+        new Connection(Pedro, DumbassGinger, 6),
+        new Connection(Pedro, Candace, 2),
+        
+        new Connection(Dimitri, DumbassGinger, 6),
+        new Connection(Dimitri, Sam, 1),
+        new Connection(Dimitri, Katie, 1),
+        new Connection(Dimitri, Ginger, 1),
+        new Connection(Dimitri, Logan, 1),
+        new Connection(Dimitri, Candace, 2),
+        new Connection(Dimitri, Phineas, 3),
+        new Connection(Dimitri, Ferb, 3),
+
+        new Connection(DumbassGinger, Katie, 1),
+        new Connection(DumbassGinger, Ginger, 1),
+        new Connection(DumbassGinger, Logan, 1),
+        new Connection(DumbassGinger, Candace, 2),
+
+        new Connection(Sam, Katie, 1),
+        new Connection(Sam, Ginger, 1),
+        new Connection(Sam, Logan, 1),
+        new Connection(Sam, Candace, 2),
+
+        new Connection(Logan, Katie, 1),
+        new Connection(Logan, Ginger, 1),
+        new Connection(Logan, Candace, 2),
+        new Connection(Logan, Phineas, 3),
+        new Connection(Logan, Ferb, 3),
+
+        new Connection(Katie, Ginger, 1),
+        new Connection(Katie, Phineas, 3),
+        new Connection(Katie, Ferb, 3),
+
+        new Connection(Ginger, Phineas, 3),
+        new Connection(Ginger, Ferb, 3),
+
+    ];
+    var episode1Bits = [
+        notMuch, gonnaDo, wellConditionally, whatchaDoin, wherePerry, lindana, littleYoung, andBy, bird, curseYou
+    ];
+    var ep1 = new Episode(1, "101a", "Rollercoaster", "Rollercoaster", "Magnitism Magnifier [reverse rotation of Earth]", 
+        episode1Songs, episode1Characters, episode1Interactions, episode1Bits, 1);
+    {//bitHandler
+    notMuch.addAppearance(ep1, Phineas);
+    gonnaDo.addAppearance(ep1, Phineas);
+    wellConditionally.addAppearance(ep1, Candace);
+    whatchaDoin.addAppearance(ep1, Isabella);
+    wherePerry.addAppearance(ep1, Phineas);
+    lindana.addAppearance(ep1);
+    littleYoung.addAppearance(ep1, BEngineer);
+    andBy.addAppearance(ep1, Doof);
+    bird.addAppearance(ep1);
+    curseYou.addAppearance(ep1, Doof)
+    }
+}
+
+{//2
+  var episode2Songs = [
+    new Song("She's Candace", [dannyJacob])
+  ];
+  var episode2Characters = [
+      Phineas,
+      Ferb,
+      Candace,
+      Perry,
+      Linda,
+      Lawrence,
+      Jeremy,
+      Isabella,
+      Milly,
+      Ginger,
+      Holly,
+      Gretchen,
+      Katie,
+      AgentRacoon1,
+      Monogram,
+      Doof,
+      FishingHat,
+      Beehive,
+      ParkRanger,
+      Adyson
+  ];
+  var episode2Interactions = [
+      new Connection(Phineas, Ferb, 6),
+      new Connection(Phineas, Candace, 6),
+      new Connection(Phineas, Perry, 6),
+      new Connection(Phineas, Linda, 6),
+      new Connection(Phineas, Lawrence, 6),
+      new Connection(Phineas, Isabella, 6),
+      new Connection(Phineas, ParkRanger, 6),
+
+      new Connection(Ferb, Candace, 6),
+      new Connection(Ferb, Perry, 6),
+      new Connection(Ferb, Linda, 6),
+      new Connection(Ferb, Lawrence, 6),
+      new Connection(Ferb, ParkRanger, 6),
+      new Connection(Ferb, Isabella, 6),
+
+      new Connection(Perry, Candace, 6),
+      new Connection(Perry, Linda, 6),
+      new Connection(Perry, Lawrence, 6),
+      new Connection(Perry, AgentRacoon1, 6),
+      new Connection(Perry, Monogram, 6),
+      new Connection(Perry, Doof, 6),
+
+      new Connection(Linda, Candace, 6),
+      new Connection(Linda, Lawrence, 6),
+      new Connection(Linda, Isabella, 6),
+      new Connection(Linda, Milly, 1),
+      new Connection(Linda, Ginger, 1),
+      new Connection(Linda, Holly, 1),
+      new Connection(Linda, Gretchen, 1),
+      new Connection(Linda, Katie, 1),
+
+      new Connection(Lawrence, Candace, 6),
+
+      new Connection(Candace, Jeremy, 6),
+      new Connection(Candace, FishingHat, 6),
+
+      new Connection(Isabella, Milly, 6),
+      new Connection(Isabella, Ginger, 6),
+      new Connection(Isabella, Holly, 6),
+      new Connection(Isabella, Gretchen, 6),
+      new Connection(Isabella, Katie, 6),
+      new Connection(Isabella, Candace, 5.5),
+      new Connection(Isabella, Adyson, 6),
+
+      new Connection(Ginger, Holly, 6),
+      new Connection(Ginger, Gretchen, 6),
+      new Connection(Ginger, Katie, 6),
+      new Connection(Ginger, Milly, 6),
+      new Connection(Ginger, Adyson, 6),
+
+      new Connection(Holly, Gretchen, 6),
+      new Connection(Holly, Katie, 6),
+      new Connection(Holly, Milly, 6),
+      new Connection(Holly, Adyson, 6),
+
+      new Connection(Gretchen, Katie, 6),
+      new Connection(Gretchen, Milly, 6),
+      new Connection(Gretchen, Adyson, 6),
+
+      new Connection(Katie, Milly, 6),
+      new Connection(Katie, Adyson, 6),
+
+      new Connection(Milly, Adyson, 6),
+
+      new Connection(Monogram, Doof, 4),
+
+      new Connection(FishingHat, Beehive, 6),
+
+      new Connection(Beehive, Candace, 3),
+  ];
+  var episode2Bits = [
+    wherePerry, andBy, whatchaDoin, littleYoung, bird, curseYou
+  ];
+  var ep2 = new Episode(2, "101b", "Candace Loses Her Head", "Candace's face on Mount Rushmore", "Drill-inator [Monopoly on 'Flation' ]", 
+    episode2Songs, episode2Characters, episode2Interactions, episode2Bits, 1);
+  {//bitHandler
+    wherePerry.addAppearance(2, Phineas);
+    andBy.addAppearance(2, Doof);
+    whatchaDoin.addAppearance(2, Isabella);
+    littleYoung.addAppearance(2, ParkRanger);
+    bird.addAppearance(2);
+    curseYou.addModifiedAppearance(2, Doof);
+  }
+}
+
+{//3
+  //Candace Meep
+  var episode3Songs = [
+    new Song("Go, Go, Phineas", [Phineas, Ferb, Isabella, Holly, Ginger, Gretchen])
+  ];
+  var episode3Characters = [
+      Phineas,
+      Ferb,
+      Candace,
+      Perry,
+      Vivian,
+      Linda,
+      Johnson,
+      Isabella,
+      Monogram,
+      Doof,
+      Adyson,
+      Milly,
+      Ginger,
+      Gretchen,
+      Holly,
+      Katie,
+      Dave,
+      Rick,
+  ];
+  var episode3Interactions = [
+      new Connection(Phineas, Ferb, 6),
+      new Connection(Phineas, Perry, 6),
+      new Connection(Phineas, Candace, 6),
+      new Connection(Phineas, Linda, 6),
+      new Connection(Phineas, Isabella, 6),
+      new Connection(Phineas, Holly, 6),
+      new Connection(Phineas, Milly, 6),
+      new Connection(Phineas, Gretchen, 6),
+      new Connection(Phineas, Ginger, 6),
+      new Connection(Phineas, Katie, 6),
+      new Connection(Phineas, Adyson, 6),
+      new Connection(Phineas, Dave, 6),
+      new Connection(Phineas, Rick, 6),
+
+      new Connection(Ferb, Perry, 6),
+      new Connection(Ferb, Candace, 6),
+      new Connection(Ferb, Linda, 6),
+      new Connection(Ferb, Isabella, 6),
+      new Connection(Ferb, Dave, 3),
+      new Connection(Ferb, Rick, 3),
+
+      new Connection(Perry, Candace, 6),
+      new Connection(Perry, Linda, 6),
+      new Connection(Perry, Monogram, 6),
+      new Connection(Perry, Doof, 6),
+
+      new Connection(Candace, Vivian, 6),
+      new Connection(Candace, Jeremy, 6),
+      new Connection(Candace, Dave, 3),
+      new Connection(Candace, Rick, 3),
+
+      new Connection(Linda, Candace, 6),
+      new Connection(Linda, Vivian, 6),
+      new Connection(Linda, Johnson, 6),
+
+      new Connection(Monogram, Doof, 4),
+
+      new Connection(Isabella, Milly, 6),
+      new Connection(Isabella, Ginger, 6),
+      new Connection(Isabella, Holly, 6),
+      new Connection(Isabella, Gretchen, 6),
+      new Connection(Isabella, Katie, 6),
+      new Connection(Isabella, Adyson, 6),
+      new Connection(Isabella, Dave, 3),
+      new Connection(Isabella, Rick, 3),
+
+      new Connection(Ginger, Holly, 6),
+      new Connection(Ginger, Gretchen, 6),
+      new Connection(Ginger, Katie, 6),
+      new Connection(Ginger, Milly, 6),
+      new Connection(Ginger, Adyson, 6),
+      new Connection(Ginger, Dave, 3),
+      new Connection(Ginger, Rick, 3),
+
+      new Connection(Holly, Gretchen, 6),
+      new Connection(Holly, Katie, 6),
+      new Connection(Holly, Milly, 6),
+      new Connection(Holly, Adyson, 6),
+      new Connection(Holly, Dave, 3),
+      new Connection(Holly, Rick, 3),
+
+      new Connection(Gretchen, Katie, 6),
+      new Connection(Gretchen, Milly, 6),
+      new Connection(Gretchen, Adyson, 6),
+      new Connection(Gretchen, Dave, 3),
+      new Connection(Gretchen, Rick, 3),
+
+      new Connection(Katie, Milly, 6),
+      new Connection(Katie, Adyson, 6),
+      new Connection(Katie, Dave, 3),
+      new Connection(Katie, Rick, 3),
+
+      new Connection(Milly, Adyson, 6),
+      new Connection(Milly, Dave, 3),
+      new Connection(Milly, Rick, 3),
+
+      new Connection(Adyson, Dave, 3),
+      new Connection(Adyson, Rick, 3),
+
+      new Connection(Jeremy, Dave, 3),
+      new Connection(Jeremy, Rick, 3), 
+  ];
+  var episode3Bits = [
+    gonnaDo, whatchaDoin, wherePerry, littleYoung
+  ];
+  var ep3 = new Episode(3, "102a", "The Fast and the Phineas", "Swamp Oil 500", "Deflate-inator Ray", 
+    episode3Songs, episode3Characters, episode3Interactions, episode3Bits, 0);
+  {//bitHandler
+    gonnaDo.addAppearance(3, Phineas);
+    whatchaDoin.addAppearance(3, Isabella);
+    wherePerry.addAppearance(3, Phineas);
+    littleYoung.addAppearance(3, Rick);
+  }
+}
+
+{//4
+  var episode4Songs = [
+    new Song("If Summer Only Lasted a Day", [dannyJacob]),
+    new Song("Backyard Beach", [Ferb])
+  ];
+  var episode4Characters = [
+      Stanky,
+      Phineas,
+      Ferb,
+      Perry,
+      Linda,
+      Candace,
+      Construction,
+      Isabella,
+      Milly,
+      Ginger,
+      Holly,
+      Gretchen,
+      Katie,
+      Stacy,
+      Jenny,
+      Jeremy,
+      Kris,
+      FricknNerd,
+      Buford,
+      Adyson,
+      Pedro,
+      Sally,
+      Django,
+      Logan,
+      FishingHat,
+      Oga,
+      Bobby,
+      DoofDad,
+      DoofMom,
+      Kenny
+  ];
+  var episode4Interactions = [
+      new Connection(Phineas, Ferb, 6),
+      new Connection(Phineas, Perry, 6),
+      new Connection(Phineas, Stanky, 6),
+      new Connection(Phineas, Candace, 6),
+      new Connection(Phineas, Linda, 6),
+      new Connection(Phineas, Lawrence, 2),
+      new Connection(Phineas, Isabella, 6),
+      new Connection(Phineas, Construction, 6),
+      new Connection(Phineas, Ginger, 6),
+      new Connection(Phineas, Katie, 6),
+      new Connection(Phineas, Milly, 6),
+      new Connection(Phineas, Holly, 6),
+      new Connection(Phineas, Buford, 6),
+
+      new Connection(Ferb, Perry, 6),
+      new Connection(Ferb, Candace, 6),
+      new Connection(Ferb, Stanky, 6),
+      new Connection(Ferb, Linda, 6),
+      new Connection(Ferb, Lawrence, 2),
+      new Connection(Ferb, Isabella, 6),
+      new Connection(Ferb, Ginger, 6),
+      new Connection(Ferb, Katie, 6),
+      new Connection(Ferb, Milly, 6),
+      new Connection(Ferb, Holly, 6),
+      new Connection(Ferb, Jeremy, 1),
+
+      new Connection(Perry, Stanky, 3),
+      new Connection(Perry, Candace, 6),
+      new Connection(Perry, Monogram, 6),
+      new Connection(Perry, Linda, 6),
+      new Connection(Perry, Doof, 6),
+      new Connection(Perry, DoofDad, 2),
+      new Connection(Perry, DoofMom, 2),
+      new Connection(Perry, Kenny, 2),
+
+      new Connection(Candace, Linda, 6),
+      new Connection(Candace, Lawrence, 2),
+      new Connection(Candace, Stacy, 6),
+      new Connection(Candace, Jenny, 6),
+      new Connection(Candace, Jeremy, 6),
+      new Connection(Candace, Buford, 4),
+
+      new Connection(Linda, Lawrence, 4),
+      new Connection(Linda, Oga, 6),
+      new Connection(Linda, Jeremy, 2),
+      new Connection(Linda, Buford, 2),
+
+      new Connection(Oga, Candace, 2),
+
+      new Connection(Monogram, Doof, 4),
+
+      new Connection(Doof, DoofMom, 6),
+      new Connection(Doof, DoofDad, 6),
+      new Connection(Doof, Kenny, 6),
+      
+      new Connection(Isabella, Ginger, 6),
+      new Connection(Isabella, Katie, 6),
+      new Connection(Isabella, Milly, 6),
+      new Connection(Isabella, Holly, 6),
+      new Connection(Isabella, Candace, 3),
+      new Connection(Isabella, Gretchen, 6),
+      new Connection(Isabella, Linda, 6),
+
+      new Connection(Ginger, Candace, 3),
+      new Connection(Ginger, Katie, 6),
+      new Connection(Ginger, Milly, 6),
+      new Connection(Ginger, Holly, 6),
+      new Connection(Ginger, Gretchen, 6),
+      new Connection(Ginger, Adyson, 6),
+
+      new Connection(Katie, Candace, 3),
+      new Connection(Katie, Milly, 6),
+      new Connection(Katie, Holly, 6),
+      new Connection(Katie, Adyson, 6),
+
+      new Connection(Milly, Candace, 3),
+      new Connection(Milly, Holly, 6),
+      new Connection(Milly, Adyson, 6),
+
+      new Connection(Holly, Candace, 3),
+      new Connection(Holly, Adyson, 6),
+
+      new Connection(Adyson, Candace, 3),
+
+      new Connection(Stacy, Jenny, 6),
+      new Connection(Stacy, Jeremy, 4),
+      new Connection(Stacy, Buford, 1),
+      new Connection(Stacy, Django, 1),
+      new Connection(Stacy, Kris, 1),
+      new Connection(Stacy, Sally, 1),
+      new Connection(Stacy, Katie, 1),
+      new Connection(Stacy, Ginger, 1),
+      new Connection(Stacy, Milly, 1),
+      new Connection(Stacy, FricknNerd, 1),
+      new Connection(Stacy, Sam, 1),
+      new Connection(Stacy, Holly, 1),
+      new Connection(Stacy, Logan, 1),
+      new Connection(Stacy, Adyson, 1),
+      new Connection(Stacy, Pedro, 1),
+      new Connection(Stacy, DumbassGinger, 1),
+      new Connection(Stacy, Ferb, 3),
+      new Connection(Stacy, Phineas, 3),
+      new Connection(Stacy, Stanky, 3),
+
+      new Connection(Jenny, Jeremy, 2),
+      new Connection(Jenny, Buford, 1),
+      new Connection(Jenny, Django, 1),
+      new Connection(Jenny, Kris, 1),
+      new Connection(Jenny, Sally, 1),
+      new Connection(Jenny, Katie, 1),
+      new Connection(Jenny, Ginger, 1),
+      new Connection(Jenny, Milly, 1),
+      new Connection(Jenny, FricknNerd, 1),
+      new Connection(Jenny, Sam, 1),
+      new Connection(Jenny, Holly, 1),
+      new Connection(Jenny, Logan, 1),
+      new Connection(Jenny, Adyson, 1),
+      new Connection(Jenny, Pedro, 1),
+      new Connection(Jenny, DumbassGinger, 1),
+      new Connection(Jenny, FishingHat, 1),
+      new Connection(Jenny, Ferb, 3),
+
+      new Connection(Kris, Pedro, 6),
+      new Connection(Kris, Sally, 6),
+      new Connection(Kris, Buford, 1),
+      new Connection(Kris, Django, 1),
+      new Connection(Kris, Katie, 1),
+      new Connection(Kris, Ginger, 1),
+      new Connection(Kris, Milly, 1),
+      new Connection(Kris, FricknNerd, 1),
+      new Connection(Kris, Sam, 1),
+      new Connection(Kris, Holly, 1),
+      new Connection(Kris, Logan, 1),
+      new Connection(Kris, Adyson, 1),
+      new Connection(Kris, DumbassGinger, 1),
+      new Connection(Kris, Candace, 3),
+      new Connection(Kris, Ferb, 3),
+      new Connection(Kris, Phineas, 3),
+      new Connection(Kris, Stanky, 3),
+
+      new Connection(Sally, Buford, 1),
+      new Connection(Sally, Django, 1),
+      new Connection(Sally, Katie, 1),
+      new Connection(Sally, Ginger, 1),
+      new Connection(Sally, Milly, 1),
+      new Connection(Sally, FricknNerd, 1),
+      new Connection(Sally, Sam, 1),
+      new Connection(Sally, Holly, 1),
+      new Connection(Sally, Logan, 1),
+      new Connection(Sally, Adyson, 1),
+      new Connection(Sally, Pedro, 1),
+      new Connection(Sally, DumbassGinger, 1),
+      new Connection(Sally, Candace, 3),
+
+      new Connection(Buford, Django, 6),
+      new Connection(Buford, Katie, 1),
+      new Connection(Buford, Ginger, 1),
+      new Connection(Buford, Milly, 1),
+      new Connection(Buford, Sam, 1),
+      new Connection(Buford, Holly, 1),
+      new Connection(Buford, Logan, 1),
+      new Connection(Buford, Adyson, 1),
+      new Connection(Buford, Pedro, 1),
+      new Connection(Buford, DumbassGinger, 1),
+      new Connection(Buford, Candace, 3),
+      new Connection(Buford, Bobby, 6),
+      new Connection(Buford, Stanky, 6),
+
+      new Connection(Django, Katie, 1),
+      new Connection(Django, Ginger, 1),
+      new Connection(Django, Milly, 1),
+      new Connection(Django, FricknNerd, 1),
+      new Connection(Django, Sam, 1),
+      new Connection(Django, Holly, 1),
+      new Connection(Django, Logan, 1),
+      new Connection(Django, Adyson, 1),
+      new Connection(Django, Pedro, 1),
+      new Connection(Django, DumbassGinger, 1),
+      new Connection(Django, Candace, 3),
+      new Connection(Django, Jeremy, 1),
+      new Connection(Django, Stanky, 6),
+      new Connection(Django, Bobby, 6),
+
+      new Connection(FricknNerd, Buford, 6),
+      new Connection(FricknNerd, Katie, 1),
+      new Connection(FricknNerd, Ginger, 1),
+      new Connection(FricknNerd, Milly, 1),
+      new Connection(FricknNerd, Sam, 1),
+      new Connection(FricknNerd, Holly, 1),
+      new Connection(FricknNerd, Logan, 1),
+      new Connection(FricknNerd, Adyson, 1),
+      new Connection(FricknNerd, Pedro, 1),
+      new Connection(FricknNerd, DumbassGinger, 1),
+      new Connection(FricknNerd, Candace, 3),
+      new Connection(FricknNerd, FishingHat, 1),
+      new Connection(FricknNerd, Jeremy, 1), 
+
+      new Connection(Sam, Katie, 1),
+      new Connection(Sam, Ginger, 1),
+      new Connection(Sam, Milly, 1),
+      new Connection(Sam, Holly, 1),
+      new Connection(Sam, Logan, 1),
+      new Connection(Sam, Adyson, 1),
+      new Connection(Sam, Pedro, 1),
+      new Connection(Sam, DumbassGinger, 1),
+      new Connection(Sam, Candace, 3),
+      new Connection(Sam, FishingHat, 1),
+
+      new Connection(Logan, Katie, 1),
+      new Connection(Logan, Ginger, 1),
+      new Connection(Logan, Milly, 1),
+      new Connection(Logan, Holly, 1),
+      new Connection(Logan, Adyson, 1),
+      new Connection(Logan, Pedro, 1),
+      new Connection(Logan, DumbassGinger, 1),
+      new Connection(Logan, Candace, 3),
+
+      new Connection(Pedro, Katie, 1),
+      new Connection(Pedro, Ginger, 1),
+      new Connection(Pedro, Milly, 1),
+      new Connection(Pedro, Holly, 1),
+      new Connection(Pedro, Adyson, 1),
+      new Connection(Pedro, Pedro, 1),
+      new Connection(Pedro, DumbassGinger, 1),
+      new Connection(Pedro, Candace, 3),
+      new Connection(Pedro, FishingHat, 1),
+      new Connection(Pedro, Ferb, 3),
+      new Connection(Pedro, Phineas, 6),
+      new Connection(Pedro, Stanky, 3),
+      new Connection(Pedro, Perry, 3),
+      new Connection(Pedro, Isabella, 3),
+
+      new Connection(DumbassGinger, Katie, 1),
+      new Connection(DumbassGinger, Ginger, 1),
+      new Connection(DumbassGinger, Milly, 1),
+      new Connection(DumbassGinger, Holly, 1),
+      new Connection(DumbassGinger, Adyson, 1),
+      new Connection(DumbassGinger, DumbassGinger, 1),
+      new Connection(DumbassGinger, Candace, 3),
+      new Connection(DumbassGinger, Perry, 3),
+      new Connection(DumbassGinger, Isabella, 3),
+
+      new Connection(Stanky, Bobby, 6),
+      new Connection(Stanky, Pedro, 4),
+      new Connection(Stanky, Stacy, 4),
+      new Connection(Stanky, Kris, 4),
+
+  ];
+  var episode4Bits = [
+    bird, wherePerry, littleYoung, aPlatypus, ohTherePerry
+  ];
+  var ep4 = new Episode(4, "102b", "Lawn Gnome Beach Party of Terror", "Backyard Beach", "Destruct-inator [Gnomes]", 
+    episode4Songs, episode4Characters, episode4Interactions, episode4Bits, 1);
+  {//bitHandler
+    bird.addAppearance(4);
+    wherePerry.addAppearance(4, Phineas);
+    littleYoung.addAppearance(4, Construction);
+    aPlatypus.addAppearance(4, Doof);
+    ohTherePerry.addAppearance(4, Phineas);
+  }
+}
+
+{//5
+  var episode5Songs = [
+    new Song("In The Mall", [Phineas, Ferb, Isabella])
+  ];
+  var episode5Characters = [
+      Phineas,
+      Ferb,
+      Candace,
+      Linda,
+      Isabella,
+      Perry,
+      Monogram,
+      Doof,
+      Vanessa,
+      Tilly,
+      Lily,
+      Haney,
+  ];
+  var episode5Interactions = [
+      new Connection(Phineas, Ferb, 6),
+      new Connection(Phineas, Linda, 6),
+      new Connection(Phineas, Perry, 6),
+      new Connection(Phineas, Candace, 6),
+      new Connection(Phineas, Isabella, 6),
+
+      new Connection(Ferb, Linda, 6),
+      new Connection(Ferb, Perry, 6),
+      new Connection(Ferb, Candace, 6),
+      new Connection(Ferb, Isabella, 6),
+
+      new Connection(Perry, Candace, 6),
+      new Connection(Perry, Linda, 6),
+      new Connection(Perry, Monogram, 6),
+      new Connection(Perry, Doof, 6),
+      new Connection(Perry, Vanessa, 6),
+
+      new Connection(Candace, Linda, 6),
+      new Connection(Candace, Stacy, 6),
+      new Connection(Candace, Haney, 6),
+
+      new Connection(Monogram, Doof, 4),
+
+      new Connection(Doof, Vanessa, 6),
+
+      new Connection(Isabella, Candace, 2),
+      new Connection(Isabella, Linda, 6),
+
+      new Connection(Tilly, Lily, 6),
+
+  ];
+  var episode5Bits = [
+    whatchaDoin, wherePerry, andBy, lindana, selfDestruct, curseYou
+  ];
+  var ep5 = new Episode(5, "103a", "The Magnificent Few", "Driving Cattle", "Termite Controlling Helmet", 
+    episode5Songs, episode5Characters, episode5Interactions, episode5Bits, 1);
+  {//bitHandler
+    whatchaDoin.addAppearance(5, Isabella);
+    wherePerry.addAppearance(5, Phineas);
+    andBy.addAppearance(5, Doof);
+    lindana.addAppearance(5);
+    selfDestruct.addAppearance(5);
+    curseYou.addAppearance(5, Doof);
+  }
+}
+
+{//6
+  var episode6Songs = [
+    new Song("S'Winter", [Adyson, Gretchen, Isabella, Phineas, Ferb])
+  ];
+  var episode6Characters = [
+      Phineas,
+      Ferb,
+      Lawrence,
+      Linda,
+      Candace,
+      Isabella,
+      Milly,
+      Katie,
+      Ginger,
+      Holly,
+      Timmy,
+      Sam,
+      Gretchen,
+      Jeremy,
+      DD,
+      Stacy,
+      Django,
+      Dimitri,
+      Buford,
+      FishingHat,
+      Baljeet,
+      Logan,
+      Kris,
+      DumbassGinger,
+      Pedro,
+      Tilly,
+      Lily,
+      Bob
+  ];
+  var episode6Interactions = [
+      new Connection(Phineas, Ferb, 6),
+      new Connection(Phineas, Perry, 6),
+      new Connection(Phineas, Lawrence, 6),
+      new Connection(Phineas, Candace, 6),
+      new Connection(Phineas, Isabella, 6),
+      new Connection(Phineas, Milly, 6),
+      new Connection(Phineas, Katie, 6),
+      new Connection(Phineas, Ginger, 6),
+      new Connection(Phineas, Holly, 6),
+      
+      new Connection(Ferb, Perry, 6),
+      new Connection(Ferb, Lawrence, 6),
+      new Connection(Ferb, Linda, 6),
+      new Connection(Ferb, Candace, 6),
+      new Connection(Ferb, Isabella, 6),
+      new Connection(Ferb, Milly, 6),
+      new Connection(Ferb, Katie, 6),
+      new Connection(Ferb, Ginger, 6),
+      new Connection(Ferb, Holly, 6),
+
+      new Connection(Perry, Candace, 6),
+      new Connection(Perry, Monogram, 6),
+      new Connection(Perry, Doof, 6),
+
+      new Connection(Candace, Linda, 6),
+      new Connection(Candace, Jeremy, 6),
+      new Connection(Candace, DD, 6),
+      new Connection(Candace, Vanessa, 6),
+      new Connection(Candace, Dimitri, 3), //There's no shot this is a two-way interaction and 3 seems like the best descriptor
+      new Connection(Candace, Buford, 6),
+
+      new Connection(Lawrence, Candace, 6),
+      new Connection(Lawrence, Linda, 6),
+
+      new Connection(Monogram, Doof, 4),
+
+      new Connection(Isabella, Milly, 6),
+      new Connection(Isabella, Katie, 6),
+      new Connection(Isabella, Ginger, 6),
+      new Connection(Isabella, Holly, 6),
+      new Connection(Isabella, Gretchen, 6),
+      new Connection(Isabella, Adyson, 6),
+      new Connection(Isabella, Pedro, 6),
+      
+      new Connection(Milly, Katie, 6),
+      new Connection(Milly, Ginger, 6),
+      new Connection(Milly, Holly, 6),
+
+      new Connection(Katie, Ginger, 6),
+      new Connection(Katie, Holly, 6),
+
+      new Connection(Ginger, Holly, 6),
+
+      new Connection(Timmy, Gretchen, 3),
+      new Connection(Timmy, Adyson, 3),
+      new Connection(Timmy, Isabella, 3),
+      new Connection(Timmy, Django, 1),
+      new Connection(Timmy, Phineas, 3),
+      new Connection(Timmy, Ferb, 3),
+      new Connection(Timmy, Candace, 3),
+
+      new Connection(Jeremy, DD, 6),
+      new Connection(Jeremy, Phineas, 3),
+      new Connection(Jeremy, Ferb, 3),
+      new Connection(Jeremy, Timmy, 3),
+      new Connection(Jeremy, Kris, 1),
+      new Connection(Jeremy, Logan, 1),
+      new Connection(Jeremy, Baljeet, 1),
+      new Connection(Jeremy, DumbassGinger, 1),
+      new Connection(Jeremy, Pedro, 1),
+      new Connection(Jeremy, Django, 1),
+      new Connection(Jeremy, Stacy, 1),
+      new Connection(Jeremy, Buford, 1),
+      new Connection(Jeremy, Dimitri, 1),
+
+      new Connection(Stacy, DD, 4),
+      new Connection(Stacy, Django, 1),
+      new Connection(Stacy, Buford, 1),
+      new Connection(Stacy, Dimitri, 1),
+      new Connection(Stacy, Phineas, 3),
+      new Connection(Stacy, Ferb, 3),
+
+      new Connection(Sam, Vanessa, 3),
+      new Connection(Sam, Candace, 3),
+      new Connection(Sam, Jeremy, 3),
+      new Connection(Sam, Phineas, 3),
+      new Connection(Sam, Ferb, 3),
+      new Connection(Sam, Timmy, 3),
+      new Connection(Sam, Kris, 1),
+      new Connection(Sam, Logan, 1),
+      new Connection(Sam, Baljeet, 1),
+      new Connection(Sam, Jeremy, 1),
+      new Connection(Sam, DumbassGinger, 1),
+      new Connection(Sam, Pedro, 1),
+      new Connection(Sam, Django, 1),
+      new Connection(Sam, Stacy, 1),
+      new Connection(Sam, Buford, 1),
+      new Connection(Sam, Dimitri, 1),
+
+      new Connection(Django, Vanessa, 3),
+      new Connection(Django, Candace, 3),
+      new Connection(Django, Sam, 3),
+      new Connection(Django, Buford, 1),
+      new Connection(Django, Dimitri, 1),
+      new Connection(Django, Phineas, 3),
+      new Connection(Django, Ferb, 3),
+
+      new Connection(Vanessa, Jeremy, 3),
+      new Connection(Vanessa, DD, 3), //This is kinda a stretch but
+
+      new Connection(FishingHat, Dimitri, 1),
+      new Connection(FishingHat, Candace, 6),
+      new Connection(FishingHat, Tilly, 1),
+      new Connection(FishingHat, Lily, 1),
+
+      new Connection(Kris, Phineas, 3),
+      new Connection(Kris, Ferb, 3),
+      new Connection(Kris, Candace, 3),
+      new Connection(Kris, Timmy, 3),
+      new Connection(Kris, Logan, 1),
+      new Connection(Kris, Baljeet, 1),
+      new Connection(Kris, DumbassGinger, 1),
+      new Connection(Kris, Pedro, 1),
+
+      new Connection(Logan, Phineas, 3),
+      new Connection(Logan, Ferb, 3),
+      new Connection(Logan, Candace, 3),
+      new Connection(Logan, Jeremy, 3),
+      new Connection(Logan, Timmy, 3),
+      new Connection(Logan, Baljeet, 1),
+      new Connection(Logan, DumbassGinger, 1),
+      new Connection(Logan, Pedro, 1),
+      new Connection(Logan, Django, 1),
+      new Connection(Logan, Stacy, 1),
+      new Connection(Logan, Buford, 1),
+      new Connection(Logan, Dimitri, 1),
+
+      new Connection(Baljeet, Phineas, 3),
+      new Connection(Baljeet, Ferb, 3),
+      new Connection(Baljeet, Candace, 3),
+      new Connection(Baljeet, Timmy, 3),
+      new Connection(Baljeet, DumbassGinger, 1),
+      new Connection(Baljeet, Pedro, 1),
+      new Connection(Baljeet, Django, 1),
+      new Connection(Baljeet, Stacy, 1),
+      new Connection(Baljeet, Buford, 1),
+      new Connection(Baljeet, Dimitri, 1),
+
+      new Connection(DumbassGinger, Phineas, 3),
+      new Connection(DumbassGinger, Ferb, 3),
+      new Connection(DumbassGinger, Candace, 3),
+      new Connection(DumbassGinger, Jeremy, 3),
+      new Connection(DumbassGinger, Timmy, 3),
+      new Connection(DumbassGinger, Pedro, 1),
+
+      new Connection(Pedro, Phineas, 3),
+      new Connection(Pedro, Ferb, 3),
+      new Connection(Pedro, Candace, 3),
+      new Connection(Pedro, Timmy, 3),
+      new Connection(Pedro, Django, 1),
+      new Connection(Pedro, Stacy, 1),
+      new Connection(Pedro, Buford, 1),
+      new Connection(Pedro, Dimitri, 1),
+
+      new Connection(Dimitri, Buford, 1),
+      new Connection(Dimitri, Candace, 3),
+      new Connection(Dimitri, Phineas, 3),
+      new Connection(Dimitri, Ferb, 3),
+      new Connection(Dimitri, Jeremy, 3),
+
+      new Connection(Buford, Phineas, 3),
+      new Connection(Buford, Ferb, 3),
+
+      new Connection(Tilly, Lily, 6),
+  ];
+  var episode6Bits = [
+    gonnaDo, wherePerry, whatchaDoin, ohTherePerry
+  ];
+  var ep6 = new Episode(6, "103b", "S'Winter", "S'Winter", "Melt-inator 6-5000 [Chocolate Doofs]", 
+    episode6Songs, episode6Characters, episode6Interactions, episode6Bits, 1);
+  {//bitHandler
+    gonnaDo.addAppearance(6, Phineas);
+    wherePerry.addAppearance(6, Phineas);
+    whatchaDoin.addAppearance(6, Isabella);
+    ohTherePerry.addAppearance(6, Phineas);
+  }
+}
+
+{//7
+  //Space Adventure
+  var episode7Songs = [
+    new Song("My Undead Mummy", [dannyJacob])
+  ];
+  var episode7Characters = [
+      Candace,
+      Ferb,
+      Perry,
+      Lawrence,
+      Logan,
+      FishingHat,
+      Dimitri,
+      Bob,
+      Pedro,
+      Phineas,
+      Monogram,
+      Doof,
+  ];
+  var episode7Interactions = [
+      new Connection(Phineas, Ferb, 6),
+      new Connection(Phineas, Lawrence, 6),
+      new Connection(Phineas, Perry, 6),
+      new Connection(Phineas, Candace, 6),
+      new Connection(Phineas, TheaterEmployee, 6),
+
+      new Connection(Ferb, Lawrence, 6),
+      new Connection(Ferb, Perry, 6),
+      new Connection(Ferb, Candace, 6),
+      new Connection(Ferb, TheaterEmployee, 6),
+
+      new Connection(Perry, Candace, 6),
+      new Connection(Perry, Lawrence, 6),
+      new Connection(Perry, Monogram, 6),
+      new Connection(Perry, Doof, 6),
+
+      new Connection(Candace, Lawrence, 6),
+
+      new Connection(Monogram, Doof, 4),
+
+      new Connection(Logan, Pedro, 6),
+      new Connection(Logan, FishingHat, 1),
+      new Connection(Logan, Bob, 1),
+
+      new Connection(Pedro, Bob, 1),
+      new Connection(Pedro, FishingHat, 1),
+      new Connection(Pedro, Lawrence, 1),
+      
+      new Connection(Bob, Ferb, 1),
+      new Connection(Bob, Candace, 1),
+      new Connection(Bob, Lawrence, 1),
+      new Connection(Bob, Perry, 1),
+
+      new Connection(FishingHat, Phineas, 1),
+      new Connection(FishingHat, Ferb, 1),
+      new Connection(FishingHat, Perry, 1),
+      new Connection(FishingHat, Lawrence, 1),
+      new Connection(FishingHat, Candace, 1),
+
+  ];
+  var episode7Bits = [
+    wherePerry, lindana, andBy, ohTherePerry
+  ];
+  var ep7 = new Episode(7, "104a", "Are You My Mummy", "Explore the Basement of the Movie Theatre [wooo]", "Woodenator", 
+    episode7Songs, episode7Characters, episode7Interactions, episode7Bits, 1);
+  {//bitHandler
+    wherePerry.addAppearance(7, Phineas);
+    lindana.addAppearance(7);
+    andBy.addAppearance(7, Doof);
+    ohTherePerry.addAppearance(7, Phineas);
+  }
+}
+
+var unpackedEpisodes = [ep1, ep2, ep3, ep4, ep5, ep6, ep7];
+
+var packedEpisodes = [];
+var packedCharacters = [];
+var allConnections = [];
+var packedConnections = [];
+
+unpackedEpisodes.forEach(ep => {
+    packedEpisodes.push(ep.packEpisode());
+    packedCharacters = packedCharacters.concat(ep.packCharacters());
+    allConnections = allConnections.concat(ep.returnConnections());
+});
+
+function findStrongestConnections(connections, allowFamilial) {
+  const used = new Set(); // track processed connection IDs or references
+  const strongestList = [];
+
+  for (let i = 0; i < connections.length; i++) {
+    const connA = connections[i];
+    if (used.has(connA)) continue;
+
+    let strongest = connA;
+    used.add(connA);
+
+    for (let j = i + 1; j < connections.length; j++) {
+      const connB = connections[j];
+      if (used.has(connB)) continue;
+
+      if (connA.checkIdenticality(connB)) {
+        strongest = strongest.getStrongestConnection(connB, allowFamilial);
+        used.add(connB);
+      }
+    }
+
+    strongestList.push(strongest);
+  }
+
+  return strongestList;
+}
+
+allConnections = findStrongestConnections(allConnections, true);
+
+allConnections.forEach(con => {
+    packedConnections = packedConnections.concat(con.pack());
+});
+
+const episodes = new vis.DataSet();
+episodes.update(packedEpisodes);
+const characters = new vis.DataSet();
+characters.update(packedCharacters);
+const connections = new vis.DataSet();
+connections.update(packedConnections);
+
+const container = document.getElementById('network');
+
+// const allNodes = new vis.DataSet([
+//   ...characters.get(),
+//   ...episodes.get()
+// ]);
+
+// const allEdges = new vis.DataSet([
+//   ...s1CharacterAppearances.get(),
+//   ...characterInteractions.get(),
+//   ...episodeTimeline.get()
+// ])
+
+// const seriesTimeline = {
+//   nodes: episodes,
+//   edges: episodeTimeline
+// };
+
+const characterMap = {
+  nodes: characters,
+  edges: connections
+};
+
+// const charatersByEpisodes = {
+//   nodes: allNodes,
+//   edges: s1CharacterAppearances
+// };
+
+// const fullMap = {
+//   nodes: allNodes,
+//   edges: allEdges
+// };
+
+const options = {
+  physics: {
+    enabled: true,
+    solver: "forceAtlas2Based",
+    forceAtlas2Based: {
+      gravitationalConstant: -50,
+      centralGravity: 0.01,
+      springLength: 150,
+      springConstant: 0.05
+    },
+    stabilization: {
+      iterations: 100
+    }
+  },
+  interaction: {
+    dragView: true,
+    zoomView: true
+  },
+  nodes: {
+    shape: "dot",
+    size: 25,
+    font: {
+      size: 18
+    },
+    borderWidth: 2,
+    color: {
+      background: "#2eb8b8",
+      border: "#248f8f"
+    }
+  },
+  edges: {
+    smooth: {
+      type: "dynamic"
+    }
+  }
+};
+
+// new vis.Network(container, seriesTimeline, options);
+// new vis.Network(container, charatersByEpisodes, options);
+new vis.Network(container, characterMap, options);
+// new vis.Network(container, fullMap, options);
