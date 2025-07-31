@@ -98,6 +98,7 @@ import {Episode} from './episode.js';
     var Bobby = new Character("Bobby Nelson", "Bobby", "Bobby Nelson", "OneOff", "#b50a93")
     var DD = new Character("Derek Dukensson", "DD", "D.D.", "OneOff", "#FF0000");
     var Baxter = new Character("Ben Baxter of Huge-O-Records", "Baxter", "Ben", "OneOff", "#94690b");
+    var ProducerGuy = new Character("Film Producer", "ProducerGuy", "Producer", "OneOff", "#857f35");
 
     //Random real-world cameo people
     var Evander = new Character("Evander Holyfield", "Evander", "Evander", "Cameos", "#FFFFFF");
@@ -1569,7 +1570,134 @@ import {Episode} from './episode.js';
   }
 }
 
-var unpackedEpisodes = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9];
+{//10
+  var episode10Songs = [
+  ];
+  var episode10Characters = [
+    Candace,
+    Phineas,
+    Ferb,
+    Perry,
+    Linda,
+    Monogram,
+    Doof,
+    ProducerGuy,
+    OlgaChicago,
+    Isabella,
+    Holly,
+    Gretchen,
+    Milly,
+    Ginger,
+    Pedro,
+    Sam,
+    Logan,
+    Timmy,
+    Dimitri,
+    Haney,
+    Tilly,
+    Lily
+  ];
+  var episode10Interactions = [
+    new Connection(Phineas, Ferb, 6),
+    new Connection(Phineas, Linda, 6),
+    new Connection(Phineas, Perry, 6),
+    new Connection(Phineas, Candace, 6),
+    new Connection(Phineas, ProducerGuy, 6),
+    new Connection(Phineas, Holly, 6),
+    new Connection(Phineas, Gretchen, 6),
+    new Connection(Phineas, Milly, 6),
+    new Connection(Phineas, Ginger, 6),
+    new Connection(Phineas, Haney, 1),
+
+    new Connection(Ferb, Linda, 6),
+    new Connection(Ferb, Perry, 6),
+    new Connection(Ferb, Candace, 6),
+    new Connection(Ferb, ProducerGuy, 6),
+    new Connection(Ferb, Holly, 6),
+    new Connection(Ferb, Gretchen, 6),
+    new Connection(Ferb, Milly, 6),
+    new Connection(Ferb, Ginger, 6),
+    new Connection(Ferb, Haney, 1),
+
+    new Connection(Perry, Candace, 6),
+    new Connection(Perry, Linda, 6),
+    new Connection(Perry, Monogram, 6),
+    new Connection(Perry, Doof, 6),
+
+    new Connection(Candace, Linda, 6),
+    new Connection(Candace, ProducerGuy, 6),
+    new Connection(Candace, OlgaChicago, 6),
+    new Connection(Candace, Holly, 6),
+    new Connection(Candace, Gretchen, 6),
+    new Connection(Candace, Milly, 6),
+    new Connection(Candace, Ginger, 6),
+    new Connection(Candace, Haney, 1),
+    new Connection(Candace, Tilly, 3),
+    new Connection(Candace, Lily, 3),
+
+    new Connection(Isabella, ProducerGuy, 6),
+
+    new Connection(Holly, Gretchen, 6),
+    new Connection(Holly, Milly, 6),
+    new Connection(Holly, Ginger, 6),
+    new Connection(Holly, Pedro, 1),
+    new Connection(Holly, Sam, 1),
+    new Connection(Holly, Dimitri, 1),
+    new Connection(Holly, Logan, 1),
+    new Connection(Holly, Timmy, 1),
+    new Connection(Holly, DumbassGinger, 1),
+
+    new Connection(Gretchen, Milly, 6),
+    new Connection(Gretchen, Ginger, 6),
+
+    new Connection(Milly, Ginger, 6),
+    new Connection(Milly, Pedro, 1),
+    new Connection(Milly, Sam, 1),
+    new Connection(Milly, Dimitri, 1),
+    new Connection(Milly, Logan, 1),
+    new Connection(Milly, Timmy, 1),
+    new Connection(Milly, DumbassGinger, 1),
+    
+    new Connection(Pedro, Sam, 1),
+    new Connection(Pedro, Dimitri, 1),
+    new Connection(Pedro, Logan, 1),
+    new Connection(Pedro, Timmy, 1),
+    new Connection(Pedro, DumbassGinger, 1),
+    
+    new Connection(Sam, Dimitri, 1),
+    new Connection(Sam, Logan, 1),
+    new Connection(Sam, Timmy, 1),
+    new Connection(Sam, DumbassGinger, 1),
+    
+    new Connection(Dimitri, Logan, 1),
+    new Connection(Dimitri, Timmy, 1),
+    new Connection(Dimitri, DumbassGinger, 1),
+    new Connection(Dimitri, Candace, 6),
+    
+    new Connection(Logan, Timmy, 1),
+    new Connection(Logan, DumbassGinger, 1),
+    new Connection(Logan, Candace, 4),
+
+    new Connection(Timmy, DumbassGinger, 1),
+
+    new Connection(Tilly, Lily, 6),
+    new Connection(Tilly, Candace, 4),
+    
+    new Connection(Lily, Candace, 3),
+  ];
+  var episode10Bits = [
+    wherePerry, littleYoung, curseYou
+  ];
+  var ep10 = new Episode(10, "105b", "Lights, Candace, Action!", "The curse of the Princess Monster", "Age Acellerator-inator [cheese]", 
+    episode10Songs, episode10Characters, episode10Interactions, episode10Bits, 1);
+  {//bitHandler
+    wherePerry.addAppearance(10, Phineas);
+    littleYoung.addAppearance(10, Candace);
+    curseYou.addAppearance(10, Doof);
+  }
+}
+
+var unpackedEpisodes = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, ep10];
 
 var packedEpisodes = [];
 var packedCharacters = [];
