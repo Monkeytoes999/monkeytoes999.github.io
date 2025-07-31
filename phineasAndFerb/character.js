@@ -40,37 +40,40 @@ export class Character {
     groupToBackground() {
         switch (this.type) {
             case ("Flynn-Fletcher"):
-                this.backgroundColor = "#90be6d"
+                this.backgroundColor = "#90be6d";
                 break;
             case ("Gang"):
-                this.backgroundColor = "#207fa2"
+                this.backgroundColor = "#207fa2";
                 break;
             case ("B-Plot"):
-                this.backgroundColor = "#42565e"
+                this.backgroundColor = "#42565e";
                 break;
             case ("Candace Crew"):
-                this.backgroundColor = "#832404"
+                this.backgroundColor = "#832404";
                 break;
             case ("Family"):
-                this.backgroundColor = "#8e97c5"
+                this.backgroundColor = "#8e97c5";
                 break;
             case ("Fireside"):
-                this.backgroundColor = "#e15527"
+                this.backgroundColor = "#e15527";
                 break;
             case ("Recurring"):
-                this.backgroundColor = "#837004"
+                this.backgroundColor = "#837004";
                 break;
             case ("Background Kids"):
-                this.backgroundColor = "#057703"
+                this.backgroundColor = "#057703";
                 break;
             case ("BackgroundNotKids"):
-                this.backgroundColor = "#fa88fc"
+                this.backgroundColor = "#fa88fc";
                 break;
             case ("OWCA"):
-                this.backgroundColor = "#77034b"
+                this.backgroundColor = "#77034b";
                 break;
             case ("OneOff"):
-                this.backgroundColor = "#ffffff"
+                this.backgroundColor = "#ffffff";
+                break;
+            case ("Cameos"):
+                this.backgroundColor = "#1ce0d0";
                 break;
         }
     }
