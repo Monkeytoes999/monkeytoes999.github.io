@@ -42,6 +42,7 @@ export class Episode {
             id: `Ep${this.number}`,
             label: this.title,
             title: this.code,
+            graphColor: "#FFFFFF"
         }
     }
 
