@@ -33,7 +33,8 @@ export class Character {
             color: {
                 background: this.backgroundColor,
                 border: this.outline
-            }
+            },
+            graphColor: this.backgroundColor,
         }
     }
 

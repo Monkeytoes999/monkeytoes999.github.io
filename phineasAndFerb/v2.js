@@ -4,7 +4,6 @@ import {Character} from './character.js';
 import {Bit} from './bit.js';
 import {Episode} from './episode.js';
 
-
 {//Characters
     //Flynn-Fletcher
     var Phineas = new Character("Phineas Flynn", "Phineas", "Phineas", "Flynn-Fletcher", "#FF0000");
@@ -185,6 +184,7 @@ import {Episode} from './episode.js';
       Logan,
       Ginger,
       Katie,
+      Suzy
     ];
     var episode1Interactions = [
       new Connection(Phineas, Ferb, 6),
@@ -1130,6 +1130,7 @@ import {Episode} from './episode.js';
     Phineas,
     Monogram,
     Doof,
+    TheaterEmployee
   ];
   var episode7Interactions = [
     new Connection(Phineas, Ferb, 6),
@@ -1384,6 +1385,7 @@ import {Episode} from './episode.js';
     Perry,
     Monogram,
     Doof,
+    Carl,
     Bob,
     Phineas,
     Ferb,
@@ -1824,3 +1826,20 @@ const options = {
 // new vis.Network(container, charatersByEpisodes, options);
 new vis.Network(container, characterMap, options);
 // new vis.Network(container, fullMap, options);
+
+const nodes = characters.get().map(n => ({
+  id: n.id,
+  label: n.label,
+  color: n.graphColor
+}));
+
+const links = connections.get().map(e => ({
+  source: e.from,
+  target: e.to
+}));
+
+const Graph = ForceGraph3D()
+  (document.getElementById('3d-graph'))
+    .graphData({ nodes, links })
+    .nodeAutoColorBy('group')
+    .nodeLabel(node => node.label);

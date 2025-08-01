@@ -2,22 +2,23 @@
 <html>
 <head>
   <title>P&F Character Map</title>
+
+  <!-- Dependencies -->
+  <script src="https://unpkg.com/3d-force-graph"></script>
   <script src="https://unpkg.com/vis-network@latest/dist/vis-network.min.js"></script>
-  <link href="https://unpkg.com/vis-network@latest/styles/vis-network.min.css" rel="stylesheet" />
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-    #network {
-      width: 100%;
-      height: 100vh;
-      background: #f4f9ff;
-    }
-  </style>
+  <link href="https://unpkg.com/vis-network@latest/styles/vis-network.min.css" rel="stylesheet"/>
+
+  <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
+  <script src="button.js"></script>
+  <div id="3d-graph" class="graph3D" style="visibility: hidden;"></div>
   <div id="network"></div>
+
+  <button id="toggle-button" onclick="swapVisual()">
+    Toggle 3D
+  </button>
+
   <script type="module" src="v2.js"></script>
 </body>
 </html>

@@ -30,7 +30,7 @@ export class Episode {
         this.interactions = interactions;
         this.bits = bits;
         this.ferbLines = ferbLines;
-        this.generateConnections();
+        // this.generateConnections();
     }
 
     /**
