@@ -19,7 +19,7 @@ export class Episode {
      * @param {[Bit]} bits An array of the bits that occurred in the episode.
      * @param {int} ferbLines The number of lines Ferb has in the episode.
      */
-    constructor(number, code, title, aPlot, bPlot, songs, characters, interactions, bits, ferbLines) {
+    constructor({number, code, title, aPlot, bPlot, songs, characters, interactions, bits, ferbLines}) {
         this.number = number;
         this.code = code;
         this.title = title;
@@ -27,7 +27,7 @@ export class Episode {
         this.bPlot = bPlot;
         this.songs = songs;
         this.characters = characters;
-        this.interactions = interactions;
+        this.interactions = (interactions?? []).flat(Infinity);
         this.bits = bits;
         this.ferbLines = ferbLines;
         // this.generateConnections();

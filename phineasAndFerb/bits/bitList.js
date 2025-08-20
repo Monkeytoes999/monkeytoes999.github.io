@@ -1,0 +1,18 @@
+import { Bit } from "../classes/bit.js";
+
+const doMuch = new Bit("They don't do much.");
+const gonnaDo = new Bit("I know what we're gonna do today");
+const wellConditionally = new Bit("This time I'm gonna be in charge");
+const whatchaDoin = new Bit("Whatcha doin'");
+const wherePerry = new Bit("Where's Perry?");
+const lindana = new Bit("I'm Lindana [Background music]", false);
+const littleYoung = new Bit("Aren't you a little young to be _");
+const andBy = new Bit("I MEAN COMPLETELY _");
+const bird = new Bit("I'm not convinced this is a thing.", false);
+const curseYou = new Bit("CURSE YOU PERRY THE PLATYPUS");
+const aPlatypus = new Bit("PERRY THE PLATYPUS?!");
+const ohTherePerry = new Bit("Oh, there you are");
+const selfDestruct = new Bit("NO NOT THAT BUTTON", false);
+const ggg = new Bit("Gitchee Gitchee Goo [Background music]", false);
+const quirkyWorky = new Bit("The Quirky Worky Song [yeah not a bit but still.]", false);
+const pharmacist = new Bit("Doof = Pharmacist", false);

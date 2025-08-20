@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "checkJs": false
+  },
+  "include": [
+    "characters/globals.d.ts",
+    "characters/**/*.js",
+    "bits/globals.d.ts",
+    "bits/**/*.js",
+    "episodes/**/*.js",
+    "classes/**/*.js",
+    "v2.js"
+  ]
+}
