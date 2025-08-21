@@ -156,10 +156,3 @@ export const robbieWyckoff = new Character("Robbie Wyckoff", "robbieWyckoff", "T
 export const swampyMarsh = new Character("Jeff 'Swampy' Marsh", "swampyMarsh", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
 export const randyCrenshaw = new Character("Randy Crenshaw", "randyCrenshaw", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
 //#endregion
-
-
-export const C = (id) => {
-  const ch = Characters[id];
-  if (!ch) throw new Error(`Unknown character id: ${id}`);
-  return ch;
-};
