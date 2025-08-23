@@ -54,6 +54,7 @@ export class Episode {
         var characterPack = [];
         this.characters.forEach(c => {
             characterPack.push(c.pack());
+            c.incrementEpisodeCount();
         });
         return characterPack;
     }

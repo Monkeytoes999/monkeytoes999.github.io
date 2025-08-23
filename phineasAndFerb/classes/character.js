@@ -19,6 +19,7 @@ export class Character {
         this.type = type;
         this.outline = outline;
         this.groupToBackground();
+        this.epCount = 0;
     }
 
     /**
@@ -35,6 +36,7 @@ export class Character {
                 border: this.outline
             },
             graphColor: this.backgroundColor,
+            size: 20 + Math.sqrt(this.epCount)*5
         }
     }
 
@@ -104,5 +106,20 @@ export class Character {
      */
     getID() {
         return this.id;
+    }
+
+    /**
+     * Increments the number of episodes the character has appeared in.
+     */
+    incrementEpisodeCount() {
+        this.epCount++;
+    }
+
+    /**
+     * Returns the number of episodes the character has appeared in.
+     * @return {int} the number of episodes the character has appeared in.
+     */
+    getEpisodeCount(){
+        return this.epCount;
     }
 }

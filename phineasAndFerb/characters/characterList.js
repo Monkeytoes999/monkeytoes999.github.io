@@ -20,6 +20,7 @@ export const Doof = new Character("Dr. Heinz Doofenshmirtz", "Doof", "Doof", "B-
 export const Monogram = new Character("Major Francis Monogram", "Monogram", "Monogram", "B-Plot", "#FF0000");
 export const Vanessa = new Character("Vanessa Doofenshmirtz", "Vanessa", "Vanessa", "B-Plot", "#000000");
 export const Roger = new Character("Roger Doofenshmirtz", "Roger", "Roger", "B-Plot", "#245732");
+export const Norm = new Character("Norm", "Norm", "Norm", "B-Plot", "#1a1c44");
 //#endregion
 
 //#region Candace Crew
@@ -51,6 +52,8 @@ export const Reginald = new Character("Reginald Fletcher", "Reginald", "Reginald
 export const Winifred = new Character("Winifred Fletcher", "Winifred", "Winifred", "Family", "#997ae4");
 export const UncleJoe = new Character("Uncle Joe [Johnson?]", "UncleJoe", "Uncle Joe", "Family", "#43a6ce");
 export const Charlene = new Character("Charlene Doofenshmirtz", "Charlene", "Charlene", "Family", "#137963");
+export const Hildegard = new Character("Hildegard Johnson", "Hildegard", "Hildegard", "Family", "#ab732e");
+export const Biffany = new Character("Biffany Van Stomm", "Biffany", "Biffany", "Family", "#FFFFFF");
 //#endregion
 
 //#region Recurring
@@ -76,6 +79,9 @@ export const Bobbi = new Character("Bobbi Fabulous [Love Händel]", "Bobbi", "Bo
 export const DannyLH = new Character("Danny [Love Händel]", "DannyLH", "Danny", "Recurring", "#b9288e");
 export const Sherman = new Character("Sherman \"Swampy\" [Love Händel]", "Sherman", "Sherman", "Recurring", "#c5550b");
 export const Johnny = new Character("Johnny", "Johnny", "Johnny", "Recurring", "#da2fc3");
+export const Farmer = new Character("Farmer", "Farmer", "Farmer", "Recurring", "#a6ac59");
+export const FarmerWife = new Character("Farmer's Wife", "FarmerWife", "Farmer's Wife", "Recurring", "#2885c4");
+export const VanceWard = new Character("Handsome Movie Actor Vance Ward", "VanceWard", "Vance Ward", "Recurring", "#e9ee65");
 //#endregion
 
 //#region Background Kids
@@ -92,6 +98,7 @@ export const Tilly = new Character("Tilly [NOT CANON]", "Tilly", "Tilly", "Backg
 export const Timmy = new Character("Timmy", "Timmy", "Timmy", "Background Kids", "#7a0b03");
 export const BSKid = new Character("Bad Singing Kid", "BSKid", "Bad Singing Kid", "Background Kids", "#dd4e16");
 export const Balthazar = new Character("Balthazar Horowitz", "Balthazar", "Balthazar", "Background Kids", "#1e801e");
+export const Sassy = new Character("Sassy Ms. K", "Sassy", "Sassy Ms. K", "Background Kids", "#587fd3");
 //#endregion
 
 //#region Background Not Kids
@@ -144,6 +151,13 @@ export const Tink = new Character("Tink [Bettys]", "Tink", "Tink", "OneOff", "#f
 export const Missy = new Character("Missy [Bettys]", "Missy", "Missy", "OneOff", "#d13131");
 export const Dennis = new Character("Dennis [Bettys]", "Dennis", "Dennis", "OneOff", "#1d7085");
 export const Boris = new Character("Big Black Boots Boris [the Bully]", "Boris", "Big Black Boots Boris", "OneOff", "#000000");
+export const DrillSergeant = new Character("Smile Away Reformatory Drill Sergeant", "DrillSergeant", "Drill Sergeant", "OneOff", "#91511e");
+export const MortyWilliams = new Character("Morty Williams", "MortyWilliams", "Morty Williams", "OneOff", "#e4d33c");
+export const Lulu = new Character("Lulu 'Busting' Jones", "Lulu", "Lulu Jones", "OneOff", "#6e19a7");
+export const Fifi = new Character("Fifi [Bust 'Em]", "Fifi", "Fifi", "OneOff", "#ece5c2");
+export const Conk = new Character("Conk", "Conk", "Conk", "OneOff", "#683615");
+export const Duffer = new Character("[Presumably] Little Duffer", "Duffer", "Little Duffer", "OneOff", "#e25311");
+export const PhilNeighbor = new Character("Phil - Doof's Neighbor", "PhilNeighbor", "Phil", "OneOff", "#b92841");
 //#endregion
 
 //#region Random real-world cameo people
@@ -155,4 +169,7 @@ export const dannyJacob = new Character("Danny Jacob", "dannyJacob", "THIS IS NO
 export const robbieWyckoff = new Character("Robbie Wyckoff", "robbieWyckoff", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
 export const swampyMarsh = new Character("Jeff 'Swampy' Marsh", "swampyMarsh", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
 export const randyCrenshaw = new Character("Randy Crenshaw", "randyCrenshaw", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
+export const danPovenmire = new Character("Dan Povenmire", "danPovenmire", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
+export const beverleyStaunton = new Character("Beverly Staunton", "beverleyStaunton", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
+export const lCPowell = new Character("LC Powell", "lCPowell", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
 //#endregion

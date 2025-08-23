@@ -16,3 +16,5 @@ export const selfDestruct = new Bit("NO NOT THAT BUTTON", false);
 export const ggg = new Bit("Gitchee Gitchee Goo [Background music]", false);
 export const quirkyWorky = new Bit("The Quirky Worky Song [yeah not a bit but still.]", false);
 export const pharmacist = new Bit("Doof = Pharmacist", false);
+export const farmer = new Bit("I can't believe you... and you didn't...", false);
+export const fthWall = new Bit("Some kind of very explicit 4th wall break");

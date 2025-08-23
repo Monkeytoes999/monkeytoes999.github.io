@@ -16,3 +16,5 @@ const selfDestruct = new Bit("NO NOT THAT BUTTON", false);
 const ggg = new Bit("Gitchee Gitchee Goo [Background music]", false);
 const quirkyWorky = new Bit("The Quirky Worky Song [yeah not a bit but still.]", false);
 const pharmacist = new Bit("Doof = Pharmacist", false);
+const farmer = new Bit("I can't believe you... and you didn't...", false);
+const fthWall = new Bit("Some kind of very explicit 4th wall break");

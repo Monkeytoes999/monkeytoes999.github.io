@@ -75,11 +75,14 @@ Ginger.addFamily(Hirano);
 Jeremy.addFamily(Johnson);
 Jeremy.addFamily(Suzy);
 Jeremy.addFamily(UncleJoe);
+Jeremy.addFamily(Hildegard);
 
 Suzy.addFamily(Johnson);
 Suzy.addFamily(UncleJoe);
+Suzy.addFamily(Hildegard);
 
 Johnson.addFamily(UncleJoe);
+Johnson.addFamily(Hildegard);
 
 Doof.addFamily(DoofDad);
 Doof.addFamily(DoofMom);
@@ -93,6 +96,8 @@ Vanessa.addFamily(Charlene);
 DoofDad.addFamily(DoofMom);
 
 Lily.addFamily(Tilly);
+
+Farmer.addFamily(FarmerWife);
 //#endregion
 
 //#region Episodes
@@ -123,9 +128,17 @@ import {ep24} from "./graph/seasonOne/ep24.js";
 import {ep25} from "./graph/seasonOne/ep25.js";
 import {ep26} from "./graph/seasonOne/ep26.js";
 import {ep27} from "./graph/seasonOne/ep27.js";
+import {ep28} from "./graph/seasonOne/ep28.js";
+import {ep29} from "./graph/seasonOne/ep29.js";
+import {ep30} from "./graph/seasonOne/ep30.js";
+import {ep31} from "./graph/seasonOne/ep31.js";
+import {ep32} from "./graph/seasonOne/ep32.js";
+import {ep33} from "./graph/seasonOne/ep33.js";
+import {ep34} from "./graph/seasonOne/ep34.js";
+import {ep35} from "./graph/seasonOne/ep35.js";
 //#endregion
 
-var unpackedEpisodes = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, ep10, ep11, ep12, ep13, ep14, ep15, ep16, ep17, ep18, ep19, ep20, ep21, ep22, ep23, ep24, ep25, ep26, ep27];
+var unpackedEpisodes = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, ep10, ep11, ep12, ep13, ep14, ep15, ep16, ep17, ep18, ep19, ep20, ep21, ep22, ep23, ep24, ep25, ep26, ep27, ep28, ep29, ep30, ep31, ep32, ep33, ep34, ep35];
 //#region Packaging
 var packedEpisodes = [];
 var packedCharacters = [];
