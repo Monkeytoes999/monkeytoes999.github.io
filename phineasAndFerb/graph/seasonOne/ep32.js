@@ -14,7 +14,7 @@ export const ep32 = new Episode({
   aPlot: "P&F do nothing, Candace goes nuts",
   bPlot: "Slow-motion-inator & Uglyinator [Make everyone else uglier thus being more handsome]",
   songs: [
-    new Song("Do Nothing Day", [Jeremy, Coltrane, IncidentalsDrummer, Candace]),
+    new Song("Do Nothing Day", [Jeremy, Coltrane, Gerez, Candace]),
   ],
   characters: [
     Phineas,
@@ -29,16 +29,16 @@ export const ep32 = new Episode({
     Timmy,
     VanceWard,
     Coltrane,
-    IncidentalsDrummer,
+    Gerez,
   ],
   interactions: [
     connectAll([Isabella, Milly, Holly, Gretchen, Adyson, Katie, Ginger], 6),
     connectAll([Phineas, Ferb, Perry, Linda], 6),
-    connectAll([Jeremy, Coltrane, IncidentalsDrummer], 6),
+    connectAll([Jeremy, Coltrane, Gerez], 6),
 
     groupConnections([Perry], [Monogram, Doof], 6),
     groupConnections([Candace], [Phineas, Ferb, Stacy, Linda], 6),
-    groupConnections([Candace, Stacy], [Jeremy, Coltrane, IncidentalsDrummer], 6),
+    groupConnections([Candace, Stacy], [Jeremy, Coltrane, Gerez], 6),
     groupConnections([Phineas, Ferb], [Jeremy], 2),
     groupConnections([Stacy], [Phineas, Ferb], 2),
     groupConnections([Doof, Perry, Linda, Phineas, Ferb], [VanceWard], 6),

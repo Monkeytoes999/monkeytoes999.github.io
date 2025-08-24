@@ -81,6 +81,12 @@ export class Character {
             case ("Cameos"):
                 this.backgroundColor = "#1ce0d0";
                 break;
+            case ("BandGroupSets"):
+                this.backgroundColor = "#fff56d";
+                break;
+            case ("Frankenstein"):
+                this.backgroundColor = "#504632" //PF2 as Hex. Change if better system found.
+                break;
         }
     }
 

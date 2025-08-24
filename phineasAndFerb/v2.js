@@ -26,6 +26,7 @@ Ferb.addFamily(BettyJo);
 Ferb.addFamily(Lorraine);
 Ferb.addFamily(Winifred);
 Ferb.addFamily(Reginald);
+Ferb.addFamily(Ferbgor);
 
 Candace.addFamily(Linda);
 Candace.addFamily(Lawrence);
@@ -64,6 +65,8 @@ BettyJo.addFamily(Lorraine);
 
 Winifred.addFamily(Reginald);
 
+Reginald.addFamily(Ferbgor);
+
 Isabella.addFamily(Vivian);
 Isabella.addFamily(Pinky);
 
@@ -89,13 +92,20 @@ Doof.addFamily(DoofMom);
 Doof.addFamily(Vanessa);
 Doof.addFamily(Roger);
 Doof.addFamily(Charlene);
+Doof.addFamily(Jekyll);
 
 Vanessa.addFamily(Roger);
 Vanessa.addFamily(Charlene);
 
 DoofDad.addFamily(DoofMom);
+DoofDad.addFamily(Jekyll);
 
 Lily.addFamily(Tilly);
+
+Django.addFamily(Beppo);
+Django.addFamily(Jenny);
+
+Jenny.addFamily(Beppo);
 
 Farmer.addFamily(FarmerWife);
 //#endregion
@@ -136,6 +146,11 @@ import {ep32} from "./graph/seasonOne/ep32.js";
 import {ep33} from "./graph/seasonOne/ep33.js";
 import {ep34} from "./graph/seasonOne/ep34.js";
 import {ep35} from "./graph/seasonOne/ep35.js";
+import {ep36} from "./graph/seasonOne/ep36.js";
+import {ep37} from "./graph/seasonOne/ep37.js";
+import {ep38} from "./graph/seasonOne/ep38.js";
+import {ep39} from "./graph/seasonOne/ep39.js";
+import {ep40} from "./graph/seasonOne/ep40.js";
 //#endregion
 
 var unpackedEpisodes = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, ep10, ep11, ep12, ep13, ep14, ep15, ep16, ep17, ep18, ep19, ep20, ep21, ep22, ep23, ep24, ep25, ep26, ep27, ep28, ep29, ep30, ep31, ep32, ep33, ep34, ep35];

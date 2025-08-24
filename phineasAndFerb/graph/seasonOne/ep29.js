@@ -39,6 +39,7 @@ export const ep29 = new Episode({
     Pedro,
     Django,
     Sally,
+    Cindy,
     FricknNerd,
     BSKid
   ],
@@ -47,7 +48,8 @@ export const ep29 = new Episode({
     connectAll([Phineas, Ferb, Isabella, Baljeet, Buford, Holly, Katie, Candace], 6),
     connectAll([Doof, Perry, Norm], 6),
     connectAll([Logan, Sam, Dimitri, DumbassGinger, Timmy, Kris, Pedro], 1),
-    connectAll([DumbassGinger, Sam, Dimitri, Django, FricknNerd, Dimitri, BSKid, Logan, Kris]),
+    connectAll([DumbassGinger, Sam, Dimitri, Django, FricknNerd, Dimitri, BSKid, Logan, Kris], 1),
+    connectAll([Cindy, Sally, Django], 1),
 
     groupConnections([Lawrence], [Phineas, Ferb, Candace, Isabella], 6),
     groupConnections([Logan, Sam, Dimitri, DumbassGinger, Timmy, Kris, Pedro, Sally, Django, FricknNerd, BSKid], [Phineas, Ferb, Isabella, Katie, Holly, Buford, Baljeet, Candace], 3),
@@ -58,7 +60,6 @@ export const ep29 = new Episode({
     new Connection(Perry, Monogram, 6),
     new Connection(Monogram, Doof, 4),
     new Connection(Candace, Norm, 6),
-    new Connection(Django, Sally, 1),
   ],
   bits: [gonnaDo, wherePerry, whatchaDoin, ggg],
   ferbLines: 2,

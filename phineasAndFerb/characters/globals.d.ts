@@ -40,6 +40,7 @@ declare global {
   const Charlene: Character;
   const Hildegard: Character;
   const Biffany: Character;
+  const Beppo: Character;
   const BEngineer: Character;
   const Construction: Character;
   const Dave: Character;
@@ -65,6 +66,7 @@ declare global {
   const Farmer: Character;
   const FarmerWife: Character;
   const VanceWard: Character;
+  const Coltrane: Character;
   const Dimitri: Character;
   const Django: Character;
   const DumbassGinger: Character;
@@ -79,16 +81,21 @@ declare global {
   const BSKid: Character;
   const Balthazar: Character;
   const Sassy: Character;
+  const Cindy: Character;
   const Beehive: Character;
   const FishingHat: Character;
   const Lily: Character;
   const Bob: Character;
   const TheaterEmployee: Character;
+  const Gerez: Character;
+  const Barry: Character;
+  const Cletus: Character;
   const AgentChicken: Character;
   const AgentDog: Character;
   const AgentDuck: Character;
   const AgentEagle: Character;
   const AgentFrog: Character;
+  const AgentHedgehog: Character;
   const AgentKangaroo: Character;
   const AgentKitty: Character;
   const AgentOwl: Character;
@@ -97,6 +104,8 @@ declare global {
   const Pinky: Character;
   const AgentRacoon1: Character;
   const AgentRacoon2: Character;
+  const AgentWorm: Character;
+  const Gevaarlijk: Character;
   const Wexler: Character;
   const ParkRanger: Character;
   const Oga: Character;
@@ -126,6 +135,7 @@ declare global {
   const Conk: Character;
   const Duffer: Character;
   const PhilNeighbor: Character;
+  const ShadyJoe: Character;
   const Evander: Character;
   const dannyJacob: Character;
   const robbieWyckoff: Character;
@@ -134,5 +144,16 @@ declare global {
   const danPovenmire: Character;
   const beverleyStaunton: Character;
   const lCPowell: Character;
+  const sheenaEaston: Character;
+  const AndrewsSisters: Character;
+  const Ferbgor: Character;
+  const Phineastein: Character;
+  const Constance: Character;
+  const PlatypusMonster: Character;
+  const Jekyll: Character;
+  const AngryMob: Character;
+  const Jameson: Character;
+  const FrankenIsabella: Character;
+  const Jeremiah: Character;
 }
 export {};
