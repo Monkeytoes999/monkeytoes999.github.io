@@ -19,5 +19,6 @@ declare global {
   const pharmacist: Bit;
   const farmer: Bit;
   const fthWall: Bit;
+  const isOUT: Bit;
 }
 export {};

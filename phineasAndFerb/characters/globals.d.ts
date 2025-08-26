@@ -67,6 +67,7 @@ declare global {
   const FarmerWife: Character;
   const VanceWard: Character;
   const Coltrane: Character;
+  const Martians: Character;
   const Dimitri: Character;
   const Django: Character;
   const DumbassGinger: Character;
@@ -136,6 +137,11 @@ declare global {
   const Duffer: Character;
   const PhilNeighbor: Character;
   const ShadyJoe: Character;
+  const McGillicuddy: Character;
+  const Wendy: Character;
+  const SlushyDawgManager: Character;
+  const UnknownGuy: Character;
+  const HHHans: Character;
   const Evander: Character;
   const dannyJacob: Character;
   const robbieWyckoff: Character;
@@ -146,6 +152,7 @@ declare global {
   const lCPowell: Character;
   const sheenaEaston: Character;
   const AndrewsSisters: Character;
+  const GuyzNtheParque: Character;
   const Ferbgor: Character;
   const Phineastein: Character;
   const Constance: Character;

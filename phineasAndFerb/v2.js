@@ -151,9 +151,14 @@ import {ep37} from "./graph/seasonOne/ep37.js";
 import {ep38} from "./graph/seasonOne/ep38.js";
 import {ep39} from "./graph/seasonOne/ep39.js";
 import {ep40} from "./graph/seasonOne/ep40.js";
+import {ep41} from "./graph/seasonOne/ep41.js";
+import {ep42} from "./graph/seasonOne/ep42.js";
+import {ep43} from "./graph/seasonOne/ep43.js";
+import {ep44} from "./graph/seasonOne/ep44.js";
+import {ep45} from "./graph/seasonOne/ep45.js";
 //#endregion
 
-var unpackedEpisodes = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, ep10, ep11, ep12, ep13, ep14, ep15, ep16, ep17, ep18, ep19, ep20, ep21, ep22, ep23, ep24, ep25, ep26, ep27, ep28, ep29, ep30, ep31, ep32, ep33, ep34, ep35];
+var unpackedEpisodes = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, ep10, ep11, ep12, ep13, ep14, ep15, ep16, ep17, ep18, ep19, ep20, ep21, ep22, ep23, ep24, ep25, ep26, ep27, ep28, ep29, ep30, ep31, ep32, ep33, ep34, ep35, ep36, ep37, ep38, ep39, ep40, ep41, ep42, ep43, ep44, ep45];
 //#region Packaging
 var packedEpisodes = [];
 var packedCharacters = [];

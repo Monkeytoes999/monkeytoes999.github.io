@@ -32,7 +32,7 @@ export const ep33 = new Episode({
   ],
   interactions: [
     connectAll([Phineas, Ferb, Linda, Lawrence, Candace], 6),
-    groupConnections([Stacy, Candace, TheaterEmployee, Badinkadink, Conk], 6),
+    connectAll([Stacy, Candace, TheaterEmployee, Badinkadink, Conk], 6),
 
     groupConnections([Phineas, Ferb, Perry], [PhilAnnouncer], 3),
     groupConnections([Perry], [Phineas, Ferb, Monogram, Doof, Carl], 6),

@@ -18,3 +18,4 @@ export const quirkyWorky = new Bit("The Quirky Worky Song [yeah not a bit but st
 export const pharmacist = new Bit("Doof = Pharmacist", false);
 export const farmer = new Bit("I can't believe you... and you didn't...", false);
 export const fthWall = new Bit("Some kind of very explicit 4th wall break");
+export const isOUT = new Bit("Candace Flynn is out. PEACE!");

@@ -84,6 +84,7 @@ export const Farmer = new Character("Farmer", "Farmer", "Farmer", "Recurring", "
 export const FarmerWife = new Character("Farmer's Wife", "FarmerWife", "Farmer's Wife", "Recurring", "#2885c4");
 export const VanceWard = new Character("Handsome Movie Actor Vance Ward", "VanceWard", "Vance Ward", "Recurring", "#e9ee65");
 export const Coltrane = new Character("Coltrane", "Coltrane", "Coltrane", "Recurring", "#1c17aa");
+export const Martians = new Character("Martians", "Martians", "Martians", "Recurring", "#398a35");
 //#endregion
 
 //#region Background Kids
@@ -168,6 +169,11 @@ export const Conk = new Character("Conk", "Conk", "Conk", "OneOff", "#683615");
 export const Duffer = new Character("[Presumably] Little Duffer", "Duffer", "Little Duffer", "OneOff", "#e25311");
 export const PhilNeighbor = new Character("Phil - Doof's Neighbor", "PhilNeighbor", "Phil", "OneOff", "#b92841");
 export const ShadyJoe = new Character("Shady Joe", "ShadyJoe", "Shady Joe", "OneOff", "#494288");
+export const McGillicuddy = new Character("Mr. McGillicuddy", "McGillicuddy", "McGillicuddy", "OneOff", "#bc761f");
+export const Wendy = new Character("Wendy", "Wendy", "Wendy", "OneOff", "#5114d2");
+export const SlushyDawgManager = new Character("Slushy Dawg Manager", "SlushyDogManager", "Slushy Dawg Manager", "OneOff", "#941bda");
+export const UnknownGuy = new Character("Unkown Guy - self proclaimed", "UnknownGuy", "Unknown Guy", "OneOff", "#0d4a0d");
+export const HHHans = new Character("Huge Hands Hans", "HHHans", "Huge Hands Hans", "OneOff", "#2b4e26");
 //#endregion
 
 //#region Random real-world cameo people
@@ -183,8 +189,8 @@ export const danPovenmire = new Character("Dan Povenmire", "danPovenmire", "THIS
 export const beverleyStaunton = new Character("Beverly Staunton", "beverleyStaunton", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
 export const lCPowell = new Character("LC Powell", "lCPowell", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
 export const sheenaEaston = new Character("sheenaEaston", "sheenaEaston", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
-
 export const AndrewsSisters = new Character("Andrews Sisters - these are like, real people who are being parodied and depicted?", "andrewsSisters", "Andrews Sisters", "BandGroupSets", "#d861d8");
+export const GuyzNtheParque = new Character("2 Guys N the Parque", "GuyzNtheParque", "2 Guys N the Parque", "BandGroupSets", "#ad3939");
 //#endregion
 
 //#region Alt. Versions [NOT 2nd DIMENSION]

@@ -6,7 +6,7 @@ import "../../bits/globals.js";
 import { Bit } from "../../classes/bit.js";
 import { connectAll, groupConnections } from "../connectionHelpers.js";
 
-export const ep = new Episode({
+export const ep40 = new Episode({
   number: 40,
   code: "122b",
   title: "Oil on Candace",
