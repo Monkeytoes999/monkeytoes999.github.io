@@ -174,6 +174,7 @@ export const Wendy = new Character("Wendy", "Wendy", "Wendy", "OneOff", "#5114d2
 export const SlushyDawgManager = new Character("Slushy Dawg Manager", "SlushyDogManager", "Slushy Dawg Manager", "OneOff", "#941bda");
 export const UnknownGuy = new Character("Unkown Guy - self proclaimed", "UnknownGuy", "Unknown Guy", "OneOff", "#0d4a0d");
 export const HHHans = new Character("Huge Hands Hans", "HHHans", "Huge Hands Hans", "OneOff", "#2b4e26");
+export const Pinhead = new Character("Pinhead Pierre", "Pinhead", "Pinhead Pierre", "OneOff", "#a847ce");
 //#endregion
 
 //#region Random real-world cameo people

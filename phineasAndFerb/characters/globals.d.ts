@@ -142,6 +142,7 @@ declare global {
   const SlushyDawgManager: Character;
   const UnknownGuy: Character;
   const HHHans: Character;
+  const Pinhead: Character;
   const Evander: Character;
   const dannyJacob: Character;
   const robbieWyckoff: Character;
