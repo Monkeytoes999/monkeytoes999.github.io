@@ -10,13 +10,23 @@
 //Level 8: Character to episode
 export class Connection {
     directionality = "to";
-    color = "#000000";
+    colors = {
+        1: "#bb1206",
+        2: "#de9211",
+        3: "#ffea30",
+        4: "#006c04",
+        5: "#0c37f4",
+        5.5: "#ff5fffff",
+        6: "#8115a4ff",
+        7: "#9d949aff",
+    };
 
     constructor(source, destination, level) {
         this.source = source;
         this.destination = destination;
         this.level = level;
         this.levelToDirectionality()
+        this.color = this.colors[level];
         return this;
     }
 

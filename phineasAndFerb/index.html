@@ -11,14 +11,13 @@
   <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-  <script src="classes/button.js"></script>
   <div id="3d-graph" class="graph3D" style="visibility: hidden;"></div>
   <div id="network"></div>
 
-  <button id="toggle-button" onclick="swapVisual()">
-    Toggle 3D
-  </button>
+  <button id="toggle-button">Toggle 3D</button>
+  <button id="direct-button">Only Direct</button>
 
+  <script type="module" src="classes/button.js"></script>
   <script type="module" src="v2.js"></script>
 </body>
 </html>

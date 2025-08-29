@@ -160,150 +160,175 @@ import {ep46} from "./graph/seasonOne/ep46.js";
 import {ep47} from "./graph/seasonOne/ep47.js";
 //#endregion
 
-var unpackedEpisodes = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, ep10, ep11, ep12, ep13, ep14, ep15, ep16, ep17, ep18, ep19, ep20, ep21, ep22, ep23, ep24, ep25, ep26, ep27, ep28, ep29, ep30, ep31, ep32, ep33, ep34, ep35, ep36, ep37, ep38, ep39, ep40, ep41, ep42, ep43, ep44, ep45, ep46, ep47];
-//#region Packaging
-var packedEpisodes = [];
-var packedCharacters = [];
-var allConnections = [];
-var packedConnections = [];
+var S1Episodes = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, ep10, ep11, ep12, ep13, ep14, ep15, ep16, ep17, ep18, ep19, ep20, ep21, ep22, ep23, ep24, ep25, ep26, ep27, ep28, ep29, ep30, ep31, ep32, ep33, ep34, ep35, ep36, ep37, ep38, ep39, ep40, ep41, ep42, ep43, ep44, ep45, ep46, ep47];
+var S2Episodes = [];
 
-unpackedEpisodes.forEach(ep => {
-    packedEpisodes.push(ep.packEpisode());
-    packedCharacters = packedCharacters.concat(ep.packCharacters());
-    allConnections = allConnections.concat(ep.returnConnections());
-});
+var allEpisodes = [];
+allEpisodes = allEpisodes.concat(S1Episodes, S2Episodes);
 
-function findStrongestConnections(connections, allowFamilial) {
-  const used = new Set(); // track processed connection IDs or references
-  const strongestList = [];
+export function PackNMap(unpackedEpisodes=allEpisodes, familyConnections=true, onlyDirect=false) {
+  //#region Packaging
+  var packedEpisodes = [];
+  var packedCharacters = [];
+  var allConnections = [];
+  var packedConnections = [];
 
-  for (let i = 0; i < connections.length; i++) {
-    const connA = connections[i];
-    if (used.has(connA)) continue;
+  unpackedEpisodes.forEach(ep => {
+      packedEpisodes.push(ep.packEpisode());
+      packedCharacters = packedCharacters.concat(ep.packCharacters());
+      allConnections = allConnections.concat(ep.returnConnections());
+  });
 
-    let strongest = connA;
-    used.add(connA);
+  function findStrongestConnections(connections, allowFamilial) {
+    const used = new Set(); // track processed connection IDs or references
+    const strongestList = [];
 
-    for (let j = i + 1; j < connections.length; j++) {
-      const connB = connections[j];
-      if (used.has(connB)) continue;
+    for (let i = 0; i < connections.length; i++) {
+      const connA = connections[i];
+      if (used.has(connA)) continue;
 
-      if (connA.checkIdenticality(connB)) {
-        strongest = strongest.getStrongestConnection(connB, allowFamilial);
-        used.add(connB);
+      let strongest = connA;
+      used.add(connA);
+
+      for (let j = i + 1; j < connections.length; j++) {
+        const connB = connections[j];
+        if (used.has(connB)) continue;
+
+        if (connA.checkIdenticality(connB)) {
+          strongest = strongest.getStrongestConnection(connB, allowFamilial);
+          used.add(connB);
+        }
       }
+
+      strongestList.push(strongest);
     }
 
-    strongestList.push(strongest);
+    return strongestList;
   }
 
-  return strongestList;
+  allConnections = findStrongestConnections(allConnections, familyConnections);
+  console.log(allConnections.length);
+
+  // PURGE NON-DIRECT
+  if (onlyDirect) {
+    var directConnections = [];
+    allConnections.forEach(con => {
+      if (con.getConnectionLevel() == 6) {
+        directConnections.push(con);
+      }
+    });
+    allConnections = directConnections;
+  }
+
+  allConnections.forEach(con => {
+      packedConnections = packedConnections.concat(con.pack());
+  });
+  //#endregion
+
+  //#region Map
+  const episodes = new vis.DataSet();
+  episodes.update(packedEpisodes);
+  const characters = new vis.DataSet();
+  characters.update(packedCharacters);
+  const connections = new vis.DataSet();
+  connections.update(packedConnections);
+
+  const container = document.getElementById('network');
+
+  // const allNodes = new vis.DataSet([
+  //   ...characters.get(),
+  //   ...episodes.get()
+  // ]);
+
+  // const allEdges = new vis.DataSet([
+  //   ...s1CharacterAppearances.get(),
+  //   ...characterInteractions.get(),
+  //   ...episodeTimeline.get()
+  // ])
+
+  // const seriesTimeline = {
+  //   nodes: episodes,
+  //   edges: episodeTimeline
+  // };
+
+  const characterMap = {
+    nodes: characters,
+    edges: connections
+  };
+
+  // const charatersByEpisodes = {
+  //   nodes: allNodes,
+  //   edges: s1CharacterAppearances
+  // };
+
+  // const fullMap = {
+  //   nodes: allNodes,
+  //   edges: allEdges
+  // };
+
+  const options = {
+    physics: {
+      enabled: true,
+      solver: "forceAtlas2Based",
+      forceAtlas2Based: {
+        gravitationalConstant: -50,
+        centralGravity: 0.01,
+        springLength: 150,
+        springConstant: 0.05
+      },
+      stabilization: {
+        iterations: 100
+      }
+    },
+    interaction: {
+      dragView: true,
+      zoomView: true
+    },
+    nodes: {
+      shape: "dot",
+      size: 25,
+      font: {
+        size: 18
+      },
+      borderWidth: 2,
+      color: {
+        background: "#2eb8b8",
+        border: "#248f8f"
+      }
+    },
+    edges: {
+      smooth: {
+        type: "dynamic"
+      }
+    },
+    layout: {
+      improvedLayout: false
+    }
+  };
+
+  // new vis.Network(container, seriesTimeline, options);
+  // new vis.Network(container, charatersByEpisodes, options);
+  new vis.Network(container, characterMap, options);
+  // new vis.Network(container, fullMap, options);
+
+  const nodes = characters.get().map(n => ({
+    id: n.id,
+    label: n.title,
+    color: n.graphColor
+  }));
+
+  const links = connections.get().map(e => ({
+    source: e.from,
+    target: e.to,
+    color: e.color
+  }));
+
+  const Graph = ForceGraph3D()
+    (document.getElementById('3d-graph'))
+      .graphData({ nodes, links })
+      .nodeAutoColorBy('group')
+      .nodeLabel(node => node.label);
+  //#endregion
 }
 
-allConnections = findStrongestConnections(allConnections, true);
-
-allConnections.forEach(con => {
-    packedConnections = packedConnections.concat(con.pack());
-});
-//#endregion
-
-//#region Map
-const episodes = new vis.DataSet();
-episodes.update(packedEpisodes);
-const characters = new vis.DataSet();
-characters.update(packedCharacters);
-const connections = new vis.DataSet();
-connections.update(packedConnections);
-
-const container = document.getElementById('network');
-
-// const allNodes = new vis.DataSet([
-//   ...characters.get(),
-//   ...episodes.get()
-// ]);
-
-// const allEdges = new vis.DataSet([
-//   ...s1CharacterAppearances.get(),
-//   ...characterInteractions.get(),
-//   ...episodeTimeline.get()
-// ])
-
-// const seriesTimeline = {
-//   nodes: episodes,
-//   edges: episodeTimeline
-// };
-
-const characterMap = {
-  nodes: characters,
-  edges: connections
-};
-
-// const charatersByEpisodes = {
-//   nodes: allNodes,
-//   edges: s1CharacterAppearances
-// };
-
-// const fullMap = {
-//   nodes: allNodes,
-//   edges: allEdges
-// };
-
-const options = {
-  physics: {
-    enabled: true,
-    solver: "forceAtlas2Based",
-    forceAtlas2Based: {
-      gravitationalConstant: -50,
-      centralGravity: 0.01,
-      springLength: 150,
-      springConstant: 0.05
-    },
-    stabilization: {
-      iterations: 100
-    }
-  },
-  interaction: {
-    dragView: true,
-    zoomView: true
-  },
-  nodes: {
-    shape: "dot",
-    size: 25,
-    font: {
-      size: 18
-    },
-    borderWidth: 2,
-    color: {
-      background: "#2eb8b8",
-      border: "#248f8f"
-    }
-  },
-  edges: {
-    smooth: {
-      type: "dynamic"
-    }
-  }
-};
-
-// new vis.Network(container, seriesTimeline, options);
-// new vis.Network(container, charatersByEpisodes, options);
-new vis.Network(container, characterMap, options);
-// new vis.Network(container, fullMap, options);
-
-const nodes = characters.get().map(n => ({
-  id: n.id,
-  label: n.title,
-  color: n.graphColor
-}));
-
-const links = connections.get().map(e => ({
-  source: e.from,
-  target: e.to
-}));
-
-const Graph = ForceGraph3D()
-  (document.getElementById('3d-graph'))
-    .graphData({ nodes, links })
-    .nodeAutoColorBy('group')
-    .nodeLabel(node => node.label);
-//#endregion
+PackNMap(allEpisodes, true, false);
