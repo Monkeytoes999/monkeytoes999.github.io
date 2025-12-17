@@ -63,11 +63,12 @@ export const ep23 = new Episode({
     new Connection(Tilly, Lily, 6),
     new Connection(Candace, Stacy, 6),
   ],
-  bits: [wherePerry, curseYou],
+  bits: [wherePerry, selfDestruct, curseYou],
   ferbLines: 1,
 });
 
 //#region Bit Handler
 wherePerry.addAppearance(ep23, Phineas);
+selfDestruct.addModifiedAppearance(ep23);
 curseYou.addAppearance(ep23, Doof);
 //#endregion

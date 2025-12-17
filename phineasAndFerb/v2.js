@@ -158,10 +158,23 @@ import {ep44} from "./graph/seasonOne/ep44.js";
 import {ep45} from "./graph/seasonOne/ep45.js";
 import {ep46} from "./graph/seasonOne/ep46.js";
 import {ep47} from "./graph/seasonOne/ep47.js";
+import {ep48} from "./graph/seasonTwo/ep48.js";
+import {ep49} from "./graph/seasonTwo/ep49.js";
+import {ep50} from "./graph/seasonTwo/ep50.js";
+import {ep51} from "./graph/seasonTwo/ep51.js";
+import {ep52} from "./graph/seasonTwo/ep52.js";
+import {ep53} from "./graph/seasonTwo/ep53.js";
+import {ep54} from "./graph/seasonTwo/ep54.js";
+import {ep55} from "./graph/seasonTwo/ep55.js";
+import {ep56} from "./graph/seasonTwo/ep56.js";
+import {ep57} from "./graph/seasonTwo/ep57.js";
+import {ep58} from "./graph/seasonTwo/ep58.js";
+import {ep59} from "./graph/seasonTwo/ep59.js";
+import {ep60} from "./graph/seasonTwo/ep60.js";
 //#endregion
 
 var S1Episodes = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, ep10, ep11, ep12, ep13, ep14, ep15, ep16, ep17, ep18, ep19, ep20, ep21, ep22, ep23, ep24, ep25, ep26, ep27, ep28, ep29, ep30, ep31, ep32, ep33, ep34, ep35, ep36, ep37, ep38, ep39, ep40, ep41, ep42, ep43, ep44, ep45, ep46, ep47];
-var S2Episodes = [];
+var S2Episodes = [ep48, ep49, ep50, ep51, ep52, ep53, ep54, ep55, ep56, ep57, ep58, ep59, ep60];
 
 var allEpisodes = [];
 allEpisodes = allEpisodes.concat(S1Episodes, S2Episodes);
@@ -206,8 +219,7 @@ export function PackNMap(unpackedEpisodes=allEpisodes, familyConnections=true, o
     return strongestList;
   }
 
-  allConnections = findStrongestConnections(allConnections, familyConnections);
-  console.log(allConnections.length);
+  allConnections = findStrongestConnections(allConnections, (familyConnections && !onlyDirect));
 
   // PURGE NON-DIRECT
   if (onlyDirect) {
@@ -223,6 +235,8 @@ export function PackNMap(unpackedEpisodes=allEpisodes, familyConnections=true, o
   allConnections.forEach(con => {
       packedConnections = packedConnections.concat(con.pack());
   });
+
+  console.log(allConnections.length);
   //#endregion
 
   //#region Map

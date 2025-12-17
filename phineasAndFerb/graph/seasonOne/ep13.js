@@ -14,7 +14,7 @@ export const ep13 = new Episode({
   bPlot: "Freeze-inator Ray",
   songs: [
     new Song("When We Didn't Get Along", [dannyJacob]),
-    new Song("My Nemesis", [dannyJacob, Doof])
+    new Song("My Nemesis", [UnnamedPopTrio, Doof])
   ],
   characters: [
     Candace,

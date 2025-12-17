@@ -72,6 +72,9 @@ export class Character {
             case ("OWCA"):
                 this.backgroundColor = "#77034b";
                 break;
+            case ("BritishSpy"):
+                this.backgroundColor = "#193181";
+                break;
             case ("Evil"):
                 this.backgroundColor = "#000000";
                 break;
