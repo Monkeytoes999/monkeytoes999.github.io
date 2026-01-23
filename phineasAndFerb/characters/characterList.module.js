@@ -12,6 +12,8 @@ export const Perry = new Character("Perry the Platypus", "Perry", "Perry", "Flyn
 export const Baljeet = new Character("Baljeet Tjinder", "Baljeet", "Baljeet", "Gang", "#FF0000");
 export const Buford = new Character("Buford Van Stomm", "Buford", "Buford", "Gang", "#000000");
 export const Isabella = new Character("Isabella Garcia-Shapiro", "Isabella", "Isabella", "Gang", "#dc3292");
+
+export const Irving = new Character("Irving Du Bois", "Irving", "Irving", "Gang", "#f25922");
 //#endregion
 
 //#region B Plot
@@ -55,6 +57,13 @@ export const Charlene = new Character("Charlene Doofenshmirtz", "Charlene", "Cha
 export const Hildegard = new Character("Hildegard Johnson", "Hildegard", "Hildegard", "Family", "#ab732e");
 export const Biffany = new Character("Biffany Van Stomm", "Biffany", "Biffany", "Family", "#f1c972");
 export const Beppo = new Character("Beppo Brown", "Beppo", "Beppo Brown", "Family", "#f7e5ac");
+export const Xavier = new Character("Xavier Johnson", "Xavier", "Xavier", "Family", "#FFFFFF");
+export const Fred = new Character("Fred Johnson", "Fred", "Fred", "Family", "#FFFFFF");
+export const Amanda = new Character("Amanda Johnson", "Amanda", "Amanda", "Family", "#cb6c00");
+export const MrsTjinder = new Character("Mrs. Tjinder", "MrsTjinder", "Mrs. Tjinder", "Family", "#2a8819"); 
+export const UncleFluffyPants = new Character("Fluffly Pants Doofenshmirtz", "UncleFluffyPants", "Uncle Fluffy Pants", "Family", "#20437f");
+export const FarFarMorFletcher = new Character("Great Grandma Fletcher", "FarFarMorFletcher", "Great Grandma Fletcher", "Family", "#be334c");
+export const UncleMaulik = new Character("Uncle Maulik [Tjinder?]", "UncleMaulik", "Uncle Maulik", "Family", "#8aa560");
 //#endregion
 
 //#region Recurring
@@ -80,6 +89,7 @@ export const Bobbi = new Character("Bobbi Fabulous [Love Händel]", "Bobbi", "Bo
 export const DannyLH = new Character("Danny [Love Händel]", "DannyLH", "Danny", "Recurring", "#b9288e");
 export const Sherman = new Character("Sherman \"Swampy\" [Love Händel]", "Sherman", "Sherman", "Recurring", "#c5550b");
 export const Johnny = new Character("Johnny", "Johnny", "Johnny", "Recurring", "#da2fc3");
+export const Lacie = new Character("Lacie", "Lacie", "Lacie", "Recurring", "#c61eb0");
 export const Farmer = new Character("Farmer", "Farmer", "Farmer", "Recurring", "#a6ac59");
 export const FarmerWife = new Character("Farmer's Wife", "FarmerWife", "Farmer's Wife", "Recurring", "#2885c4");
 export const VanceWard = new Character("Handsome Movie Actor Vance Ward", "VanceWard", "Vance Ward", "Recurring", "#e9ee65");
@@ -90,12 +100,16 @@ export const Bridgette = new Character("Bridgette Oshinomi", "Bridgette", "Bridg
 export const Meap = new Character("Meap", "Meap", "Meap", "Recurring", "#e36ca8");
 export const Mitch = new Character("Mitch", "Mitch", "Mitch", "Recurring", "#5b0f0f");
 export const Balloony = new Character("Balloony / Colin", "Balloony", "Balloony", "Recurring", "#b69b38");
+export const Mishti = new Character("Mishti Patel", "Mishti", "Mishti", "Recurring", "#bc3d61");
+export const DennisRabbit = new Character("Dennis the Rogue Rabbit", "Dennis", "Dennis", "Recurring", "#dae7e4");
+export const Jerry = new Character("Jerry the Platypus", "Jerry", "Jerry the Platypus", "Recurring", "#1fd0bb");
+export const Feyersied = new Character("Eliza M. Feyersied", "Feyersied", "Eliza Feyersied", "Recurring", "#db921d");
 //#endregion
 
 //#region Background Kids
 export const Dimitri = new Character("Dimitri Popaunicolas", "Dimitri", "Dimitri", "Background Kids", "#FF0000");
 export const Django = new Character("Django Brown", "Django", "Django", "Background Kids", "#FF0000");
-export const DumbassGinger = new Character("Stupid Fricking Ginger Kid", "DumbassGinger", "Redhead", "Background Kids", "#FF0000");
+export const DumbassGinger = new Character("Stupid Fricking Ginger Kid", "DumbassGinger", "Redhead", "Background Kids", "#f25922");
 export const FricknNerd = new Character("Big Ol' Nerd Stereotype", "FricknNerd", "Nerd", "Background Kids", "#FF0000");
 export const Kris = new Character("Kris [NOT CANON]", "Kris", "Kris", "Background Kids", "#FF0000");
 export const Logan = new Character("Logan McKeen [NOT CANON]", "Logan", "Logan", "Background Kids", "#0000FF");
@@ -130,24 +144,38 @@ export const Greg = new Character("Greg [NOT CANON]", "Greg", "Greg", "Backgroun
 export const Bimmany = new Character("Bimmany [NOT CANON]", "Bimmany", "Bimmany", "BackgroundNotKids", "#e25eb4");
 export const Elaine = new Character("Elaine [NOT CANON]", "Elaine", "Elaine", "BackgroundNotKids", "#9440c1");
 export const Sven = new Character("Sven", "Sven", "Sven", "BackgroundNotKids", "#621367");
+export const Kalcium = new Character("Kalcium [NOT CANON]", "Kalcium", "Kalcium", "BackgroundNotKids", "#2e7458");
+export const Hoxx = new Character("Hoxx [NOT CANON]", "Hoxx", "Hoxx", "BackgroundNotKids", "#188272");
+export const MoMo = new Character("Mo-Mo", "MoMo", "Mo-Mo", "BackgroundNotKids", "#d05ac6");
 //#endregion
 
 //#region OWCA
+export const AgentBear = new Character("Agent B. [Bear]", "AgentBear", "Agent B.", "OWCA", "#836009");
+export const AgentBulldog = new Character("Agent B. [Bulldog]", "AgentBulldog", "Agent B.", "OWCA", "#bfbf");
 export const AgentChicken = new Character("Agent C. [Chicken]", "AgentChicken", "Agent C.", "OWCA", "#eca218");
+export const AgentCrocodile = new Character("Agent C. [Crocodile]", "AgentCrocodile", "Agent C.", "OWCA", "#349f30");
 export const AgentDog = new Character("Agent D. [Dog]", "AgentDog", "Agent D.", "OWCA", "#a67a41");
 export const AgentDuck = new Character("Agent D. [Duck]", "AgentDuck", "Agent D.", "OWCA", "#0a6b12");
 export const AgentEagle = new Character("Agent E. [Eagle]", "AgentEagle", "Agent E.", "OWCA", "#FF0000");
 export const AgentFrog = new Character("Ferdinand the Frog", "AgentFrog", "Agent F.", "OWCA", "#91f165");
+export const AgentFox = new Character("Agent F. [Fox]", "AgentFox", "Agent F.", "OWCA", "#8c5a1e");
 export const AgentHedgehog = new Character("Herman the Hedgehog", "AgentHedgehog", "Agent H.", "OWCA", "#e6c587");
 export const AgentKangaroo = new Character("Agent K. [Kangaroo]", "AgentKangaroo", "Agent K.", "OWCA", "#cc627e");
 export const AgentKitty = new Character("Agent K. [Kitty]", "AgentKitty", "Agent K.", "OWCA", "#ebc43a");
 export const AgentKoi = new Character("Agent K. [Koi]", "AgentKoi", "Agent K.", "OWCA", "#da864a");
+export const AgentLizard = new Character("Agent L. [Lizard]", "AgentLizard", "Agent L.", "OWCA", "#18ab30");
+export const AgentMouse = new Character("Agent M. [Mouse]", "AgentMouse", "Agent M.", "OWCA", "#FFFFFF");
+export const AgentOstrich = new Character("Agent O. [Ostrich]", "AgentOstrich", "Agent O.", "OWCA", "#e55ac2");
 export const AgentOwl = new Character("Agent O. [Owl]", "AgentOwl", "Agent O.", "OWCA", "#82482f");
 export const AgentPanda = new Character("Peter the Panda", "AgentPanda", "Agent P.", "OWCA", "#454141");
 export const AgentPig = new Character("Agent P. [Pig]", "AgentPig", "Agent P.", "OWCA", "#ef6ac9");
 export const Pinky = new Character("Pinky the Chiuahua", "Pinky", "Agent P.", "OWCA", "#FF0000");
+export const Planty = new Character("Planty the Potted Plant", "Planty", "Agent P.", "OWCA", "#4a9d20");
+export const AgentPorcupine = new Character("Agent P. [Porcupine]", "AgentPorcupine", "Agent P.", "OWCA", "#383232");
 export const AgentRacoon1 = new Character("Agent R. [Racoon] #1", "AgentRacoon1", "Agent R.", "OWCA", "#744a36");
 export const AgentRacoon2 = new Character("Agent R. [Racoon] #2", "AgentRacoon2", "Agent R.", "OWCA", "#565453ff");
+export const AgentSnail = new Character("Agent S. [Snail]", "AgentSnail", "Agent S.", "OWCA", "#fab1ec");
+export const AgentSquirrel = new Character("Agent S. [Squirrel]", "AgentSquirrel", "Agent S.", "OWCA", "#886a16");
 export const AgentWorm = new Character("Agent W. [Worm]", "AgentWorm", "Agent W.", "OWCA", "#dd81d8");
 export const Acronym = new Character("Admiral Wanda Acronym", "Acronym", "Admiral Acronym", "OWCA", "#df5dd6");
 
@@ -159,7 +187,17 @@ export const Initials = new Character("Inspector Initials", "Initials", "Inspect
 export const Gevaarlijk = new Character("Dr. Gevaarlijk", "Gevaarlijk", "Dr. Gevaarlijk", "Evil", "#497da8");
 export const Wexler = new Character("Dr. Llyod Wexler", "Wexler", "Wexler", "Evil", "#0f3ac7");
 
+export const Rodney = new Character("Aloyse Everheart Elizabeth Otto Wolfgang Hypatia Galen Gary Copper von Roddenstein", "Rodney", "Rodney", "Evil", "#087d26");
+export const Diminutive = new Character("Dr. Diminutive", "Diminutive", "Dr. Diminutive", "Evil", "#FFFFFF");
+export const Wormwood = new Character("Ethyl Wormwood", "Wormwood", "[Dr.] Wormwood", "Evil", "#b43e3e");
+export const Bloodpudding = new Character("Dr. [Ethyl Espionaget] Bloodpudding", "Bloodpudding", "Dr. Bloodpudding", "Evil", "#943208");
+export const Montgomery = new Character("Mad Montgomery", "Montgomery", "Montgomery", "Evil", "#97d8c2");
+export const Stabby = new Character("Dr. Stabby Stubble", "Stabby", "Dr. Stabby Stubble", "Evil", "#c66b43");
+export const Scotterson = new Character("Professor Pete Scotterson", "Scotterson", "Scotterson", "Evil", "#edeacb");
+
 export const Poofenplotz = new Character("Professor Esmeralda Poofenplotz", "Poofenplotz", "Professor Poofenplotz", "Evil", "#ca4ea3");
+
+export const Regurgitator = new Character("The Regurgitator", "Regurgitator", "Regurgitator", "Evil", "#0c6f28");
 //#endregion
 
 //#region One-Offs
@@ -205,6 +243,15 @@ export const Thaddeus = new Character("Thaddeus Weaver", "Thaddeus", "Thaddeus",
 export const Thor = new Character("Thor Weaver", "Thor", "Thor", "OneOff", "#eaa423");
 export const Mandy = new Character("Mandy Weaver", "Mandy", "Mandy", "OneOff", "#319ba4");
 export const Harry = new Character("Harry", "Harry", "Harry", "OneOff", "#e7e019");
+export const Nicolette = new Character("Nicolette (Jeremy's Cousin)", "Nicolette", "Nicolette", "OneOff", "#df64be");
+export const Onassis = new Character("Professor Xavier Onassis", "Onassis", "Professor Onassis", "OneOff", "#2e6722");
+export const Shlocko = new Character("Shlocko the Clown", "Shlocko", "Shlocko", "OneOff", "#dd3b26");
+export const TomMM = new Character("Tom [Mix & Mingle]", "Tom", "Tom", "OneOff", "#2265ac");
+export const KeithMM = new Character("Keith [Mix & Mingle]", "KeithMM", "Keith", "OneOff", "#2a581b");
+export const SvenMM = new Character("Sven [Mix & Mingle]", "SvenMM", "Sven", "OneOff", "#4aa5ba")
+export const RexMM = new Character("Rex [Mix & Mingle]", "RexMM", "Rex", "OneOff", "#111262")
+export const SamAdult = new Character("Sam [Adult]", "Sam", "Sam", "OneOff", "#d9d2a9");
+export const NikkiStars = new Character("Nikki Stars", "NikkiStars", "Nikki Starss", "OneOff", "#c2159c");
 //#endregion
 
 //#region Random real-world cameo people
@@ -220,10 +267,15 @@ export const danPovenmire = new Character("Dan Povenmire", "danPovenmire", "THIS
 export const beverleyStaunton = new Character("Beverly Staunton", "beverleyStaunton", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
 export const lCPowell = new Character("LC Powell", "lCPowell", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
 export const sheenaEaston = new Character("Sheena Easton", "sheenaEaston", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
-export const animatronicAnimals = new Character("Animatronic Animals", "Animatronic Animals", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
+export const animatronicAnimals = new Character("Animatronic Animals", "animatronicAnimals", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
+export const jackJones = new Character("Jack Jones", "jackJones", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
+export const vangieGunn = new Character("Vangie Gunn", "vangieGunn", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
+
 export const AndrewsSisters = new Character("Andrews Sisters - these are like, real people who are being parodied and depicted?", "andrewsSisters", "Andrews Sisters", "BandGroupSets", "#d861d8");
 export const GuyzNtheParque = new Character("2 Guys N the Parque", "GuyzNtheParque", "2 Guys N the Parque", "BandGroupSets", "#ad3939");
 export const UnnamedPopTrio = new Character("Unnamed Pop Trio", "UnnamedPopTrio", "Unnamed Pop Trio", "BandGroupSets", "#0e5f25");
+export const BowlingForSoup = new Character("Bowling For Soup", "BowlingForSoup", "Bowling For Soup", "BandGroupSets", "#c52323")
+export const Zanzibar = new Character("Zanzibar", "Zanzibar", "Zanzibar", "BandGroupSets", "#de3cb8")
 //#endregion
 
 //#region Alt. Versions [NOT 2nd DIMENSION]

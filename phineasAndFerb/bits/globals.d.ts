@@ -20,5 +20,6 @@ declare global {
   const farmer: Bit;
   const fthWall: Bit;
   const isOUT: Bit;
+  const themeSong: Bit;
 }
 export {};

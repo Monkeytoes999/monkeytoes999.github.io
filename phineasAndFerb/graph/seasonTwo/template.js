@@ -19,10 +19,10 @@ export const ep = new Episode({
   ],
   interactions: [
     connectAll([Isabella, Milly, Holly, Gretchen, Adyson, Katie, Ginger], 6),
-
-    groupConnections([Perry], [Monogram, Doof], 6),
+    connectAll([Perry, Monogram, Carl], 6),
     
     new Connection(Monogram, Doof, 4),
+    new Connection(Perry, Doof, 6),
   ],
   bits: [],
   ferbLines: 1,

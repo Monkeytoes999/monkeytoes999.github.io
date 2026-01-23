@@ -19,3 +19,4 @@ const pharmacist = new Bit("Doof = Pharmacist", false);
 const farmer = new Bit("I can't believe you... and you didn't...", false);
 const fthWall = new Bit("Some kind of very explicit 4th wall break");
 const isOUT = new Bit("Candace Flynn is out. PEACE!");
+const themeSong = new Bit("Something from the theme song.", false);

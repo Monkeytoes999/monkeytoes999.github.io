@@ -16,6 +16,7 @@ Phineas.addFamily(BettyJo);
 Phineas.addFamily(Lorraine);
 Phineas.addFamily(Winifred);
 Phineas.addFamily(Reginald);
+Phineas.addFamily(FarFarMorFletcher);
 
 Ferb.addFamily(Candace);
 Ferb.addFamily(Linda);
@@ -27,6 +28,7 @@ Ferb.addFamily(Lorraine);
 Ferb.addFamily(Winifred);
 Ferb.addFamily(Reginald);
 Ferb.addFamily(Ferbgor);
+Ferb.addFamily(FarFarMorFletcher);
 
 Candace.addFamily(Linda);
 Candace.addFamily(Lawrence);
@@ -36,6 +38,7 @@ Candace.addFamily(BettyJo);
 Candace.addFamily(Lorraine);
 Candace.addFamily(Winifred);
 Candace.addFamily(Reginald);
+Candace.addFamily(FarFarMorFletcher);
 
 Linda.addFamily(Lawrence);
 Linda.addFamily(Perry);
@@ -51,6 +54,7 @@ Lawrence.addFamily(BettyJo);
 Lawrence.addFamily(Lorraine);
 Lawrence.addFamily(Winifred);
 Lawrence.addFamily(Reginald);
+Lawrence.addFamily(FarFarMorFletcher);
 
 Perry.addFamily(Clyde);
 Perry.addFamily(BettyJo);
@@ -64,8 +68,10 @@ Clyde.addFamily(Lorraine);
 BettyJo.addFamily(Lorraine);
 
 Winifred.addFamily(Reginald);
+Winifred.addFamily(FarFarMorFletcher);
 
 Reginald.addFamily(Ferbgor);
+Reginald.addFamily(FarFarMorFletcher);
 
 Isabella.addFamily(Vivian);
 Isabella.addFamily(Pinky);
@@ -93,12 +99,16 @@ Doof.addFamily(Vanessa);
 Doof.addFamily(Roger);
 Doof.addFamily(Charlene);
 Doof.addFamily(Jekyll);
+Doof.addFamily(UncleFluffyPants);
 
 Vanessa.addFamily(Roger);
 Vanessa.addFamily(Charlene);
 
 DoofDad.addFamily(DoofMom);
 DoofDad.addFamily(Jekyll);
+DoofDad.addFamily(UncleFluffyPants);
+
+DoofMom.addFamily(UncleFluffyPants);
 
 Lily.addFamily(Tilly);
 
@@ -108,6 +118,19 @@ Django.addFamily(Jenny);
 Jenny.addFamily(Beppo);
 
 Farmer.addFamily(FarmerWife);
+
+Buford.addFamily(Biffany);
+
+Baljeet.addFamily(MrsTjinder);
+Baljeet.addFamily(UncleMaulik);
+
+MrsTjinder.addFamily(UncleMaulik);
+
+//I'm not doing the future kids, except to each other.
+Xavier.addFamily(Amanda);
+Xavier.addFamily(Fred);
+
+Amanda.addFamily(Fred);
 //#endregion
 
 //#region Episodes
@@ -171,10 +194,36 @@ import {ep57} from "./graph/seasonTwo/ep57.js";
 import {ep58} from "./graph/seasonTwo/ep58.js";
 import {ep59} from "./graph/seasonTwo/ep59.js";
 import {ep60} from "./graph/seasonTwo/ep60.js";
+import {ep61} from "./graph/seasonTwo/ep61.js";
+import {ep62} from "./graph/seasonTwo/ep62.js";
+import {ep63} from "./graph/seasonTwo/ep63.js";
+import {ep64} from "./graph/seasonTwo/ep64.js";
+import {ep65} from "./graph/seasonTwo/ep65.js";
+import {ep67} from "./graph/seasonTwo/ep67.js";
+import {ep68} from "./graph/seasonTwo/ep68.js";
+import {ep69} from "./graph/seasonTwo/ep69.js";
+import {ep70} from "./graph/seasonTwo/ep70.js";
+import {ep71} from "./graph/seasonTwo/ep71.js";
+import {ep72} from "./graph/seasonTwo/ep72.js";
+import {ep73} from "./graph/seasonTwo/ep73.js";
+import {ep74} from "./graph/seasonTwo/ep74.js";
+import {ep75} from "./graph/seasonTwo/ep75.js";
+import {ep76} from "./graph/seasonTwo/ep76.js";
+import {ep77} from "./graph/seasonTwo/ep77.js";
+import {ep78} from "./graph/seasonTwo/ep78.js";
+import {ep79} from "./graph/seasonTwo/ep79.js";
+import {ep80} from "./graph/seasonTwo/ep80.js";
+import {ep81} from "./graph/seasonTwo/ep81.js";
+import {ep82} from "./graph/seasonTwo/ep82.js";
+import {ep83} from "./graph/seasonTwo/ep83.js";
+import {ep84} from "./graph/seasonTwo/ep84.js";
+import {ep85} from "./graph/seasonTwo/ep85.js";
+
+import { FarFarMorFletcher } from './characters/characterList.js';
 //#endregion
 
 var S1Episodes = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, ep10, ep11, ep12, ep13, ep14, ep15, ep16, ep17, ep18, ep19, ep20, ep21, ep22, ep23, ep24, ep25, ep26, ep27, ep28, ep29, ep30, ep31, ep32, ep33, ep34, ep35, ep36, ep37, ep38, ep39, ep40, ep41, ep42, ep43, ep44, ep45, ep46, ep47];
-var S2Episodes = [ep48, ep49, ep50, ep51, ep52, ep53, ep54, ep55, ep56, ep57, ep58, ep59, ep60];
+var S2Episodes = [ep48, ep49, ep50, ep51, ep52, ep53, ep54, ep55, ep56, ep57, ep58, ep59, ep60, ep61, ep62, ep63, ep64, ep65, ep67, ep68, ep69, ep70, ep71, ep72, ep73, ep74, ep75, ep76, ep77, ep78, ep79, ep80, ep81, ep82, ep83, ep84, ep85];
 
 var allEpisodes = [];
 allEpisodes = allEpisodes.concat(S1Episodes, S2Episodes);

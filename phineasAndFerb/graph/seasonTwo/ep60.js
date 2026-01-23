@@ -10,7 +10,7 @@ export const ep60 = new Episode({
   number: 60,
   code: "208a",
   title: "Thaddeus and Thor",
-  aPlot: "",
+  aPlot: "Build a Fort",
   bPlot: "Kickenator 5000",
   songs: [new Song("Kick My Way Into Her Heart", [Doof, Bobbi, Sherman, DannyLH])],
   characters: [
