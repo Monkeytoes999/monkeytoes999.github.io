@@ -1,0 +1,117 @@
+import "../../characters/globals.js";
+import { Episode } from "../../classes/episode.js";
+import { Song } from "../../classes/song.js";
+import { Connection } from "../../classes/connection.js";
+import "../../bits/globals.js";
+import { Bit } from "../../classes/bit.js";
+import { connectAll, groupConnections } from "../connectionHelpers.js";
+
+export const ep86 = new Episode({
+  number: 86,
+  code: "222",
+  title: "Phineas and Ferb Christmas Vacation!",
+  aPlot: "Santa Rest Stop... & Save Christmas",
+  bPlot: "Naughty-inator",
+  songs: [new Song("What Does He Want?", [Candace, Stacy, Jenny]), new Song("I Really Don't Hate Christmas", [Doof]),
+new Song("That Christmas Feeling", [oliviaOlson]), new Song("Where Did We Go Wrong?", [Phineas, Ferb, Isabella, Baljeet, Jeremy, Candace]),
+new Song("Danville for Niceness", [Ferb, Phineas, Isabella, Baljeet, Buford]), new Song("Christmas is Starting Now", [bigBadVoodooDaddy])],
+  characters: [
+    Phineas,
+    Ferb,
+    Candace,
+    Linda,
+    Lawrence,
+    Stacy,
+    Jeremy,
+    Perry,
+    Santa,
+    AgentOwl,
+    AgentBear,
+    AgentKangaroo,
+    Carl,
+    Monogram,
+    AgentFrog,
+    AgentKitty,
+    AgentReindeer,
+    AgentRacoon2,
+    AgentPig,
+    AgentSquirrel,
+    AgentDuck,
+    AgentEagle,
+    AgentMouse,
+    AgentDog,
+    AgentHedgehog,
+    AgentLizard,
+    AgentCrocodile,
+    Isabella,
+    Jenny,
+    Baljeet,
+    Buford,
+    Rodney,
+    Diminutive,
+    Montgomery,
+    Roger,
+    DoofMom,
+    DoofDad,
+    DoofUncleJustin,
+    Suzy,
+    ChrimsasJosh,
+    ChrimsasBecky,
+    Blayn,
+    Clewnt,
+    GordonGuts,
+    BEngineer,
+    Reginald,
+    Winifred,
+    Stinglehopper
+  ],
+  interactions: [
+    connectAll([Perry, Monogram, Carl], 6),
+    connectAll([Phineas, Ferb, Candace, Perry], 6),
+    connectAll([AgentOwl, AgentBear, AgentKangaroo, Carl, Monogram, AgentFrog, AgentChicken, AgentKitty, AgentReindeer, AgentRacoon2, AgentPig, AgentSquirrel, AgentDuck, AgentEagle, AgentMouse, AgentDog, AgentHedgehog, AgentLizard, AgentCrocodile], 1),
+    connectAll([Perry, AgentDog, AgentKangaroo, AgentOwl, AgentPig, AgentBear, AgentReindeer, AgentKitty, AgentDuck], 1),
+    connectAll([AgentKangaroo, AgentFrog, AgentChicken, AgentSquirrel, AgentDuck, AgentKitty, AgentRacoon2, AgentPig, AgentEagle, AgentMouse, Perry], 1),
+    connectAll([Candace, Jenny, Stacy], 6),
+    connectAll([Phineas, Ferb, Baljeet, Buford, Isabella], 6),
+    connectAll([Jeremy, Candace, Suzy, Phineas, Ferb], 6),
+    connectAll([ChrimsasJosh, ChrimsasBecky, Doof, Perry], 6),
+    connectAll([Blayn, Clewnt, Phineas, Isabella, Baljeet, Buford, Ferb, Candace], 6),
+    connectAll([Phineas, Ferb, Isabella, Baljeet, Buford, Clewnt, Blayn, Santa], 6),
+    connectAll([Phineas, Ferb, Candace, Linda, Lawrence, Winifred, Reginald], 6),
+    connectAll([AgentDog, AgentEagle, AgentMouse], 6),
+    connectAll([AgentKitty, AgentRacoon2, AgentReindeer], 6),
+    connectAll([AgentKangaroo, AgentOwl, AgentBear], 6),
+
+    groupConnections([Linda], [Stacy, Jeremy], 2),
+    groupConnections([Candace, Jeremy], [Santa], 4),
+    groupConnections([Phineas, Ferb], [Jeremy], 2),
+    groupConnections([AgentKangaroo, AgentBear, AgentHedgehog, AgentDuck, AgentSquirrel, AgentOwl, AgentReindeer, AgentPig, AgentKitty, AgentEagle], [Perry, Monogram, Carl], 3),
+    groupConnections([AgentBear, AgentDog, AgentChicken, AgentReindeer, AgentPig, AgentKitty, AgentEagle, Carl], [Doof], 2),
+    groupConnections([Baljeet, Buford, Isabella], [Candace], 3),
+    groupConnections([Perry], [Rodney, Montgomery, Diminutive, Roger, DoofMom, DoofDad], 3),
+    groupConnections([Isabella, Candace], [Stinglehopper], 6),
+    groupConnections([Clewnt, Stacy], [Jeremy], 4),
+
+    new Connection(Monogram, Doof, 4),
+    new Connection(Perry, Doof, 6),
+    new Connection(AgentFrog, AgentChicken, 6),
+    new Connection(AgentLizard, AgentCrocodile, 6),
+    new Connection(AgentDuck, AgentHedgehog, 6),
+    new Connection(AgentBear, AgentDog, 6),
+    new Connection(AgentOwl, AgentPig, 6),
+    new Connection(AgentDuck, AgentKitty, 6),
+    new Connection(Doof, DoofUncleJustin, 4),
+    new Connection(Perry, DoofUncleJustin, 2),
+    new Connection(BEngineer, Phineas, 6),
+    new Connection(Stinglehopper, Baljeet, 6),
+  ],
+  bits: [wherePerry, whatchaDoin, gonnaDo, curseYou],
+  ferbLines: 2,
+});
+
+//#region Bit Handler
+wherePerry.addAppearance(ep86, Ferb);
+whatchaDoin.addModifiedAppearance(ep86, Candace);
+gonnaDo.addModifiedAppearance(ep86, Phineas);
+curseYou.addModifiedAppearance(ep86, Doof);
+//#endregion

@@ -9,7 +9,7 @@ import { connectAll, groupConnections } from "../connectionHelpers.js";
 //For this episode I think it could be argued that Linda should have level 6 w/ Sherman and Danny, but for now I won't.
 //It could also be argued that Isabella, Milly, Ginger, and Gretchen should have level 6 w/ Love Händel as a whole, but again.
 export const ep25 = new Episode({
-  number: 0,
+  number: 25,
   code: "114",
   title: "Dude, We're Gettin' the Band Back Together!",
   aPlot: "Love Händel",

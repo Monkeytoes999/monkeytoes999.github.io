@@ -61,7 +61,7 @@ export class Connection {
         if (this.source == otherConnection.getConnectionSource() && this.destination == otherConnection.getConnectionDestination()) {
             return true;
         }
-        if (this.source == otherConnection.getConnectionDestination() && this.destination == otherConnection.getConnectionSource() && (this.level == 6 || otherConnection.getConnectionLevel() == 6)) {
+        if (this.source == otherConnection.getConnectionDestination() && this.destination == otherConnection.getConnectionSource() && (this.level == 6 || otherConnection.getConnectionLevel() == 6 || this.level == 7 || otherConnection.getConnectionLevel == 7)) {
             return true;
         }
         return false;

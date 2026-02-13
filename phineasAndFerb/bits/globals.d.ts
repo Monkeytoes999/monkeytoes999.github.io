@@ -21,5 +21,6 @@ declare global {
   const fthWall: Bit;
   const isOUT: Bit;
   const themeSong: Bit;
+  const panicRoom: Bit;
 }
 export {};

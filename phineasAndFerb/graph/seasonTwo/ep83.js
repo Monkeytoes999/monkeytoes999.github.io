@@ -55,7 +55,7 @@ export const ep83 = new Episode({
     groupConnections([Candace, Stacy, Jeremy], [Dave, Greg, Dimitri, DumbassGinger, Greg, Terrance, GuyzNtheParque], 3),
     groupConnections([Candace, Stacy, Jeremy, GuyzNtheParque, Carl, Bimmany, Sven], [NikkiStars, Stanky], 3),
     groupConnections([Ferb, Jeremy], [Perry], 2),
-    groupConnections([NikkiStars, Stanky], [Candace, Jeremy, GuyzNtheParque, Monogram, Rodney, Montgomery], 3),
+    groupConnections([NikkiStars, Stanky], [Candace, GuyzNtheParque, Monogram, Rodney, Montgomery], 3),
     groupConnections([Diminutive, Rodney, Bloodpudding, Doof, Stabby, Montgomery, Wormwood], [PhilAnnouncer], 3),
     groupConnections([Stanky, Dave, NikkiStars], [Ferb], 3),
 
@@ -65,8 +65,8 @@ export const ep83 = new Episode({
     new Connection(Stanky, NikkiStars, 6),
     new Connection(Monogram, Carl, 6),
     new Connection(Perry, Carl, 2),
+    new Connection(Stanky, Jeremy, 3),
     new Connection(NikkiStars, Jeremy, 6),
-
   ],
   bits: [gonnaDo, wherePerry],
   ferbLines: 1,

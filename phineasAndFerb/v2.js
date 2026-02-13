@@ -17,6 +17,10 @@ Phineas.addFamily(Lorraine);
 Phineas.addFamily(Winifred);
 Phineas.addFamily(Reginald);
 Phineas.addFamily(FarFarMorFletcher);
+Phineas.addFamily(Tiana);
+Phineas.addFamily(Webber);
+Phineas.addFamily(UncleAngus);
+Phineas.addFamily(AuntMora);
 
 Ferb.addFamily(Candace);
 Ferb.addFamily(Linda);
@@ -29,6 +33,10 @@ Ferb.addFamily(Winifred);
 Ferb.addFamily(Reginald);
 Ferb.addFamily(Ferbgor);
 Ferb.addFamily(FarFarMorFletcher);
+Ferb.addFamily(Tiana);
+Ferb.addFamily(Webber);
+Ferb.addFamily(UncleAngus);
+Ferb.addFamily(AuntMora);
 
 Candace.addFamily(Linda);
 Candace.addFamily(Lawrence);
@@ -39,6 +47,10 @@ Candace.addFamily(Lorraine);
 Candace.addFamily(Winifred);
 Candace.addFamily(Reginald);
 Candace.addFamily(FarFarMorFletcher);
+Candace.addFamily(Tiana);
+Candace.addFamily(Webber);
+Candace.addFamily(UncleAngus);
+Candace.addFamily(AuntMora);
 
 Linda.addFamily(Lawrence);
 Linda.addFamily(Perry);
@@ -47,6 +59,10 @@ Linda.addFamily(BettyJo);
 Linda.addFamily(Lorraine);
 Linda.addFamily(Winifred);
 Linda.addFamily(Reginald);
+Linda.addFamily(Tiana);
+Linda.addFamily(Webber);
+Linda.addFamily(UncleAngus);
+Linda.addFamily(AuntMora);
 
 Lawrence.addFamily(Perry);
 Lawrence.addFamily(Clyde);
@@ -55,6 +71,10 @@ Lawrence.addFamily(Lorraine);
 Lawrence.addFamily(Winifred);
 Lawrence.addFamily(Reginald);
 Lawrence.addFamily(FarFarMorFletcher);
+Lawrence.addFamily(Tiana);
+Lawrence.addFamily(Webber);
+Lawrence.addFamily(UncleAngus);
+Lawrence.addFamily(AuntMora);
 
 Perry.addFamily(Clyde);
 Perry.addFamily(BettyJo);
@@ -64,14 +84,27 @@ Perry.addFamily(Reginald);
 
 Clyde.addFamily(BettyJo);
 Clyde.addFamily(Lorraine);
+Clyde.addFamily(Tiana);
+Clyde.addFamily(Webber);
 
 BettyJo.addFamily(Lorraine);
+BettyJo.addFamily(Tiana);
+BettyJo.addFamily(Webber);
+
+Lorraine.addFamily(Tiana);
+Lorraine.addFamily(Webber);
 
 Winifred.addFamily(Reginald);
 Winifred.addFamily(FarFarMorFletcher);
+Winifred.addFamily(UncleAngus);
+Winifred.addFamily(AuntMora);
 
 Reginald.addFamily(Ferbgor);
 Reginald.addFamily(FarFarMorFletcher);
+Reginald.addFamily(UncleAngus);
+Reginald.addFamily(AuntMora);
+
+Webber.addFamily(Tiana);
 
 Isabella.addFamily(Vivian);
 Isabella.addFamily(Pinky);
@@ -100,6 +133,7 @@ Doof.addFamily(Roger);
 Doof.addFamily(Charlene);
 Doof.addFamily(Jekyll);
 Doof.addFamily(UncleFluffyPants);
+Doof.addFamily(DoofUncleJustin);
 
 Vanessa.addFamily(Roger);
 Vanessa.addFamily(Charlene);
@@ -107,8 +141,10 @@ Vanessa.addFamily(Charlene);
 DoofDad.addFamily(DoofMom);
 DoofDad.addFamily(Jekyll);
 DoofDad.addFamily(UncleFluffyPants);
+DoofDad.addFamily(DoofUncleJustin);
 
 DoofMom.addFamily(UncleFluffyPants);
+DoofMom.addFamily(DoofUncleJustin);
 
 Lily.addFamily(Tilly);
 
@@ -120,11 +156,23 @@ Jenny.addFamily(Beppo);
 Farmer.addFamily(FarmerWife);
 
 Buford.addFamily(Biffany);
+Buford.addFamily(Adjacent);
 
 Baljeet.addFamily(MrsTjinder);
 Baljeet.addFamily(UncleMaulik);
+Baljeet.addFamily(UncleKamal);
 
 MrsTjinder.addFamily(UncleMaulik);
+MrsTjinder.addFamily(UncleKamal);
+
+Orville.addFamily(Wilbur);
+
+KP.addFamily(GKP);
+
+Irving.addFamily(Albert);
+Irving.addFamily(MrsDuBois);
+
+Albert.addFamily(MrsDuBois);
 
 //I'm not doing the future kids, except to each other.
 Xavier.addFamily(Amanda);
@@ -218,12 +266,24 @@ import {ep82} from "./graph/seasonTwo/ep82.js";
 import {ep83} from "./graph/seasonTwo/ep83.js";
 import {ep84} from "./graph/seasonTwo/ep84.js";
 import {ep85} from "./graph/seasonTwo/ep85.js";
+import {ep86} from "./graph/seasonTwo/ep86.js";
+import {ep87} from "./graph/seasonTwo/ep87.js";
+import {ep88} from "./graph/seasonTwo/ep88.js";
+import {ep89} from "./graph/seasonTwo/ep89.js";
+import {ep90} from "./graph/seasonTwo/ep90.js";
+import {ep91} from "./graph/seasonTwo/ep91.js";
+import {ep92} from "./graph/seasonTwo/ep92.js";
+import {ep93} from "./graph/seasonTwo/ep93.js";
+import {ep94} from "./graph/seasonTwo/ep94.js";
+import {ep95} from "./graph/seasonTwo/ep95.js";
+import {ep96} from "./graph/seasonTwo/ep96.js";
 
-import { FarFarMorFletcher } from './characters/characterList.js';
+
+import { Adjacent, FarFarMorFletcher } from './characters/characterList.js';
 //#endregion
 
 var S1Episodes = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, ep10, ep11, ep12, ep13, ep14, ep15, ep16, ep17, ep18, ep19, ep20, ep21, ep22, ep23, ep24, ep25, ep26, ep27, ep28, ep29, ep30, ep31, ep32, ep33, ep34, ep35, ep36, ep37, ep38, ep39, ep40, ep41, ep42, ep43, ep44, ep45, ep46, ep47];
-var S2Episodes = [ep48, ep49, ep50, ep51, ep52, ep53, ep54, ep55, ep56, ep57, ep58, ep59, ep60, ep61, ep62, ep63, ep64, ep65, ep67, ep68, ep69, ep70, ep71, ep72, ep73, ep74, ep75, ep76, ep77, ep78, ep79, ep80, ep81, ep82, ep83, ep84, ep85];
+var S2Episodes = [ep48, ep49, ep50, ep51, ep52, ep53, ep54, ep55, ep56, ep57, ep58, ep59, ep60, ep61, ep62, ep63, ep64, ep65, ep67, ep68, ep69, ep70, ep71, ep72, ep73, ep74, ep75, ep76, ep77, ep78, ep79, ep80, ep81, ep82, ep83, ep84, ep85, ep86, ep87, ep88, ep89, ep90, ep91, ep92, ep93, ep94, ep95, ep96];
 
 var allEpisodes = [];
 allEpisodes = allEpisodes.concat(S1Episodes, S2Episodes);

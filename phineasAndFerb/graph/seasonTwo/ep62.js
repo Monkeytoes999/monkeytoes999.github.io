@@ -35,7 +35,7 @@ export const ep62 = new Episode({
     Bob,
     Margaret,
     Ginger,
-    Kalcium,
+    Charley,
     Gartanial,
     Coltrane
   ],
@@ -48,7 +48,7 @@ export const ep62 = new Episode({
 
     groupConnections([Perry], [Monogram, Doof], 6),
     groupConnections([Stacy, Candace], [Jenny], 2),
-    groupConnections([Bob, Margaret, Kalcium, Gartanial], [Phineas, Candace, Buford], 3),
+    groupConnections([Bob, Margaret, Charley, Gartanial], [Phineas, Candace, Buford], 3),
     
     new Connection(Candace, Stacy, 6),
     new Connection(Candace, Jeremy, 6),

@@ -6,7 +6,6 @@ import "../../bits/globals.js";
 import { Bit } from "../../classes/bit.js";
 import { connectAll, groupConnections } from "../connectionHelpers.js";
 
-//Panic room
 export const ep18 = new Episode({
   number: 18,
   code: "110b",
@@ -39,11 +38,12 @@ export const ep18 = new Episode({
     new Connection(Monogram, Carl, 6),
     new Connection(Carl, Santa, 2),
   ],
-  bits: [wherePerry, ggg],
+  bits: [wherePerry, ggg, panicRoom],
   ferbLines: 0,
 });
 
 //#region Bit Handler
 wherePerry.addAppearance(ep18, Phineas);
 ggg.addAppearance(ep18);
+panicRoom.addAppearance(ep18)
 //#endregion

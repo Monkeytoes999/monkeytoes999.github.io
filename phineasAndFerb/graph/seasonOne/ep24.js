@@ -7,7 +7,7 @@ import { Bit } from "../../classes/bit.js";
 import { connectAll, groupConnections } from "../connectionHelpers.js";
 
 export const ep24 = new Episode({
-  number: 0,
+  number: 24,
   code: "113b",
   title: "The Ballad of Badbeard",
   aPlot: "Badbeard's Treasure",
