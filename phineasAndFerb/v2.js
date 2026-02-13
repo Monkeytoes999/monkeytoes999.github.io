@@ -302,30 +302,34 @@ export function PackNMap(unpackedEpisodes=allEpisodes, familyConnections=true, o
   });
 
   function findStrongestConnections(connections, allowFamilial) {
-    const used = new Set(); // track processed connection IDs or references
-    const strongestList = [];
-
+    const visited = new Map();
+    
     for (let i = 0; i < connections.length; i++) {
-      const connA = connections[i];
-      if (used.has(connA)) continue;
+      
+      let connA = connections[i];
+      let strength = connA.getConnectionLevel();
+      let conFrom = connA.getConnectionSource().getID();
+      let conTo = connA.getConnectionDestination().getID();
 
-      let strongest = connA;
-      used.add(connA);
+      let key = `${conFrom}-${conTo}`
+      let revKey = `${conTo}-${conFrom}`
 
-      for (let j = i + 1; j < connections.length; j++) {
-        const connB = connections[j];
-        if (used.has(connB)) continue;
+      if (visited.has(key) && (allowFamilial || strength != 7)) {
+        if (visited.get(key).strength < strength){
+          visited.set(key, {"strength": strength, "conn": connA});
 
-        if (connA.checkIdenticality(connB)) {
-          strongest = strongest.getStrongestConnection(connB, allowFamilial);
-          used.add(connB);
+          if (strength >= 6 && visited.has(revKey)) {
+            visited.delete(revKey);
+          }
         }
+      } else if (visited.has(revKey) && visited.get(revKey).strength >= 6) {
+        continue;
+      } else {
+          visited.set(key, {"strength": strength, "conn": connA});
       }
-
-      strongestList.push(strongest);
     }
 
-    return strongestList;
+    return Array.from(visited.values()).map(c => c.conn);
   }
 
   allConnections = findStrongestConnections(allConnections, (familyConnections && !onlyDirect));
