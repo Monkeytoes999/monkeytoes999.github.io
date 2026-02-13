@@ -316,6 +316,14 @@ export function PackNMap(unpackedEpisodes=allEpisodes, familyConnections=true, o
 
       if (visited.has(key) && (allowFamilial || strength != 7)) {
         if (visited.get(key).strength < strength){
+
+          if (visited.get(key).strength == 1) {
+            if (!visited.has(revKey)) {
+              let connB = new Connection(connA.getConnectionDestination(), connA.getConnectionSource(), 1);
+              visited.set(revKey, {"strength": 1, "conn": connB})
+            }
+          }
+
           visited.set(key, {"strength": strength, "conn": connA});
 
           if (strength >= 6 && visited.has(revKey)) {
@@ -346,7 +354,7 @@ export function PackNMap(unpackedEpisodes=allEpisodes, familyConnections=true, o
   }
 
   allConnections.forEach(con => {
-      packedConnections = packedConnections.concat(con.pack());
+    packedConnections = packedConnections.concat(con.pack());
   });
 
   console.log(allConnections.length);
