@@ -10,8 +10,8 @@ export const ep96 = new Episode({
   number: 96,
   code: "228b",
   title: "Phineas and Ferb Busters",
-  aPlot: "",
-  bPlot: "Straightjacket-inator, ",
+  aPlot: "Giant Tops",
+  bPlot: "Straightjacket-inator, Blender Norm",
   songs: [new Song("Busted Dance", [Candace]), new Song("Bust Your Brothers", [robbieWyckoff])],
   characters: [
     Candace,

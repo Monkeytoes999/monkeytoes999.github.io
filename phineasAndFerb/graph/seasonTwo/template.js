@@ -6,8 +6,8 @@ import "../../bits/globals.js";
 import { Bit } from "../../classes/bit.js";
 import { connectAll, groupConnections } from "../connectionHelpers.js";
 
-export const ep = new Episode({
-  number: 0,
+export const ep1 = new Episode({
+  number: 1,
   code: "",
   title: "",
   aPlot: "",

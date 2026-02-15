@@ -277,13 +277,15 @@ import {ep93} from "./graph/seasonTwo/ep93.js";
 import {ep94} from "./graph/seasonTwo/ep94.js";
 import {ep95} from "./graph/seasonTwo/ep95.js";
 import {ep96} from "./graph/seasonTwo/ep96.js";
+import {ep97} from "./graph/seasonTwo/ep97.js";
+import {ep98} from "./graph/seasonTwo/ep98.js";
+import {ep99} from "./graph/seasonTwo/ep99.js";
+import {ep100} from "./graph/seasonTwo/ep100.js";
 
-
-import { Adjacent, FarFarMorFletcher } from './characters/characterList.js';
 //#endregion
 
 var S1Episodes = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, ep10, ep11, ep12, ep13, ep14, ep15, ep16, ep17, ep18, ep19, ep20, ep21, ep22, ep23, ep24, ep25, ep26, ep27, ep28, ep29, ep30, ep31, ep32, ep33, ep34, ep35, ep36, ep37, ep38, ep39, ep40, ep41, ep42, ep43, ep44, ep45, ep46, ep47];
-var S2Episodes = [ep48, ep49, ep50, ep51, ep52, ep53, ep54, ep55, ep56, ep57, ep58, ep59, ep60, ep61, ep62, ep63, ep64, ep65, ep67, ep68, ep69, ep70, ep71, ep72, ep73, ep74, ep75, ep76, ep77, ep78, ep79, ep80, ep81, ep82, ep83, ep84, ep85, ep86, ep87, ep88, ep89, ep90, ep91, ep92, ep93, ep94, ep95, ep96];
+var S2Episodes = [ep48, ep49, ep50, ep51, ep52, ep53, ep54, ep55, ep56, ep57, ep58, ep59, ep60, ep61, ep62, ep63, ep64, ep65, ep67, ep68, ep69, ep70, ep71, ep72, ep73, ep74, ep75, ep76, ep77, ep78, ep79, ep80, ep81, ep82, ep83, ep84, ep85, ep86, ep87, ep88, ep89, ep90, ep91, ep92, ep93, ep94, ep95, ep96, ep97, ep98, ep99, ep100];
 
 var allEpisodes = [];
 allEpisodes = allEpisodes.concat(S1Episodes, S2Episodes);

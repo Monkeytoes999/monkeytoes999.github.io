@@ -243,6 +243,10 @@ declare global {
   const Vic: Character;
   const KP: Character;
   const GKP: Character;
+  const WindowSteve: Character;
+  const NewspaperSteve: Character;
+  const TadShaw: Character;
+  const Chad: Character;
   const Evander: Character;
   const dannyJacob: Character;
   const robbieWyckoff: Character;
@@ -263,6 +267,7 @@ declare global {
   const UnnamedPopTrio: Character;
   const BowlingForSoup: Character;
   const Zanzibar: Character;
+  const TinyCowboy: Character;
   const Ferbgor: Character;
   const Phineastein: Character;
   const Constance: Character;

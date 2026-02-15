@@ -206,7 +206,7 @@ export const Wexler = new Character("Dr. Llyod Wexler", "Wexler", "Wexler", "Evi
 export const Rodney = new Character("Aloyse Everheart Elizabeth Otto Wolfgang Hypatia Galen Gary Copper von Roddenstein", "Rodney", "Rodney", "Evil", "#087d26");
 export const Diminutive = new Character("Dr. Diminutive", "Diminutive", "Dr. Diminutive", "Evil", "#FFFFFF");
 export const Wormwood = new Character("Ethyl Wormwood", "Wormwood", "[Dr.] Wormwood", "Evil", "#b43e3e");
-export const Bloodpudding = new Character("Dr. [Ethyl Espionaget] Bloodpudding", "Bloodpudding", "Dr. Bloodpudding", "Evil", "#943208");
+export const Bloodpudding = new Character("Dr. [Fraud Espionaget] Bloodpudding", "Bloodpudding", "Dr. Bloodpudding", "Evil", "#943208");
 export const Montgomery = new Character("Mad Montgomery", "Montgomery", "Montgomery", "Evil", "#97d8c2");
 export const Stabby = new Character("Dr. Stabby Stubble", "Stabby", "Dr. Stabby Stubble", "Evil", "#c66b43");
 export const Scotterson = new Character("Professor Pete Scotterson", "Scotterson", "Scotterson", "Evil", "#edeacb");
@@ -280,6 +280,10 @@ export const Garrbagg = new Character("Garr-bagg", "Garbagg", "Gar-bagg", "OneOf
 export const Vic = new Character("Vic", "Vic", "Vic", "OneOff", "#74ccc8");
 export const KP = new Character("Khaka Peü Peü", "KP", "Khaka Peü Peü", "OneOff", "#ce18ac");
 export const GKP = new Character("Gustav Khaka Peü Peü", "GKP", "Gustav Peü Peü", "OneOff", "#2a0222");
+export const WindowSteve = new Character("[Window] Steve", "WindowSteve", "Steve", "OneOff", "#4f88a7");
+export const NewspaperSteve = new Character("[Newspaper] Steve", "NewspaperSteve", "Steve", "OneOff", "#105511");
+export const TadShaw = new Character("Tad Shaw", "TadShaw", "Tad", "OneOff", "#ea6912");
+export const Chad = new Character("Chad", "Chad", "Chad", "OneOff", "#a04508");
 //#endregion
 
 //#region Random real-world cameo people
@@ -307,6 +311,7 @@ export const GuyzNtheParque = new Character("2 Guys N the Parque", "GuyzNtheParq
 export const UnnamedPopTrio = new Character("Unnamed Pop Trio", "UnnamedPopTrio", "Unnamed Pop Trio", "BandGroupSets", "#0e5f25");
 export const BowlingForSoup = new Character("Bowling For Soup", "BowlingForSoup", "Bowling For Soup", "BandGroupSets", "#c52323")
 export const Zanzibar = new Character("Zanzibar", "Zanzibar", "Zanzibar", "BandGroupSets", "#de3cb8")
+export const TinyCowboy = new Character("Tiny Cowboy", "TinyCowboy", "Tiny Cowboy", "BandGroupSets", "#FFFFFF");
 //#endregion
 
 //#region Alt. Versions [NOT 2nd DIMENSION]
