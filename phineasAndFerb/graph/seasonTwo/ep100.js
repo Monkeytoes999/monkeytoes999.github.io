@@ -29,7 +29,6 @@ export const ep100 = new Episode({
     Bimmany
   ],
   interactions: [
-    // connectAll([Isabella, Milly, Holly, Gretchen, Adyson, Katie, Ginger], 6),
     connectAll([Phineas, Ferb, Isabella, Irving, Candace, Albert], 6),
     connectAll([Albert, Irving, GFBH, Bimmany], 1),
     connectAll([Phineas, Ferb, Linda, Candace], 6),

@@ -111,8 +111,17 @@ Isabella.addFamily(Pinky);
 
 Stacy.addFamily(Ginger);
 Stacy.addFamily(Hirano);
+Stacy.addFamily(StacyCousins);
+Stacy.addFamily(Bāchan);
 
 Ginger.addFamily(Hirano);
+Ginger.addFamily(StacyCousins);
+Ginger.addFamily(Bāchan);
+
+Hirano.addFamily(StacyCousins);
+Hirano.addFamily(Bāchan);
+
+StacyCousins.addFamily(Bāchan);
 
 Jeremy.addFamily(Johnson);
 Jeremy.addFamily(Suzy);
@@ -150,8 +159,10 @@ Lily.addFamily(Tilly);
 
 Django.addFamily(Beppo);
 Django.addFamily(Jenny);
+Django.addFamily(Sarah);
 
 Jenny.addFamily(Beppo);
+Jenny.addFamily(Sarah);
 
 Farmer.addFamily(FarmerWife);
 
@@ -161,9 +172,11 @@ Buford.addFamily(Adjacent);
 Baljeet.addFamily(MrsTjinder);
 Baljeet.addFamily(UncleMaulik);
 Baljeet.addFamily(UncleKamal);
+Baljeet.addFamily(UncleSabu);
 
 MrsTjinder.addFamily(UncleMaulik);
 MrsTjinder.addFamily(UncleKamal);
+MrsTjinder.addFamily(UncleSabu);
 
 Orville.addFamily(Wilbur);
 
@@ -281,11 +294,23 @@ import {ep97} from "./graph/seasonTwo/ep97.js";
 import {ep98} from "./graph/seasonTwo/ep98.js";
 import {ep99} from "./graph/seasonTwo/ep99.js";
 import {ep100} from "./graph/seasonTwo/ep100.js";
+import {ep101} from "./graph/seasonTwo/ep101.js";
+import {ep102} from "./graph/seasonTwo/ep102.js";
+import {ep103} from "./graph/seasonTwo/ep103.js";
+import {ep104} from "./graph/seasonTwo/ep104.js";
+import {ep105} from "./graph/seasonTwo/ep105.js";
+import {ep106} from "./graph/seasonTwo/ep106.js";
+import {ep107} from "./graph/seasonTwo/ep107.js";
+import {ep108} from "./graph/seasonTwo/ep108.js";
+import {ep109} from "./graph/seasonTwo/ep109.js";
+import {ep110} from "./graph/seasonTwo/ep110.js";
+import {ep111} from "./graph/seasonTwo/ep111.js";
+
 
 //#endregion
 
 var S1Episodes = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, ep10, ep11, ep12, ep13, ep14, ep15, ep16, ep17, ep18, ep19, ep20, ep21, ep22, ep23, ep24, ep25, ep26, ep27, ep28, ep29, ep30, ep31, ep32, ep33, ep34, ep35, ep36, ep37, ep38, ep39, ep40, ep41, ep42, ep43, ep44, ep45, ep46, ep47];
-var S2Episodes = [ep48, ep49, ep50, ep51, ep52, ep53, ep54, ep55, ep56, ep57, ep58, ep59, ep60, ep61, ep62, ep63, ep64, ep65, ep67, ep68, ep69, ep70, ep71, ep72, ep73, ep74, ep75, ep76, ep77, ep78, ep79, ep80, ep81, ep82, ep83, ep84, ep85, ep86, ep87, ep88, ep89, ep90, ep91, ep92, ep93, ep94, ep95, ep96, ep97, ep98, ep99, ep100];
+var S2Episodes = [ep48, ep49, ep50, ep51, ep52, ep53, ep54, ep55, ep56, ep57, ep58, ep59, ep60, ep61, ep62, ep63, ep64, ep65, ep67, ep68, ep69, ep70, ep71, ep72, ep73, ep74, ep75, ep76, ep77, ep78, ep79, ep80, ep81, ep82, ep83, ep84, ep85, ep86, ep87, ep88, ep89, ep90, ep91, ep92, ep93, ep94, ep95, ep96, ep97, ep98, ep99, ep100, ep101, ep102, ep103, ep104, ep105, ep106, ep107, ep108, ep109, ep110, ep111];
 
 var allEpisodes = [];
 allEpisodes = allEpisodes.concat(S1Episodes, S2Episodes);

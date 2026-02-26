@@ -38,7 +38,6 @@ export const ep99 = new Episode({
     DoofMom
   ],
   interactions: [
-    // connectAll([Isabella, Milly, Holly, Gretchen, Adyson, Katie, Ginger], 6),
     connectAll([Phineas, Ferb, Buford, Isabella, Baljeet, Candace], 6),
     connectAll([Candace, Stacy, Baljeet], 6),
     connectAll([Candace, Stacy, Baljeet, Chalk], 1),
