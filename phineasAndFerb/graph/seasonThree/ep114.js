@@ -1,0 +1,98 @@
+import "../../characters/globals.js";
+import { Episode } from "../../classes/episode.js";
+import { Song } from "../../classes/song.js";
+import { Connection } from "../../classes/connection.js";
+import "../../bits/globals.js";
+import { Bit } from "../../classes/bit.js";
+import { connectAll, groupConnections } from "../connectionHelpers.js";
+
+export const ep114 = new Episode({
+  number: 114,
+  code: "301a",
+  title: "Run Candace, Run",
+  aPlot: "Speed boots",
+  bPlot: "Don't let house be sold",
+  songs: [new Song("Run, Candace, Run", [dannyJacob, lCPowell])],
+  characters: [
+    Phineas,
+    Ferb,
+    Candace,
+    Jeremy,
+    Linda,
+    Stacy,
+    Perry,
+    Monogram,
+    Doof,
+    Charlene,
+    Tilly,
+    Lily,
+    Sarah,
+    Terrance,
+    Kris,
+    DumbassGinger,
+    Gerez,
+    Coltrane,
+    Pedro,
+    MoMo,
+    Greg,
+    Kris,
+    Balthazar,
+    Sam,
+    Dimitri,
+    Chaw,
+    JackJohnson,
+    Hildegard,
+    Anabelle,
+    Elaine,
+    Chalk,
+    Logan,
+    Sassy,
+    Arlene,
+    Charley,
+  ],
+  interactions: [
+    // connectAll([Isabella, Milly, Holly, Gretchen, Adyson, Katie, Ginger], 6),
+    // connectAll([Perry, Monogram, Carl], 6),
+    connectAll([Phineas, Ferb, Linda, Candace], 6),
+    connectAll([Sarah, Terrance, Kris, DumbassGinger, Gerez, Coltrane], 1),
+    connectAll([Pedro, MoMo, Greg, Coltrane], 1),
+    connectAll([DumbassGinger, Terrance, Dimitri, Pedro, Sam, Chaw], 1),
+    connectAll([Jeremy, Johnson, JackJohnson, Suzy, Candace], 6),
+    connectAll([Candace, Jeremy, Hildegard], 6),
+    connectAll([Dimitri, Chalk], 1),
+    connectAll([Sam, Greg, Sassy, MoMo, DumbassGinger, Balthazar, Logan, Chalk, Terrance, Pedro], 1),
+    connectAll([Sam, Hildegard, Anabelle, JackJohnson], 6),
+
+    groupConnections([Perry], [Doof, Monogram], 6),
+    groupConnections([Ferb], [Jeremy, Perry], 2),
+    groupConnections([Phineas], [Perry, Jeremy], 4),
+    groupConnections([Candace], [Stacy, Jeremy, Sally], 6),
+    groupConnections([Monogram], [Doof, Charlene], 4),
+    groupConnections([Sarah, Terrance, Kris, DumbassGinger, Gerez, Coltrane, Pedro, MoMo, Greg], [Phineas], 3),
+    groupConnections([Balthazar], [Linda, Candace], 3),
+    groupConnections([Dimitri, Chalk], [Jeremy, Candace], 3),
+    groupConnections([Dimitri, Terrance], [Candace, Jeremy, JackJohnson], 3),
+    groupConnections([Lily], [Suzy, Candace, Jeremy], 3),
+    groupConnections([Anabelle], [Candace, Doof], 6),
+    groupConnections([Gerez, Terrance, DumbassGinger, Elaine], [Candace, Anabelle], 3),
+
+    new Connection(Gerez, Anabelle, 4),
+    new Connection(Kris, Candace, 3),
+    new Connection(DumbassGinger, Hildegard, 3),
+    new Connection(Gerez, Candace, 4),
+    new Connection(Elaine, Gerez, 3),
+    new Connection(Dimitri, Chalk, 1),
+    new Connection(Doof, Charlene, 6),
+    new Connection(Perry, Charlene, 4),
+    new Connection(Perry, Doof, 6),
+    new Connection(Tilly, Lily, 6),
+    new Connection(Suzy, Hildegard, 6),
+    new Connection(Perry, Anabelle, 3),
+  ],
+  bits: [gonnaDo],
+  ferbLines: 0,
+});
+
+//#region Bit Handler
+gonnaDo.addAppearance(ep114, Phineas);
+//#endregion

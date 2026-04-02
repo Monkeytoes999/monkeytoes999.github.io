@@ -61,6 +61,10 @@ declare global {
   const StacyCousins: Character;
   const Bāchan: Character;
   const UncleSabu: Character;
+  const JackJohnson: Character;
+  const Anabelle: Character;
+  const Gretel: Character;
+  const Jose: Character;
   const BEngineer: Character;
   const Construction: Character;
   const Dave: Character;
@@ -122,6 +126,8 @@ declare global {
   const Gartanial: Character;
   const Chaw: Character;
   const Chalk: Character;
+  const Velvet: Character;
+  const Ruby: Character;
   const Beehive: Character;
   const FishingHat: Character;
   const Lily: Character;
@@ -141,6 +147,7 @@ declare global {
   const MoMo: Character;
   const Arlene: Character;
   const Charles: Character;
+  const Parlet: Character;
   const AgentBear: Character;
   const AgentBulldog: Character;
   const AgentChicken: Character;
@@ -170,6 +177,7 @@ declare global {
   const AgentReindeer: Character;
   const AgentSnail: Character;
   const AgentSquirrel: Character;
+  const AgentTurtle: Character;
   const AgentWorm: Character;
   const AgentWhale: Character;
   const Acronym: Character;
@@ -263,8 +271,16 @@ declare global {
   const Elrik: Character;
   const Baldegunde: Character;
   const Guiserblint: Character;
+  const Glenda: Character;
+  const Squint: Character;
+  const Reynolds: Character;
+  const Tykera: Character;
+  const NavyDavy: Character;
+  const Fonzworth: Character;
   const Evander: Character;
   const Laird: Character;
+  const Tabitha: Character;
+  const Oliver: Character;
   const BowlingForSoup: Character;
   const ClayAiken: Character;
   const ChakaKhan: Character;
@@ -284,12 +300,14 @@ declare global {
   const bigBadVoodooDaddy: Character;
   const carmenCarter: Character;
   const darrylPhinnessee: Character;
+  const aaronJacob: Character;
   const AndrewsSisters: Character;
   const GuyzNtheParque: Character;
   const UnnamedPopTrio: Character;
   const Zanzibar: Character;
   const TinyCowboy: Character;
   const PaisleySideburnBrothers: Character;
+  const DRSV: Character;
   const Ferbgor: Character;
   const Phineastein: Character;
   const Constance: Character;

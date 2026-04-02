@@ -143,17 +143,33 @@ Doof.addFamily(Charlene);
 Doof.addFamily(Jekyll);
 Doof.addFamily(UncleFluffyPants);
 Doof.addFamily(DoofUncleJustin);
+Doof.addFamily(Gretel);
+Doof.addFamily(Jose);
 
 Vanessa.addFamily(Roger);
 Vanessa.addFamily(Charlene);
+
+Roger.addFamily(DoofDad);
+Roger.addFamily(DoofMom);
+Roger.addFamily(Charlene);
+Roger.addFamily(Jekyll);
+Roger.addFamily(UncleFluffyPants);
+Roger.addFamily(DoofUncleJustin);
+Roger.addFamily(Gretel);
+Roger.addFamily(Jose);
 
 DoofDad.addFamily(DoofMom);
 DoofDad.addFamily(Jekyll);
 DoofDad.addFamily(UncleFluffyPants);
 DoofDad.addFamily(DoofUncleJustin);
+DoofDad.addFamily(Jose);
+DoofDad.addFamily(Gretel);
 
 DoofMom.addFamily(UncleFluffyPants);
 DoofMom.addFamily(DoofUncleJustin);
+DoofMom.addFamily(Jose);
+
+Jose.addFamily(Gretel);
 
 Lily.addFamily(Tilly);
 
@@ -179,6 +195,10 @@ MrsTjinder.addFamily(UncleKamal);
 MrsTjinder.addFamily(UncleSabu);
 
 Orville.addFamily(Wilbur);
+Orville.addFamily(Glenda);
+
+Wilbur.addFamily(Glenda);
+
 
 KP.addFamily(GKP);
 
@@ -305,15 +325,31 @@ import {ep108} from "./graph/seasonTwo/ep108.js";
 import {ep109} from "./graph/seasonTwo/ep109.js";
 import {ep110} from "./graph/seasonTwo/ep110.js";
 import {ep111} from "./graph/seasonTwo/ep111.js";
+// import {ep112} from "./graph/seasonTwo/ep112.js";
+import {ep113} from "./graph/seasonTwo/ep113.js";
 
+import {ep114} from "./graph/seasonThree/ep114.js";
+import {ep115} from "./graph/seasonThree/ep115.js";
+import {ep116} from "./graph/seasonThree/ep116.js";
+import {ep117} from "./graph/seasonThree/ep117.js";
+import {ep118} from "./graph/seasonThree/ep118.js";
+import {ep119} from "./graph/seasonThree/ep119.js";
+import {ep120} from "./graph/seasonThree/ep120.js";
+import {ep121} from "./graph/seasonThree/ep121.js";
+import {ep122} from "./graph/seasonThree/ep122.js";
+import {ep123} from "./graph/seasonThree/ep123.js";
+import {ep124} from "./graph/seasonThree/ep124.js";
+import {ep125} from "./graph/seasonThree/ep125.js";
+import {ep126} from "./graph/seasonThree/ep126.js";
 
 //#endregion
 
 var S1Episodes = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, ep10, ep11, ep12, ep13, ep14, ep15, ep16, ep17, ep18, ep19, ep20, ep21, ep22, ep23, ep24, ep25, ep26, ep27, ep28, ep29, ep30, ep31, ep32, ep33, ep34, ep35, ep36, ep37, ep38, ep39, ep40, ep41, ep42, ep43, ep44, ep45, ep46, ep47];
-var S2Episodes = [ep48, ep49, ep50, ep51, ep52, ep53, ep54, ep55, ep56, ep57, ep58, ep59, ep60, ep61, ep62, ep63, ep64, ep65, ep67, ep68, ep69, ep70, ep71, ep72, ep73, ep74, ep75, ep76, ep77, ep78, ep79, ep80, ep81, ep82, ep83, ep84, ep85, ep86, ep87, ep88, ep89, ep90, ep91, ep92, ep93, ep94, ep95, ep96, ep97, ep98, ep99, ep100, ep101, ep102, ep103, ep104, ep105, ep106, ep107, ep108, ep109, ep110, ep111];
+var S2Episodes = [ep48, ep49, ep50, ep51, ep52, ep53, ep54, ep55, ep56, ep57, ep58, ep59, ep60, ep61, ep62, ep63, ep64, ep65, ep67, ep68, ep69, ep70, ep71, ep72, ep73, ep74, ep75, ep76, ep77, ep78, ep79, ep80, ep81, ep82, ep83, ep84, ep85, ep86, ep87, ep88, ep89, ep90, ep91, ep92, ep93, ep94, ep95, ep96, ep97, ep98, ep99, ep100, ep101, ep102, ep103, ep104, ep105, ep106, ep107, ep108, ep109, ep110, ep111, ep113];
+var S3Episodes = [ep114, ep115, ep116, ep117, ep118, ep119, ep120, ep121, ep122, ep123, ep124, ep125, ep126];
 
 var allEpisodes = [];
-allEpisodes = allEpisodes.concat(S1Episodes, S2Episodes);
+allEpisodes = allEpisodes.concat(S1Episodes, S2Episodes, S3Episodes);
 
 export function PackNMap(unpackedEpisodes=allEpisodes, familyConnections=true, onlyDirect=false) {
   //#region Packaging
