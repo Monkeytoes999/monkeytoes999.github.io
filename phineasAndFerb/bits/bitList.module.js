@@ -21,3 +21,4 @@ export const fthWall = new Bit("Some kind of very explicit 4th wall break");
 export const isOUT = new Bit("Candace Flynn is out. PEACE!");
 export const themeSong = new Bit("Something from the theme song.", false);
 export const panicRoom = new Bit("The Panic Room", false);
+export const mysteriousForce = new Bit("Some Mysterious Force");

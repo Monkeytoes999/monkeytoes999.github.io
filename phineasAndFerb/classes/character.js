@@ -88,7 +88,16 @@ export class Character {
                 this.backgroundColor = "#fff56d";
                 break;
             case ("Frankenstein"):
-                this.backgroundColor = "#504632" //PF2 as Hex. Change if better system found.
+                this.backgroundColor = "#46524B"; //FRK as Hex. Change if better system found.
+                break;
+            case ("StoneAge"):
+                this.backgroundColor = "#535441"; //STA
+                break;
+            case ("MingDynasty"):
+                this.backgroundColor = "#4D4459"; //MDY
+                break;
+            case ("2D"):
+                this.backgroundColor = "#1051dc";
                 break;
         }
     }

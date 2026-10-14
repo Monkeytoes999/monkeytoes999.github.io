@@ -37,6 +37,14 @@ Ferb.addFamily(Tiana);
 Ferb.addFamily(Webber);
 Ferb.addFamily(UncleAngus);
 Ferb.addFamily(AuntMora);
+Ferb.addFamily(Adrian);
+Ferb.addFamily(Lucy);
+Ferb.addFamily(Beckham1);
+Ferb.addFamily(Beckham2);
+Ferb.addFamily(Beckham3);
+Ferb.addFamily(Pele1);
+Ferb.addFamily(Pele2);
+Ferb.addFamily(Eliza);
 
 Candace.addFamily(Linda);
 Candace.addFamily(Lawrence);
@@ -75,6 +83,49 @@ Lawrence.addFamily(Tiana);
 Lawrence.addFamily(Webber);
 Lawrence.addFamily(UncleAngus);
 Lawrence.addFamily(AuntMora);
+Lawrence.addFamily(Adrian);
+Lawrence.addFamily(Lucy);
+Lawrence.addFamily(Beckham1);
+Lawrence.addFamily(Beckham2);
+Lawrence.addFamily(Beckham3);
+Lawrence.addFamily(Pele1);
+Lawrence.addFamily(Pele2);
+Lawrence.addFamily(Eliza);
+
+Adrian.addFamily(Lucy);
+Adrian.addFamily(Beckham1);
+Adrian.addFamily(Beckham2);
+Adrian.addFamily(Beckham3);
+Adrian.addFamily(Pele1);
+Adrian.addFamily(Pele2);
+Adrian.addFamily(Eliza);
+
+Lucy.addFamily(Beckham1);
+Lucy.addFamily(Beckham2);
+Lucy.addFamily(Beckham3);
+Lucy.addFamily(Pele1);
+Lucy.addFamily(Pele2);
+Lucy.addFamily(Eliza);
+
+Beckham1.addFamily(Beckham2);
+Beckham1.addFamily(Beckham3);
+Beckham1.addFamily(Pele1);
+Beckham1.addFamily(Pele2);
+Beckham1.addFamily(Eliza);
+
+Beckham2.addFamily(Beckham3);
+Beckham2.addFamily(Pele1);
+Beckham2.addFamily(Pele2);
+Beckham2.addFamily(Eliza);
+
+Beckham3.addFamily(Pele1);
+Beckham3.addFamily(Pele2);
+Beckham3.addFamily(Eliza);
+
+Pele1.addFamily(Pele2);
+Pele1.addFamily(Eliza);
+
+Pele2.addFamily(Eliza);
 
 Perry.addFamily(Clyde);
 Perry.addFamily(BettyJo);
@@ -145,6 +196,7 @@ Doof.addFamily(UncleFluffyPants);
 Doof.addFamily(DoofUncleJustin);
 Doof.addFamily(Gretel);
 Doof.addFamily(Jose);
+Doof.addFamily(GertrudeDoof);
 
 Vanessa.addFamily(Roger);
 Vanessa.addFamily(Charlene);
@@ -157,6 +209,7 @@ Roger.addFamily(UncleFluffyPants);
 Roger.addFamily(DoofUncleJustin);
 Roger.addFamily(Gretel);
 Roger.addFamily(Jose);
+Roger.addFamily(GertrudeDoof);
 
 DoofDad.addFamily(DoofMom);
 DoofDad.addFamily(Jekyll);
@@ -164,10 +217,12 @@ DoofDad.addFamily(UncleFluffyPants);
 DoofDad.addFamily(DoofUncleJustin);
 DoofDad.addFamily(Jose);
 DoofDad.addFamily(Gretel);
+DoofDad.addFamily(GertrudeDoof);
 
 DoofMom.addFamily(UncleFluffyPants);
 DoofMom.addFamily(DoofUncleJustin);
 DoofMom.addFamily(Jose);
+DoofMom.addFamily(GertrudeDoof);
 
 Jose.addFamily(Gretel);
 
@@ -186,19 +241,38 @@ Buford.addFamily(Biffany);
 Buford.addFamily(Adjacent);
 
 Baljeet.addFamily(MrsTjinder);
+Baljeet.addFamily(MrTjinder);
 Baljeet.addFamily(UncleMaulik);
 Baljeet.addFamily(UncleKamal);
 Baljeet.addFamily(UncleSabu);
 
+MrsTjinder.addFamily(MrTjinder);
 MrsTjinder.addFamily(UncleMaulik);
 MrsTjinder.addFamily(UncleKamal);
 MrsTjinder.addFamily(UncleSabu);
+
+MrTjinder.addFamily(UncleSabu);
+MrTjinder.addFamily(UncleMaulik);
+MrTjinder.addFamily(UncleKamal);
 
 Orville.addFamily(Wilbur);
 Orville.addFamily(Glenda);
 
 Wilbur.addFamily(Glenda);
 
+Phinabunk.addFamily(Gerb);
+Phinabunk.addFamily(Cantok);
+Phinabunk.addFamily(Mog);
+Phinabunk.addFamily(Da);
+
+Gerb.addFamily(Cantok);
+Gerb.addFamily(Mog);
+Gerb.addFamily(Da);
+
+Cantok.addFamily(Mog);
+Cantok.addFamily(Da);
+
+Mog.addFamily(Da);
 
 KP.addFamily(GKP);
 
@@ -206,6 +280,26 @@ Irving.addFamily(Albert);
 Irving.addFamily(MrsDuBois);
 
 Albert.addFamily(MrsDuBois);
+
+Phineas2D.addFamily(Ferb2D);
+Phineas2D.addFamily(Candace2D);
+Phineas2D.addFamily(Perry2D);
+Phineas2D.addFamily(Linda2D);
+Phineas2D.addFamily(Lawrence2D);
+
+Ferb2D.addFamily(Candace2D);
+Ferb2D.addFamily(Perry2D);
+Ferb2D.addFamily(Linda2D);
+Ferb2D.addFamily(Lawrence2D);
+
+Candace2D.addFamily(Perry2D);
+Candace2D.addFamily(Linda2D);
+Candace2D.addFamily(Lawrence2D);
+
+Perry2D.addFamily(Linda2D);
+Perry2D.addFamily(Lawrence2D);
+
+Linda2D.addFamily(Lawrence2D);
 
 //I'm not doing the future kids, except to each other.
 Xavier.addFamily(Amanda);
@@ -341,12 +435,25 @@ import {ep123} from "./graph/seasonThree/ep123.js";
 import {ep124} from "./graph/seasonThree/ep124.js";
 import {ep125} from "./graph/seasonThree/ep125.js";
 import {ep126} from "./graph/seasonThree/ep126.js";
+import {ep127} from "./graph/seasonThree/ep127.js";
+import {ep128} from "./graph/seasonThree/ep128.js";
+import {ep129} from "./graph/seasonThree/ep129.js";
+import {ep130} from "./graph/seasonThree/ep130.js";
+import {ep131} from "./graph/seasonThree/ep131.js";
+import {ep132} from "./graph/seasonThree/ep132.js";
+import {ep133} from "./graph/seasonThree/ep133.js";
+import {ep134} from "./graph/seasonThree/ep134.js";
+import {ep135} from "./graph/seasonThree/ep135.js";
+import {ep136} from "./graph/seasonThree/ep136.js";
+import {ep137} from "./graph/seasonThree/ep137.js";
 
+
+import {firstMovie} from "./graph/movies/firstMovie.js";
 //#endregion
 
 var S1Episodes = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, ep10, ep11, ep12, ep13, ep14, ep15, ep16, ep17, ep18, ep19, ep20, ep21, ep22, ep23, ep24, ep25, ep26, ep27, ep28, ep29, ep30, ep31, ep32, ep33, ep34, ep35, ep36, ep37, ep38, ep39, ep40, ep41, ep42, ep43, ep44, ep45, ep46, ep47];
 var S2Episodes = [ep48, ep49, ep50, ep51, ep52, ep53, ep54, ep55, ep56, ep57, ep58, ep59, ep60, ep61, ep62, ep63, ep64, ep65, ep67, ep68, ep69, ep70, ep71, ep72, ep73, ep74, ep75, ep76, ep77, ep78, ep79, ep80, ep81, ep82, ep83, ep84, ep85, ep86, ep87, ep88, ep89, ep90, ep91, ep92, ep93, ep94, ep95, ep96, ep97, ep98, ep99, ep100, ep101, ep102, ep103, ep104, ep105, ep106, ep107, ep108, ep109, ep110, ep111, ep113];
-var S3Episodes = [ep114, ep115, ep116, ep117, ep118, ep119, ep120, ep121, ep122, ep123, ep124, ep125, ep126];
+var S3Episodes = [ep114, ep115, ep116, ep117, ep118, ep119, ep120, ep121, ep122, ep123, ep124, ep125, ep126, ep127, ep128, ep129, ep130, ep131, ep132, firstMovie, ep133, ep134, ep135, ep136, ep137];
 
 var allEpisodes = [];
 allEpisodes = allEpisodes.concat(S1Episodes, S2Episodes, S3Episodes);

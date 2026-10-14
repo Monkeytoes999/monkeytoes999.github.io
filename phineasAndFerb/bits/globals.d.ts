@@ -22,5 +22,6 @@ declare global {
   const isOUT: Bit;
   const themeSong: Bit;
   const panicRoom: Bit;
+  const mysteriousForce: Bit;
 }
 export {};

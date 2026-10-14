@@ -3,7 +3,7 @@ import { Character } from "../classes/character.js";
 export const Phineas = new Character("Phineas Flynn", "Phineas", "Phineas", "Flynn-Fletcher", "#FF0000");
 export const Ferb = new Character("Ferb Fletcher", "Ferb", "Ferb", "Flynn-Fletcher", "#104110");
 export const Candace = new Character("Candace Flynn", "Candace", "Candace", "Flynn-Fletcher", "#cb6c00");
-export const Linda = new Character("Linda Flynn-Fletcher", "Linda", "Linda", "Flynn-Fletcher", "#FF0000");
+export const Linda = new Character("Linda Flynn-Fletcher", "Linda", "Linda", "Flynn-Fletcher", "#c4510e");
 export const Lawrence = new Character("Lawrence Fletcher", "Lawrence", "Lawrence", "Flynn-Fletcher", "#FF0000");
 export const Perry = new Character("Perry the Platypus", "Perry", "Perry", "Flynn-Fletcher", "#1fd0bb");
 //#endregion
@@ -19,7 +19,7 @@ export const Irving = new Character("Irving Du Bois", "Irving", "Irving", "Gang"
 //#region B Plot
 export const Carl = new Character("Carl Karl", "Carl", "Carl", "B-Plot", "#FF0000");
 export const Doof = new Character("Dr. Heinz Doofenshmirtz", "Doof", "Doof", "B-Plot", "#b9b3b3");
-export const Monogram = new Character("Major Francis Monogram", "Monogram", "Monogram", "B-Plot", "#FF0000");
+export const Monogram = new Character("Major Francis Monogram", "Monogram", "Monogram", "B-Plot", "#e6e6e6");
 export const Vanessa = new Character("Vanessa Doofenshmirtz", "Vanessa", "Vanessa", "B-Plot", "#000000");
 export const Roger = new Character("Roger Doofenshmirtz", "Roger", "Roger", "B-Plot", "#245732");
 export const Norm = new Character("Norm", "Norm", "Norm", "B-Plot", "#1a1c44");
@@ -80,6 +80,19 @@ export const JackJohnson = new Character("Jack Johnson", "JackJohnson", "Jack Jo
 export const Anabelle = new Character("Anabelle [Johnson]", "Anabelle", "Anabelle Johnson", "Family", "#174b93");
 export const Gretel = new Character("Gretel Doofenshmirtz", "Gretel", "Gretel Doofenshmirtz", "Family", "#e66262");
 export const Jose = new Character("José Doofenshmirtz", "Jose", "José Doofenshmirtz", "Family", "#e66262");
+export const OrvilleRod = new Character("Orville von Roddenstein", "OrvilleRod", "Orville", "Family", "#a07326");
+export const BaljeetsGreatGrandfather = new Character("Baljeets Great-Grandfather", "BaljeetsGreatGrandfather", "Baljeet's FarFarFar", "Family", "#8ebe7e");
+export const BaljeetsGrandfather = new Character("Baljeets Grandfather", "BaljeetsGrandfather", "Baljeet's FarFar", "Family", "#90ba82");
+export const MrTjinder = new Character("Mr. Tjinder", "MrTjinder", "Mr. Tjinder", "Family", "#bddb2b");
+export const GertrudeDoof = new Character("Gertrude Zupermultienator Doofenshmirtz", "GetrudeDoof", "Gertrude Doofenshmirtz", "Family", "#077046");
+export const Adrian = new Character("Adrian Fletcher", "Adrian", "Adrian", "Family", "#90ea7e");
+export const Lucy = new Character("Lucy Fletcher", "Lucy", "Lucy", "Family", "#e8df61");
+export const Beckham1 = new Character("Beckham Fletcher", "Beckham1", "Beckham", "Family", "#1f742d");
+export const Beckham2 = new Character("Beckham Fletcher", "Beckham2", "Beckham", "Family", "#979760");
+export const Beckham3 = new Character("Beckham Fletcher", "Beckham3", "Beckham", "Family", "#0e4273");
+export const Pele1 = new Character("Pele Fletcher", "Pele1", "Pele", "Family", "#af0707");
+export const Pele2 = new Character("Pele Fletcher", "Pele2", "Pele", "Family", "#692020");
+export const Eliza = new Character("Eliza Fletcher", "Eliza", "Eliza", "Family", "#5a2a06");
 //#endregion
 
 //#region Recurring
@@ -224,6 +237,10 @@ export const Bloodpudding = new Character("Dr. [Fraud Espionaget] Bloodpudding",
 export const Montgomery = new Character("Mad Montgomery", "Montgomery", "Montgomery", "Evil", "#97d8c2");
 export const Stabby = new Character("Dr. Stabby Stubble", "Stabby", "Dr. Stabby Stubble", "Evil", "#c66b43");
 export const Scotterson = new Character("Professor Pete Scotterson", "Scotterson", "Scotterson", "Evil", "#edeacb");
+export const Irksome = new Character("Ingrid Irksome", "Irksome", "Ingrid Irksome", "Evil", "#470404")
+export const Hornswaggle = new Character("Dr. Hornswaggle", "Hornswaggle", "Dr. Hornswaggle", "Evil", "#5d5a5a");
+export const Bringdown = new Character("Dr. David Bringdown", "Bringdown", "Dr. Bringdown", "Evil", "#ec7921");
+export const OtherEvilDavid = new Character("David [L.O.V.E. M.U.F.F.I.N.]", "OtherEvilDavid", "David", "Evil", "#053b15");
 
 export const Poofenplotz = new Character("Professor Esmeralda Poofenplotz", "Poofenplotz", "Professor Poofenplotz", "Evil", "#ca4ea3");
 
@@ -235,7 +252,7 @@ export const ParkRanger = new Character("Rushmore Park Ranger", "ParkRanger", "P
 export const Oga = new Character("Oga", "Oga", "Oga", "OneOff", "#bbec96");
 export const Bobby = new Character("Bobby Nelson", "Bobby", "Bobby Nelson", "OneOff", "#b50a93");
 export const DD = new Character("Derek Dukensson", "DD", "D.D.", "OneOff", "#FF0000");
-export const Baxter = new Character("Ben Baxter of Huge-O-Records", "Baxter", "Ben", "OneOff", "#94690b");
+export const Baxter = new Character("Ben Baxter of Huge-O-Records", "Baxter", "Ben Baxter", "OneOff", "#94690b");
 export const ProducerGuy = new Character("Film Producer", "ProducerGuy", "Producer", "OneOff", "#857f35");
 export const Feelbetter = new Character("Dr. Feelbetter", "Feelbetter", "Dr. Feelbetter", "OneOff", "#e87b06");
 export const HDHStoreClerk = new Character("Candace's Boss at Har-D-Har", "HDHStoreClerk", "Har-D-Har Store Clerk", "OneOff", "#f73939ff");
@@ -314,6 +331,13 @@ export const Reynolds = new Character("Al Reynolds", "Reynolds", "Al Reynolds", 
 export const Tykera = new Character("Tykera Kwok", "Tykera", "Tykera Kwok", "OneOff", "#FFFFFF");
 export const NavyDavy = new Character("Davy [from the Navy]", "NavyDavy", "Davy", "OneOff", "#FFFFFF");
 export const Fonzworth = new Character("Professor Herbert Fonzworth Weatherman Jones", "Fonzworth", "Professor Jones", "OneOff", "#088a13");
+export const RossEforp = new Character("Professor Ross Eforp", "RossEforp", "Ross Eforp", "OneOff", "#ccda54");
+export const Nostrils = new Character("The Nostrils", "Nostrils", "Nostrils", "OneOff", "#336a0b");
+export const JohnnyChild = new Character("Johnny", "JohnnyChild", "Johnny", "OneOff", "#14a005");
+export const Anne = new Character("Anne", "Anne", "Anne", "OneOff", "#58a7cc");
+export const Sunisa = new Character("Sunisa", "Sunisa", "Sunisa", "OneOff", "#d22174");
+export const Danielle = new Character("Danielle", "Danielle", "Danielle", "OneOff", "#72087b");
+export const TomTotally = new Character("Tom Totally", "TomTotally", "Tom Totally", "OneOff", "#b60c0c");
 //#endregion
 
 //#region Random real-world cameo people
@@ -321,19 +345,23 @@ export const Evander = new Character("Evander Holyfield", "Evander", "Evander", 
 export const Laird = new Character("Laird Hamilton", "Laird", "Laird", "Cameos", "#2ed5ca");
 export const Tabitha = new Character("Tabitha Comstock", "Tabitha", "Tabitha Comstock", "Cameos", "#a84edc");
 export const Oliver = new Character("Jamie Oliver", "Oliver", "Jamie Oliver", "Cameos", "#519e9c");
+export const GregLeMond = new Character("Greg LeMond", "GregLeMond", "Greg LeMond", "Cameos", "#fffa5c");
+
+export const Ali = new Character("Ali B.", "Ali", "Ali", "Cameos", "#585a19");
 
 export const BowlingForSoup = new Character("Bowling For Soup", "BowlingForSoup", "Bowling For Soup", "Cameos", "#c52323")
 export const ClayAiken = new Character("Clay Aiken", "ClayAiken", "Clay Aiken", "Cameos", "#2882c3");
 export const ChakaKhan = new Character("Chaka Khan", "ChakaKhan", "Chaka Khan", "Cameos", "#730162");
 export const KennyOrtega = new Character("Kenny Ortega", "KennyOrtega", "Kenny Ortega", "Cameos", "#052740");
+export const Slash = new Character("Slash", "Slash", "Slash", "Cameos", "#6a1414");
 //#endregion
 
 //#region Song People
 export const dannyJacob = new Character("Danny Jacob", "dannyJacob", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
 export const robbieWyckoff = new Character("Robbie Wyckoff", "robbieWyckoff", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
-export const swampyMarsh = new Character("Jeff 'Swampy' Marsh", "swampyMarsh", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
+export const swampyMarsh = new Character("Jeff 'Swampy' Marsh", "swampyMarsh", "Swampy Marsh", "SONGWRITERS", "#3370db");
 export const randyCrenshaw = new Character("Randy Crenshaw", "randyCrenshaw", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
-export const danPovenmire = new Character("Dan Povenmire", "danPovenmire", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
+export const danPovenmire = new Character("Dan Povenmire", "danPovenmire", "Dan Povenmire", "SONGWRITERS", "#73bec6");
 export const beverleyStaunton = new Character("Beverly Staunton", "beverleyStaunton", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
 export const lCPowell = new Character("LC Powell", "lCPowell", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
 export const sheenaEaston = new Character("Sheena Easton", "sheenaEaston", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
@@ -345,7 +373,8 @@ export const bigBadVoodooDaddy = new Character("Big Bad Voodoo Daddy", "bigBadVo
 export const carmenCarter = new Character("Carmen Carter", "carmenCarter", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
 export const darrylPhinnessee = new Character("Darryl Phinnessee", "darrylPhinnessee", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
 export const aaronJacob = new Character("Aaron Jacob", "aaronJacob", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
-
+export const rickCowling = new Character("Rick Cowling", "rickCowling", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
+export const katiePierson = new Character("Katie Pierson", "katiePierson", "THIS IS NOT VALID! I DID A MESS UP!", "SONGWRITERS", "#FFFFFF");
 
 export const AndrewsSisters = new Character("Andrews Sisters - these are like, real people who are being parodied and depicted?", "andrewsSisters", "Andrews Sisters", "BandGroupSets", "#d861d8");
 export const GuyzNtheParque = new Character("2 Guys N the Parque", "GuyzNtheParque", "2 Guys N the Parque", "BandGroupSets", "#ad3939");
@@ -354,9 +383,10 @@ export const Zanzibar = new Character("Zanzibar", "Zanzibar", "Zanzibar", "BandG
 export const TinyCowboy = new Character("Tiny Cowboy", "TinyCowboy", "Tiny Cowboy", "BandGroupSets", "#FFFFFF");
 export const PaisleySideburnBrothers = new Character("Paisley Sideburn Brothers", "PaisleySideburnBrothers", "Paisley Sideburn Brothers", "BandGroupSets", "#59074a");
 export const DRSV = new Character("Disembodied Reggae Space Voice", "DRSV", "THIS IS NOT VALID! I DID A MESS UP!", "BandGroupSets", "#FFFFFF");
+export const Doof2LawnGnomes = new Character("2nd Dimension Doof's Singing Lawn Gnomes", "Doof2LawnGnomes", "THIS IS NOT VALID! I DID A MESS UP!", "BandGroupSets", "#FF00FF");
 //#endregion
 
-//#region Alt. Verowsions [NOT 2nd DIMENSION]
+//#region Alt. Verowsions [NOT 2nd DIMENSION] screw you bitch I'm putting them here. What are you gonna do about it?
 export const Ferbgor = new Character("Ferbgor [Fletcher?], Ferb's GGGGGGGGGG Uncle", "Ferbgor", "Ferbgor", "Frankenstein", "#104110");
 export const Phineastein = new Character("Dr. Phineastein", "Phineastein", "Phineastein", "Frankenstein", "#FF0000");
 export const Constance = new Character("Constance", "Constance", "Constance", "Frankenstein", "#cb6c00");
@@ -366,4 +396,62 @@ export const AngryMob = new Character("Angry Mob", "AngryMob", "Angry Mob", "Fra
 export const Jameson = new Character("Jameson", "Jameson", "Jameson", "Frankenstein", "#245732");
 export const FrankenIsabella = new Character("Unnamed Isabella Version", "FrankenIsabella", "Frankenstein Isabella", "Frankenstein", "#dc3292");
 export const Jeremiah = new Character("Jeremiah", "Jeremiah", "Jeremiah", "Frankenstein", "#3dac11");
+
+export const Phinabunk = new Character("Phinabunk", "Phinabunk", "Phinabunk", "StoneAge", "#FF0000");
+export const Gerb = new Character("Gerb", "Gerb", "Gerb", "StoneAge", "#104110");
+export const Bunka = new Character("Bunka da Bunka Quwonk", "Bunka", "Bunka", "StoneAge", "#1fd0bb");
+export const Isabelock = new Character("Isabelock", "Isabelock", "Isabelock", "StoneAge", "#662cc4");
+export const Boofgard = new Character("Boofgard", "Boofgard", "Boofgard", "StoneAge", "#185111");
+export const Baljug = new Character("Baljug", "Baljug", "Baljug", "StoneAge", "#6d6b6b");
+export const Monobrow = new Character("Monobrow", "Monobrow", "Monobrow", "StoneAge", "#FFFFFF");
+export const Doofengung = new Character("Doofengung", "Doofengung", "Doofengung", "StoneAge", "#FFFFFF");
+export const Gnarl = new Character("Gnarl", "Gnarl", "Gnarl", "StoneAge", "#573da4");
+export const Da = new Character("Da", "Da", "Da", "StoneAge", "#1c1c1c");
+export const Mog = new Character("Mog", "Mog", "Mog", "StoneAge", "#c4510e");
+export const Cantok = new Character("Can-tok", "Cantok", "Can-tok", "StoneAge", "#cb6c00");
+export const StoneStacy = new Character("Unnamed Stacy Version", "StoneStacy", "Stone Age Stacy", "StoneAge", "#2a5564");
+export const Rojuh = new Character("Ro-juh", "Rojuh", "Ro-juh", "StoneAge", "#bb8d0d");
+export const Jerabunk = new Character("Jerabunk", "Jerabunk", "Jerabunk", "StoneAge", "#2f5726");
+export const StoneAdyson = new Character("Unnamed Adyson Version", "StoneAdyson", "Stone Age Adyson", "StoneAge", "#FF0000");
+export const StoneGinger = new Character("Unnamed Ginger Version", "StoneGinger", "Stone Age Ginger", "StoneAge", "#FF0000");
+export const StoneHolly = new Character("Unnamed Holly Version", "StoneHolly", "Stone Age Holly", "StoneAge", "#FF0000");
+export const StoneGretchen = new Character("Unnamed Gretchen Version", "StoneGretchen", "Stone Age Gretchen", "StoneAge", "#FF0000");
+export const StoneKatie = new Character("Unnamed Katie Version", "StoneKatie", "Stone Age Katie", "StoneAge", "#e8cf72");
+export const StoneMilly = new Character("Unnamed Milly Version", "StoneMilly", "Stone Age Milly", "StoneAge", "#FF0000");
+
+export const PhineasChina = new Character("Phineas [China]", "PhineasChina", "Phineas [China]", "MingDynasty", "#FF0000");
+export const FerbChina = new Character("Ferb [China]", "FerbChina", "Ferb [China]", "MingDynasty", "#104110");
+export const BaljeetChina = new Character("Baljeet [China]", "BaljeetChina", "Baljeet [China]", "MingDynasty", "#7c6624");
+export const BufordChina = new Character("Buford [China]", "BufordChina", "Buford [China]", "MingDynasty", "#000000");
+export const CandaceChina = new Character("Candace [China]", "CandaceChina", "Candace [China]", "MingDynasty", "#cb6c00");
+export const LindaChina = new Character("Linda [China]", "LindaChina", "Linda [China]", "MingDynasty", "#c4510e");
+export const LawrenceChina = new Character("Lawrence [China]", "LawrenceChina", "Lawrence [China]", "MingDynasty", "#FF0000");
+export const RegentMonogram = new Character("Regent Monogram", "RegentMonogram", "Regent Monogram", "MingDystanst", "#2e9922");
+export const PrincessIsabella = new Character("Princess Isabella", "PrincessIsabella", "Princess Isabella", "MingDynasty", "#dc3292");
+export const MasterPerry = new Character("Master Perry", "MasterPerry", "Master Perry", "MingDynasty", "#1fd0bb");
+export const GeneralCarl = new Character("General Carl", "GeneralCarl", "General Carl", "MingDynasty", "#FFFFFF");
+export const DoofusKhan = new Character("Doofus Khan", "DoofusKhan", "Doofus Khan", "MingDynasty", "#281c27");
+export const RedundantScribe = new Character("The Redundant Scribe of Redundantness", "RedundantScribe", "The Redundant Scribe", "MingDynasty", "#6d0a0a");
+export const Yoda = new Character("Yoda [China] [not... Canon.]", "Yoda", "Yoda", "MingDynasty", "#28633f");
+
+export const Monogram2D = new Character("Major Monogram [2nd Dimension]", "Monogram2nd", "Major Monogram [2nd Dimension]", "2D", "#e6e6e6");
+export const Doof2D = new Character("Dr. Heinz Doofenshmirtz [2nd Dimension]", "Doof2nd", "Doof [2nd Dimension]", "2D", "#000000");
+export const Perry2D = new Character("Perry the Platyborg", "Perry2D", "Perry the Platyborg", "2D", "#1fd0bb");
+export const Lawrence2D = new Character("Lawrence Fletcher [2nd Dimension]", "Lawrence2D", "Lawrence [2nd Dimension]", "2D", "#514c4c");
+export const Baxter2D = new Character("Ben Baxter [2nd Dimension]", "Baxter2D", "Ben Baxter [2nd Dimension]", "2D", "#94690b");
+export const Linda2D = new Character("Linda Flynn-Fletcher", "Linda2D", "Linda [2nd Dimension]", "2D", "#c4510e");
+export const Phineas2D = new Character("Phineas Flynn [2nd Dimension]", "Phineas2D", "Phineas [2nd Dimension]", "2D", "#FF0000");
+export const Ferb2D = new Character("Ferb Fletcher [2nd Dimension]", "Ferb2D", "Ferb [2nd Dimension]", "2D", "#104110");
+export const Candace2D = new Character("Candace Flynn [2nd Dimension]", "Candace2D", "Candace [2nd Dimension]", "2D", "#cb6c00");
+export const Isabella2D = new Character("Isabella Garcia-Shapiro [2nd Dimension]", "Isabella2D", "Isabella [2nd Dimension]", "2D", "#dc3292");
+export const Buford2D = new Character("Buford Van Stomm [2nd Dimension]", "Buford2D", "Buford [2nd Dimension]", "2D", "#000000");
+export const Baljeet2D = new Character("Dr. Baljeet Tjinder [2nd Dimension]", "Baljeet2D", "Baljeet [2nd Dimension]", "2D", "#FF0000");
+export const Adyson2D = new Character("Adyson Sweetwater [2nd Dimension]", "Adyson2D", "Adyson [2nd Dimension]", "2D", "#FF0000");
+export const Ginger2D = new Character("Ginger Hirano [2nd Dimension]", "Ginger2D", "Ginger [2nd Dimension]", "2D", "#FF0000");
+export const Holly2D = new Character("Holly [2nd Dimension]", "Holly2D", "Holly [2nd Dimension]", "2D", "#FF0000");
+export const Gretchen2D = new Character("Gretchen [2nd Dimension]", "Gretchen2D", "Gretchen [2nd Dimension]", "2D", "#FF0000");
+export const Katie2D = new Character("Katie [2nd Dimension]", "Katie2D", "Katie [2nd Dimension]", "2D", "#e8cf72");
+export const Milly2D = new Character("Milly [2nd Dimension]", "Milly2D", "Milly [2nd Dimension]", "2D", "#FF0000");
+export const Jeremy2D = new Character("Jeremy Johnson [2nd Dimension]", "Jeremy2D", "Jeremy [2nd Dimension]", "2D", "#FF0000");
+
 //#endregion
